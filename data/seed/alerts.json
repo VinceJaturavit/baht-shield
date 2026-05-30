@@ -1,0 +1,3257 @@
+[
+  {
+    "alert_id": "ALT_000001",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_001",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000002",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_002",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000003",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_003",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000004",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_004",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000005",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_005",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000006",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_006",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000007",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_007",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000008",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_008",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000009",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_009",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000010",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_010",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000011",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_011",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000012",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_012",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000013",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_013",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000014",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_014",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000015",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_015",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000016",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_016",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000017",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_017",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000018",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_018",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000019",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_019",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000020",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_020",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000021",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_021",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000022",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_022",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000023",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_023",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000024",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_024",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000025",
+    "rule_name": "PATTERN_MULE_FARM_CLUSTER",
+    "severity": "high",
+    "wallet_id": "WAL_MF_025",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000026",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_001",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000027",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_002",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000028",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_003",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000029",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_004",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000030",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_005",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000031",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_006",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000032",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_007",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000033",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_008",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000034",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_009",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000035",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_010",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000036",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_011",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000037",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_012",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000038",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_013",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000039",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_014",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000040",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_015",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000041",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_016",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000042",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_017",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000043",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_018",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000044",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_019",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000045",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_020",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000046",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_021",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000047",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_022",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000048",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_023",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000049",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_024",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000050",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_025",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000051",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_026",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000052",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_027",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000053",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_028",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000054",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_029",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000055",
+    "rule_name": "PATTERN_SLEEPER_MULE_ACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_SM_030",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000056",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_002",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000057",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_003",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000058",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_004",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000059",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_005",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000060",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_006",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000061",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_007",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000062",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_008",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000063",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_009",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000064",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_010",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000065",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_011",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000066",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_012",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000067",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_013",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000068",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_014",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000069",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_015",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000070",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_001",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000071",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_002",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000072",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_003",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000073",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_004",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000074",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_005",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000075",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_006",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000076",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_007",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000077",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_008",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000078",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_009",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000079",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_010",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000080",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_011",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000081",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_012",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000082",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_013",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000083",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_014",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000084",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_015",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000085",
+    "rule_name": "PATTERN_APP_SCAM_CASHOUT_RING",
+    "severity": "critical",
+    "wallet_id": "WAL_APP_MUL_001",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000086",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000001",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000087",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "high",
+    "wallet_id": "WAL_000002",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000088",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000003",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000089",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000004",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000090",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000005",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000091",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000006",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000092",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000007",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000093",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000008",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000094",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000009",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000095",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "high",
+    "wallet_id": "WAL_000010",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000096",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000011",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000097",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000012",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000098",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000013",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000099",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000014",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000100",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000015",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000101",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000016",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000102",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000017",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000103",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000018",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000104",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000019",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000105",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000020",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000106",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000021",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000107",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000022",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000108",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000023",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000109",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000024",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000110",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000025",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000111",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000026",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000112",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000027",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000113",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000028",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000114",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000029",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000115",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "high",
+    "wallet_id": "WAL_000030",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000116",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000031",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000117",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000032",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000118",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000033",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000119",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000034",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000120",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000035",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000121",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000036",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000122",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000037",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000123",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000038",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000124",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000039",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000125",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "high",
+    "wallet_id": "WAL_000040",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000126",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000041",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000127",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000042",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000128",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000043",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000129",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000044",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000130",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "high",
+    "wallet_id": "WAL_000045",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000131",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000046",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000132",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000047",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000133",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000048",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000134",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000049",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000135",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000050",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000136",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000051",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000137",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000052",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000138",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000053",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000139",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000054",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000140",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000055",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000141",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000056",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000142",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000057",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000143",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000058",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000144",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000059",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000145",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000060",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000146",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000061",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000147",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000062",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000148",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000063",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000149",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000064",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000150",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000065",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000151",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000066",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000152",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000067",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000153",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000068",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000154",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000069",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000155",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000070",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000156",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000071",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000157",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "high",
+    "wallet_id": "WAL_000072",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000158",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000073",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000159",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000074",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000160",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "high",
+    "wallet_id": "WAL_000075",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000161",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000076",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000162",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000077",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000163",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000078",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000164",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000079",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000165",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000080",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000166",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000081",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000167",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000082",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000168",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000083",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000169",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000084",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000170",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000085",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000171",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000086",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000172",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000087",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000173",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000088",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000174",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000089",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000175",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000090",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000176",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000091",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000177",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000092",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000178",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000093",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000179",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000094",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000180",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000095",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000181",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000096",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000182",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000097",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000183",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000098",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000184",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000099",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000185",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000100",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000186",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000101",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000187",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000102",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000188",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000103",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000189",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000104",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000190",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000105",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000191",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000106",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000192",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000107",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000193",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000108",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000194",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000109",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000195",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000110",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000196",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000111",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000197",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000112",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000198",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "high",
+    "wallet_id": "WAL_000113",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000199",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000114",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000200",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000115",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000201",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000116",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000202",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000117",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000203",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000118",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000204",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000119",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000205",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000120",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000206",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000121",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000207",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000122",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000208",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000123",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000209",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000124",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000210",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000125",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000211",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000126",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000212",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000127",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000213",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000128",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000214",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000129",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000215",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000130",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000216",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000131",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000217",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000132",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000218",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000133",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000219",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000134",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000220",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000135",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000221",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000136",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000222",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000137",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000223",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "high",
+    "wallet_id": "WAL_000138",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000224",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000139",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000225",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "high",
+    "wallet_id": "WAL_000140",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000226",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000141",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000227",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000142",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000228",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000143",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000229",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000144",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000230",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000145",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000231",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "high",
+    "wallet_id": "WAL_000146",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000232",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000147",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000233",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000148",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000234",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000149",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000235",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000150",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000236",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000151",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000237",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000152",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000238",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000153",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000239",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000154",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000240",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000155",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000241",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000156",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000242",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000157",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000243",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000158",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000244",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000159",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000245",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000160",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000246",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000161",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000247",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "high",
+    "wallet_id": "WAL_000162",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000248",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000163",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000249",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000164",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000250",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000165",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000251",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000166",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000252",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000167",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000253",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000168",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000254",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000169",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000255",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000170",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000256",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000171",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000257",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000172",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000258",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000173",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000259",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000174",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000260",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000175",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000261",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000176",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000262",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000177",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000263",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000178",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000264",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000179",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000265",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000180",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000266",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000181",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000267",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000182",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000268",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000183",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000269",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "high",
+    "wallet_id": "WAL_000184",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000270",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000185",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000271",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000186",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000272",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000187",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000273",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000188",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000274",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000189",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000275",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000190",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000276",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000191",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000277",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000192",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000278",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000193",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000279",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000194",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000280",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000195",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000281",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000196",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000282",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000197",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000283",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000198",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000284",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000199",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000285",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000200",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000286",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000201",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000287",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000202",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000288",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000203",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000289",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000204",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000290",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000205",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000291",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000206",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000292",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000207",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000293",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000208",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000294",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000209",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000295",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000210",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000296",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000211",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000297",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000212",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000298",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000213",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000299",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000214",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000300",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000215",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000301",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000216",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000302",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000217",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000303",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000218",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000304",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000219",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000305",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000220",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000306",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000221",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000307",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000222",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000308",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000223",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000309",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000224",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000310",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000225",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000311",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000226",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000312",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000227",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000313",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000228",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000314",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000229",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000315",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000230",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000316",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000231",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000317",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000232",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000318",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000233",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000319",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000234",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000320",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000235",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000321",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000236",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000322",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000237",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000323",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000238",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000324",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000239",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000325",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000240",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000326",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000241",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000327",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000242",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000328",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000243",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000329",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000244",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000330",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "high",
+    "wallet_id": "WAL_000245",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000331",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000246",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000332",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000247",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000333",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000248",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000334",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000249",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000335",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000250",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000336",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000251",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000337",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000252",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000338",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000253",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000339",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000254",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000340",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000255",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000341",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000256",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000342",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000257",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000343",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "high",
+    "wallet_id": "WAL_000258",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000344",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000259",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000345",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000260",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000346",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000261",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000347",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000262",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000348",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000263",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000349",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000264",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000350",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000265",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000351",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "medium",
+    "wallet_id": "WAL_000266",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000352",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000267",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000353",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000268",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000354",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000269",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000355",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000270",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000356",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000271",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000357",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000272",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000358",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000273",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000359",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000274",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000360",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000275",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000361",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "high",
+    "wallet_id": "WAL_000276",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000362",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000277",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000363",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000278",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000364",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000279",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000365",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000280",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000366",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000281",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000367",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000282",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000368",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "high",
+    "wallet_id": "WAL_000283",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000369",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000284",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000370",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000285",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000371",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000286",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000372",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000287",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000373",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000288",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000374",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000289",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000375",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000290",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000376",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000291",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000377",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000292",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000378",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000293",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000379",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000294",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000380",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000295",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000381",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000296",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000382",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000297",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000383",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000298",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000384",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000299",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000385",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000300",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000386",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000301",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000387",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000302",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000388",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000303",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000389",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000304",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000390",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000305",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000391",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000306",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000392",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000307",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000393",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000308",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000394",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000309",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000395",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000310",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000396",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000311",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000397",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000312",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000398",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000313",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000399",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000314",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000400",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000315",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000401",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000316",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000402",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000317",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000403",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000318",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000404",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000319",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000405",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000320",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000406",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000321",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000407",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000322",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000408",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000323",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000409",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000324",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000410",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000325",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000411",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000326",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000412",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000327",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000413",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000328",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000414",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000329",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000415",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000330",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000416",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000331",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000417",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000332",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000418",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000333",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000419",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000334",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000420",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000335",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000421",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000336",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000422",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000337",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000423",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000338",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000424",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000339",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000425",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000340",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000426",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000341",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000427",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000342",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000428",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000343",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000429",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000344",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000430",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000345",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000431",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000346",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000432",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000347",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000433",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "high",
+    "wallet_id": "WAL_000348",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000434",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000349",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000435",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000350",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000436",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000351",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000437",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000352",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000438",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "high",
+    "wallet_id": "WAL_000353",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000439",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000354",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000440",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000355",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000441",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000356",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000442",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "low",
+    "wallet_id": "WAL_000357",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000443",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "low",
+    "wallet_id": "WAL_000358",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000444",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "high",
+    "wallet_id": "WAL_000359",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000445",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "low",
+    "wallet_id": "WAL_000360",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000446",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "low",
+    "wallet_id": "WAL_000361",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000447",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000362",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000448",
+    "rule_name": "RULE_KYC_REVIEW",
+    "severity": "low",
+    "wallet_id": "WAL_000363",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000449",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000364",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000450",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000365",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000451",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000366",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000452",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000367",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000453",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "medium",
+    "wallet_id": "WAL_000368",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000454",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000369",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000455",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000370",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000456",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000371",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000457",
+    "rule_name": "RULE_CROSS_BORDER_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000372",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000458",
+    "rule_name": "RULE_FAILED_KYC_ATTEMPT",
+    "severity": "medium",
+    "wallet_id": "WAL_000373",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000459",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000374",
+    "status": "closed"
+  },
+  {
+    "alert_id": "ALT_000460",
+    "rule_name": "RULE_CASHOUT_FREQUENCY",
+    "severity": "medium",
+    "wallet_id": "WAL_000375",
+    "status": "escalated"
+  },
+  {
+    "alert_id": "ALT_000461",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "low",
+    "wallet_id": "WAL_000376",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000462",
+    "rule_name": "RULE_DORMANT_REACTIVATION",
+    "severity": "high",
+    "wallet_id": "WAL_000377",
+    "status": "new"
+  },
+  {
+    "alert_id": "ALT_000463",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "medium",
+    "wallet_id": "WAL_000378",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000464",
+    "rule_name": "RULE_DEVICE_RISK_MEDIUM",
+    "severity": "medium",
+    "wallet_id": "WAL_000379",
+    "status": "in_review"
+  },
+  {
+    "alert_id": "ALT_000465",
+    "rule_name": "RULE_HIGH_AMOUNT_TRANSFER",
+    "severity": "high",
+    "wallet_id": "WAL_000380",
+    "status": "escalated"
+  }
+]

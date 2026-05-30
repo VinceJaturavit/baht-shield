@@ -1,0 +1,3017 @@
+[
+  {
+    "case_id": "CASE_MF_001",
+    "alert_id": "ALT_000001",
+    "owner": "Malee T.",
+    "decision": "close_account",
+    "loss_amount": 2007,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_002",
+    "alert_id": "ALT_000002",
+    "owner": "Wanida S.",
+    "decision": "close_account",
+    "loss_amount": 5286,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_003",
+    "alert_id": "ALT_000003",
+    "owner": "Wanida S.",
+    "decision": "close_account",
+    "loss_amount": 5953,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_004",
+    "alert_id": "ALT_000004",
+    "owner": "Nattawut P.",
+    "decision": "close_account",
+    "loss_amount": 7138,
+    "opened_at": "2026-05-17T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_005",
+    "alert_id": "ALT_000005",
+    "owner": "Malee T.",
+    "decision": "close_account",
+    "loss_amount": 6271,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_006",
+    "alert_id": "ALT_000006",
+    "owner": "Siriporn K.",
+    "decision": "close_account",
+    "loss_amount": 7646,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_007",
+    "alert_id": "ALT_000007",
+    "owner": "Kanokwan B.",
+    "decision": "close_account",
+    "loss_amount": 7471,
+    "opened_at": "2026-05-18T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_008",
+    "alert_id": "ALT_000008",
+    "owner": "Siriporn K.",
+    "decision": "close_account",
+    "loss_amount": 1540,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_009",
+    "alert_id": "ALT_000009",
+    "owner": "Malee T.",
+    "decision": "close_account",
+    "loss_amount": 4907,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_010",
+    "alert_id": "ALT_000010",
+    "owner": "Nattawut P.",
+    "decision": "close_account",
+    "loss_amount": 4010,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_011",
+    "alert_id": "ALT_000011",
+    "owner": "Malee T.",
+    "decision": "close_account",
+    "loss_amount": 511,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_012",
+    "alert_id": "ALT_000012",
+    "owner": "Wanida S.",
+    "decision": "close_account",
+    "loss_amount": 2767,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_013",
+    "alert_id": "ALT_000013",
+    "owner": "Nattawut P.",
+    "decision": "close_account",
+    "loss_amount": 2726,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_014",
+    "alert_id": "ALT_000014",
+    "owner": "Theerawat C.",
+    "decision": "close_account",
+    "loss_amount": 365,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_015",
+    "alert_id": "ALT_000015",
+    "owner": "Kanokwan B.",
+    "decision": "close_account",
+    "loss_amount": 466,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_016",
+    "alert_id": "ALT_000016",
+    "owner": "Siriporn K.",
+    "decision": "close_account",
+    "loss_amount": 80,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_017",
+    "alert_id": "ALT_000017",
+    "owner": "Malee T.",
+    "decision": "close_account",
+    "loss_amount": 959,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_018",
+    "alert_id": "ALT_000018",
+    "owner": "Wanida S.",
+    "decision": "close_account",
+    "loss_amount": 6679,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_019",
+    "alert_id": "ALT_000019",
+    "owner": "Kanokwan B.",
+    "decision": "close_account",
+    "loss_amount": 3843,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_020",
+    "alert_id": "ALT_000020",
+    "owner": "Anucha W.",
+    "decision": "close_account",
+    "loss_amount": 5901,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_MF_021",
+    "alert_id": "ALT_000021",
+    "owner": "Theerawat C.",
+    "decision": "pending",
+    "loss_amount": 212,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_MF_022",
+    "alert_id": "ALT_000022",
+    "owner": "Theerawat C.",
+    "decision": "pending",
+    "loss_amount": 853,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_MF_023",
+    "alert_id": "ALT_000023",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 3592,
+    "opened_at": "2026-05-18T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_MF_024",
+    "alert_id": "ALT_000024",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 7196,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_MF_025",
+    "alert_id": "ALT_000025",
+    "owner": "Siriporn K.",
+    "decision": "pending",
+    "loss_amount": 6760,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_SM_001",
+    "alert_id": "ALT_000026",
+    "owner": "Priya M.",
+    "decision": "suspend_wallet",
+    "loss_amount": 9490,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_002",
+    "alert_id": "ALT_000027",
+    "owner": "Theerawat C.",
+    "decision": "suspend_wallet",
+    "loss_amount": 19739,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_003",
+    "alert_id": "ALT_000028",
+    "owner": "Priya M.",
+    "decision": "suspend_wallet",
+    "loss_amount": 4653,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_004",
+    "alert_id": "ALT_000029",
+    "owner": "Anucha W.",
+    "decision": "suspend_wallet",
+    "loss_amount": 17187,
+    "opened_at": "2026-05-22T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_005",
+    "alert_id": "ALT_000030",
+    "owner": "Anucha W.",
+    "decision": "suspend_wallet",
+    "loss_amount": 5557,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_006",
+    "alert_id": "ALT_000031",
+    "owner": "Kanokwan B.",
+    "decision": "suspend_wallet",
+    "loss_amount": 13801,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_007",
+    "alert_id": "ALT_000032",
+    "owner": "Theerawat C.",
+    "decision": "suspend_wallet",
+    "loss_amount": 9024,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_008",
+    "alert_id": "ALT_000033",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 17151,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_009",
+    "alert_id": "ALT_000034",
+    "owner": "Nattawut P.",
+    "decision": "suspend_wallet",
+    "loss_amount": 17188,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_010",
+    "alert_id": "ALT_000035",
+    "owner": "Theerawat C.",
+    "decision": "suspend_wallet",
+    "loss_amount": 4394,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_011",
+    "alert_id": "ALT_000036",
+    "owner": "Siriporn K.",
+    "decision": "suspend_wallet",
+    "loss_amount": 7990,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_012",
+    "alert_id": "ALT_000037",
+    "owner": "Nattawut P.",
+    "decision": "suspend_wallet",
+    "loss_amount": 13923,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_013",
+    "alert_id": "ALT_000038",
+    "owner": "Nattawut P.",
+    "decision": "suspend_wallet",
+    "loss_amount": 23699,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_014",
+    "alert_id": "ALT_000039",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 4623,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_015",
+    "alert_id": "ALT_000040",
+    "owner": "Anucha W.",
+    "decision": "suspend_wallet",
+    "loss_amount": 24656,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_016",
+    "alert_id": "ALT_000041",
+    "owner": "Nattawut P.",
+    "decision": "suspend_wallet",
+    "loss_amount": 14394,
+    "opened_at": "2026-05-22T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_017",
+    "alert_id": "ALT_000042",
+    "owner": "Anucha W.",
+    "decision": "suspend_wallet",
+    "loss_amount": 13578,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_018",
+    "alert_id": "ALT_000043",
+    "owner": "Theerawat C.",
+    "decision": "suspend_wallet",
+    "loss_amount": 8818,
+    "opened_at": "2026-05-22T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_019",
+    "alert_id": "ALT_000044",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 24284,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_020",
+    "alert_id": "ALT_000045",
+    "owner": "Theerawat C.",
+    "decision": "suspend_wallet",
+    "loss_amount": 24227,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_021",
+    "alert_id": "ALT_000046",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 10076,
+    "opened_at": "2026-05-22T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_022",
+    "alert_id": "ALT_000047",
+    "owner": "Priya M.",
+    "decision": "suspend_wallet",
+    "loss_amount": 17478,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_023",
+    "alert_id": "ALT_000048",
+    "owner": "Siriporn K.",
+    "decision": "suspend_wallet",
+    "loss_amount": 2532,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_024",
+    "alert_id": "ALT_000049",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 13512,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_025",
+    "alert_id": "ALT_000050",
+    "owner": "Malee T.",
+    "decision": "suspend_wallet",
+    "loss_amount": 10677,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_SM_026",
+    "alert_id": "ALT_000051",
+    "owner": "Malee T.",
+    "decision": "pending",
+    "loss_amount": 5559,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_SM_027",
+    "alert_id": "ALT_000052",
+    "owner": "Nattawut P.",
+    "decision": "pending",
+    "loss_amount": 22371,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_SM_028",
+    "alert_id": "ALT_000053",
+    "owner": "Wanida S.",
+    "decision": "pending",
+    "loss_amount": 16502,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_SM_029",
+    "alert_id": "ALT_000054",
+    "owner": "Wanida S.",
+    "decision": "pending",
+    "loss_amount": 8112,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_SM_030",
+    "alert_id": "ALT_000055",
+    "owner": "Kanokwan B.",
+    "decision": "pending",
+    "loss_amount": 18882,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_APP_001",
+    "alert_id": "ALT_000056",
+    "owner": "Siriporn K.",
+    "decision": "escalate_compliance",
+    "loss_amount": 27127,
+    "opened_at": "2026-05-29T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_002",
+    "alert_id": "ALT_000057",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 34676,
+    "opened_at": "2026-05-29T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_003",
+    "alert_id": "ALT_000058",
+    "owner": "Theerawat C.",
+    "decision": "escalate_compliance",
+    "loss_amount": 38671,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_004",
+    "alert_id": "ALT_000059",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 23243,
+    "opened_at": "2026-05-29T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_005",
+    "alert_id": "ALT_000060",
+    "owner": "Anucha W.",
+    "decision": "escalate_compliance",
+    "loss_amount": 25288,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_006",
+    "alert_id": "ALT_000061",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 25964,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_007",
+    "alert_id": "ALT_000062",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 32463,
+    "opened_at": "2026-05-22T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_008",
+    "alert_id": "ALT_000063",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 4656,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_009",
+    "alert_id": "ALT_000064",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 43485,
+    "opened_at": "2026-05-18T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_010",
+    "alert_id": "ALT_000065",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 31431,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_011",
+    "alert_id": "ALT_000066",
+    "owner": "Kanokwan B.",
+    "decision": "escalate_compliance",
+    "loss_amount": 29778,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_012",
+    "alert_id": "ALT_000067",
+    "owner": "Siriporn K.",
+    "decision": "escalate_compliance",
+    "loss_amount": 9709,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_013",
+    "alert_id": "ALT_000068",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 28920,
+    "opened_at": "2026-05-17T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_014",
+    "alert_id": "ALT_000069",
+    "owner": "Anucha W.",
+    "decision": "escalate_compliance",
+    "loss_amount": 13290,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_015",
+    "alert_id": "ALT_000070",
+    "owner": "Theerawat C.",
+    "decision": "escalate_compliance",
+    "loss_amount": 37701,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_016",
+    "alert_id": "ALT_000071",
+    "owner": "Siriporn K.",
+    "decision": "escalate_compliance",
+    "loss_amount": 33659,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_017",
+    "alert_id": "ALT_000072",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 9951,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_018",
+    "alert_id": "ALT_000073",
+    "owner": "Theerawat C.",
+    "decision": "escalate_compliance",
+    "loss_amount": 10878,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_019",
+    "alert_id": "ALT_000074",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 12931,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_020",
+    "alert_id": "ALT_000075",
+    "owner": "Theerawat C.",
+    "decision": "escalate_compliance",
+    "loss_amount": 26611,
+    "opened_at": "2026-05-18T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_021",
+    "alert_id": "ALT_000076",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 30818,
+    "opened_at": "2026-05-17T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_022",
+    "alert_id": "ALT_000077",
+    "owner": "Anucha W.",
+    "decision": "escalate_compliance",
+    "loss_amount": 11379,
+    "opened_at": "2026-05-29T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_023",
+    "alert_id": "ALT_000078",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 43331,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_024",
+    "alert_id": "ALT_000079",
+    "owner": "Kanokwan B.",
+    "decision": "escalate_compliance",
+    "loss_amount": 13271,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_025",
+    "alert_id": "ALT_000080",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 43471,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_APP_026",
+    "alert_id": "ALT_000081",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 17489,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_APP_027",
+    "alert_id": "ALT_000082",
+    "owner": "Siriporn K.",
+    "decision": "pending",
+    "loss_amount": 26013,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_APP_028",
+    "alert_id": "ALT_000083",
+    "owner": "Wanida S.",
+    "decision": "pending",
+    "loss_amount": 41480,
+    "opened_at": "2026-05-22T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_APP_029",
+    "alert_id": "ALT_000084",
+    "owner": "Kanokwan B.",
+    "decision": "pending",
+    "loss_amount": 3505,
+    "opened_at": "2026-05-29T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_APP_030",
+    "alert_id": "ALT_000085",
+    "owner": "Anucha W.",
+    "decision": "pending",
+    "loss_amount": 3015,
+    "opened_at": "2026-05-19T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001001",
+    "alert_id": "ALT_000086",
+    "owner": "Malee T.",
+    "decision": "pending",
+    "loss_amount": 9123,
+    "opened_at": "2026-05-19T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001002",
+    "alert_id": "ALT_000087",
+    "owner": "Anucha W.",
+    "decision": "clear",
+    "loss_amount": 14942,
+    "opened_at": "2026-05-14T12:00:00.000Z",
+    "closed_at": "2026-05-17T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001003",
+    "alert_id": "ALT_000088",
+    "owner": "Nattawut P.",
+    "decision": "pending",
+    "loss_amount": 4055,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001004",
+    "alert_id": "ALT_000089",
+    "owner": "Priya M.",
+    "decision": "monitor",
+    "loss_amount": 14756,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-05T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001005",
+    "alert_id": "ALT_000090",
+    "owner": "Theerawat C.",
+    "decision": "clear",
+    "loss_amount": 14372,
+    "opened_at": "2026-05-06T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001006",
+    "alert_id": "ALT_000091",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 16566,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001007",
+    "alert_id": "ALT_000092",
+    "owner": "Anucha W.",
+    "decision": "pending",
+    "loss_amount": 356,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": "2026-05-22T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001008",
+    "alert_id": "ALT_000093",
+    "owner": "Malee T.",
+    "decision": "close_account",
+    "loss_amount": 4463,
+    "opened_at": "2026-05-04T12:00:00.000Z",
+    "closed_at": "2026-05-21T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001009",
+    "alert_id": "ALT_000094",
+    "owner": "Siriporn K.",
+    "decision": "monitor",
+    "loss_amount": 4045,
+    "opened_at": "2026-05-06T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001010",
+    "alert_id": "ALT_000095",
+    "owner": "Malee T.",
+    "decision": "suspend_wallet",
+    "loss_amount": 15699,
+    "opened_at": "2026-05-10T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001011",
+    "alert_id": "ALT_000096",
+    "owner": "Anucha W.",
+    "decision": "monitor",
+    "loss_amount": 633,
+    "opened_at": "2026-05-12T12:00:00.000Z",
+    "closed_at": "2026-05-15T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001012",
+    "alert_id": "ALT_000097",
+    "owner": "Nattawut P.",
+    "decision": "suspend_wallet",
+    "loss_amount": 8178,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001013",
+    "alert_id": "ALT_000098",
+    "owner": "Kanokwan B.",
+    "decision": "pending",
+    "loss_amount": 1065,
+    "opened_at": "2026-05-12T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001014",
+    "alert_id": "ALT_000099",
+    "owner": "Malee T.",
+    "decision": "suspend_wallet",
+    "loss_amount": 12893,
+    "opened_at": "2026-05-29T12:00:00.000Z",
+    "closed_at": "2026-05-23T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001015",
+    "alert_id": "ALT_000100",
+    "owner": "Wanida S.",
+    "decision": "monitor",
+    "loss_amount": 10231,
+    "opened_at": "2026-05-18T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001016",
+    "alert_id": "ALT_000101",
+    "owner": "Priya M.",
+    "decision": "close_account",
+    "loss_amount": 3339,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001017",
+    "alert_id": "ALT_000102",
+    "owner": "Wanida S.",
+    "decision": "close_account",
+    "loss_amount": 5442,
+    "opened_at": "2026-05-14T12:00:00.000Z",
+    "closed_at": "2026-05-14T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001018",
+    "alert_id": "ALT_000103",
+    "owner": "Wanida S.",
+    "decision": "clear",
+    "loss_amount": 7616,
+    "opened_at": "2026-05-12T12:00:00.000Z",
+    "closed_at": "2026-05-23T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001019",
+    "alert_id": "ALT_000104",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 7080,
+    "opened_at": "2026-05-07T12:00:00.000Z",
+    "closed_at": "2026-05-11T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001020",
+    "alert_id": "ALT_000105",
+    "owner": "Malee T.",
+    "decision": "monitor",
+    "loss_amount": 17252,
+    "opened_at": "2026-05-04T12:00:00.000Z",
+    "closed_at": "2026-05-17T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001021",
+    "alert_id": "ALT_000106",
+    "owner": "Wanida S.",
+    "decision": "pending",
+    "loss_amount": 10553,
+    "opened_at": "2026-05-02T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001022",
+    "alert_id": "ALT_000107",
+    "owner": "Wanida S.",
+    "decision": "monitor",
+    "loss_amount": 8631,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": "2026-05-23T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001023",
+    "alert_id": "ALT_000108",
+    "owner": "Malee T.",
+    "decision": "suspend_wallet",
+    "loss_amount": 2918,
+    "opened_at": "2026-05-06T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001024",
+    "alert_id": "ALT_000109",
+    "owner": "Kanokwan B.",
+    "decision": "escalate_compliance",
+    "loss_amount": 14592,
+    "opened_at": "2026-05-13T12:00:00.000Z",
+    "closed_at": "2026-05-11T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001025",
+    "alert_id": "ALT_000110",
+    "owner": "Siriporn K.",
+    "decision": "suspend_wallet",
+    "loss_amount": 6819,
+    "opened_at": "2026-05-08T12:00:00.000Z",
+    "closed_at": "2026-05-13T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001026",
+    "alert_id": "ALT_000111",
+    "owner": "Malee T.",
+    "decision": "close_account",
+    "loss_amount": 6783,
+    "opened_at": "2026-05-08T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001027",
+    "alert_id": "ALT_000112",
+    "owner": "Theerawat C.",
+    "decision": "pending",
+    "loss_amount": 4730,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001028",
+    "alert_id": "ALT_000113",
+    "owner": "Priya M.",
+    "decision": "close_account",
+    "loss_amount": 19519,
+    "opened_at": "2026-05-19T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001029",
+    "alert_id": "ALT_000114",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 5288,
+    "opened_at": "2026-05-07T12:00:00.000Z",
+    "closed_at": "2026-05-13T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001030",
+    "alert_id": "ALT_000115",
+    "owner": "Malee T.",
+    "decision": "close_account",
+    "loss_amount": 2717,
+    "opened_at": "2026-05-07T12:00:00.000Z",
+    "closed_at": "2026-05-15T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001031",
+    "alert_id": "ALT_000116",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 16842,
+    "opened_at": "2026-05-13T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001032",
+    "alert_id": "ALT_000117",
+    "owner": "Siriporn K.",
+    "decision": "clear",
+    "loss_amount": 1729,
+    "opened_at": "2026-05-22T12:00:00.000Z",
+    "closed_at": "2026-05-23T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001033",
+    "alert_id": "ALT_000118",
+    "owner": "Theerawat C.",
+    "decision": "suspend_wallet",
+    "loss_amount": 11225,
+    "opened_at": "2026-05-09T12:00:00.000Z",
+    "closed_at": "2026-05-05T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001034",
+    "alert_id": "ALT_000119",
+    "owner": "Kanokwan B.",
+    "decision": "pending",
+    "loss_amount": 4498,
+    "opened_at": "2026-05-13T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001035",
+    "alert_id": "ALT_000120",
+    "owner": "Priya M.",
+    "decision": "close_account",
+    "loss_amount": 7072,
+    "opened_at": "2026-05-12T12:00:00.000Z",
+    "closed_at": "2026-05-17T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001036",
+    "alert_id": "ALT_000121",
+    "owner": "Malee T.",
+    "decision": "pending",
+    "loss_amount": 7496,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-09T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001037",
+    "alert_id": "ALT_000122",
+    "owner": "Priya M.",
+    "decision": "clear",
+    "loss_amount": 10414,
+    "opened_at": "2026-05-09T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001038",
+    "alert_id": "ALT_000123",
+    "owner": "Anucha W.",
+    "decision": "suspend_wallet",
+    "loss_amount": 2492,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001039",
+    "alert_id": "ALT_000124",
+    "owner": "Kanokwan B.",
+    "decision": "suspend_wallet",
+    "loss_amount": 14369,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": "2026-05-18T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001040",
+    "alert_id": "ALT_000125",
+    "owner": "Theerawat C.",
+    "decision": "clear",
+    "loss_amount": 19798,
+    "opened_at": "2026-05-01T12:00:00.000Z",
+    "closed_at": "2026-05-20T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001041",
+    "alert_id": "ALT_000126",
+    "owner": "Malee T.",
+    "decision": "clear",
+    "loss_amount": 13657,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": "2026-05-10T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001042",
+    "alert_id": "ALT_000127",
+    "owner": "Theerawat C.",
+    "decision": "pending",
+    "loss_amount": 2769,
+    "opened_at": "2026-05-04T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001043",
+    "alert_id": "ALT_000128",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 17456,
+    "opened_at": "2026-05-19T12:00:00.000Z",
+    "closed_at": "2026-05-12T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001044",
+    "alert_id": "ALT_000129",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 15939,
+    "opened_at": "2026-05-12T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001045",
+    "alert_id": "ALT_000130",
+    "owner": "Wanida S.",
+    "decision": "pending",
+    "loss_amount": 19298,
+    "opened_at": "2026-05-17T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001046",
+    "alert_id": "ALT_000131",
+    "owner": "Wanida S.",
+    "decision": "clear",
+    "loss_amount": 7205,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001047",
+    "alert_id": "ALT_000132",
+    "owner": "Anucha W.",
+    "decision": "suspend_wallet",
+    "loss_amount": 4407,
+    "opened_at": "2026-05-07T12:00:00.000Z",
+    "closed_at": "2026-05-05T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001048",
+    "alert_id": "ALT_000133",
+    "owner": "Anucha W.",
+    "decision": "close_account",
+    "loss_amount": 8873,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": "2026-05-23T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001049",
+    "alert_id": "ALT_000134",
+    "owner": "Siriporn K.",
+    "decision": "clear",
+    "loss_amount": 1977,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001050",
+    "alert_id": "ALT_000135",
+    "owner": "Theerawat C.",
+    "decision": "clear",
+    "loss_amount": 15927,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-15T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001051",
+    "alert_id": "ALT_000136",
+    "owner": "Malee T.",
+    "decision": "pending",
+    "loss_amount": 19891,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": "2026-05-23T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001052",
+    "alert_id": "ALT_000137",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 17858,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-19T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001053",
+    "alert_id": "ALT_000138",
+    "owner": "Theerawat C.",
+    "decision": "suspend_wallet",
+    "loss_amount": 6438,
+    "opened_at": "2026-05-01T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001054",
+    "alert_id": "ALT_000139",
+    "owner": "Theerawat C.",
+    "decision": "pending",
+    "loss_amount": 16751,
+    "opened_at": "2026-05-10T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001055",
+    "alert_id": "ALT_000140",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 2109,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001056",
+    "alert_id": "ALT_000141",
+    "owner": "Anucha W.",
+    "decision": "monitor",
+    "loss_amount": 7167,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001057",
+    "alert_id": "ALT_000142",
+    "owner": "Siriporn K.",
+    "decision": "close_account",
+    "loss_amount": 11763,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001058",
+    "alert_id": "ALT_000143",
+    "owner": "Nattawut P.",
+    "decision": "clear",
+    "loss_amount": 411,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001059",
+    "alert_id": "ALT_000144",
+    "owner": "Malee T.",
+    "decision": "close_account",
+    "loss_amount": 12094,
+    "opened_at": "2026-05-17T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001060",
+    "alert_id": "ALT_000145",
+    "owner": "Anucha W.",
+    "decision": "monitor",
+    "loss_amount": 11807,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001061",
+    "alert_id": "ALT_000146",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 970,
+    "opened_at": "2026-05-01T12:00:00.000Z",
+    "closed_at": "2026-05-05T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001062",
+    "alert_id": "ALT_000147",
+    "owner": "Siriporn K.",
+    "decision": "suspend_wallet",
+    "loss_amount": 15225,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": "2026-05-08T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001063",
+    "alert_id": "ALT_000148",
+    "owner": "Siriporn K.",
+    "decision": "pending",
+    "loss_amount": 8378,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001064",
+    "alert_id": "ALT_000149",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 12230,
+    "opened_at": "2026-05-04T12:00:00.000Z",
+    "closed_at": "2026-05-12T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001065",
+    "alert_id": "ALT_000150",
+    "owner": "Wanida S.",
+    "decision": "monitor",
+    "loss_amount": 14372,
+    "opened_at": "2026-05-17T12:00:00.000Z",
+    "closed_at": "2026-05-11T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001066",
+    "alert_id": "ALT_000151",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 15848,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": "2026-05-12T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001067",
+    "alert_id": "ALT_000152",
+    "owner": "Kanokwan B.",
+    "decision": "suspend_wallet",
+    "loss_amount": 5941,
+    "opened_at": "2026-05-13T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001068",
+    "alert_id": "ALT_000153",
+    "owner": "Siriporn K.",
+    "decision": "close_account",
+    "loss_amount": 8599,
+    "opened_at": "2026-05-05T12:00:00.000Z",
+    "closed_at": "2026-05-12T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001069",
+    "alert_id": "ALT_000154",
+    "owner": "Wanida S.",
+    "decision": "clear",
+    "loss_amount": 6355,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001070",
+    "alert_id": "ALT_000155",
+    "owner": "Kanokwan B.",
+    "decision": "clear",
+    "loss_amount": 2708,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001071",
+    "alert_id": "ALT_000156",
+    "owner": "Siriporn K.",
+    "decision": "clear",
+    "loss_amount": 7581,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-21T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001072",
+    "alert_id": "ALT_000157",
+    "owner": "Siriporn K.",
+    "decision": "close_account",
+    "loss_amount": 15488,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001073",
+    "alert_id": "ALT_000158",
+    "owner": "Nattawut P.",
+    "decision": "close_account",
+    "loss_amount": 7496,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001074",
+    "alert_id": "ALT_000159",
+    "owner": "Nattawut P.",
+    "decision": "pending",
+    "loss_amount": 13013,
+    "opened_at": "2026-05-07T12:00:00.000Z",
+    "closed_at": "2026-05-05T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001075",
+    "alert_id": "ALT_000160",
+    "owner": "Malee T.",
+    "decision": "pending",
+    "loss_amount": 4133,
+    "opened_at": "2026-05-29T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001076",
+    "alert_id": "ALT_000161",
+    "owner": "Theerawat C.",
+    "decision": "pending",
+    "loss_amount": 18685,
+    "opened_at": "2026-05-19T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001077",
+    "alert_id": "ALT_000162",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 9822,
+    "opened_at": "2026-05-01T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001078",
+    "alert_id": "ALT_000163",
+    "owner": "Anucha W.",
+    "decision": "pending",
+    "loss_amount": 5416,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": "2026-05-19T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001079",
+    "alert_id": "ALT_000164",
+    "owner": "Siriporn K.",
+    "decision": "monitor",
+    "loss_amount": 6116,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": "2026-05-24T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001080",
+    "alert_id": "ALT_000165",
+    "owner": "Kanokwan B.",
+    "decision": "monitor",
+    "loss_amount": 9171,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-24T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001081",
+    "alert_id": "ALT_000166",
+    "owner": "Kanokwan B.",
+    "decision": "clear",
+    "loss_amount": 18080,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-09T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001082",
+    "alert_id": "ALT_000167",
+    "owner": "Theerawat C.",
+    "decision": "escalate_compliance",
+    "loss_amount": 15612,
+    "opened_at": "2026-05-07T12:00:00.000Z",
+    "closed_at": "2026-05-22T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001083",
+    "alert_id": "ALT_000168",
+    "owner": "Malee T.",
+    "decision": "clear",
+    "loss_amount": 6637,
+    "opened_at": "2026-05-13T12:00:00.000Z",
+    "closed_at": "2026-05-22T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001084",
+    "alert_id": "ALT_000169",
+    "owner": "Malee T.",
+    "decision": "escalate_compliance",
+    "loss_amount": 19510,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-19T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001085",
+    "alert_id": "ALT_000170",
+    "owner": "Wanida S.",
+    "decision": "monitor",
+    "loss_amount": 2950,
+    "opened_at": "2026-05-06T12:00:00.000Z",
+    "closed_at": "2026-05-14T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001086",
+    "alert_id": "ALT_000171",
+    "owner": "Anucha W.",
+    "decision": "close_account",
+    "loss_amount": 8967,
+    "opened_at": "2026-05-07T12:00:00.000Z",
+    "closed_at": "2026-05-24T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001087",
+    "alert_id": "ALT_000172",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 14621,
+    "opened_at": "2026-05-19T12:00:00.000Z",
+    "closed_at": "2026-05-08T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001088",
+    "alert_id": "ALT_000173",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 17,
+    "opened_at": "2026-05-05T12:00:00.000Z",
+    "closed_at": "2026-05-08T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001089",
+    "alert_id": "ALT_000174",
+    "owner": "Siriporn K.",
+    "decision": "suspend_wallet",
+    "loss_amount": 9496,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-22T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001090",
+    "alert_id": "ALT_000175",
+    "owner": "Siriporn K.",
+    "decision": "clear",
+    "loss_amount": 5972,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001091",
+    "alert_id": "ALT_000176",
+    "owner": "Siriporn K.",
+    "decision": "clear",
+    "loss_amount": 7693,
+    "opened_at": "2026-05-12T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001092",
+    "alert_id": "ALT_000177",
+    "owner": "Nattawut P.",
+    "decision": "monitor",
+    "loss_amount": 7196,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-23T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001093",
+    "alert_id": "ALT_000178",
+    "owner": "Anucha W.",
+    "decision": "monitor",
+    "loss_amount": 11735,
+    "opened_at": "2026-05-02T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001094",
+    "alert_id": "ALT_000179",
+    "owner": "Nattawut P.",
+    "decision": "suspend_wallet",
+    "loss_amount": 12894,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-14T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001095",
+    "alert_id": "ALT_000180",
+    "owner": "Malee T.",
+    "decision": "suspend_wallet",
+    "loss_amount": 15278,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": "2026-05-12T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001096",
+    "alert_id": "ALT_000181",
+    "owner": "Theerawat C.",
+    "decision": "clear",
+    "loss_amount": 4817,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": "2026-05-21T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001097",
+    "alert_id": "ALT_000182",
+    "owner": "Malee T.",
+    "decision": "suspend_wallet",
+    "loss_amount": 5592,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": "2026-05-11T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001098",
+    "alert_id": "ALT_000183",
+    "owner": "Malee T.",
+    "decision": "pending",
+    "loss_amount": 19731,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001099",
+    "alert_id": "ALT_000184",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 2019,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-14T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001100",
+    "alert_id": "ALT_000185",
+    "owner": "Priya M.",
+    "decision": "clear",
+    "loss_amount": 13362,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": "2026-05-05T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001101",
+    "alert_id": "ALT_000186",
+    "owner": "Wanida S.",
+    "decision": "monitor",
+    "loss_amount": 17685,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-20T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001102",
+    "alert_id": "ALT_000187",
+    "owner": "Nattawut P.",
+    "decision": "close_account",
+    "loss_amount": 3966,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001103",
+    "alert_id": "ALT_000188",
+    "owner": "Anucha W.",
+    "decision": "close_account",
+    "loss_amount": 10019,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001104",
+    "alert_id": "ALT_000189",
+    "owner": "Kanokwan B.",
+    "decision": "monitor",
+    "loss_amount": 4457,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001105",
+    "alert_id": "ALT_000190",
+    "owner": "Nattawut P.",
+    "decision": "pending",
+    "loss_amount": 14066,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001106",
+    "alert_id": "ALT_000191",
+    "owner": "Malee T.",
+    "decision": "pending",
+    "loss_amount": 7579,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-12T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001107",
+    "alert_id": "ALT_000192",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 1514,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-21T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001108",
+    "alert_id": "ALT_000193",
+    "owner": "Priya M.",
+    "decision": "monitor",
+    "loss_amount": 5781,
+    "opened_at": "2026-05-04T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001109",
+    "alert_id": "ALT_000194",
+    "owner": "Nattawut P.",
+    "decision": "monitor",
+    "loss_amount": 17175,
+    "opened_at": "2026-05-05T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001110",
+    "alert_id": "ALT_000195",
+    "owner": "Malee T.",
+    "decision": "pending",
+    "loss_amount": 16511,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001111",
+    "alert_id": "ALT_000196",
+    "owner": "Theerawat C.",
+    "decision": "escalate_compliance",
+    "loss_amount": 15848,
+    "opened_at": "2026-05-13T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001112",
+    "alert_id": "ALT_000197",
+    "owner": "Kanokwan B.",
+    "decision": "clear",
+    "loss_amount": 14483,
+    "opened_at": "2026-05-10T12:00:00.000Z",
+    "closed_at": "2026-05-13T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001113",
+    "alert_id": "ALT_000198",
+    "owner": "Siriporn K.",
+    "decision": "pending",
+    "loss_amount": 17281,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-19T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001114",
+    "alert_id": "ALT_000199",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 15498,
+    "opened_at": "2026-05-17T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001115",
+    "alert_id": "ALT_000200",
+    "owner": "Siriporn K.",
+    "decision": "pending",
+    "loss_amount": 6918,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-07T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001116",
+    "alert_id": "ALT_000201",
+    "owner": "Theerawat C.",
+    "decision": "close_account",
+    "loss_amount": 17642,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-05T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001117",
+    "alert_id": "ALT_000202",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 15397,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001118",
+    "alert_id": "ALT_000203",
+    "owner": "Malee T.",
+    "decision": "escalate_compliance",
+    "loss_amount": 6037,
+    "opened_at": "2026-05-12T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001119",
+    "alert_id": "ALT_000204",
+    "owner": "Malee T.",
+    "decision": "escalate_compliance",
+    "loss_amount": 843,
+    "opened_at": "2026-05-13T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001120",
+    "alert_id": "ALT_000205",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 16893,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001121",
+    "alert_id": "ALT_000206",
+    "owner": "Anucha W.",
+    "decision": "monitor",
+    "loss_amount": 18325,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": "2026-05-07T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001122",
+    "alert_id": "ALT_000207",
+    "owner": "Kanokwan B.",
+    "decision": "close_account",
+    "loss_amount": 7005,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001123",
+    "alert_id": "ALT_000208",
+    "owner": "Siriporn K.",
+    "decision": "escalate_compliance",
+    "loss_amount": 19765,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-11T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001124",
+    "alert_id": "ALT_000209",
+    "owner": "Siriporn K.",
+    "decision": "pending",
+    "loss_amount": 15386,
+    "opened_at": "2026-05-01T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001125",
+    "alert_id": "ALT_000210",
+    "owner": "Theerawat C.",
+    "decision": "suspend_wallet",
+    "loss_amount": 17269,
+    "opened_at": "2026-05-05T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001126",
+    "alert_id": "ALT_000211",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 3126,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001127",
+    "alert_id": "ALT_000212",
+    "owner": "Nattawut P.",
+    "decision": "suspend_wallet",
+    "loss_amount": 13457,
+    "opened_at": "2026-05-14T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001128",
+    "alert_id": "ALT_000213",
+    "owner": "Priya M.",
+    "decision": "close_account",
+    "loss_amount": 19247,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-23T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001129",
+    "alert_id": "ALT_000214",
+    "owner": "Nattawut P.",
+    "decision": "suspend_wallet",
+    "loss_amount": 2774,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": "2026-05-10T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001130",
+    "alert_id": "ALT_000215",
+    "owner": "Siriporn K.",
+    "decision": "clear",
+    "loss_amount": 12447,
+    "opened_at": "2026-05-19T12:00:00.000Z",
+    "closed_at": "2026-05-14T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001131",
+    "alert_id": "ALT_000216",
+    "owner": "Siriporn K.",
+    "decision": "pending",
+    "loss_amount": 11825,
+    "opened_at": "2026-05-29T12:00:00.000Z",
+    "closed_at": "2026-05-08T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001132",
+    "alert_id": "ALT_000217",
+    "owner": "Siriporn K.",
+    "decision": "pending",
+    "loss_amount": 8462,
+    "opened_at": "2026-05-06T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001133",
+    "alert_id": "ALT_000218",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 10019,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001134",
+    "alert_id": "ALT_000219",
+    "owner": "Nattawut P.",
+    "decision": "clear",
+    "loss_amount": 14265,
+    "opened_at": "2026-05-01T12:00:00.000Z",
+    "closed_at": "2026-05-13T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001135",
+    "alert_id": "ALT_000220",
+    "owner": "Theerawat C.",
+    "decision": "pending",
+    "loss_amount": 15822,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": "2026-05-13T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001136",
+    "alert_id": "ALT_000221",
+    "owner": "Kanokwan B.",
+    "decision": "clear",
+    "loss_amount": 18068,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": "2026-05-09T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001137",
+    "alert_id": "ALT_000222",
+    "owner": "Theerawat C.",
+    "decision": "monitor",
+    "loss_amount": 12228,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001138",
+    "alert_id": "ALT_000223",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 10180,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001139",
+    "alert_id": "ALT_000224",
+    "owner": "Anucha W.",
+    "decision": "monitor",
+    "loss_amount": 12197,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001140",
+    "alert_id": "ALT_000225",
+    "owner": "Kanokwan B.",
+    "decision": "suspend_wallet",
+    "loss_amount": 1136,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": "2026-05-11T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001141",
+    "alert_id": "ALT_000226",
+    "owner": "Theerawat C.",
+    "decision": "escalate_compliance",
+    "loss_amount": 5956,
+    "opened_at": "2026-05-02T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001142",
+    "alert_id": "ALT_000227",
+    "owner": "Nattawut P.",
+    "decision": "pending",
+    "loss_amount": 1813,
+    "opened_at": "2026-05-06T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001143",
+    "alert_id": "ALT_000228",
+    "owner": "Siriporn K.",
+    "decision": "clear",
+    "loss_amount": 18517,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001144",
+    "alert_id": "ALT_000229",
+    "owner": "Theerawat C.",
+    "decision": "monitor",
+    "loss_amount": 5172,
+    "opened_at": "2026-05-12T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001145",
+    "alert_id": "ALT_000230",
+    "owner": "Priya M.",
+    "decision": "suspend_wallet",
+    "loss_amount": 2717,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001146",
+    "alert_id": "ALT_000231",
+    "owner": "Nattawut P.",
+    "decision": "monitor",
+    "loss_amount": 5294,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": "2026-05-22T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001147",
+    "alert_id": "ALT_000232",
+    "owner": "Nattawut P.",
+    "decision": "pending",
+    "loss_amount": 6110,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": "2026-05-18T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001148",
+    "alert_id": "ALT_000233",
+    "owner": "Anucha W.",
+    "decision": "escalate_compliance",
+    "loss_amount": 1986,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": "2026-05-22T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001149",
+    "alert_id": "ALT_000234",
+    "owner": "Kanokwan B.",
+    "decision": "close_account",
+    "loss_amount": 3008,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001150",
+    "alert_id": "ALT_000235",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 7546,
+    "opened_at": "2026-05-09T12:00:00.000Z",
+    "closed_at": "2026-05-09T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001151",
+    "alert_id": "ALT_000236",
+    "owner": "Wanida S.",
+    "decision": "clear",
+    "loss_amount": 8688,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-09T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001152",
+    "alert_id": "ALT_000237",
+    "owner": "Anucha W.",
+    "decision": "suspend_wallet",
+    "loss_amount": 15519,
+    "opened_at": "2026-05-17T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001153",
+    "alert_id": "ALT_000238",
+    "owner": "Priya M.",
+    "decision": "clear",
+    "loss_amount": 92,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001154",
+    "alert_id": "ALT_000239",
+    "owner": "Priya M.",
+    "decision": "suspend_wallet",
+    "loss_amount": 14271,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001155",
+    "alert_id": "ALT_000240",
+    "owner": "Anucha W.",
+    "decision": "monitor",
+    "loss_amount": 760,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001156",
+    "alert_id": "ALT_000241",
+    "owner": "Kanokwan B.",
+    "decision": "escalate_compliance",
+    "loss_amount": 11489,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-21T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001157",
+    "alert_id": "ALT_000242",
+    "owner": "Malee T.",
+    "decision": "monitor",
+    "loss_amount": 7881,
+    "opened_at": "2026-05-02T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001158",
+    "alert_id": "ALT_000243",
+    "owner": "Anucha W.",
+    "decision": "escalate_compliance",
+    "loss_amount": 13917,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-18T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001159",
+    "alert_id": "ALT_000244",
+    "owner": "Wanida S.",
+    "decision": "pending",
+    "loss_amount": 15008,
+    "opened_at": "2026-05-09T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001160",
+    "alert_id": "ALT_000245",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 768,
+    "opened_at": "2026-05-08T12:00:00.000Z",
+    "closed_at": "2026-05-16T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001161",
+    "alert_id": "ALT_000246",
+    "owner": "Siriporn K.",
+    "decision": "close_account",
+    "loss_amount": 2891,
+    "opened_at": "2026-05-14T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001162",
+    "alert_id": "ALT_000247",
+    "owner": "Theerawat C.",
+    "decision": "pending",
+    "loss_amount": 18480,
+    "opened_at": "2026-05-29T12:00:00.000Z",
+    "closed_at": "2026-05-15T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001163",
+    "alert_id": "ALT_000248",
+    "owner": "Malee T.",
+    "decision": "clear",
+    "loss_amount": 11445,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": "2026-05-24T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001164",
+    "alert_id": "ALT_000249",
+    "owner": "Nattawut P.",
+    "decision": "clear",
+    "loss_amount": 2461,
+    "opened_at": "2026-05-08T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001165",
+    "alert_id": "ALT_000250",
+    "owner": "Theerawat C.",
+    "decision": "escalate_compliance",
+    "loss_amount": 147,
+    "opened_at": "2026-05-01T12:00:00.000Z",
+    "closed_at": "2026-05-19T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001166",
+    "alert_id": "ALT_000251",
+    "owner": "Kanokwan B.",
+    "decision": "close_account",
+    "loss_amount": 18464,
+    "opened_at": "2026-05-04T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001167",
+    "alert_id": "ALT_000252",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 5558,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": "2026-05-21T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001168",
+    "alert_id": "ALT_000253",
+    "owner": "Kanokwan B.",
+    "decision": "escalate_compliance",
+    "loss_amount": 3707,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001169",
+    "alert_id": "ALT_000254",
+    "owner": "Theerawat C.",
+    "decision": "clear",
+    "loss_amount": 18329,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001170",
+    "alert_id": "ALT_000255",
+    "owner": "Theerawat C.",
+    "decision": "monitor",
+    "loss_amount": 16899,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001171",
+    "alert_id": "ALT_000256",
+    "owner": "Anucha W.",
+    "decision": "clear",
+    "loss_amount": 3240,
+    "opened_at": "2026-05-10T12:00:00.000Z",
+    "closed_at": "2026-05-07T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001172",
+    "alert_id": "ALT_000257",
+    "owner": "Anucha W.",
+    "decision": "escalate_compliance",
+    "loss_amount": 10982,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001173",
+    "alert_id": "ALT_000258",
+    "owner": "Priya M.",
+    "decision": "clear",
+    "loss_amount": 11549,
+    "opened_at": "2026-05-04T12:00:00.000Z",
+    "closed_at": "2026-05-08T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001174",
+    "alert_id": "ALT_000259",
+    "owner": "Siriporn K.",
+    "decision": "escalate_compliance",
+    "loss_amount": 2552,
+    "opened_at": "2026-05-12T12:00:00.000Z",
+    "closed_at": "2026-05-15T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001175",
+    "alert_id": "ALT_000260",
+    "owner": "Anucha W.",
+    "decision": "clear",
+    "loss_amount": 17,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": "2026-05-07T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001176",
+    "alert_id": "ALT_000261",
+    "owner": "Kanokwan B.",
+    "decision": "clear",
+    "loss_amount": 17914,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-15T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001177",
+    "alert_id": "ALT_000262",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 14088,
+    "opened_at": "2026-05-14T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001178",
+    "alert_id": "ALT_000263",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 6486,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001179",
+    "alert_id": "ALT_000264",
+    "owner": "Priya M.",
+    "decision": "escalate_compliance",
+    "loss_amount": 14880,
+    "opened_at": "2026-05-18T12:00:00.000Z",
+    "closed_at": "2026-05-07T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001180",
+    "alert_id": "ALT_000265",
+    "owner": "Priya M.",
+    "decision": "clear",
+    "loss_amount": 19151,
+    "opened_at": "2026-05-22T12:00:00.000Z",
+    "closed_at": "2026-05-20T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001181",
+    "alert_id": "ALT_000266",
+    "owner": "Wanida S.",
+    "decision": "pending",
+    "loss_amount": 4810,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001182",
+    "alert_id": "ALT_000267",
+    "owner": "Theerawat C.",
+    "decision": "close_account",
+    "loss_amount": 8817,
+    "opened_at": "2026-05-10T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001183",
+    "alert_id": "ALT_000268",
+    "owner": "Priya M.",
+    "decision": "suspend_wallet",
+    "loss_amount": 11540,
+    "opened_at": "2026-05-08T12:00:00.000Z",
+    "closed_at": "2026-05-10T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001184",
+    "alert_id": "ALT_000269",
+    "owner": "Kanokwan B.",
+    "decision": "close_account",
+    "loss_amount": 12910,
+    "opened_at": "2026-05-08T12:00:00.000Z",
+    "closed_at": "2026-05-21T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001185",
+    "alert_id": "ALT_000270",
+    "owner": "Anucha W.",
+    "decision": "suspend_wallet",
+    "loss_amount": 739,
+    "opened_at": "2026-05-08T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001186",
+    "alert_id": "ALT_000271",
+    "owner": "Anucha W.",
+    "decision": "close_account",
+    "loss_amount": 5523,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-21T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001187",
+    "alert_id": "ALT_000272",
+    "owner": "Nattawut P.",
+    "decision": "suspend_wallet",
+    "loss_amount": 611,
+    "opened_at": "2026-05-02T12:00:00.000Z",
+    "closed_at": "2026-05-13T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001188",
+    "alert_id": "ALT_000273",
+    "owner": "Nattawut P.",
+    "decision": "close_account",
+    "loss_amount": 6290,
+    "opened_at": "2026-05-21T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001189",
+    "alert_id": "ALT_000274",
+    "owner": "Nattawut P.",
+    "decision": "suspend_wallet",
+    "loss_amount": 12998,
+    "opened_at": "2026-05-10T12:00:00.000Z",
+    "closed_at": "2026-05-18T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001190",
+    "alert_id": "ALT_000275",
+    "owner": "Wanida S.",
+    "decision": "suspend_wallet",
+    "loss_amount": 8022,
+    "opened_at": "2026-05-04T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001191",
+    "alert_id": "ALT_000276",
+    "owner": "Theerawat C.",
+    "decision": "escalate_compliance",
+    "loss_amount": 4631,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001192",
+    "alert_id": "ALT_000277",
+    "owner": "Anucha W.",
+    "decision": "close_account",
+    "loss_amount": 16161,
+    "opened_at": "2026-05-12T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001193",
+    "alert_id": "ALT_000278",
+    "owner": "Theerawat C.",
+    "decision": "suspend_wallet",
+    "loss_amount": 19723,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001194",
+    "alert_id": "ALT_000279",
+    "owner": "Kanokwan B.",
+    "decision": "close_account",
+    "loss_amount": 16991,
+    "opened_at": "2026-05-04T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001195",
+    "alert_id": "ALT_000280",
+    "owner": "Wanida S.",
+    "decision": "monitor",
+    "loss_amount": 8629,
+    "opened_at": "2026-05-05T12:00:00.000Z",
+    "closed_at": "2026-05-09T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001196",
+    "alert_id": "ALT_000281",
+    "owner": "Priya M.",
+    "decision": "close_account",
+    "loss_amount": 12332,
+    "opened_at": "2026-05-07T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001197",
+    "alert_id": "ALT_000282",
+    "owner": "Priya M.",
+    "decision": "suspend_wallet",
+    "loss_amount": 9489,
+    "opened_at": "2026-05-22T12:00:00.000Z",
+    "closed_at": "2026-05-11T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001198",
+    "alert_id": "ALT_000283",
+    "owner": "Wanida S.",
+    "decision": "clear",
+    "loss_amount": 19711,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001199",
+    "alert_id": "ALT_000284",
+    "owner": "Nattawut P.",
+    "decision": "clear",
+    "loss_amount": 1997,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001200",
+    "alert_id": "ALT_000285",
+    "owner": "Siriporn K.",
+    "decision": "monitor",
+    "loss_amount": 15556,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": "2026-05-11T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001201",
+    "alert_id": "ALT_000286",
+    "owner": "Siriporn K.",
+    "decision": "suspend_wallet",
+    "loss_amount": 12619,
+    "opened_at": "2026-05-18T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001202",
+    "alert_id": "ALT_000287",
+    "owner": "Siriporn K.",
+    "decision": "close_account",
+    "loss_amount": 4129,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001203",
+    "alert_id": "ALT_000288",
+    "owner": "Theerawat C.",
+    "decision": "suspend_wallet",
+    "loss_amount": 6029,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": "2026-05-19T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001204",
+    "alert_id": "ALT_000289",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 16815,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001205",
+    "alert_id": "ALT_000290",
+    "owner": "Nattawut P.",
+    "decision": "pending",
+    "loss_amount": 9534,
+    "opened_at": "2026-05-14T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001206",
+    "alert_id": "ALT_000291",
+    "owner": "Priya M.",
+    "decision": "clear",
+    "loss_amount": 2458,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": "2026-05-21T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001207",
+    "alert_id": "ALT_000292",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 17101,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-13T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001208",
+    "alert_id": "ALT_000293",
+    "owner": "Malee T.",
+    "decision": "escalate_compliance",
+    "loss_amount": 7239,
+    "opened_at": "2026-05-07T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001209",
+    "alert_id": "ALT_000294",
+    "owner": "Priya M.",
+    "decision": "pending",
+    "loss_amount": 18931,
+    "opened_at": "2026-05-17T12:00:00.000Z",
+    "closed_at": "2026-05-17T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001210",
+    "alert_id": "ALT_000295",
+    "owner": "Anucha W.",
+    "decision": "clear",
+    "loss_amount": 19214,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001211",
+    "alert_id": "ALT_000296",
+    "owner": "Wanida S.",
+    "decision": "escalate_compliance",
+    "loss_amount": 10029,
+    "opened_at": "2026-05-05T12:00:00.000Z",
+    "closed_at": "2026-05-05T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001212",
+    "alert_id": "ALT_000297",
+    "owner": "Theerawat C.",
+    "decision": "clear",
+    "loss_amount": 18421,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001213",
+    "alert_id": "ALT_000298",
+    "owner": "Theerawat C.",
+    "decision": "close_account",
+    "loss_amount": 8500,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-28T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001214",
+    "alert_id": "ALT_000299",
+    "owner": "Priya M.",
+    "decision": "close_account",
+    "loss_amount": 13954,
+    "opened_at": "2026-04-30T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001215",
+    "alert_id": "ALT_000300",
+    "owner": "Kanokwan B.",
+    "decision": "clear",
+    "loss_amount": 6121,
+    "opened_at": "2026-05-09T12:00:00.000Z",
+    "closed_at": "2026-05-15T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001216",
+    "alert_id": "ALT_000301",
+    "owner": "Siriporn K.",
+    "decision": "pending",
+    "loss_amount": 16178,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001217",
+    "alert_id": "ALT_000302",
+    "owner": "Siriporn K.",
+    "decision": "pending",
+    "loss_amount": 2757,
+    "opened_at": "2026-05-14T12:00:00.000Z",
+    "closed_at": "2026-05-16T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001218",
+    "alert_id": "ALT_000303",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 4285,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": "2026-05-24T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001219",
+    "alert_id": "ALT_000304",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 2915,
+    "opened_at": "2026-05-27T12:00:00.000Z",
+    "closed_at": "2026-05-26T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001220",
+    "alert_id": "ALT_000305",
+    "owner": "Nattawut P.",
+    "decision": "escalate_compliance",
+    "loss_amount": 17492,
+    "opened_at": "2026-05-02T12:00:00.000Z",
+    "closed_at": "2026-05-15T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001221",
+    "alert_id": "ALT_000306",
+    "owner": "Kanokwan B.",
+    "decision": "suspend_wallet",
+    "loss_amount": 17538,
+    "opened_at": "2026-05-05T12:00:00.000Z",
+    "closed_at": "2026-05-27T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001222",
+    "alert_id": "ALT_000307",
+    "owner": "Kanokwan B.",
+    "decision": "escalate_compliance",
+    "loss_amount": 14313,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-19T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001223",
+    "alert_id": "ALT_000308",
+    "owner": "Theerawat C.",
+    "decision": "escalate_compliance",
+    "loss_amount": 7868,
+    "opened_at": "2026-05-10T12:00:00.000Z",
+    "closed_at": "2026-05-10T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001224",
+    "alert_id": "ALT_000309",
+    "owner": "Malee T.",
+    "decision": "escalate_compliance",
+    "loss_amount": 16340,
+    "opened_at": "2026-05-14T12:00:00.000Z",
+    "closed_at": "2026-05-11T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001225",
+    "alert_id": "ALT_000310",
+    "owner": "Anucha W.",
+    "decision": "clear",
+    "loss_amount": 11765,
+    "opened_at": "2026-05-11T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001226",
+    "alert_id": "ALT_000311",
+    "owner": "Nattawut P.",
+    "decision": "pending",
+    "loss_amount": 19140,
+    "opened_at": "2026-05-14T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001227",
+    "alert_id": "ALT_000312",
+    "owner": "Anucha W.",
+    "decision": "close_account",
+    "loss_amount": 12404,
+    "opened_at": "2026-05-09T12:00:00.000Z",
+    "closed_at": "2026-05-06T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001228",
+    "alert_id": "ALT_000313",
+    "owner": "Anucha W.",
+    "decision": "close_account",
+    "loss_amount": 17090,
+    "opened_at": "2026-05-22T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001229",
+    "alert_id": "ALT_000314",
+    "owner": "Malee T.",
+    "decision": "monitor",
+    "loss_amount": 10200,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001230",
+    "alert_id": "ALT_000315",
+    "owner": "Priya M.",
+    "decision": "close_account",
+    "loss_amount": 3268,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": "2026-05-19T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001231",
+    "alert_id": "ALT_000316",
+    "owner": "Siriporn K.",
+    "decision": "escalate_compliance",
+    "loss_amount": 19895,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001232",
+    "alert_id": "ALT_000317",
+    "owner": "Nattawut P.",
+    "decision": "pending",
+    "loss_amount": 5259,
+    "opened_at": "2026-05-17T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001233",
+    "alert_id": "ALT_000318",
+    "owner": "Anucha W.",
+    "decision": "pending",
+    "loss_amount": 665,
+    "opened_at": "2026-05-07T12:00:00.000Z",
+    "closed_at": "2026-05-10T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001234",
+    "alert_id": "ALT_000319",
+    "owner": "Wanida S.",
+    "decision": "pending",
+    "loss_amount": 10674,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": "2026-05-22T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001235",
+    "alert_id": "ALT_000320",
+    "owner": "Malee T.",
+    "decision": "suspend_wallet",
+    "loss_amount": 17487,
+    "opened_at": "2026-05-25T12:00:00.000Z",
+    "closed_at": "2026-05-22T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001236",
+    "alert_id": "ALT_000321",
+    "owner": "Kanokwan B.",
+    "decision": "pending",
+    "loss_amount": 13625,
+    "opened_at": "2026-05-09T12:00:00.000Z",
+    "closed_at": "2026-05-24T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001237",
+    "alert_id": "ALT_000322",
+    "owner": "Wanida S.",
+    "decision": "clear",
+    "loss_amount": 8480,
+    "opened_at": "2026-05-19T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001238",
+    "alert_id": "ALT_000323",
+    "owner": "Anucha W.",
+    "decision": "pending",
+    "loss_amount": 16406,
+    "opened_at": "2026-05-23T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001239",
+    "alert_id": "ALT_000324",
+    "owner": "Wanida S.",
+    "decision": "clear",
+    "loss_amount": 838,
+    "opened_at": "2026-05-26T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001240",
+    "alert_id": "ALT_000325",
+    "owner": "Siriporn K.",
+    "decision": "escalate_compliance",
+    "loss_amount": 14115,
+    "opened_at": "2026-05-10T12:00:00.000Z",
+    "closed_at": "2026-05-08T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001241",
+    "alert_id": "ALT_000326",
+    "owner": "Wanida S.",
+    "decision": "clear",
+    "loss_amount": 16744,
+    "opened_at": "2026-05-24T12:00:00.000Z",
+    "closed_at": "2026-05-05T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001242",
+    "alert_id": "ALT_000327",
+    "owner": "Siriporn K.",
+    "decision": "close_account",
+    "loss_amount": 17904,
+    "opened_at": "2026-05-16T12:00:00.000Z",
+    "closed_at": "2026-05-25T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001243",
+    "alert_id": "ALT_000328",
+    "owner": "Priya M.",
+    "decision": "clear",
+    "loss_amount": 9455,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": "2026-05-18T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001244",
+    "alert_id": "ALT_000329",
+    "owner": "Anucha W.",
+    "decision": "clear",
+    "loss_amount": 1752,
+    "opened_at": "2026-05-06T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001245",
+    "alert_id": "ALT_000330",
+    "owner": "Malee T.",
+    "decision": "suspend_wallet",
+    "loss_amount": 2227,
+    "opened_at": "2026-05-03T12:00:00.000Z",
+    "closed_at": "2026-05-20T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001246",
+    "alert_id": "ALT_000331",
+    "owner": "Anucha W.",
+    "decision": "pending",
+    "loss_amount": 4184,
+    "opened_at": "2026-05-02T12:00:00.000Z",
+    "closed_at": "2026-05-29T12:00:00.000Z"
+  },
+  {
+    "case_id": "CASE_001247",
+    "alert_id": "ALT_000332",
+    "owner": "Siriporn K.",
+    "decision": "suspend_wallet",
+    "loss_amount": 13238,
+    "opened_at": "2026-05-15T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001248",
+    "alert_id": "ALT_000333",
+    "owner": "Anucha W.",
+    "decision": "escalate_compliance",
+    "loss_amount": 14433,
+    "opened_at": "2026-05-28T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001249",
+    "alert_id": "ALT_000334",
+    "owner": "Kanokwan B.",
+    "decision": "monitor",
+    "loss_amount": 17810,
+    "opened_at": "2026-05-20T12:00:00.000Z",
+    "closed_at": null
+  },
+  {
+    "case_id": "CASE_001250",
+    "alert_id": "ALT_000335",
+    "owner": "Siriporn K.",
+    "decision": "monitor",
+    "loss_amount": 16119,
+    "opened_at": "2026-05-29T12:00:00.000Z",
+    "closed_at": "2026-05-17T12:00:00.000Z"
+  }
+]

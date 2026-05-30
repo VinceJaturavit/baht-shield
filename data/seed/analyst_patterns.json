@@ -1,0 +1,122 @@
+[
+  {
+    "pattern_id": "PAT_MF_001",
+    "name": "Onboarding Mule Farm Cluster",
+    "variables": "shared_device_count >= 6; signup_window <= 72h; repeated_doc_type = thai_id_card; liveness_scores_clustered = true; individual_device_score < 40",
+    "cluster_type": "onboarding_mule",
+    "status": "verified",
+    "created_by": "analyst"
+  },
+  {
+    "pattern_id": "PAT_SM_001",
+    "name": "Sleeper Mule Activation Cluster",
+    "variables": "account_age_days >= 120; days_since_last_active > 90; inbound_count >= 2 in 24h; outbound_to_known_endpoint = true; individual_velocity_below_threshold = true",
+    "cluster_type": "sleeper_mule",
+    "status": "verified",
+    "created_by": "analyst"
+  },
+  {
+    "pattern_id": "PAT_APP_001",
+    "name": "APP Scam Cash-out Ring",
+    "variables": "endpoint_reuse_count >= 5_cases; victim_fan_in >= 3; outbound_channel in [agent_cashout, convenience_cashout, cross_border_remittance]; amount_per_hop < 10000 THB; victim_authorized_payment = true",
+    "cluster_type": "app_scam_cashout",
+    "status": "verified",
+    "created_by": "fraud_intelligence"
+  },
+  {
+    "pattern_id": "PAT_ENDPOINT_001",
+    "name": "Known Agent Cash-out Endpoint",
+    "variables": "beneficiary_wallet_provider = agent_cashout; endpoint_appears_in_cases >= 3; linked_to_mule_wallet = true",
+    "cluster_type": "cashout_endpoint",
+    "status": "verified",
+    "created_by": "analyst"
+  },
+  {
+    "pattern_id": "PAT_ENDPOINT_002",
+    "name": "Cross-Border Exit Endpoint",
+    "variables": "beneficiary_country in [MM, KH, LA]; channel = cross_border_remittance; linked_to_mule_ring = true; amount_per_txn < 10000 THB",
+    "cluster_type": "cashout_endpoint",
+    "status": "probable",
+    "created_by": "fraud_intelligence"
+  },
+  {
+    "pattern_id": "PAT_BG_001",
+    "name": "High-Frequency QR Merchant Split",
+    "variables": "cluster_type = background_noise; analyst_flagged = true; case_count >= 13",
+    "cluster_type": "background_noise",
+    "status": "emerging",
+    "created_by": "system_seed"
+  },
+  {
+    "pattern_id": "PAT_BG_002",
+    "name": "Cross-Border Migrant Remittance Cluster",
+    "variables": "cluster_type = background_noise; analyst_flagged = true; case_count >= 4",
+    "cluster_type": "background_noise",
+    "status": "emerging",
+    "created_by": "system_seed"
+  },
+  {
+    "pattern_id": "PAT_BG_003",
+    "name": "SIM Swap Account Takeover Precursor",
+    "variables": "cluster_type = onboarding_mule; analyst_flagged = true; case_count >= 7",
+    "cluster_type": "onboarding_mule",
+    "status": "probable",
+    "created_by": "analyst"
+  },
+  {
+    "pattern_id": "PAT_BG_004",
+    "name": "Repeated Failed KYC — Re-submission Ring",
+    "variables": "cluster_type = onboarding_mule; analyst_flagged = true; case_count >= 2",
+    "cluster_type": "onboarding_mule",
+    "status": "emerging",
+    "created_by": "fraud_intelligence"
+  },
+  {
+    "pattern_id": "PAT_BG_005",
+    "name": "Agent Cash-in Structuring Pattern",
+    "variables": "cluster_type = cashout_endpoint; analyst_flagged = true; case_count >= 8",
+    "cluster_type": "cashout_endpoint",
+    "status": "probable",
+    "created_by": "system_seed"
+  },
+  {
+    "pattern_id": "PAT_BG_006",
+    "name": "Student Segment Peer-Transfer Ring",
+    "variables": "cluster_type = background_noise; analyst_flagged = true; case_count >= 3",
+    "cluster_type": "background_noise",
+    "status": "emerging",
+    "created_by": "system_seed"
+  },
+  {
+    "pattern_id": "PAT_BG_007",
+    "name": "Convenience Cashout Velocity Burst",
+    "variables": "cluster_type = app_scam_cashout; analyst_flagged = true; case_count >= 3",
+    "cluster_type": "app_scam_cashout",
+    "status": "probable",
+    "created_by": "fraud_intelligence"
+  },
+  {
+    "pattern_id": "PAT_BG_008",
+    "name": "Multi-Wallet Fan-Out Pre-Exit",
+    "variables": "cluster_type = sleeper_mule; analyst_flagged = true; case_count >= 9",
+    "cluster_type": "sleeper_mule",
+    "status": "probable",
+    "created_by": "analyst"
+  },
+  {
+    "pattern_id": "PAT_BG_009",
+    "name": "Low-Cost Device Cluster Registration",
+    "variables": "cluster_type = onboarding_mule; analyst_flagged = true; case_count >= 13",
+    "cluster_type": "onboarding_mule",
+    "status": "emerging",
+    "created_by": "fraud_intelligence"
+  },
+  {
+    "pattern_id": "PAT_BG_010",
+    "name": "Bill Pay Structuring — Round-Amount Cluster",
+    "variables": "cluster_type = background_noise; analyst_flagged = true; case_count >= 15",
+    "cluster_type": "background_noise",
+    "status": "retired",
+    "created_by": "fraud_intelligence"
+  }
+]

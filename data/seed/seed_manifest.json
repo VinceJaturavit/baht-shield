@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-05-30T11:18:01.765Z",
+  "seed_date": "2026-05-30",
+  "note": "All data synthetic and illustrative — no real customer or employer data. No Kraken/Payward references.",
+  "table_counts": {
+    "users": 10175,
+    "wallet_accounts": 10175,
+    "kyc_events": 10175,
+    "devices": 10183,
+    "phone_sim_bindings": 10175,
+    "beneficiaries": 912,
+    "transactions": 160375,
+    "alerts": 465,
+    "cases": 335,
+    "case_notes": 755,
+    "analyst_patterns": 15,
+    "graph_edges": 1535
+  },
+  "scenario_counts": {
+    "onboarding_mule_farm_cases": 25,
+    "sleeper_mule_activation_cases": 30,
+    "app_scam_cashout_ring_cases": 30,
+    "total_scenario_cases": 85
+  },
+  "required_patterns": [
+    "PAT_MF_001",
+    "PAT_SM_001",
+    "PAT_APP_001",
+    "PAT_ENDPOINT_001",
+    "PAT_ENDPOINT_002"
+  ],
+  "timing_note": "transactions table has no timestamp field per Spec-001. Sequence encoded in txn_id prefixes (TXN_SM_NNN_IN before TXN_SM_NNN_OUT). Timing logic documented in case_notes.",
+  "contrast_note": "Scenario accounts: individual device risk < 40, KYC approved, amounts < 10,000 THB. Pattern layer detects clusters via shared devices, shared endpoints, graph edges, and curated analyst_patterns.",
+  "spec": "Spec-001-synthetic-data-seed",
+  "version": "1.0.0"
+}
