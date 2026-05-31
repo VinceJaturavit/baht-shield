@@ -1,5 +1,7 @@
 import type { MatchedPatternDisplay } from "@/lib/wallet-profile";
 import { EmptyState } from "./EmptyState";
+import { VariableChipGroup } from "@/components/patterns/VariableChipGroup";
+import { getPatternFamily } from "@/lib/scenario-utils";
 
 interface MatchedPatternsPanelProps {
   patterns: MatchedPatternDisplay[];
@@ -28,7 +30,13 @@ export function MatchedPatternsPanel({ patterns }: MatchedPatternsPanelProps) {
         />
       ) : (
         <div className="space-y-4">
-          {patterns.map((p) => (
+          {patterns.map((p) => {
+            const family = getPatternFamily({
+              pattern_id: p.pattern_id,
+              name: p.name,
+              cluster_type: p.cluster_type,
+            });
+            return (
             <div
               key={p.pattern_id}
               className="rounded-signal border border-signal-accentBorder bg-white shadow-signal overflow-hidden"
@@ -53,12 +61,13 @@ export function MatchedPatternsPanel({ patterns }: MatchedPatternsPanelProps) {
               {/* Card body */}
               <div className="px-6 py-4 space-y-3">
                 <div>
-                  <p className="text-[11px] uppercase tracking-wide text-signal-faint mb-1">
+                  <p className="text-[11px] uppercase tracking-wide text-signal-faint mb-2">
                     Matched Variables
                   </p>
-                  <p className="font-mono bg-signal-muted border border-signal-borderSubtle rounded-signalSm px-3 py-2 text-xs leading-relaxed text-signal-body">
-                    {p.variables}
-                  </p>
+                  <VariableChipGroup
+                    variables={p.variables}
+                    patternFamily={family}
+                  />
                 </div>
 
                 <div className="rounded-signalSm border-l-2 border-signal-accentBorder bg-signal-accentSubtle px-4 py-3">
@@ -69,7 +78,8 @@ export function MatchedPatternsPanel({ patterns }: MatchedPatternsPanelProps) {
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </section>

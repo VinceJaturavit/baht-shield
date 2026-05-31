@@ -5,6 +5,7 @@ import { DeviceSimPanel } from "@/components/wallet/DeviceSimPanel";
 import { TransactionTimeline } from "@/components/wallet/TransactionTimeline";
 import { MatchedPatternsPanel } from "@/components/wallet/MatchedPatternsPanel";
 import { CaseHistoryPanel } from "@/components/wallet/CaseHistoryPanel";
+import { AICopilotPanel } from "@/components/wallet/AICopilotPanel";
 import { getWalletProfile } from "@/lib/wallet-profile";
 
 interface WalletProfilePageProps {
@@ -66,7 +67,10 @@ export default function WalletProfilePage({ params }: WalletProfilePageProps) {
             {/* 4. Matched Analyst Patterns — most important panel */}
             <MatchedPatternsPanel patterns={profile.matchedPatterns} />
 
-            {/* 5. Case History */}
+            {/* 5. AI Copilot — deterministic, synthetic demo */}
+            <AICopilotPanel walletProfile={profile} />
+
+            {/* 6. Case History */}
             <CaseHistoryPanel cases={profile.cases} walletProfile={profile} />
           </div>
         )}

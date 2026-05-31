@@ -193,3 +193,33 @@ export interface GeneratedClosureNote {
   auditControlNote: string;
   fullText: string;
 }
+
+// ---------------------------------------------------------------------------
+// Spec-008 — Variable Chips + AI Copilot Panel
+// ---------------------------------------------------------------------------
+
+export type VariableCategory =
+  | "Device/SIM"
+  | "Endpoint/Beneficiary"
+  | "Behavior/Velocity"
+  | "Identity/KYC"
+  | "Other";
+
+export interface ParsedPatternVariable {
+  raw: string;
+  key: string;
+  operator?: string;
+  value?: string;
+  label: string;
+  category: VariableCategory;
+  rank: number;
+}
+
+export interface AICopilotSummary {
+  riskSummary: string;
+  matchedPatternExplanation: string;
+  naiveScoreMissed: string;
+  suggestedNextStep: string;
+  sourceCaseId?: string;
+  sourcePatternId?: string;
+}

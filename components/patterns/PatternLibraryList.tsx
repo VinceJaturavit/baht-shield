@@ -1,5 +1,6 @@
 import type { PatternSummary } from "@/lib/types";
 import { PatternFamilyBadge } from "./PatternFamilyBadge";
+import { VariableChipGroup } from "./VariableChipGroup";
 
 interface PatternLibraryListProps {
   patterns: PatternSummary[];
@@ -24,8 +25,6 @@ export function PatternLibraryList({
       {patterns.map((p) => {
         const isSelected = p.pattern_id === selectedPatternId;
         const statusClass = STATUS_CLASSES[p.status] ?? "bg-gray-100 text-gray-600";
-        const variablesPreview =
-          p.variables.length > 160 ? p.variables.slice(0, 157) + "…" : p.variables;
 
         return (
           <button
@@ -69,8 +68,12 @@ export function PatternLibraryList({
               </span>
             </div>
 
-            <div className="mt-2 font-mono text-xs leading-relaxed text-signal-secondary">
-              {variablesPreview}
+            <div className="mt-2">
+              <VariableChipGroup
+                variables={p.variables}
+                patternFamily={p.family}
+                compact
+              />
             </div>
           </button>
         );

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { PatternSummary } from "@/lib/types";
 import { PatternFamilyBadge } from "./PatternFamilyBadge";
+import { VariableChipGroup } from "./VariableChipGroup";
 
 interface PatternDetailPanelProps {
   pattern: PatternSummary | null;
@@ -57,12 +58,14 @@ export function PatternDetailPanel({ pattern }: PatternDetailPanelProps) {
 
       {/* Variables */}
       <div className="border-b border-signal-borderSubtle px-6 py-5">
-        <h3 className="mb-2 text-xs font-medium uppercase tracking-wide text-signal-secondary">
+        <h3 className="mb-3 text-xs font-medium uppercase tracking-wide text-signal-secondary">
           Matched Variables / Pattern Criteria
         </h3>
-        <pre className="whitespace-pre-wrap rounded-signalSm border border-signal-borderSubtle bg-signal-muted px-3 py-2.5 font-mono text-xs leading-relaxed text-signal-body">
-          {pattern.variables}
-        </pre>
+        <VariableChipGroup
+          variables={pattern.variables}
+          patternFamily={pattern.family}
+          showLegend
+        />
       </div>
 
       {/* Naive-miss note */}
