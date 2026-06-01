@@ -34,20 +34,20 @@ export function AppShell({ children }: AppShellProps) {
   return (
     <div className="min-h-screen bg-signal-bg">
       {/* Top nav */}
-      <header className="border-b border-signal-border bg-white">
-        <div className="mx-auto max-w-signal px-6 lg:px-8">
-          <div className="flex h-16 items-center gap-4">
+      <header className="w-full overflow-x-hidden border-b border-signal-border bg-white">
+        <div className="mx-auto flex max-w-[1280px] items-center gap-3 px-4 lg:px-6">
+          <div className="flex h-16 min-w-0 flex-1 items-center gap-3">
             {/* Brand */}
-            <div className="flex shrink-0 items-center gap-3.5">
+            <div className="flex shrink-0 items-center gap-3">
               <Logo />
-              <span className="hidden h-5 w-px bg-signal-border sm:block" />
-              <span className="hidden text-xs text-signal-secondary sm:block">
+              <span className="hidden h-5 w-px bg-signal-border 2xl:block" />
+              <span className="hidden truncate text-xs text-signal-secondary 2xl:block">
                 Analyst-Curated Fraud Intelligence
               </span>
             </div>
 
-            {/* Nav links — scrollable on small screens */}
-            <nav className="flex flex-1 items-center gap-0.5 overflow-x-auto">
+            {/* Nav links */}
+            <nav className="flex min-w-0 flex-1 items-center gap-0.5 overflow-hidden">
               {NAV_LINKS.map((link) => {
                 const active = isActive(pathname, link.href);
                 return (
@@ -55,7 +55,7 @@ export function AppShell({ children }: AppShellProps) {
                     key={link.href}
                     href={link.href}
                     aria-current={active ? "page" : undefined}
-                    className={`shrink-0 rounded-signalSm px-3 py-1.5 text-sm font-medium transition-colors ${
+                    className={`shrink-0 rounded-signalSm px-2.5 py-1.5 text-sm font-medium transition-colors ${
                       active
                         ? "bg-signal-accentSubtle text-signal-accent"
                         : "text-signal-secondary hover:bg-signal-muted hover:text-signal-heading"
@@ -68,7 +68,7 @@ export function AppShell({ children }: AppShellProps) {
             </nav>
 
             {/* Search affordance */}
-            <div className="shrink-0">
+            <div className="shrink">
               <CommandBar />
             </div>
           </div>
@@ -77,13 +77,13 @@ export function AppShell({ children }: AppShellProps) {
 
       {/* Synthetic data label bar */}
       <div className="border-b border-signal-borderSubtle bg-white">
-        <div className="mx-auto max-w-signal px-6 py-2.5 lg:px-8">
+        <div className="mx-auto max-w-[1280px] px-4 py-2.5 lg:px-6">
           <SyntheticDataLabel />
         </div>
       </div>
 
       {/* Page content */}
-      <main className="mx-auto max-w-signal px-6 py-8 lg:px-8 lg:py-10">
+      <main className="mx-auto max-w-[1280px] px-4 py-8 lg:px-6 lg:py-10">
         {children}
       </main>
     </div>
