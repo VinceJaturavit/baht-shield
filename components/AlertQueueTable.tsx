@@ -4,11 +4,12 @@ import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { SeverityBadge } from "./SeverityBadge";
 import { severityRank } from "@/lib/metrics";
-import type { Alert } from "@/lib/types";
-
-interface AlertQueueTableProps {
-  alerts: Alert[];
-}
+import { getEnrichedAlertRows, getAlertQueueKpis, applyAlertSavedView } from "@/lib/alert-queue";
+import { AlertQueueKpiStrip } from "./alerts/AlertQueueKpiStrip";
+import { SavedViewTabs } from "./alerts/SavedViewTabs";
+import { AlertQueueFilterChips } from "./alerts/AlertQueueFilterChips";
+import { ScenarioChip } from "./alerts/ScenarioChip";
+import type { AlertSavedView } from "@/lib/types";
 
 type SortDir = "desc" | "asc";
 
@@ -19,32 +20,64 @@ const STATUS_LABELS: Record<string, string> = {
   closed: "Closed",
 };
 
-export function AlertQueueTable({ alerts }: AlertQueueTableProps) {
+function formatTHB(amount: number): string {
+  if (amount <= 0) return "—";
+  if (amount >= 1_000_000) return `฿${(amount / 1_000_000).toFixed(1)}M`;
+  if (amount >= 1_000) return `฿${(amount / 1_000).toFixed(0)}K`;
+  return `฿${amount.toLocaleString("th-TH")}`;
+}
+
+// All enriched rows computed once at module level (pure derivation from seed)
+const ALL_ENRICHED_ROWS = getEnrichedAlertRows();
+const ALL_KPIS = getAlertQueueKpis(ALL_ENRICHED_ROWS);
+const ALL_STATUSES = Array.from(new Set(ALL_ENRICHED_ROWS.map((r) => r.status))).sort();
+
+export function AlertQueueTable() {
   const router = useRouter();
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
-
-  // Unique statuses from data
-  const allStatuses = useMemo(
-    () => Array.from(new Set(alerts.map((a) => a.status))).sort(),
-    [alerts]
-  );
+  const [savedView, setSavedView] = useState<AlertSavedView>("all");
 
   const filtered = useMemo(() => {
-    const base =
-      statusFilter === "all"
-        ? alerts
-        : alerts.filter((a) => a.status === statusFilter);
+    // 1. Apply saved view preset
+    let rows = applyAlertSavedView(ALL_ENRICHED_ROWS, savedView);
 
-    return [...base].sort((a, b) => {
+    // 2. Apply status filter
+    if (statusFilter !== "all") {
+      rows = rows.filter((r) => r.status === statusFilter);
+    }
+
+    // 3. Apply severity sort
+    return [...rows].sort((a, b) => {
       const diff = severityRank(b.severity) - severityRank(a.severity);
       return sortDir === "desc" ? diff : -diff;
     });
-  }, [alerts, statusFilter, sortDir]);
+  }, [statusFilter, sortDir, savedView]);
+
+  const handleClearView = () => setSavedView("all");
+  const handleClearStatus = () => setStatusFilter("all");
 
   return (
     <div>
-      {/* Controls */}
+      {/* KPI strip */}
+      <AlertQueueKpiStrip kpis={ALL_KPIS} />
+
+      {/* Saved views */}
+      <div className="mb-4 flex flex-wrap items-center gap-3">
+        <SavedViewTabs activeView={savedView} onViewChange={setSavedView} />
+      </div>
+
+      {/* Active filter chips */}
+      <div className="mb-3">
+        <AlertQueueFilterChips
+          activeView={savedView}
+          statusFilter={statusFilter}
+          onClearView={handleClearView}
+          onClearStatus={handleClearStatus}
+        />
+      </div>
+
+      {/* Controls — status filter + severity sort */}
       <div className="mb-4 flex flex-wrap items-center gap-3">
         {/* Status filter */}
         <div className="flex items-center gap-2">
@@ -52,11 +85,11 @@ export function AlertQueueTable({ alerts }: AlertQueueTableProps) {
             Status
           </span>
           <div className="flex flex-wrap gap-1">
-            {["all", ...allStatuses].map((s) => (
+            {["all", ...ALL_STATUSES].map((s) => (
               <button
                 key={s}
                 onClick={() => setStatusFilter(s)}
-                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
+                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-accent ${
                   statusFilter === s
                     ? "bg-signal-accentSubtle text-signal-accent ring-1 ring-signal-accentBorder"
                     : "bg-signal-muted text-signal-secondary hover:bg-signal-border/60 hover:text-signal-heading"
@@ -75,7 +108,7 @@ export function AlertQueueTable({ alerts }: AlertQueueTableProps) {
           </span>
           <button
             onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
-            className="flex items-center gap-1 rounded-signalSm border border-signal-border bg-white px-3 py-1.5 text-xs font-medium text-signal-body transition-colors hover:bg-signal-muted"
+            className="flex items-center gap-1 rounded-signalSm border border-signal-border bg-white px-3 py-1.5 text-xs font-medium text-signal-body transition-colors hover:bg-signal-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-accent"
           >
             {sortDir === "desc" ? "High → Low" : "Low → High"}
             <span className="text-signal-faint">{sortDir === "desc" ? "↓" : "↑"}</span>
@@ -86,71 +119,154 @@ export function AlertQueueTable({ alerts }: AlertQueueTableProps) {
       {/* Count summary */}
       <p className="mb-3 text-[13px] text-signal-secondary">
         Showing{" "}
-        <span className="font-semibold tabular-nums text-signal-heading">
-          {filtered.length}
-        </span>{" "}
-        of{" "}
-        <span className="font-semibold tabular-nums text-signal-heading">
-          {alerts.length}
-        </span>{" "}
-        alerts
+        <span className="font-semibold tabular-nums text-signal-heading">{filtered.length}</span>
+        {" "}of{" "}
+        <span className="font-semibold tabular-nums text-signal-heading">{ALL_ENRICHED_ROWS.length}</span>
+        {" "}alerts
       </p>
 
       {/* Table */}
       <div className="overflow-hidden rounded-signal border border-signal-border bg-white shadow-signal">
         <div className="overflow-x-auto">
-          <table className="min-w-full">
+          <table className="min-w-[1080px] w-full">
             <thead>
               <tr className="border-b border-signal-border bg-signal-muted">
                 <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
-                  Alert ID
-                </th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
-                  Rule / Pattern
+                  Alert
                 </th>
                 <th
-                  className="cursor-pointer px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary hover:text-signal-heading"
+                  className="cursor-pointer px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary hover:text-signal-heading focus:outline-none focus-visible:underline"
                   onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setSortDir((d) => (d === "desc" ? "asc" : "desc"));
+                    }
+                  }}
+                  aria-sort={sortDir === "desc" ? "descending" : "ascending"}
                 >
                   Severity {sortDir === "desc" ? "↓" : "↑"}
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
-                  Wallet ID
+                  Scenario
+                </th>
+                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+                  Linked Pattern
+                </th>
+                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+                  Links
+                </th>
+                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+                  Case Age
                 </th>
                 <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
                   Status
                 </th>
+                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+                  Next Action
+                </th>
               </tr>
             </thead>
             <tbody>
-              {filtered.map((alert) => (
+              {filtered.map((row) => (
                 <tr
-                  key={alert.alert_id}
-                  onClick={() => router.push(`/wallet/${alert.wallet_id}`)}
+                  key={row.alert_id}
+                  onClick={() => router.push(`/wallet/${row.wallet_id}`)}
                   className="cursor-pointer border-b border-signal-borderSubtle last:border-0 transition-colors hover:bg-signal-bg"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      router.push(`/wallet/${row.wallet_id}`);
+                    }
+                  }}
+                  aria-label={`Alert ${row.alert_id}, wallet ${row.wallet_id}`}
                 >
-                  <td className="whitespace-nowrap px-4 py-3.5 font-mono text-xs text-signal-secondary">
-                    {alert.alert_id}
+                  {/* ALERT — stacked: alert_id, wallet_id · rule_name */}
+                  <td className="px-4 py-3.5">
+                    <div className="flex flex-col gap-0.5">
+                      <span className="font-mono text-xs font-medium text-signal-heading">
+                        {row.alert_id}
+                      </span>
+                      <span className="font-mono text-[11px] text-signal-accent">
+                        {row.wallet_id}
+                      </span>
+                      <span
+                        className="max-w-[200px] truncate text-[11px] text-signal-secondary"
+                        title={row.rule_name}
+                      >
+                        {row.rule_name}
+                      </span>
+                    </div>
                   </td>
-                  <td className="max-w-xs px-4 py-3.5 text-sm text-signal-body">
-                    <span className="block truncate" title={alert.rule_name}>
-                      {alert.rule_name}
+
+                  {/* SEVERITY */}
+                  <td className="whitespace-nowrap px-4 py-3.5">
+                    <SeverityBadge severity={row.severity} />
+                  </td>
+
+                  {/* SCENARIO */}
+                  <td className="whitespace-nowrap px-4 py-3.5">
+                    <ScenarioChip scenario={row.scenario} />
+                  </td>
+
+                  {/* LINKED PATTERN */}
+                  <td className="px-4 py-3.5">
+                    {row.linked_pattern_id ? (
+                      <div className="flex flex-col gap-0.5">
+                        <span className="font-mono text-xs text-signal-body">
+                          {row.linked_pattern_id}
+                        </span>
+                        {row.linked_pattern_name && (
+                          <span className="text-[11px] text-signal-secondary">
+                            {row.linked_pattern_name}
+                          </span>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-sm text-signal-faint">—</span>
+                    )}
+                  </td>
+
+                  {/* LINKS */}
+                  <td className="whitespace-nowrap px-4 py-3.5 text-xs text-signal-body">
+                    <span>{row.linked_wallet_count} wallet{row.linked_wallet_count !== 1 ? "s" : ""}</span>
+                    <span className="mx-1 text-signal-faint">/</span>
+                    <span>{row.linked_case_count} case{row.linked_case_count !== 1 ? "s" : ""}</span>
+                  </td>
+
+                  {/* CASE AGE */}
+                  <td className="whitespace-nowrap px-4 py-3.5">
+                    {row.alert_age_label ? (
+                      <span
+                        className="text-xs text-signal-body"
+                        title="Source: linked case opened_at"
+                      >
+                        {row.alert_age_label}
+                      </span>
+                    ) : (
+                      <span className="text-sm text-signal-faint">—</span>
+                    )}
+                  </td>
+
+                  {/* STATUS */}
+                  <td className="whitespace-nowrap px-4 py-3.5">
+                    <StatusBadge status={row.status} />
+                  </td>
+
+                  {/* NEXT ACTION */}
+                  <td className="px-4 py-3.5">
+                    <span className="text-xs text-signal-body">
+                      {row.next_action_hint}
                     </span>
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-3.5">
-                    <SeverityBadge severity={alert.severity} />
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-3.5 font-mono text-xs text-signal-accent">
-                    {alert.wallet_id}
-                  </td>
-                  <td className="whitespace-nowrap px-4 py-3.5">
-                    <StatusBadge status={alert.status} />
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+
         {filtered.length === 0 && (
           <div className="py-12 text-center text-sm text-signal-secondary">
             No alerts match the current filter.

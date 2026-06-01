@@ -245,3 +245,50 @@ export interface AICopilotSummary {
   sourceCaseId?: string;
   sourcePatternId?: string;
 }
+
+// ---------------------------------------------------------------------------
+// Spec-011 — Alert Queue Decision Hierarchy
+// ---------------------------------------------------------------------------
+
+export type AlertScenario =
+  | "Onboarding Mule Farm"
+  | "Sleeper Mule Activation"
+  | "APP Scam Cash-out Ring"
+  | "Endpoint Intelligence"
+  | "Background";
+
+export type AlertSavedView =
+  | "all"
+  | "critical_escalated"
+  | "scenario_linked";
+
+export interface EnrichedAlertQueueRow {
+  alert_id: string;
+  rule_name: string;
+  severity: string;
+  wallet_id: string;
+  status: string;
+
+  scenario: AlertScenario;
+  linked_pattern_id: string | null;
+  linked_pattern_name: string | null;
+  linked_wallet_count: number;
+  linked_case_count: number;
+
+  linked_case_ids: string[];
+  linked_case_loss_exposure: number;
+
+  opened_at_source: "linked_case.opened_at" | null;
+  earliest_case_opened_at: string | null;
+  alert_age_label: string | null;
+
+  next_action_hint: string;
+}
+
+export interface AlertQueueKpis {
+  open_alert_count: number;
+  escalated_alert_count: number;
+  high_severity_count: number;
+  total_synthetic_loss_exposure: number;
+  scenario_linked_alert_count: number;
+}
