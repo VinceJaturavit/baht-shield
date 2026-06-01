@@ -1,22 +1,41 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { Suspense, useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { AppShell } from "@/components/AppShell";
 import { PatternLibraryList } from "@/components/patterns/PatternLibraryList";
 import { PatternDetailPanel } from "@/components/patterns/PatternDetailPanel";
 import { PatternStatsCard } from "@/components/patterns/PatternStatsCard";
 import { getPatternSummaries } from "@/lib/pattern-intelligence";
 
-export default function PatternsPage() {
+function PatternsContent() {
+  const searchParams = useSearchParams();
   const patterns = useMemo(() => getPatternSummaries(), []);
-  const [selectedPatternId, setSelectedPatternId] = useState<string | null>(
-    patterns.length > 0 ? patterns[0].pattern_id : null
-  );
+
+  const defaultId = useMemo(() => {
+    const paramId = searchParams.get("patternId");
+    if (paramId) {
+      const match = patterns.find((p) => p.pattern_id === paramId);
+      if (match) return match.pattern_id;
+    }
+    return patterns.length > 0 ? patterns[0].pattern_id : null;
+  }, [patterns, searchParams]);
+
+  const [selectedPatternId, setSelectedPatternId] = useState<string | null>(defaultId);
+
+  // Sync if URL param changes after mount (e.g. command modal navigation)
+  useEffect(() => {
+    const paramId = searchParams.get("patternId");
+    if (paramId) {
+      const match = patterns.find((p) => p.pattern_id === paramId);
+      if (match) setSelectedPatternId(match.pattern_id);
+    }
+  }, [searchParams, patterns]);
 
   const selectedPattern = patterns.find((p) => p.pattern_id === selectedPatternId) ?? null;
 
   return (
-    <AppShell>
+    <>
       <div className="mb-8">
         <h1 className="text-3xl font-semibold tracking-tight text-signal-heading">Pattern Intelligence</h1>
         <p className="mt-2 text-[15px] text-signal-secondary">
@@ -30,7 +49,6 @@ export default function PatternsPage() {
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {/* Pattern library list */}
         <div>
           <h2 className="mb-3 text-xs font-medium uppercase tracking-wide text-signal-secondary">
             Pattern Library{" "}
@@ -45,12 +63,21 @@ export default function PatternsPage() {
           />
         </div>
 
-        {/* Pattern detail drill-in */}
         <div className="lg:sticky lg:top-6 lg:self-start">
           <h2 className="mb-3 text-xs font-medium uppercase tracking-wide text-signal-secondary">Pattern Detail</h2>
           <PatternDetailPanel pattern={selectedPattern} />
         </div>
       </div>
+    </>
+  );
+}
+
+export default function PatternsPage() {
+  return (
+    <AppShell>
+      <Suspense fallback={<div className="py-8 text-sm text-signal-secondary">Loading patterns…</div>}>
+        <PatternsContent />
+      </Suspense>
     </AppShell>
   );
 }

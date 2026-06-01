@@ -195,6 +195,28 @@ export interface GeneratedClosureNote {
 }
 
 // ---------------------------------------------------------------------------
+// Spec-009 — Global Search / Command Bar
+// ---------------------------------------------------------------------------
+
+export type SearchResultType =
+  | "command"
+  | "wallet"
+  | "alert"
+  | "case"
+  | "pattern"
+  | "device"
+  | "endpoint";
+
+export interface SearchResult {
+  id: string;
+  type: SearchResultType;
+  title: string;
+  subtitle?: string;
+  route: string;
+  keywords: string[];
+}
+
+// ---------------------------------------------------------------------------
 // Spec-008 — Variable Chips + AI Copilot Panel
 // ---------------------------------------------------------------------------
 
