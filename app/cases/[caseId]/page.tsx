@@ -51,8 +51,11 @@ export default async function CaseDetailPage({ params }: PageProps) {
       {/* Header */}
       <CaseHeader caseDetail={caseDetail} />
 
-      {/* Why-this-case line — subtle top separator from header card */}
-      <div className="mb-6 mt-4 border-t border-signal-border pt-4">
+      {/* Why-this-case — visible top border separates it from the header card */}
+      <div className="mb-6 mt-8 border-t-2 border-signal-border pt-5">
+        <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-widest text-signal-meta">
+          Why this case
+        </p>
         <div className="rounded-signalSm border border-signal-indigoBorder bg-signal-indigoSubtle px-4 py-3">
           <p className="text-[11px] font-medium text-signal-secondary leading-relaxed">
             {caseDetail.why_this_case}

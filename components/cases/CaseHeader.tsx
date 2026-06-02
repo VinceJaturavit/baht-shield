@@ -59,10 +59,10 @@ export function CaseHeader({ caseDetail }: CaseHeaderProps) {
       </div>
 
       {/* Meta grid */}
-      <div className="grid grid-cols-2 gap-x-6 gap-y-2 px-6 py-3 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-x-5 gap-y-1.5 px-6 py-2 sm:grid-cols-3 lg:grid-cols-4">
         <div>
           <p className="text-[11px] uppercase tracking-wide text-signal-faint">Decision / Status</p>
-          <div className="mt-1">
+          <div className="mt-0.5">
             <CaseDecisionBadge
               decision={caseDetail.decision}
               investigation_status={caseDetail.investigation_status}
@@ -72,12 +72,12 @@ export function CaseHeader({ caseDetail }: CaseHeaderProps) {
 
         <div>
           <p className="text-[11px] uppercase tracking-wide text-signal-faint">Owner</p>
-          <p className="mt-1 text-xs text-signal-body">{caseDetail.owner || "Unassigned"}</p>
+          <p className="mt-0.5 text-xs text-signal-body">{caseDetail.owner || "Unassigned"}</p>
         </div>
 
         <div>
           <p className="text-[11px] uppercase tracking-wide text-signal-faint">Synthetic Loss</p>
-          <p className="mt-1 text-xs font-semibold tabular-nums text-signal-heading">
+          <p className="mt-0.5 text-xs font-semibold tabular-nums text-signal-heading">
             {formatTHB(caseDetail.loss_amount)}
           </p>
         </div>
@@ -87,12 +87,12 @@ export function CaseHeader({ caseDetail }: CaseHeaderProps) {
           {caseDetail.wallet_id ? (
             <Link
               href={`/wallet/${caseDetail.wallet_id}`}
-              className="mt-1 block font-mono text-xs text-signal-indigo hover:underline focus:outline-none focus-visible:underline"
+              className="mt-0.5 block font-mono text-xs text-signal-indigo hover:underline focus:outline-none focus-visible:underline"
             >
               {caseDetail.wallet_id}
             </Link>
           ) : (
-            <p className="mt-1 text-xs text-signal-faint">—</p>
+            <p className="mt-0.5 text-xs text-signal-faint">—</p>
           )}
         </div>
 
@@ -101,20 +101,20 @@ export function CaseHeader({ caseDetail }: CaseHeaderProps) {
           {caseDetail.linked_pattern_id ? (
             <Link
               href={`/patterns?patternId=${caseDetail.linked_pattern_id}`}
-              className="mt-1 block font-mono text-xs text-signal-indigo hover:underline focus:outline-none focus-visible:underline"
+              className="mt-0.5 block font-mono text-xs text-signal-indigo hover:underline focus:outline-none focus-visible:underline"
             >
               {caseDetail.linked_pattern_id}
             </Link>
           ) : (
-            <p className="mt-1 text-xs text-signal-faint">—</p>
+            <p className="mt-0.5 text-xs text-signal-faint">—</p>
           )}
         </div>
 
         <div>
           <p className="text-[11px] uppercase tracking-wide text-signal-faint">Opened</p>
-          <p className="mt-1 text-xs text-signal-body">{caseDetail.opened_at || "—"}</p>
+          <p className="mt-0.5 text-xs text-signal-body">{caseDetail.opened_at || "—"}</p>
           {caseDetail.age_label && (
-            <p className="mt-0.5 text-[10px] text-signal-secondary" title="Age from case opened_at">
+            <p className="text-[10px] text-signal-secondary" title="Age from case opened_at">
               {caseDetail.age_label}
             </p>
           )}
@@ -123,13 +123,13 @@ export function CaseHeader({ caseDetail }: CaseHeaderProps) {
         {caseDetail.closed_at && (
           <div>
             <p className="text-[11px] uppercase tracking-wide text-signal-faint">Closed</p>
-            <p className="mt-1 text-xs text-signal-body">{caseDetail.closed_at}</p>
+            <p className="mt-0.5 text-xs text-signal-body">{caseDetail.closed_at}</p>
           </div>
         )}
 
         <div>
           <p className="text-[11px] uppercase tracking-wide text-signal-faint">Alert</p>
-          <p className="mt-1 font-mono text-xs text-signal-body">{caseDetail.alert_id}</p>
+          <p className="mt-0.5 font-mono text-xs text-signal-body">{caseDetail.alert_id}</p>
         </div>
       </div>
     </div>

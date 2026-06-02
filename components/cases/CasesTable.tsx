@@ -69,15 +69,15 @@ export function CasesTable() {
         <span className="text-xs font-medium uppercase tracking-wide text-signal-secondary">
           Decision
         </span>
-        <div className="flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-2">
           {["all", ...ALL_DECISIONS].map((d) => (
             <button
               key={d}
               onClick={() => setDecisionFilter(d)}
-              className={`rounded-full px-3 py-1 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-accent ${
+              className={`inline-flex items-center rounded-full px-3 py-0.5 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-accent ${
                 decisionFilter === d
-                  ? "bg-signal-accentSubtle text-signal-accent ring-1 ring-signal-accentBorder"
-                  : "bg-signal-muted text-signal-secondary hover:bg-signal-border/60 hover:text-signal-heading"
+                  ? "border border-signal-accentBorder bg-signal-accentSubtle text-signal-accent"
+                  : "border border-signal-border bg-signal-muted text-signal-secondary hover:bg-signal-border/60 hover:text-signal-heading"
               }`}
             >
               {d === "all" ? "All decisions" : d}
@@ -119,7 +119,7 @@ export function CasesTable() {
                 <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Owner
                 </th>
-                <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
+                <th className="w-32 whitespace-nowrap px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Decision / Status
                 </th>
                 <th className="px-4 py-3 text-right text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
