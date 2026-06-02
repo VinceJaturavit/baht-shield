@@ -65,26 +65,24 @@ export function CasesTable() {
       </div>
 
       {/* Decision filter */}
-      <div className="mb-4 flex flex-wrap items-center gap-3">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-medium uppercase tracking-wide text-signal-secondary">
-            Decision
-          </span>
-          <div className="flex flex-wrap gap-1">
-            {["all", ...ALL_DECISIONS].map((d) => (
-              <button
-                key={d}
-                onClick={() => setDecisionFilter(d)}
-                className={`rounded-full px-3 py-1 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-accent ${
-                  decisionFilter === d
-                    ? "bg-signal-accentSubtle text-signal-accent ring-1 ring-signal-accentBorder"
-                    : "bg-signal-muted text-signal-secondary hover:bg-signal-border/60 hover:text-signal-heading"
-                }`}
-              >
-                {d === "all" ? "All decisions" : d}
-              </button>
-            ))}
-          </div>
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <span className="text-xs font-medium uppercase tracking-wide text-signal-secondary">
+          Decision
+        </span>
+        <div className="flex flex-wrap gap-1">
+          {["all", ...ALL_DECISIONS].map((d) => (
+            <button
+              key={d}
+              onClick={() => setDecisionFilter(d)}
+              className={`rounded-full px-3 py-1 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-accent ${
+                decisionFilter === d
+                  ? "bg-signal-accentSubtle text-signal-accent ring-1 ring-signal-accentBorder"
+                  : "bg-signal-muted text-signal-secondary hover:bg-signal-border/60 hover:text-signal-heading"
+              }`}
+            >
+              {d === "all" ? "All decisions" : d}
+            </button>
+          ))}
         </div>
       </div>
 
@@ -103,7 +101,7 @@ export function CasesTable() {
           <table className="min-w-[1200px] w-full">
             <thead>
               <tr className="border-b border-signal-border bg-signal-surfaceSubtle">
-                <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
+                <th className="w-36 px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Case
                 </th>
                 <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
@@ -152,11 +150,11 @@ export function CasesTable() {
                 >
                   {/* CASE */}
                   <td className="px-4 py-3.5">
-                    <div className="flex flex-col gap-0.5">
-                      <span className="font-mono text-xs font-semibold text-signal-heading">
+                    <div className="flex flex-col gap-0.5 max-w-[132px]">
+                      <span className="font-mono text-xs font-semibold text-signal-heading truncate">
                         {row.case_id}
                       </span>
-                      <span className="font-mono text-[11px] text-signal-secondary">
+                      <span className="font-mono text-[11px] text-signal-secondary truncate">
                         {row.alert_id}
                       </span>
                     </div>
@@ -219,10 +217,11 @@ export function CasesTable() {
                   </td>
 
                   {/* DECISION / STATUS */}
-                  <td className="px-4 py-3.5">
+                  <td className="whitespace-nowrap px-4 py-3.5">
                     <CaseDecisionBadge
                       decision={row.decision}
                       investigation_status={row.investigation_status}
+                      compact
                     />
                   </td>
 

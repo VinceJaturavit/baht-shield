@@ -18,9 +18,9 @@ interface CaseHeaderProps {
 
 export function CaseHeader({ caseDetail }: CaseHeaderProps) {
   return (
-    <div className="mb-6 overflow-hidden rounded-signal border border-signal-border bg-signal-surface shadow-signalSubtle">
+    <div className="mb-3 overflow-hidden rounded-signal border border-signal-border bg-signal-surface shadow-signalSubtle">
       {/* Title row */}
-      <div className="border-b border-signal-borderSubtle bg-signal-surfaceSubtle px-6 py-4">
+      <div className="border-b border-signal-borderSubtle bg-signal-surfaceSubtle px-6 py-3">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <div className="flex items-center gap-3">
@@ -59,7 +59,7 @@ export function CaseHeader({ caseDetail }: CaseHeaderProps) {
       </div>
 
       {/* Meta grid */}
-      <div className="grid grid-cols-2 gap-x-6 gap-y-4 px-6 py-4 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-2 px-6 py-3 sm:grid-cols-3 lg:grid-cols-4">
         <div>
           <p className="text-[11px] uppercase tracking-wide text-signal-faint">Decision / Status</p>
           <div className="mt-1">

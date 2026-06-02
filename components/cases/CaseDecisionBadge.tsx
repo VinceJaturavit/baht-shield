@@ -3,6 +3,8 @@ import type { CaseInvestigationStatus } from "@/lib/types";
 interface CaseDecisionBadgeProps {
   decision: string;
   investigation_status: CaseInvestigationStatus;
+  /** compact: table cells — render only the dot+label badge, no stacked decision text */
+  compact?: boolean;
 }
 
 const STATUS_STYLES: Record<CaseInvestigationStatus, string> = {
@@ -29,10 +31,21 @@ const STATUS_DOT: Record<CaseInvestigationStatus, string> = {
   closed: "bg-signal-faintSlate",
 };
 
-export function CaseDecisionBadge({ decision, investigation_status }: CaseDecisionBadgeProps) {
+export function CaseDecisionBadge({ decision, investigation_status, compact = false }: CaseDecisionBadgeProps) {
   const statusStyle = STATUS_STYLES[investigation_status] ?? STATUS_STYLES.open;
   const statusLabel = STATUS_LABELS[investigation_status] ?? investigation_status;
   const dot = STATUS_DOT[investigation_status] ?? "bg-signal-faintSlate";
+
+  if (compact) {
+    return (
+      <span
+        className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium ${statusStyle}`}
+      >
+        <span className={`inline-block h-1.5 w-1.5 rounded-full ${dot}`} />
+        {statusLabel}
+      </span>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-0.5">
