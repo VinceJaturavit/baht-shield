@@ -13,13 +13,13 @@ export function CompactClosureEntry({ hasLinkedCases }: CompactClosureEntryProps
   }
 
   return (
-    <div className="rounded-signal border border-signal-border bg-white p-4 shadow-signal">
-      <p className="text-xs font-semibold uppercase tracking-widest text-signal-faint mb-2">
-        Closure Note
+    <div className="rounded-signal border border-signal-border bg-signal-surface p-4 shadow-signalSubtle">
+      <p className="text-xs font-semibold uppercase tracking-widest text-signal-meta mb-2">
+        Closure note
       </p>
       {hasLinkedCases ? (
         <>
-          <p className="text-xs text-signal-secondary leading-relaxed mb-3">
+          <p className="text-xs text-signal-slate leading-relaxed mb-3">
             Draft a standardised rationale from the linked case evidence.
           </p>
           <button
@@ -44,7 +44,7 @@ export function CompactClosureEntry({ hasLinkedCases }: CompactClosureEntryProps
           </button>
         </>
       ) : (
-        <p className="text-xs text-signal-faint italic">
+        <p className="text-xs text-signal-meta italic">
           No linked case available for closure-note drafting.
         </p>
       )}

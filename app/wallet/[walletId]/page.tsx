@@ -77,21 +77,21 @@ export default function WalletProfilePage({ params }: WalletProfilePageProps) {
       {/* Back link */}
       <Link
         href="/alerts"
-        className="mb-5 inline-flex items-center gap-1.5 text-sm text-signal-secondary hover:text-signal-heading transition-colors"
+        className="mb-5 inline-flex items-center gap-1.5 text-sm text-signal-slate hover:text-signal-ink transition-colors"
       >
         ← Back to Alert Queue
       </Link>
 
       {/* Not found */}
       {!profile ? (
-        <div className="rounded-signal border border-dashed border-signal-border bg-white p-8 text-center">
+        <div className="rounded-signal border border-dashed border-signal-border bg-signal-surface p-8 text-center">
           <p className="text-sm font-medium text-signal-body">
             Wallet not found in synthetic seed data.
           </p>
-          <p className="mt-1 text-xs text-signal-faint font-mono">{walletId}</p>
+          <p className="mt-1 text-xs text-signal-meta font-mono">{walletId}</p>
           <Link
             href="/alerts"
-            className="mt-4 inline-flex items-center gap-1 text-sm text-signal-accent hover:underline"
+            className="mt-4 inline-flex items-center gap-1 text-sm text-signal-indigo hover:underline"
           >
             ← Back to Alert Queue
           </Link>

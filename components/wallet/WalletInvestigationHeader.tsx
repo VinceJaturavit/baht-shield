@@ -10,11 +10,11 @@ interface WalletInvestigationHeaderProps {
 }
 
 const STATUS_STYLES: Record<string, string> = {
-  active: "border-signal-border bg-white text-signal-body",
-  suspended: "border-signal-border bg-signal-muted text-severity-critical",
-  under_review: "border-signal-accentBorder bg-signal-accentSubtle text-signal-accent",
-  closed: "border-signal-border bg-signal-muted text-signal-secondary",
-  frozen: "border-signal-border bg-signal-muted text-signal-body",
+  active: "border-signal-border bg-signal-surface text-signal-body",
+  suspended: "border-signal-amberBorder bg-signal-amberSubtle text-signal-body",
+  under_review: "border-signal-indigoBorder bg-signal-indigoSubtle text-signal-indigo",
+  closed: "border-signal-border bg-signal-surfaceSubtle text-signal-slate",
+  frozen: "border-signal-border bg-signal-surfaceSubtle text-signal-body",
 };
 
 function formatTHB(amount: number): string {
@@ -40,18 +40,18 @@ export function WalletInvestigationHeader({
 }: WalletInvestigationHeaderProps) {
   const statusKey = (status ?? "").toLowerCase();
   const statusStyle =
-    STATUS_STYLES[statusKey] ?? "border-signal-border bg-signal-muted text-signal-secondary";
+    STATUS_STYLES[statusKey] ?? "border-signal-border bg-signal-surfaceSubtle text-signal-slate";
 
   return (
-    <div className="rounded-signal border border-signal-border bg-white px-6 py-5 shadow-signal">
+    <div className="rounded-signal border border-signal-border bg-signal-surface px-6 py-5 shadow-signalSubtle">
       <div className="flex flex-wrap items-start justify-between gap-4">
         {/* Left: title + metadata */}
         <div className="min-w-0">
-          <p className="text-[11px] font-semibold uppercase tracking-widest text-signal-faint mb-1">
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-signal-meta mb-1">
             Wallet Profile
           </p>
           <div className="flex flex-wrap items-center gap-2">
-            <h1 className="text-xl font-semibold tracking-tight text-signal-heading font-mono">
+            <h1 className="text-2xl font-semibold tracking-tight text-signal-ink font-mono">
               {walletId}
             </h1>
             {status && (

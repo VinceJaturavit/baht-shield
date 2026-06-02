@@ -14,10 +14,10 @@ function Row({ label, value }: { label: string; value: React.ReactNode }) {
 }
 
 const STATUS_STYLES: Record<string, string> = {
-  active: "border border-signal-border bg-white text-signal-body",
-  suspended: "border border-signal-border bg-signal-muted text-severity-critical",
-  closed: "border border-signal-border bg-signal-muted text-signal-secondary",
-  frozen: "border border-signal-border bg-signal-muted text-signal-body",
+  active: "border border-signal-border bg-signal-surface text-signal-body",
+  suspended: "border border-signal-amberBorder bg-signal-amberSubtle text-signal-body",
+  closed: "border border-signal-border bg-signal-surfaceSubtle text-signal-slate",
+  frozen: "border border-signal-border bg-signal-surfaceSubtle text-signal-body",
 };
 
 export function WalletSummaryPanel({ data }: WalletSummaryPanelProps) {
@@ -25,12 +25,12 @@ export function WalletSummaryPanel({ data }: WalletSummaryPanelProps) {
   const statusKey = (wallet.status ?? "").toLowerCase();
   const statusStyle =
     STATUS_STYLES[statusKey] ??
-    "border border-signal-border bg-signal-muted text-signal-secondary";
+    "border border-signal-border bg-signal-surfaceSubtle text-signal-slate";
 
   return (
     <section>
-      <h2 className="text-lg font-semibold text-signal-heading mb-3">Wallet Summary</h2>
-      <div className="rounded-signal border border-signal-border bg-white px-6 py-5 shadow-signal divide-y divide-signal-borderSubtle">
+      <h2 className="text-lg font-semibold text-signal-ink mb-3">Wallet summary</h2>
+      <div className="rounded-signal border border-signal-border bg-signal-surface px-6 py-5 shadow-signalSubtle divide-y divide-signal-borderSubtle">
         {/* Wallet fields */}
         <div className="pb-3 mb-1">
           <p className="text-[11px] uppercase tracking-wide text-signal-faint mb-2">Wallet</p>

@@ -20,12 +20,12 @@ function formatTHB(amount: number): string {
 }
 
 const DECISION_STYLES: Record<string, string> = {
-  pending: "border-signal-border bg-signal-muted text-signal-secondary",
-  clear: "border-signal-border bg-white text-signal-body",
-  close_account: "border-signal-border bg-signal-muted text-severity-critical",
-  escalate_compliance: "border-signal-accentBorder bg-signal-accentSubtle text-signal-accent",
-  monitor: "border-signal-border bg-white text-signal-body",
-  suspend_wallet: "border-signal-border bg-signal-muted text-severity-high",
+  pending: "border-signal-border bg-signal-surfaceSubtle text-signal-slate",
+  clear: "border-signal-border bg-signal-surface text-signal-body",
+  close_account: "border-signal-border bg-signal-surfaceSubtle text-risk-critical",
+  escalate_compliance: "border-signal-amberBorder bg-signal-amberSubtle text-signal-body",
+  monitor: "border-signal-border bg-signal-surface text-signal-body",
+  suspend_wallet: "border-signal-border bg-signal-surfaceSubtle text-risk-high",
 };
 
 export function CaseHistoryPanel({ cases, walletProfile }: CaseHistoryPanelProps) {
@@ -39,9 +39,9 @@ export function CaseHistoryPanel({ cases, walletProfile }: CaseHistoryPanelProps
   return (
     <section>
       <div className="mb-3 flex items-center gap-2">
-        <h2 className="text-lg font-semibold text-signal-heading">Case History</h2>
+        <h2 className="text-lg font-semibold text-signal-ink">Case history</h2>
         {cases.length > 0 && (
-          <span className="inline-flex items-center rounded-full border border-signal-border bg-signal-muted px-2 py-0.5 text-xs font-medium tabular-nums text-signal-secondary">
+          <span className="inline-flex items-center rounded-full border border-signal-border bg-signal-surfaceSubtle px-2 py-0.5 text-xs font-medium tabular-nums text-signal-slate">
             {cases.length}
           </span>
         )}
@@ -60,12 +60,12 @@ export function CaseHistoryPanel({ cases, walletProfile }: CaseHistoryPanelProps
             return (
               <div
                 key={c.case_id}
-                className="rounded-signal border border-signal-border bg-white shadow-signal overflow-hidden"
+                className="rounded-signal border border-signal-border bg-signal-surface shadow-signalSubtle overflow-hidden"
               >
                 {/* Case header */}
-                <div className="px-6 py-3.5 bg-signal-muted border-b border-signal-borderSubtle flex flex-wrap items-center justify-between gap-2">
+                <div className="px-6 py-3.5 bg-signal-surfaceSubtle border-b border-signal-borderSubtle flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">
-                    <span className="text-sm font-mono font-semibold text-signal-heading">{c.case_id}</span>
+                    <span className="text-sm font-mono font-semibold text-signal-ink">{c.case_id}</span>
                     {c.alert && <SeverityBadge severity={c.alert.severity} />}
                   </div>
                   <span
@@ -123,7 +123,7 @@ export function CaseHistoryPanel({ cases, walletProfile }: CaseHistoryPanelProps
                     </p>
                     <div className="space-y-2">
                       {c.notes.map((note) => (
-                        <div key={note.note_id} className="rounded-signalSm border border-signal-borderSubtle bg-signal-muted px-3 py-2">
+                        <div key={note.note_id} className="rounded-signalSm border border-signal-borderSubtle bg-signal-surfaceSubtle px-3 py-2">
                           <div className="flex items-center justify-between mb-1">
                             <span className="text-[11px] font-medium text-signal-secondary capitalize">
                               {note.author_type}
@@ -138,13 +138,13 @@ export function CaseHistoryPanel({ cases, walletProfile }: CaseHistoryPanelProps
                 )}
 
                 {/* Draft closure note action */}
-                <div className="px-6 py-3 border-t border-signal-borderSubtle bg-white flex items-center gap-3">
+                <div className="px-6 py-3 border-t border-signal-borderSubtle bg-signal-surface flex items-center gap-3">
                   <button
                     onClick={() => handleDraftNote(c.case_id)}
-                    className={`inline-flex items-center gap-1.5 rounded-signalSm px-3 py-1.5 text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-signal-accent focus:ring-offset-1 ${
+                    className={`inline-flex items-center gap-1.5 rounded-signalSm px-3 py-1.5 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-indigo focus-visible:ring-offset-1 ${
                       isOpen
-                        ? "bg-signal-accent text-white hover:bg-signal-accentHover"
-                        : "bg-white text-signal-accent border border-signal-accentBorder hover:bg-signal-accentSubtle"
+                        ? "bg-signal-indigo text-white hover:bg-signal-indigoHover"
+                        : "bg-signal-surface text-signal-indigo border border-signal-indigoBorder hover:bg-signal-indigoSubtle"
                     }`}
                   >
                     <svg

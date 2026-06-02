@@ -13,8 +13,8 @@ interface EvidenceCardProps {
 
 function EvidenceCard({ label, children }: EvidenceCardProps) {
   return (
-    <div className="rounded-signalSm border border-signal-border bg-signal-muted p-4">
-      <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-widest text-signal-faint">
+    <div className="rounded-signalSm border border-signal-borderSubtle bg-signal-surfaceSubtle p-4">
+      <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-widest text-signal-meta">
         {label}
       </p>
       {children}
@@ -29,11 +29,11 @@ export function KeyEvidenceSummary({ walletProfile }: KeyEvidenceSummaryProps) {
 
   if (!hasMatch && cases.length === 0) {
     return (
-      <div className="rounded-signal border border-dashed border-signal-border bg-white px-6 py-5">
-        <p className="text-xs font-semibold uppercase tracking-widest text-signal-faint mb-1">
-          Key Evidence Summary
+      <div className="rounded-signal border border-dashed border-signal-border bg-signal-surface px-6 py-5">
+        <p className="text-xs font-semibold uppercase tracking-widest text-signal-meta mb-1">
+          Evidence summary
         </p>
-        <p className="text-sm text-signal-secondary">
+        <p className="text-sm text-signal-slate">
           No scenario-linked evidence found for this wallet. Review available wallet, device,
           transaction, and case context manually.
         </p>
@@ -50,9 +50,9 @@ export function KeyEvidenceSummary({ walletProfile }: KeyEvidenceSummaryProps) {
     : "Other";
 
   return (
-    <div className="rounded-signal border border-signal-border bg-white px-6 py-5 shadow-signal">
-      <p className="mb-4 text-[11px] font-semibold uppercase tracking-widest text-signal-faint">
-        Key Evidence Summary
+    <div className="rounded-signal border border-signal-border bg-signal-surface px-6 py-5 shadow-signalSubtle">
+      <p className="mb-4 text-[11px] font-semibold uppercase tracking-widest text-signal-meta">
+        Evidence summary
       </p>
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">

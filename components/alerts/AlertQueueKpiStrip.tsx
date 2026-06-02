@@ -19,23 +19,31 @@ interface KpiTileProps {
   value: string | number;
   caption?: string;
   highlight?: boolean;
+  tone?: "indigo" | "amber";
 }
 
-function KpiTile({ label, value, caption, highlight = false }: KpiTileProps) {
+function KpiTile({
+  label,
+  value,
+  caption,
+  highlight = false,
+  tone = "indigo",
+}: KpiTileProps) {
+  const valueClass = highlight
+    ? tone === "amber"
+      ? "text-signal-amber"
+      : "text-signal-indigo"
+    : "text-signal-ink";
   return (
-    <div className="flex flex-col gap-0.5 rounded-signal border border-signal-border bg-white px-4 py-3 shadow-signal min-w-0">
-      <span className="text-[11px] font-medium uppercase tracking-wide text-signal-secondary truncate">
+    <div className="flex flex-col gap-0.5 rounded-signal border border-signal-border bg-signal-surface px-4 py-3 shadow-signalSubtle min-w-0">
+      <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-signal-meta truncate">
         {label}
       </span>
-      <span
-        className={`text-xl font-semibold tabular-nums ${
-          highlight ? "text-signal-accent" : "text-signal-heading"
-        }`}
-      >
+      <span className={`text-xl font-semibold tabular-nums ${valueClass}`}>
         {value}
       </span>
       {caption && (
-        <span className="text-[11px] text-signal-faint truncate">{caption}</span>
+        <span className="text-[11px] text-signal-meta truncate">{caption}</span>
       )}
     </div>
   );
@@ -55,9 +63,10 @@ export function AlertQueueKpiStrip({ kpis }: AlertQueueKpiStripProps) {
         label="Escalated"
         value={kpis.escalated_alert_count}
         highlight={kpis.escalated_alert_count > 0}
+        tone="amber"
       />
       <KpiTile
-        label="Critical / High"
+        label="Critical / high"
         value={kpis.high_severity_count}
       />
       <KpiTile

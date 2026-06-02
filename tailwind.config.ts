@@ -19,36 +19,79 @@ const config: Config = {
         ],
       },
       colors: {
+        // SignalOS committed palette (Spec-012). Existing token NAMES are kept
+        // and remapped onto the committed values so the whole app adopts the
+        // palette at the token step; new semantic aliases are added below.
         signal: {
-          bg: "#FAFAFA",
+          // Backwards-compatible names (remapped to committed palette)
+          bg: "#F8FAFC",
           card: "#FFFFFF",
-          muted: "#F5F5F5",
-          heading: "#0A0A0A",
-          body: "#404040",
-          secondary: "#737373",
-          faint: "#A3A3A3",
-          border: "#E5E5E5",
-          borderSubtle: "#F0F0F0",
-          borderStrong: "#D4D4D4",
-          accent: "#4F46E5",
-          accentHover: "#4338CA",
-          accentSubtle: "#EEF2FF",
-          accentBorder: "#C7D2FE",
+          muted: "#F3F6FA",
+          heading: "#1B2436",
+          body: "#3F4A5A",
+          secondary: "#647084",
+          faint: "#8A94A6",
+          border: "#D9DEE8",
+          borderSubtle: "#E6EAF1",
+          borderStrong: "#C4CAD6",
+          accent: "#4B53C9",
+          accentHover: "#3F46B5",
+          accentSubtle: "#EEF0FF",
+          accentBorder: "#C8CCF7",
+
+          // Committed semantic aliases
+          ink: "#1B2436",
+          slate: "#647084",
+          meta: "#8A94A6",
+          faintSlate: "#B6BECA",
+
+          surface: "#FFFFFF",
+          surfaceSubtle: "#F3F6FA",
+          surfaceSoft: "#EEF2F7",
+
+          indigo: "#4B53C9",
+          indigoHover: "#3F46B5",
+          indigoActive: "#353C9E",
+          indigoSubtle: "#EEF0FF",
+          indigoBorder: "#C8CCF7",
+
+          amber: "#D98A3D",
+          amberHover: "#C8792D",
+          amberSubtle: "#FFF4E8",
+          amberBorder: "#F3D2AF",
+        },
+        // Risk/severity scale — muted, paired with text, never color-alone.
+        risk: {
+          critical: "#DC2626",
+          high: "#EA580C",
+          medium: "#CA8A04",
+          low: "#647084",
+          unknown: "#8A94A6",
         },
         severity: {
           critical: "#DC2626",
           high: "#EA580C",
           medium: "#CA8A04",
-          low: "#6B7280",
-          unknown: "#737373",
+          low: "#647084",
+          unknown: "#8A94A6",
         },
       },
       borderRadius: {
         signal: "12px",
         signalSm: "8px",
+        signalLg: "16px",
       },
       boxShadow: {
-        signal: "0 1px 2px rgba(10, 10, 10, 0.04)",
+        signal:
+          "0 1px 2px rgba(27, 36, 54, 0.04), 0 8px 24px rgba(27, 36, 54, 0.04)",
+        signalSubtle: "0 1px 2px rgba(27, 36, 54, 0.04)",
+      },
+      fontSize: {
+        "signal-page": ["30px", { lineHeight: "38px", fontWeight: "600" }],
+        "signal-section": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+        "signal-body": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+        "signal-meta": ["12px", { lineHeight: "16px", fontWeight: "500" }],
+        "signal-figure": ["32px", { lineHeight: "40px", fontWeight: "600" }],
       },
       maxWidth: {
         signal: "1200px",

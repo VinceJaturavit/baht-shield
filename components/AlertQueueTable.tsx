@@ -126,16 +126,16 @@ export function AlertQueueTable() {
       </p>
 
       {/* Table */}
-      <div className="overflow-hidden rounded-signal border border-signal-border bg-white shadow-signal">
+      <div className="overflow-hidden rounded-signal border border-signal-border bg-signal-surface shadow-signalSubtle">
         <div className="overflow-x-auto">
           <table className="min-w-[1080px] w-full">
             <thead>
-              <tr className="border-b border-signal-border bg-signal-muted">
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+              <tr className="border-b border-signal-border bg-signal-surfaceSubtle">
+                <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Alert
                 </th>
                 <th
-                  className="cursor-pointer px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary hover:text-signal-heading focus:outline-none focus-visible:underline"
+                  className="cursor-pointer px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta hover:text-signal-ink focus:outline-none focus-visible:underline"
                   onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
                   tabIndex={0}
                   onKeyDown={(e) => {
@@ -148,22 +148,22 @@ export function AlertQueueTable() {
                 >
                   Severity {sortDir === "desc" ? "↓" : "↑"}
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+                <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Scenario
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+                <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Linked Pattern
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+                <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Links
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+                <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Case Age
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+                <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Status
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-signal-secondary">
+                <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Next Action
                 </th>
               </tr>
@@ -173,7 +173,7 @@ export function AlertQueueTable() {
                 <tr
                   key={row.alert_id}
                   onClick={() => router.push(`/wallet/${row.wallet_id}`)}
-                  className="cursor-pointer border-b border-signal-borderSubtle last:border-0 transition-colors hover:bg-signal-bg"
+                  className="cursor-pointer border-b border-signal-borderSubtle last:border-0 transition-colors hover:bg-signal-surfaceSubtle focus:outline-none focus-visible:bg-signal-indigoSubtle focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-signal-indigoBorder"
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
@@ -268,8 +268,8 @@ export function AlertQueueTable() {
         </div>
 
         {filtered.length === 0 && (
-          <div className="py-12 text-center text-sm text-signal-secondary">
-            No alerts match the current filter.
+          <div className="py-12 text-center text-sm text-signal-slate">
+            No alerts match the current filter. Clear a filter or saved view to see more.
           </div>
         )}
       </div>
@@ -279,15 +279,22 @@ export function AlertQueueTable() {
 
 function StatusBadge({ status }: { status: string }) {
   const dotStyles: Record<string, string> = {
-    new: "bg-signal-accent",
-    in_review: "bg-severity-medium",
-    escalated: "bg-severity-high",
-    closed: "bg-signal-faint",
+    new: "bg-signal-indigo",
+    in_review: "bg-signal-slate",
+    escalated: "bg-signal-amber",
+    closed: "bg-signal-faintSlate",
   };
   const key = (status ?? "").toLowerCase();
-  const dot = dotStyles[key] ?? "bg-signal-faint";
+  const dot = dotStyles[key] ?? "bg-signal-faintSlate";
+  const escalated = key === "escalated";
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-signal-border bg-white px-2.5 py-0.5 text-xs font-medium text-signal-body">
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium ${
+        escalated
+          ? "border-signal-amberBorder bg-signal-amberSubtle text-signal-body"
+          : "border-signal-border bg-signal-surface text-signal-body"
+      }`}
+    >
       <span className={`inline-block h-1.5 w-1.5 rounded-full ${dot}`} />
       {STATUS_LABELS[key] ?? status}
     </span>

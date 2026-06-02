@@ -24,7 +24,7 @@ export function CommandBar() {
         type="button"
         aria-label="Open command search"
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-2 rounded-signalSm border border-signal-border bg-signal-muted px-3 py-1.5 text-xs text-signal-secondary transition-colors hover:border-signal-accent/40 hover:bg-signal-accentSubtle hover:text-signal-accent"
+        className="flex items-center gap-2 rounded-signalSm border border-signal-border bg-signal-surfaceSubtle px-3 py-1.5 text-xs text-signal-slate transition-colors hover:border-signal-indigoBorder hover:bg-signal-indigoSubtle hover:text-signal-indigo focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-indigo focus-visible:ring-offset-2"
       >
         <svg
           className="h-3.5 w-3.5"

@@ -31,10 +31,10 @@ export default function DashboardPage() {
   );
 
   const severityRows = [
-    { label: "Critical", count: m.alertsBySeverity.critical, bar: "bg-severity-critical" },
-    { label: "High", count: m.alertsBySeverity.high, bar: "bg-severity-high" },
-    { label: "Medium", count: m.alertsBySeverity.medium, bar: "bg-severity-medium" },
-    { label: "Low", count: m.alertsBySeverity.low, bar: "bg-severity-low" },
+    { label: "Critical", count: m.alertsBySeverity.critical, bar: "bg-risk-critical" },
+    { label: "High", count: m.alertsBySeverity.high, bar: "bg-risk-high" },
+    { label: "Medium", count: m.alertsBySeverity.medium, bar: "bg-risk-medium" },
+    { label: "Low", count: m.alertsBySeverity.low, bar: "bg-risk-low" },
   ];
   const maxSeverityCount = Math.max(...severityRows.map((r) => r.count), 1);
 
@@ -42,37 +42,37 @@ export default function DashboardPage() {
     <AppShell>
       {/* Page header */}
       <div className="mb-8">
-        <h1 className="text-3xl font-semibold tracking-tight text-signal-heading">
-          Executive Dashboard
+        <h1 className="text-[30px] leading-[38px] font-semibold tracking-tight text-signal-ink">
+          Fraud Operations Overview
         </h1>
-        <p className="mt-2 text-[15px] text-signal-secondary">
+        <p className="mt-2 text-[15px] leading-6 text-signal-slate">
           How a Head of Fraud sees synthetic e-wallet risk across alerts, cases,
-          losses, and scenario-linked activity.
+          loss exposure, and pattern-linked activity.
         </p>
       </div>
 
       {/* Top metric tiles */}
       <div className="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
         <MetricCard
-          title="Total Synthetic Losses"
+          title="Synthetic loss exposure"
           value={formatTHB(m.totalSyntheticLosses)}
-          description="Sum of all case loss amounts"
+          description="Total across all case loss amounts"
           accent="red"
         />
         <MetricCard
-          title="Open Alerts"
+          title="Open alert backlog"
           value={m.openAlertCount.toLocaleString()}
           description={`of ${m.totalAlertCount} total alerts`}
           accent="amber"
         />
         <MetricCard
-          title="Scenario-Linked Wallets"
+          title="Pattern-linked wallets"
           value={m.scenarioWalletCount.toLocaleString()}
-          description="Wallets tied to analyst-curated patterns"
+          description="Tied to analyst-curated patterns"
           accent="purple"
         />
         <MetricCard
-          title="Total Cases"
+          title="Total cases"
           value={m.totalCaseCount.toLocaleString()}
           description={`${m.totalScenarioCases} scenario + ${m.totalCaseCount - m.totalScenarioCases} background`}
           accent="blue"
@@ -82,11 +82,11 @@ export default function DashboardPage() {
       {/* Secondary sections — two column grid */}
       <div className="grid gap-6 lg:grid-cols-2">
         {/* Alerts by severity */}
-        <div className="rounded-signal border border-signal-border bg-white p-6 shadow-signal">
-          <h2 className="mb-1 text-lg font-semibold text-signal-heading">
-            Alerts by Severity
+        <div className="rounded-signal border border-signal-border bg-signal-surface p-6 shadow-signalSubtle">
+          <h2 className="mb-1 text-lg font-semibold text-signal-ink">
+            Severity mix
           </h2>
-          <p className="mb-4 text-[13px] text-signal-secondary">
+          <p className="mb-4 text-[13px] text-signal-slate">
             Distribution across {m.totalAlertCount} alerts
           </p>
           <div className="space-y-3">
@@ -94,9 +94,9 @@ export default function DashboardPage() {
               <div key={row.label}>
                 <div className="mb-1 flex justify-between text-xs">
                   <span className="font-medium text-signal-body">{row.label}</span>
-                  <span className="tabular-nums text-signal-secondary">{row.count}</span>
+                  <span className="tabular-nums text-signal-slate">{row.count}</span>
                 </div>
-                <div className="h-2 w-full overflow-hidden rounded-full bg-signal-muted">
+                <div className="h-2 w-full overflow-hidden rounded-full bg-signal-surfaceSubtle">
                   <div
                     className={`h-2 rounded-full ${row.bar}`}
                     style={{
@@ -112,45 +112,45 @@ export default function DashboardPage() {
         {/* Open vs closed + scenario breakdown */}
         <div className="space-y-6">
           {/* Open vs closed */}
-          <div className="rounded-signal border border-signal-border bg-white p-6 shadow-signal">
-            <h2 className="mb-1 text-lg font-semibold text-signal-heading">
-              Cases — Open vs Closed
+          <div className="rounded-signal border border-signal-border bg-signal-surface p-6 shadow-signalSubtle">
+            <h2 className="mb-1 text-lg font-semibold text-signal-ink">
+              Cases — open vs closed
             </h2>
-            <p className="mb-4 text-[13px] text-signal-secondary">
-              Based on presence of closed_at timestamp
+            <p className="mb-4 text-[13px] text-signal-slate">
+              Based on presence of a closed_at timestamp
             </p>
             <div className="flex items-center gap-6">
               <div className="text-center">
-                <div className="text-2xl font-semibold tabular-nums text-signal-heading">
+                <div className="text-2xl font-semibold tabular-nums text-signal-ink">
                   {m.openClosedCases.open}
                 </div>
-                <div className="text-xs text-signal-secondary">Open</div>
+                <div className="text-xs text-signal-slate">Open</div>
               </div>
-              <div className="flex-1 h-2.5 overflow-hidden rounded-full bg-signal-muted">
+              <div className="flex-1 h-2.5 overflow-hidden rounded-full bg-signal-surfaceSubtle">
                 <div
-                  className="h-2.5 rounded-full bg-signal-accent"
+                  className="h-2.5 rounded-full bg-signal-indigo"
                   style={{
                     width: `${(m.openClosedCases.closed / m.totalCaseCount) * 100}%`,
                   }}
                 />
               </div>
               <div className="text-center">
-                <div className="text-2xl font-semibold tabular-nums text-signal-accent">
+                <div className="text-2xl font-semibold tabular-nums text-signal-indigo">
                   {m.openClosedCases.closed}
                 </div>
-                <div className="text-xs text-signal-secondary">Closed</div>
+                <div className="text-xs text-signal-slate">Closed</div>
               </div>
             </div>
           </div>
 
           {/* Scenario breakdown */}
-          <div className="rounded-signal border border-signal-border bg-white p-6 shadow-signal">
-            <h2 className="mb-1 text-lg font-semibold text-signal-heading">
-              Scenario Case Breakdown
+          <div className="rounded-signal border border-signal-border bg-signal-surface p-6 shadow-signalSubtle">
+            <h2 className="mb-1 text-lg font-semibold text-signal-ink">
+              Scenario case breakdown
             </h2>
-            <p className="mb-3 text-[13px] text-signal-secondary">
-              Scenario-linked wallets are derived from cases tied to
-              analyst-curated mule/scam patterns.
+            <p className="mb-3 text-[13px] text-signal-slate">
+              Pattern-linked wallets are derived from cases tied to
+              analyst-curated mule / scam patterns.
             </p>
             <div className="space-y-2">
               {scenarioRows.map((row) => (
@@ -163,14 +163,14 @@ export default function DashboardPage() {
                   >
                     {row.label}
                   </span>
-                  <span className="text-sm font-semibold tabular-nums text-signal-heading">
+                  <span className="text-sm font-semibold tabular-nums text-signal-ink">
                     {row.count} cases
                   </span>
                 </div>
               ))}
-              <div className="mt-2 border-t border-signal-borderSubtle pt-2 flex justify-between text-xs text-signal-secondary">
+              <div className="mt-2 border-t border-signal-borderSubtle pt-2 flex justify-between text-xs text-signal-slate">
                 <span>Total scenario cases</span>
-                <span className="font-semibold tabular-nums text-signal-heading">
+                <span className="font-semibold tabular-nums text-signal-ink">
                   {m.totalScenarioCases}
                 </span>
               </div>
@@ -179,21 +179,21 @@ export default function DashboardPage() {
         </div>
 
         {/* Case decision mix */}
-        <div className="rounded-signal border border-signal-border bg-white p-6 shadow-signal lg:col-span-2">
-          <h2 className="mb-1 text-lg font-semibold text-signal-heading">
-            Case Decision Mix
+        <div className="rounded-signal border border-signal-border bg-signal-surface p-6 shadow-signalSubtle lg:col-span-2">
+          <h2 className="mb-1 text-lg font-semibold text-signal-ink">
+            Case decision mix
           </h2>
-          <p className="mb-4 text-[13px] text-signal-secondary">
+          <p className="mb-4 text-[13px] text-signal-slate">
             How {m.totalCaseCount} cases were resolved — grouped by analyst decision
           </p>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             {sortedDecisions.map(([decision, count]) => (
               <div
                 key={decision}
-                className="rounded-signalSm border border-signal-borderSubtle bg-signal-muted p-4 text-center"
+                className="rounded-signalSm border border-signal-borderSubtle bg-signal-surfaceSubtle p-4 text-center"
               >
-                <div className="text-xl font-semibold tabular-nums text-signal-heading">{count}</div>
-                <div className="mt-1 text-xs text-signal-secondary break-words">
+                <div className="text-xl font-semibold tabular-nums text-signal-ink">{count}</div>
+                <div className="mt-1 text-xs text-signal-slate break-words">
                   {decision.replace(/_/g, " ")}
                 </div>
               </div>

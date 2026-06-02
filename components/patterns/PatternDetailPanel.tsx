@@ -17,8 +17,8 @@ const STATUS_CLASSES: Record<string, string> = {
 export function PatternDetailPanel({ pattern }: PatternDetailPanelProps) {
   if (!pattern) {
     return (
-      <div className="flex h-full min-h-[200px] items-center justify-center rounded-signal border border-dashed border-signal-border bg-white p-8 text-sm text-signal-faint">
-        Select a pattern to view details.
+      <div className="flex h-full min-h-[200px] items-center justify-center rounded-signal border border-dashed border-signal-border bg-signal-surface p-8 text-sm text-signal-meta">
+        Select a pattern to view its matched variables and linked wallets.
       </div>
     );
   }
@@ -28,7 +28,7 @@ export function PatternDetailPanel({ pattern }: PatternDetailPanelProps) {
     "border border-signal-border bg-signal-muted text-signal-secondary";
 
   return (
-    <div className="rounded-signal border border-signal-border bg-white shadow-signal">
+    <div className="rounded-signal border border-signal-border bg-signal-surface shadow-signalSubtle">
       {/* Header */}
       <div className="border-b border-signal-borderSubtle px-6 py-5">
         <div className="flex flex-wrap items-start justify-between gap-2">

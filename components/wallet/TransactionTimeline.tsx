@@ -17,10 +17,10 @@ export function TransactionTimeline({ transactions }: TransactionTimelineProps) 
   return (
     <section>
       <div className="mb-3">
-        <h2 className="text-lg font-semibold text-signal-heading">
-          Transaction Timeline — Sequence Order
+        <h2 className="text-lg font-semibold text-signal-ink">
+          Transaction timeline — sequence order
         </h2>
-        <p className="text-[13px] text-signal-secondary mt-0.5">
+        <p className="text-[13px] text-signal-slate mt-0.5">
           Transactions are ordered by synthetic txn_id sequence. The seed data does not contain
           transaction timestamps.
         </p>
@@ -31,7 +31,7 @@ export function TransactionTimeline({ transactions }: TransactionTimelineProps) 
           title="No transactions found for this wallet in the synthetic seed data."
         />
       ) : (
-        <div className="rounded-signal border border-signal-border bg-white shadow-signal overflow-hidden">
+        <div className="rounded-signal border border-signal-border bg-signal-surface shadow-signalSubtle overflow-hidden">
           <div className="overflow-x-auto">
             <table className="min-w-[920px] w-full table-fixed">
               <colgroup>
@@ -43,7 +43,7 @@ export function TransactionTimeline({ transactions }: TransactionTimelineProps) 
                 <col className="w-[150px]" />
               </colgroup>
               <thead>
-                <tr className="border-b border-signal-border bg-signal-muted">
+                <tr className="border-b border-signal-border bg-signal-surfaceSubtle">
                   <th className="px-4 py-2.5 text-left text-[11px] font-medium text-signal-secondary uppercase tracking-wide">
                     #
                   </th>
@@ -74,7 +74,7 @@ export function TransactionTimeline({ transactions }: TransactionTimelineProps) 
                   return (
                     <tr
                       key={txn.txn_id}
-                      className="hover:bg-signal-bg transition-colors"
+                      className="hover:bg-signal-surfaceSubtle transition-colors"
                     >
                       {/* Sequence */}
                       <td className="px-4 py-3 text-xs text-signal-faint tabular-nums">
@@ -144,8 +144,8 @@ export function TransactionTimeline({ transactions }: TransactionTimelineProps) 
             </table>
           </div>
 
-          <div className="px-4 py-2.5 bg-signal-muted border-t border-signal-borderSubtle">
-            <p className="text-[11px] text-signal-secondary">
+          <div className="px-4 py-2.5 bg-signal-surfaceSubtle border-t border-signal-borderSubtle">
+            <p className="text-[11px] text-signal-slate">
               {transactions.length} transaction{transactions.length !== 1 ? "s" : ""} · ordered by txn_id sequence
             </p>
           </div>

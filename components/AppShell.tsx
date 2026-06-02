@@ -55,10 +55,10 @@ export function AppShell({ children }: AppShellProps) {
                     key={link.href}
                     href={link.href}
                     aria-current={active ? "page" : undefined}
-                    className={`shrink-0 rounded-signalSm px-2.5 py-1.5 text-sm font-medium transition-colors ${
+                    className={`shrink-0 rounded-signalSm px-2.5 py-1.5 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-indigo focus-visible:ring-offset-2 ${
                       active
-                        ? "bg-signal-accentSubtle text-signal-accent"
-                        : "text-signal-secondary hover:bg-signal-muted hover:text-signal-heading"
+                        ? "bg-signal-indigoSubtle text-signal-indigo"
+                        : "text-signal-slate hover:bg-signal-surfaceSubtle hover:text-signal-ink"
                     }`}
                   >
                     {link.label}

@@ -102,7 +102,7 @@ export function CommandModal({ isOpen, onClose }: CommandModalProps) {
         role="dialog"
         aria-modal="true"
         aria-label="Command search"
-        className="fixed left-1/2 top-[15vh] z-50 w-full max-w-xl -translate-x-1/2 rounded-signal border border-signal-border bg-white shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+        className="fixed left-1/2 top-[15vh] z-50 w-full max-w-xl -translate-x-1/2 rounded-signal border border-signal-border bg-signal-surface shadow-[0_8px_32px_rgba(27,36,54,0.12)]"
         onMouseDown={(e) => e.stopPropagation()}
       >
         {/* Input */}
@@ -128,7 +128,7 @@ export function CommandModal({ isOpen, onClose }: CommandModalProps) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="flex-1 bg-transparent text-sm text-signal-heading placeholder:text-signal-secondary/60 focus:outline-none"
+            className="flex-1 bg-transparent text-sm text-signal-ink placeholder:text-signal-meta focus:outline-none"
           />
           <kbd className="ml-2 rounded border border-signal-border px-1.5 py-0.5 text-[10px] font-medium text-signal-secondary">
             Esc
@@ -143,12 +143,11 @@ export function CommandModal({ isOpen, onClose }: CommandModalProps) {
         >
           {flatResults.length === 0 ? (
             <div className="px-3 py-8 text-center">
-              <p className="text-sm font-medium text-signal-heading">
-                No results found.
+              <p className="text-sm font-medium text-signal-ink">
+                No command results found.
               </p>
-              <p className="mt-1 text-xs text-signal-secondary">
-                Try a wallet ID, alert ID, case ID, pattern name, device ID, or
-                endpoint.
+              <p className="mt-1 text-xs text-signal-slate">
+                Try a wallet, alert, case, pattern, device, or endpoint ID.
               </p>
             </div>
           ) : (

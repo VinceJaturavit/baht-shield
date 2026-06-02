@@ -15,8 +15,8 @@ function getRiskLabel(score: number): { label: string; dot: string } {
 export function DeviceSimPanel({ devices, simBindings }: DeviceSimPanelProps) {
   return (
     <section>
-      <h2 className="text-lg font-semibold text-signal-heading mb-1">Device + SIM</h2>
-      <p className="text-[13px] text-signal-secondary mb-4">
+      <h2 className="text-lg font-semibold text-signal-ink mb-1">Device + SIM</h2>
+      <p className="text-[13px] text-signal-slate mb-4">
         Standalone device risk may look low even when shared-device behavior creates cluster risk.
       </p>
 
@@ -35,7 +35,7 @@ export function DeviceSimPanel({ devices, simBindings }: DeviceSimPanelProps) {
                 return (
                   <div
                     key={device.device_id}
-                    className="rounded-signal border border-signal-border bg-white px-4 py-3 shadow-signal"
+                    className="rounded-signal border border-signal-border bg-signal-surface px-4 py-3 shadow-signalSubtle"
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="min-w-0">
@@ -68,7 +68,7 @@ export function DeviceSimPanel({ devices, simBindings }: DeviceSimPanelProps) {
               {simBindings.map((sim) => (
                 <div
                   key={sim.binding_id}
-                  className="rounded-signal border border-signal-border bg-white px-4 py-3 shadow-signal"
+                  className="rounded-signal border border-signal-border bg-signal-surface px-4 py-3 shadow-signalSubtle"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="min-w-0">

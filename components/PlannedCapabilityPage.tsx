@@ -16,20 +16,21 @@ export function PlannedCapabilityPage({
     <AppShell>
       <div className="flex min-h-[60vh] items-center justify-center">
         <div className="w-full max-w-lg">
-          <div className="rounded-signal border border-signal-border bg-white p-8 shadow-signal">
-            <p className="mb-3 text-xs font-medium uppercase tracking-widest text-signal-secondary">
+          <div className="rounded-signal border border-signal-border bg-signal-surface p-8 shadow-signalSubtle">
+            <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.12em] text-signal-meta">
               Planned capability
             </p>
-            <h1 className="mb-2 text-2xl font-semibold tracking-tight text-signal-heading">
+            <h1 className="mb-2 text-2xl font-semibold tracking-tight text-signal-ink">
               {title}
             </h1>
-            <p className="mb-5 text-[15px] leading-relaxed text-signal-secondary">
+            <p className="mb-5 text-[15px] leading-relaxed text-signal-slate">
               {description}
             </p>
-            <span className="inline-flex items-center rounded-full border border-signal-border bg-signal-muted px-3 py-1 text-xs font-medium text-signal-secondary">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-signal-amberBorder bg-signal-amberSubtle px-3 py-1 text-xs font-medium text-signal-body">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-signal-amber" />
               {plannedTag}
             </span>
-            <p className="mt-6 text-xs text-signal-secondary/70">
+            <p className="mt-6 text-xs text-signal-meta">
               This placeholder is intentionally minimal. It marks planned product
               scope without adding unfinished functionality.
             </p>

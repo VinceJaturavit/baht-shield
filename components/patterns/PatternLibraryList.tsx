@@ -30,10 +30,10 @@ export function PatternLibraryList({
           <button
             key={p.pattern_id}
             onClick={() => onSelectPattern(p.pattern_id)}
-            className={`w-full rounded-signal border p-4 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-accent ${
+            className={`w-full rounded-signal border p-4 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-indigo focus-visible:ring-offset-1 ${
               isSelected
-                ? "border-signal-accentBorder bg-signal-accentSubtle ring-1 ring-signal-accentBorder"
-                : "border-signal-border bg-white hover:border-signal-borderStrong hover:bg-signal-bg"
+                ? "border-signal-indigoBorder border-l-[3px] border-l-signal-indigo bg-signal-indigoSubtle"
+                : "border-signal-border bg-signal-surface hover:border-signal-borderStrong hover:bg-signal-surfaceSubtle"
             }`}
           >
             <div className="flex flex-wrap items-start justify-between gap-2">

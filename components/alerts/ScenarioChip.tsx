@@ -6,32 +6,27 @@ interface ScenarioChipProps {
 
 const SCENARIO_CONFIG: Record<
   AlertScenario,
-  { label: string; className: string }
+  { label: string; dot: string }
 > = {
   "Onboarding Mule Farm": {
     label: "Mule Farm",
-    className:
-      "bg-purple-50 text-purple-700 border-purple-200",
+    dot: "bg-signal-indigo",
   },
   "Sleeper Mule Activation": {
     label: "Sleeper Mule",
-    className:
-      "bg-amber-50 text-amber-700 border-amber-200",
+    dot: "bg-signal-amber",
   },
   "APP Scam Cash-out Ring": {
     label: "APP Scam",
-    className:
-      "bg-red-50 text-red-700 border-red-200",
+    dot: "bg-risk-high",
   },
   "Endpoint Intelligence": {
     label: "Endpoint",
-    className:
-      "bg-blue-50 text-blue-700 border-blue-200",
+    dot: "bg-signal-slate",
   },
   Background: {
     label: "—",
-    className:
-      "bg-transparent text-signal-faint border-transparent",
+    dot: "bg-signal-faintSlate",
   },
 };
 
@@ -40,7 +35,7 @@ export function ScenarioChip({ scenario }: ScenarioChipProps) {
 
   if (scenario === "Background") {
     return (
-      <span className="text-sm text-signal-faint" aria-label="Background — no scenario cluster">
+      <span className="text-sm text-signal-meta" aria-label="Background — no scenario cluster">
         —
       </span>
     );
@@ -48,9 +43,10 @@ export function ScenarioChip({ scenario }: ScenarioChipProps) {
 
   return (
     <span
-      className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium ${config.className}`}
+      className="inline-flex items-center gap-1.5 rounded-full border border-signal-border bg-signal-surfaceSubtle px-2.5 py-0.5 text-xs font-medium text-signal-body"
       aria-label={`Scenario: ${scenario}`}
     >
+      <span className={`inline-block h-1.5 w-1.5 rounded-full ${config.dot}`} />
       {config.label}
     </span>
   );
