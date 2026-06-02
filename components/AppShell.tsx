@@ -1,10 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { SyntheticDataLabel } from "./SyntheticDataLabel";
 import { CommandBar } from "./command/CommandBar";
+import { IntroOverlay } from "./IntroOverlay";
+
+// Module-level flag: true on first load, resets on full page reload.
+// No storage — a fresh visitor always sees the intro.
+let _introShown = false;
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -30,6 +36,14 @@ function isActive(pathname: string | null, href: string): boolean {
 
 export function AppShell({ children }: AppShellProps) {
   const pathname = usePathname();
+
+  const [overlayOpen, setOverlayOpen] = useState<boolean>(() => {
+    if (!_introShown) {
+      _introShown = true;
+      return true;
+    }
+    return false;
+  });
 
   return (
     <div className="min-h-screen bg-signal-bg">
@@ -67,6 +81,14 @@ export function AppShell({ children }: AppShellProps) {
               })}
             </nav>
 
+            {/* About button */}
+            <button
+              onClick={() => setOverlayOpen(true)}
+              className="shrink-0 rounded-signalSm px-2.5 py-1.5 text-sm font-medium text-signal-slate transition-colors hover:bg-signal-surfaceSubtle hover:text-signal-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-indigo focus-visible:ring-offset-2"
+            >
+              About
+            </button>
+
             {/* GitHub link */}
             <a
               href="https://github.com/VinceJaturavit/baht-shield"
@@ -99,6 +121,9 @@ export function AppShell({ children }: AppShellProps) {
       <main className="mx-auto max-w-[1280px] px-4 py-8 lg:px-6 lg:py-10">
         {children}
       </main>
+
+      {/* First-visit intro overlay */}
+      <IntroOverlay open={overlayOpen} onClose={() => setOverlayOpen(false)} />
     </div>
   );
 }
