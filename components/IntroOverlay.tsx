@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/jaturavit-chaovalit/";
 
@@ -12,6 +12,7 @@ interface IntroOverlayProps {
 export function IntroOverlay({ open, onClose }: IntroOverlayProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const [showThesis, setShowThesis] = useState(false);
 
   // Close on Escape
   useEffect(() => {
@@ -150,6 +151,54 @@ export function IntroOverlay({ open, onClose }: IntroOverlayProps) {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Collapsible thesis explainer */}
+          <div className="border-t border-signal-borderSubtle pt-4 mb-5">
+            <button
+              type="button"
+              aria-expanded={showThesis}
+              onClick={() => setShowThesis((v) => !v)}
+              className="flex w-full items-center justify-between gap-2 text-left text-signal-body font-medium text-signal-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-indigo focus-visible:ring-offset-2 rounded-signalSm"
+            >
+              <span>What is analyst-curated pattern intelligence?</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                aria-hidden="true"
+                className={`shrink-0 text-signal-secondary transition-transform duration-200 ${showThesis ? "rotate-180" : "rotate-0"}`}
+              >
+                <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" />
+              </svg>
+            </button>
+
+            {showThesis && (
+              <div className="mt-4 border-l-2 border-signal-indigo pl-4 space-y-3">
+                <p className="text-signal-body text-signal-slate leading-relaxed">
+                  Most fraud systems score each account, transaction, or device on its own. A mule
+                  account in a coordinated farm often looks clean in isolation — it passes KYC, its
+                  device risk is low, its transaction sizes sit below alert thresholds. The fraud is
+                  only visible in the relationships between accounts, not in any single one.
+                </p>
+                <p className="text-signal-body text-signal-slate leading-relaxed">
+                  Analyst-curated pattern intelligence captures the judgment an experienced
+                  investigator applies when they recognise one of these clusters — the combination
+                  of shared devices, repeated onboarding windows, reused cash-out endpoints, and
+                  dormant-then-active behaviour that together signal a coordinated ring. Each pattern
+                  is a reusable, named signature with the evidence and reasoning attached, so the
+                  same judgment is applied consistently across every analyst and every case.
+                </p>
+                <p className="text-signal-body text-signal-slate leading-relaxed">
+                  SignalOS demonstrates this as a layer that sits alongside scores and rules — not
+                  replacing them. The example scenarios (onboarding mule farms, sleeper-mule
+                  activation, APP-scam cash-out rings) are built so a naive standalone score
+                  under-flags them, while the curated pattern catches the cluster. Every output is
+                  human-in-the-loop: the analyst decides.
+                </p>
+              </div>
+            )}
           </div>
 
           {/* Divider */}
