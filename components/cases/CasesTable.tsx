@@ -15,7 +15,6 @@ import { ScenarioChip } from "@/components/alerts/ScenarioChip";
 import { CasesKpiStrip } from "./CasesKpiStrip";
 import { CaseSavedViews } from "./CaseSavedViews";
 import { CaseFilterChips } from "./CaseFilterChips";
-import { CaseDecisionBadge } from "./CaseDecisionBadge";
 import type { CaseSavedView } from "@/lib/types";
 
 function formatTHB(amount: number): string {
@@ -24,6 +23,22 @@ function formatTHB(amount: number): string {
   if (amount >= 1_000) return `฿${(amount / 1_000).toFixed(0)}K`;
   return `฿${amount.toLocaleString("th-TH")}`;
 }
+
+const DECISION_STATUS_DOT: Record<string, string> = {
+  escalated: "bg-signal-amber",
+  needs_closure: "bg-signal-accent",
+  open: "bg-signal-indigo",
+  resolved: "bg-signal-slate",
+  closed: "bg-signal-faintSlate",
+};
+
+const DECISION_STATUS_LABEL: Record<string, string> = {
+  escalated: "Escalated",
+  needs_closure: "Needs closure",
+  open: "Open",
+  resolved: "Resolved",
+  closed: "Closed",
+};
 
 // Compute once at module level — pure derivation from seed
 const ALL_ROWS = getEnrichedCaseRows();
@@ -218,11 +233,12 @@ export function CasesTable() {
 
                   {/* DECISION / STATUS */}
                   <td className="whitespace-nowrap px-4 py-3.5">
-                    <CaseDecisionBadge
-                      decision={row.decision}
-                      investigation_status={row.investigation_status}
-                      compact
-                    />
+                    <span className="inline-flex items-center gap-1.5 text-sm text-signal-body">
+                      <span
+                        className={`inline-block w-2 h-2 rounded-full ${DECISION_STATUS_DOT[row.investigation_status] ?? "bg-signal-faintSlate"}`}
+                      />
+                      {DECISION_STATUS_LABEL[row.investigation_status] ?? row.investigation_status}
+                    </span>
                   </td>
 
                   {/* SYNTHETIC LOSS */}

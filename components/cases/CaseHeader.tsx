@@ -59,7 +59,7 @@ export function CaseHeader({ caseDetail }: CaseHeaderProps) {
       </div>
 
       {/* Meta grid */}
-      <div className="grid grid-cols-2 gap-x-5 gap-y-1.5 px-6 py-2 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-x-5 gap-y-2 px-6 py-1.5 sm:grid-cols-3 lg:grid-cols-4">
         <div>
           <p className="text-[11px] uppercase tracking-wide text-signal-faint">Decision / Status</p>
           <div className="mt-0.5">
