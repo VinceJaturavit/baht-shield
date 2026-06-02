@@ -147,21 +147,18 @@ export function buildSearchIndex(): SearchResult[] {
     });
   }
 
-  // Cases
+  // Cases — route to /cases/{caseId} (Spec-014)
   for (const c of cases) {
     const walletId = alertToWallet.get(c.alert_id);
-    const route = walletId
-      ? `/wallet/${walletId}?caseId=${c.case_id}`
-      : `/cases?caseId=${c.case_id}`;
     const subtitle = walletId
-      ? `Case · ${c.decision} · linked wallet ${walletId}`
-      : `Case · ${c.decision} · owner ${c.owner}`;
+      ? `Case · ${c.decision} · ${walletId}`
+      : `Case · ${c.decision} · ${c.owner}`;
     results.push({
       id: c.case_id,
       type: "case",
       title: c.case_id,
       subtitle,
-      route,
+      route: `/cases/${c.case_id}`,
       keywords: [
         c.case_id.toLowerCase(),
         c.alert_id.toLowerCase(),

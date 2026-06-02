@@ -292,3 +292,68 @@ export interface AlertQueueKpis {
   total_synthetic_loss_exposure: number;
   scenario_linked_alert_count: number;
 }
+
+// ---------------------------------------------------------------------------
+// Spec-014 — Cases Investigation Workspace
+// ---------------------------------------------------------------------------
+
+export type CaseInvestigationStatus =
+  | "open"
+  | "needs_closure"
+  | "escalated"
+  | "resolved"
+  | "closed";
+
+export type CaseSavedView =
+  | "open_needs_closure"
+  | "escalated"
+  | "scenario_linked"
+  | "all";
+
+export interface EnrichedCaseRow {
+  case_id: string;
+  alert_id: string;
+  owner: string;
+  decision: string;
+  loss_amount: number;
+  opened_at: string;
+  closed_at: string | null;
+
+  investigation_status: CaseInvestigationStatus;
+  severity: string;
+  scenario: AlertScenario;
+  wallet_id: string | null;
+
+  linked_pattern_id: string | null;
+  linked_pattern_name: string | null;
+  linked_pattern_cluster_type: string | null;
+  linked_pattern_variables: string | null;
+
+  alert_rule_name: string | null;
+  alert_status: string | null;
+
+  age_label: string | null;
+  age_source: "case.opened_at" | null;
+
+  note_count: number;
+  latest_note_at: string | null;
+
+  next_action_hint: string;
+}
+
+export interface CasesKpis {
+  open_case_count: number;
+  escalated_case_count: number;
+  needs_closure_count: number;
+  total_synthetic_loss: number;
+  scenario_linked_case_count: number;
+}
+
+export interface EnrichedCaseDetail extends EnrichedCaseRow {
+  notes: CaseNote[];
+  wallet: WalletAccount | null;
+  matchedPattern: AnalystPattern | null;
+  linkedAlert: Alert | null;
+  naive_miss_note: string | null;
+  why_this_case: string;
+}
