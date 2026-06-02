@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppShell } from "@/components/AppShell";
 import { getCaseDetail } from "@/lib/cases";
 import { getWalletProfile } from "@/lib/wallet-profile";
 import { CaseHeader } from "@/components/cases/CaseHeader";
@@ -17,6 +18,7 @@ export default async function CaseDetailPage({ params }: PageProps) {
 
   if (!caseDetail) {
     return (
+      <AppShell>
       <div className="flex flex-col items-center gap-4 py-24 text-center">
         <h1 className="text-xl font-semibold text-signal-ink">Case not found</h1>
         <p className="text-sm text-signal-secondary">
@@ -29,6 +31,7 @@ export default async function CaseDetailPage({ params }: PageProps) {
           ← Back to Cases
         </Link>
       </div>
+      </AppShell>
     );
   }
 
@@ -37,6 +40,7 @@ export default async function CaseDetailPage({ params }: PageProps) {
     : null;
 
   return (
+    <AppShell>
     <div>
       {/* Breadcrumb */}
       <div className="mb-4">
@@ -94,5 +98,6 @@ export default async function CaseDetailPage({ params }: PageProps) {
         </aside>
       </div>
     </div>
+    </AppShell>
   );
 }

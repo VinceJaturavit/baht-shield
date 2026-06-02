@@ -1,8 +1,9 @@
+import { AppShell } from "@/components/AppShell";
 import { CasesTable } from "@/components/cases/CasesTable";
 
 export default function CasesPage() {
   return (
-    <div>
+    <AppShell>
       {/* Page header */}
       <div className="mb-6">
         <h1 className="text-2xl font-semibold text-signal-ink">Cases</h1>
@@ -13,6 +14,6 @@ export default function CasesPage() {
       </div>
 
       <CasesTable />
-    </div>
+    </AppShell>
   );
 }
