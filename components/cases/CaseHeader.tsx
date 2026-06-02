@@ -20,7 +20,7 @@ export function CaseHeader({ caseDetail }: CaseHeaderProps) {
   return (
     <div className="mb-3 overflow-hidden rounded-signal border border-signal-border bg-signal-surface shadow-signalSubtle">
       {/* Title row */}
-      <div className="border-b border-signal-borderSubtle bg-signal-surfaceSubtle px-6 py-3">
+      <div className="border-b border-signal-borderSubtle bg-signal-surfaceSubtle px-6 py-2">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <div className="flex items-center gap-3">
@@ -59,15 +59,23 @@ export function CaseHeader({ caseDetail }: CaseHeaderProps) {
       </div>
 
       {/* Meta grid */}
-      <div className="grid grid-cols-2 gap-x-5 gap-y-2 px-6 py-1.5 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 px-6 py-1.5 sm:grid-cols-3 lg:grid-cols-4">
         <div>
-          <p className="text-[11px] uppercase tracking-wide text-signal-faint">Decision / Status</p>
-          <div className="mt-0.5">
-            <CaseDecisionBadge
-              decision={caseDetail.decision}
-              investigation_status={caseDetail.investigation_status}
-            />
+          <div className="text-sm text-slate-500 uppercase tracking-wide font-medium mb-1">
+            DECISION / STATUS
           </div>
+          <div className="text-sm font-medium text-ink">{caseDetail.decision}</div>
+          <span className="inline-flex items-center gap-1.5 mt-1">
+            <span className={`w-2 h-2 rounded-full ${
+              caseDetail.investigation_status === 'open' ? 'bg-indigo-500' :
+              caseDetail.investigation_status === 'escalated' ? 'bg-amber-500' :
+              caseDetail.investigation_status === 'needs_closure' ? 'bg-amber-400' :
+              'bg-slate-400'
+            }`} />
+            <span className="text-sm text-slate-600 capitalize">
+              {caseDetail.investigation_status?.replace('_', ' ')}
+            </span>
+          </span>
         </div>
 
         <div>
