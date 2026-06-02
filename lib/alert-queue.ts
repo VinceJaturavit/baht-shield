@@ -310,6 +310,87 @@ export function getAlertQueueKpis(rows: EnrichedAlertQueueRow[]): AlertQueueKpis
 }
 
 // ---------------------------------------------------------------------------
+// applyDefaultAlertQueueOrdering — Spec-013
+// Pure, deterministic. Does not mutate input rows.
+// Pipeline: actionability score → per-scenario bucket sort → scenario interleave
+// ---------------------------------------------------------------------------
+
+const STATUS_PRIORITY: Record<string, number> = {
+  escalated: 0,
+  in_review: 1,
+  new: 2,
+  closed: 4,
+};
+
+const SEVERITY_PRIORITY: Record<string, number> = {
+  critical: 0,
+  high: 1,
+  medium: 2,
+  low: 3,
+};
+
+const SCENARIO_PRIORITY: Record<AlertScenario, number> = {
+  "Onboarding Mule Farm": 0,
+  "Sleeper Mule Activation": 0,
+  "APP Scam Cash-out Ring": 0,
+  "Endpoint Intelligence": 1,
+  Background: 2,
+};
+
+function getActionabilityScore(row: EnrichedAlertQueueRow): number {
+  const statusScore = STATUS_PRIORITY[row.status] ?? 3;
+  const severityScore = SEVERITY_PRIORITY[row.severity] ?? 4;
+  const scenarioScore = SCENARIO_PRIORITY[row.scenario] ?? 2;
+  const exposureBoost = row.linked_case_loss_exposure > 0 ? -0.25 : 0;
+  return statusScore * 100 + severityScore * 20 + scenarioScore * 5 + exposureBoost;
+}
+
+const INTERLEAVE_ORDER: AlertScenario[] = [
+  "Onboarding Mule Farm",
+  "Sleeper Mule Activation",
+  "APP Scam Cash-out Ring",
+  "Endpoint Intelligence",
+  "Background",
+];
+
+export function applyDefaultAlertQueueOrdering(
+  rows: EnrichedAlertQueueRow[]
+): EnrichedAlertQueueRow[] {
+  const copy = [...rows];
+
+  // Build scenario buckets, each sorted by actionability ascending
+  const buckets: Record<string, EnrichedAlertQueueRow[]> = {};
+  for (const scenario of INTERLEAVE_ORDER) {
+    buckets[scenario] = [];
+  }
+  for (const row of copy) {
+    const key = (INTERLEAVE_ORDER as string[]).includes(row.scenario)
+      ? row.scenario
+      : "Background";
+    buckets[key].push(row);
+  }
+  for (const scenario of INTERLEAVE_ORDER) {
+    buckets[scenario].sort((a, b) => getActionabilityScore(a) - getActionabilityScore(b));
+  }
+
+  // Interleave scenario buckets in repeating order
+  const result: EnrichedAlertQueueRow[] = [];
+  let added = true;
+  while (added) {
+    added = false;
+    for (const scenario of INTERLEAVE_ORDER) {
+      const next = buckets[scenario].shift();
+      if (next !== undefined) {
+        result.push(next);
+        added = true;
+      }
+    }
+  }
+
+  return result;
+}
+
+// ---------------------------------------------------------------------------
 // applyAlertSavedView
 // ---------------------------------------------------------------------------
 

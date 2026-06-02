@@ -4,14 +4,14 @@ import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { SeverityBadge } from "./SeverityBadge";
 import { severityRank } from "@/lib/metrics";
-import { getEnrichedAlertRows, getAlertQueueKpis, applyAlertSavedView } from "@/lib/alert-queue";
+import { getEnrichedAlertRows, getAlertQueueKpis, applyAlertSavedView, applyDefaultAlertQueueOrdering } from "@/lib/alert-queue";
 import { AlertQueueKpiStrip } from "./alerts/AlertQueueKpiStrip";
 import { SavedViewTabs } from "./alerts/SavedViewTabs";
 import { AlertQueueFilterChips } from "./alerts/AlertQueueFilterChips";
 import { ScenarioChip } from "./alerts/ScenarioChip";
 import type { AlertSavedView } from "@/lib/types";
 
-type SortDir = "desc" | "asc";
+type AlertSortMode = "triage" | "severity_desc" | "severity_asc";
 
 const STATUS_LABELS: Record<string, string> = {
   new: "New",
@@ -35,7 +35,7 @@ const ALL_STATUSES = Array.from(new Set(ALL_ENRICHED_ROWS.map((r) => r.status)))
 export function AlertQueueTable() {
   const router = useRouter();
   const [statusFilter, setStatusFilter] = useState<string>("all");
-  const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [sortMode, setSortMode] = useState<AlertSortMode>("triage");
   const [savedView, setSavedView] = useState<AlertSavedView>("all");
 
   const filtered = useMemo(() => {
@@ -47,12 +47,16 @@ export function AlertQueueTable() {
       rows = rows.filter((r) => r.status === statusFilter);
     }
 
-    // 3. Apply severity sort
-    return [...rows].sort((a, b) => {
-      const diff = severityRank(b.severity) - severityRank(a.severity);
-      return sortDir === "desc" ? diff : -diff;
-    });
-  }, [statusFilter, sortDir, savedView]);
+    // 3. Sort: explicit severity sort overrides default triage order
+    if (sortMode === "severity_desc") {
+      return [...rows].sort((a, b) => severityRank(b.severity) - severityRank(a.severity));
+    }
+    if (sortMode === "severity_asc") {
+      return [...rows].sort((a, b) => severityRank(a.severity) - severityRank(b.severity));
+    }
+    // Default: triage order (actionability + scenario interleave)
+    return applyDefaultAlertQueueOrdering(rows);
+  }, [statusFilter, sortMode, savedView]);
 
   const handleClearView = () => setSavedView("all");
   const handleClearStatus = () => setStatusFilter("all");
@@ -101,18 +105,32 @@ export function AlertQueueTable() {
           </div>
         </div>
 
-        {/* Severity sort */}
+        {/* Sort mode */}
         <div className="ml-auto flex items-center gap-2">
           <span className="text-xs font-medium uppercase tracking-wide text-signal-secondary">
-            Severity
+            Sort
           </span>
-          <button
-            onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
-            className="flex items-center gap-1 rounded-signalSm border border-signal-border bg-white px-3 py-1.5 text-xs font-medium text-signal-body transition-colors hover:bg-signal-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-accent"
-          >
-            {sortDir === "desc" ? "High → Low" : "Low → High"}
-            <span className="text-signal-faint">{sortDir === "desc" ? "↓" : "↑"}</span>
-          </button>
+          <div className="flex gap-1">
+            {(
+              [
+                { mode: "triage", label: "Triage order" },
+                { mode: "severity_desc", label: "High → Low" },
+                { mode: "severity_asc", label: "Low → High" },
+              ] as { mode: AlertSortMode; label: string }[]
+            ).map(({ mode, label }) => (
+              <button
+                key={mode}
+                onClick={() => setSortMode(mode)}
+                className={`rounded-signalSm border px-3 py-1.5 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-accent ${
+                  sortMode === mode
+                    ? "border-signal-accentBorder bg-signal-accentSubtle text-signal-accent"
+                    : "border-signal-border bg-white text-signal-body hover:bg-signal-muted"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -136,17 +154,34 @@ export function AlertQueueTable() {
                 </th>
                 <th
                   className="cursor-pointer px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta hover:text-signal-ink focus:outline-none focus-visible:underline"
-                  onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
+                  onClick={() =>
+                    setSortMode((m) =>
+                      m === "severity_desc" ? "severity_asc" : "severity_desc"
+                    )
+                  }
                   tabIndex={0}
                   onKeyDown={(e) => {
                     if (e.key === "Enter" || e.key === " ") {
                       e.preventDefault();
-                      setSortDir((d) => (d === "desc" ? "asc" : "desc"));
+                      setSortMode((m) =>
+                        m === "severity_desc" ? "severity_asc" : "severity_desc"
+                      );
                     }
                   }}
-                  aria-sort={sortDir === "desc" ? "descending" : "ascending"}
+                  aria-sort={
+                    sortMode === "severity_desc"
+                      ? "descending"
+                      : sortMode === "severity_asc"
+                      ? "ascending"
+                      : "none"
+                  }
                 >
-                  Severity {sortDir === "desc" ? "↓" : "↑"}
+                  Severity{" "}
+                  {sortMode === "severity_desc"
+                    ? "↓"
+                    : sortMode === "severity_asc"
+                    ? "↑"
+                    : ""}
                 </th>
                 <th className="px-4 py-3 text-left text-[11px] font-medium uppercase tracking-[0.08em] text-signal-meta">
                   Scenario

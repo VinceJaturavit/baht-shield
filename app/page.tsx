@@ -79,37 +79,63 @@ export default function DashboardPage() {
         />
       </div>
 
-      {/* Secondary sections — two column grid */}
+      {/* Secondary sections — explicit two-column layout */}
       <div className="grid gap-6 lg:grid-cols-2">
-        {/* Alerts by severity */}
-        <div className="rounded-signal border border-signal-border bg-signal-surface p-6 shadow-signalSubtle">
-          <h2 className="mb-1 text-lg font-semibold text-signal-ink">
-            Severity mix
-          </h2>
-          <p className="mb-4 text-[13px] text-signal-slate">
-            Distribution across {m.totalAlertCount} alerts
-          </p>
-          <div className="space-y-3">
-            {severityRows.map((row) => (
-              <div key={row.label}>
-                <div className="mb-1 flex justify-between text-xs">
-                  <span className="font-medium text-signal-body">{row.label}</span>
-                  <span className="tabular-nums text-signal-slate">{row.count}</span>
+        {/* Left column: Severity mix + Case decision mix */}
+        <div className="space-y-6">
+          {/* Alerts by severity */}
+          <div className="rounded-signal border border-signal-border bg-signal-surface p-6 shadow-signalSubtle">
+            <h2 className="mb-1 text-lg font-semibold text-signal-ink">
+              Severity mix
+            </h2>
+            <p className="mb-4 text-[13px] text-signal-slate">
+              Distribution across {m.totalAlertCount} alerts
+            </p>
+            <div className="space-y-3">
+              {severityRows.map((row) => (
+                <div key={row.label}>
+                  <div className="mb-1 flex justify-between text-xs">
+                    <span className="font-medium text-signal-body">{row.label}</span>
+                    <span className="tabular-nums text-signal-slate">{row.count}</span>
+                  </div>
+                  <div className="h-2 w-full overflow-hidden rounded-full bg-signal-surfaceSubtle">
+                    <div
+                      className={`h-2 rounded-full ${row.bar}`}
+                      style={{
+                        width: `${(row.count / maxSeverityCount) * 100}%`,
+                      }}
+                    />
+                  </div>
                 </div>
-                <div className="h-2 w-full overflow-hidden rounded-full bg-signal-surfaceSubtle">
-                  <div
-                    className={`h-2 rounded-full ${row.bar}`}
-                    style={{
-                      width: `${(row.count / maxSeverityCount) * 100}%`,
-                    }}
-                  />
+              ))}
+            </div>
+          </div>
+
+          {/* Case decision mix */}
+          <div className="rounded-signal border border-signal-border bg-signal-surface p-6 shadow-signalSubtle">
+            <h2 className="mb-1 text-lg font-semibold text-signal-ink">
+              Case decision mix
+            </h2>
+            <p className="mb-4 text-[13px] text-signal-slate">
+              How {m.totalCaseCount} cases were resolved — grouped by analyst decision
+            </p>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {sortedDecisions.map(([decision, count]) => (
+                <div
+                  key={decision}
+                  className="rounded-signalSm border border-signal-borderSubtle bg-signal-surfaceSubtle p-4 text-center"
+                >
+                  <div className="text-xl font-semibold tabular-nums text-signal-ink">{count}</div>
+                  <div className="mt-1 text-xs text-signal-slate break-words">
+                    {decision.replace(/_/g, " ")}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Open vs closed + scenario breakdown */}
+        {/* Right column: Open vs closed + Scenario breakdown */}
         <div className="space-y-6">
           {/* Open vs closed */}
           <div className="rounded-signal border border-signal-border bg-signal-surface p-6 shadow-signalSubtle">
@@ -175,29 +201,6 @@ export default function DashboardPage() {
                 </span>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Case decision mix */}
-        <div className="rounded-signal border border-signal-border bg-signal-surface p-6 shadow-signalSubtle lg:col-span-2">
-          <h2 className="mb-1 text-lg font-semibold text-signal-ink">
-            Case decision mix
-          </h2>
-          <p className="mb-4 text-[13px] text-signal-slate">
-            How {m.totalCaseCount} cases were resolved — grouped by analyst decision
-          </p>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-            {sortedDecisions.map(([decision, count]) => (
-              <div
-                key={decision}
-                className="rounded-signalSm border border-signal-borderSubtle bg-signal-surfaceSubtle p-4 text-center"
-              >
-                <div className="text-xl font-semibold tabular-nums text-signal-ink">{count}</div>
-                <div className="mt-1 text-xs text-signal-slate break-words">
-                  {decision.replace(/_/g, " ")}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
