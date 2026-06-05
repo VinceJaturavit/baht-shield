@@ -10,6 +10,7 @@ import {
 } from '@/lib/arbiter/tuning';
 import type { BacktestEvent } from '@/lib/arbiter/rule-backtest';
 import TuningSyntheticBanner from './TuningSyntheticBanner';
+import { ArbiterSectionNav } from '../ArbiterSectionNav';
 import ThresholdSliderPanel from './ThresholdSliderPanel';
 import ConfusionMatrixPanel from './ConfusionMatrixPanel';
 import MetricsPanel from './MetricsPanel';
@@ -91,11 +92,16 @@ export default function ArbiterTuningWorkspace({ tunedEvents, backtestEvents }: 
       <div className="px-6 py-5 border-b border-ourox-obsidianLight bg-ourox-obsidianMid">
         <div className="max-w-7xl mx-auto flex items-start justify-between gap-6">
           <div>
-            <h1 className="text-xl font-bold text-ourox-ink tracking-tight">
-              Arbiter — Tuning Workspace
-            </h1>
+            <div className="flex items-center gap-2 mb-1">
+              <h1 className="text-xl font-bold text-ourox-ink tracking-tight">
+                Arbiter
+              </h1>
+              <span className="rounded-full border border-ourox-orange/30 bg-ourox-orange/10 px-2 py-0.5 text-xs font-semibold text-ourox-orange">
+                Tuning Workspace
+              </span>
+            </div>
             <p className="text-ourox-ink/40 text-sm mt-1">
-              Adjust thresholds and weights to explore precision/recall trade-offs.
+              Adjust score thresholds and feature weights to explore precision/recall trade-offs.
               Scoring is precomputed — no API calls during slider movement.
             </p>
           </div>
@@ -133,6 +139,13 @@ export default function ArbiterTuningWorkspace({ tunedEvents, backtestEvents }: 
             </p>
           </div>
         )}
+      </div>
+
+      {/* Scoring / Tuning section nav */}
+      <div className="border-b border-ourox-obsidianLight bg-ourox-obsidianMid px-6">
+        <div className="max-w-7xl mx-auto">
+          <ArbiterSectionNav />
+        </div>
       </div>
 
       {/* Score-band layer explainer — Spec-019 */}

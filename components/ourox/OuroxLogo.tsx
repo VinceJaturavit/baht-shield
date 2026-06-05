@@ -1,6 +1,7 @@
-// OuroxLogo — ported from 07 Reference/LOGO/Ourox LOGO/Ourox Logo/icons.jsx
-// Source of truth: icons.jsx (D2-C "Heavy" mark variant)
-// Geometry and tokens are exact; adapted to TypeScript/TSX with theme-safe color refs.
+// OuroxLogo — corrected 10-segment mark (Spec-020)
+// Source SVG: 400×400 viewBox, 10 arc segments, 5 nodes (2 yellow, 3 obsidian+ring),
+// faint internal chord lines at 0.38 opacity.
+// Scaled proportionally: at small sizes (≤32px) chord lines are hidden.
 
 const OX = {
   obsidian: '#101820',
@@ -9,86 +10,50 @@ const OX = {
   ink: '#ECEFF3',
 } as const;
 
-const RAD = Math.PI / 180;
-
-function pt(cx: number, cy: number, r: number, deg: number): [number, number] {
-  return [cx + r * Math.cos(deg * RAD), cy + r * Math.sin(deg * RAD)];
-}
-
-function arcPath(cx: number, cy: number, r: number, a1: number, a2: number): string {
-  const [x1, y1] = pt(cx, cy, r, a1);
-  const [x2, y2] = pt(cx, cy, r, a2);
-  const large = (a2 - a1) > 180 ? 1 : 0;
-  return `M ${x1.toFixed(2)} ${y1.toFixed(2)} A ${r} ${r} 0 ${large} 1 ${x2.toFixed(2)} ${y2.toFixed(2)}`;
-}
-
-interface Segment { a1: number; a2: number }
-
-function segs(n: number, gapAtTop: number, innerGap: number): Segment[] {
-  const span = 360 - gapAtTop;
-  const segSpan = span / n;
-  const start = -90 + gapAtTop / 2;
-  return Array.from({ length: n }, (_, i) => ({
-    a1: start + i * segSpan + innerGap / 2,
-    a2: start + (i + 1) * segSpan - innerGap / 2,
-  }));
-}
-
-function junctionAngles(segments: Segment[]): number[] {
-  return segments.slice(0, -1).map((seg, i) => (seg.a2 + segments[i + 1].a1) / 2);
-}
-
-// D2-C Heavy: 6 segments, 3 nodes, 1 yellow node, no chords — nav mark
 interface OuroxMarkProps {
   s?: number;
   className?: string;
 }
 
 export function OuroxMark({ s = 200, className }: OuroxMarkProps) {
-  const c = s / 2;
-  const r = s * 0.37;
-  const segments = segs(6, 56, 6);
-  const juncts = junctionAngles(segments);
-  const nodeAt = [0, 2, 4];
-  const yellowAt = new Set([1]);
-  const nodePts = nodeAt.map((ji) => pt(c, c, r, juncts[ji]));
-  const segSW = 0.078;
-  const nodeR = 0.042;
-  const nodeSW = 0.020;
+  const showChords = s > 32;
 
   return (
     <svg
-      viewBox={`0 0 ${s} ${s}`}
+      viewBox="0 0 400 400"
       width="100%"
       height="100%"
       className={className}
       aria-hidden="true"
       focusable="false"
     >
-      {segments.map(({ a1, a2 }, i) => (
-        <path
-          key={i}
-          d={arcPath(c, c, r, a1, a2)}
-          fill="none"
-          stroke={OX.orange}
-          strokeWidth={s * segSW}
-          strokeLinecap="round"
-        />
-      ))}
-      {nodePts.map((p, i) => {
-        const yellow = yellowAt.has(i);
-        return (
-          <circle
-            key={i}
-            cx={p[0]}
-            cy={p[1]}
-            r={s * (yellow ? nodeR * 1.25 : nodeR)}
-            fill={yellow ? OX.yellow : OX.obsidian}
-            stroke={yellow ? 'none' : OX.orange}
-            strokeWidth={s * nodeSW}
-          />
-        );
-      })}
+      {/* Chord lines — hidden at very small sizes */}
+      {showChords && (
+        <>
+          <line x1="323.84" y1="118.96" x2="69.81" y2="270.39" stroke={OX.orange} strokeWidth="3.64" opacity="0.38"/>
+          <line x1="330.19" y1="270.39" x2="76.16" y2="118.96" stroke={OX.orange} strokeWidth="3.64" opacity="0.38"/>
+          <line x1="200.00" y1="348.00" x2="76.16" y2="118.96" stroke={OX.orange} strokeWidth="3.64" opacity="0.38"/>
+        </>
+      )}
+
+      {/* 10 arc segments */}
+      <path d="M270.62,69.94 A148,148,0,0,1,320.19,113.64" fill="none" stroke={OX.orange} strokeWidth="22.40" strokeLinecap="round"/>
+      <path d="M327.26,124.44 A148,148,0,0,1,347.46,187.36" fill="none" stroke={OX.orange} strokeWidth="22.40" strokeLinecap="round"/>
+      <path d="M348.00,200.26 A148,148,0,0,1,333.13,264.65" fill="none" stroke={OX.orange} strokeWidth="22.40" strokeLinecap="round"/>
+      <path d="M326.99,276.00 A148,148,0,0,1,281.26,323.70" fill="none" stroke={OX.orange} strokeWidth="22.40" strokeLinecap="round"/>
+      <path d="M270.17,330.31 A148,148,0,0,1,206.46,347.86" fill="none" stroke={OX.orange} strokeWidth="22.40" strokeLinecap="round"/>
+      <path d="M193.54,347.86 A148,148,0,0,1,129.83,330.31" fill="none" stroke={OX.orange} strokeWidth="22.40" strokeLinecap="round"/>
+      <path d="M118.74,323.70 A148,148,0,0,1,73.01,276.00" fill="none" stroke={OX.orange} strokeWidth="22.40" strokeLinecap="round"/>
+      <path d="M66.87,264.65 A148,148,0,0,1,52.00,200.26" fill="none" stroke={OX.orange} strokeWidth="22.40" strokeLinecap="round"/>
+      <path d="M52.54,187.36 A148,148,0,0,1,72.74,124.44" fill="none" stroke={OX.orange} strokeWidth="22.40" strokeLinecap="round"/>
+      <path d="M79.81,113.64 A148,148,0,0,1,129.38,69.94" fill="none" stroke={OX.orange} strokeWidth="22.40" strokeLinecap="round"/>
+
+      {/* 5 nodes: 3 obsidian with orange ring, 2 yellow solid */}
+      <circle cx="323.84" cy="118.96" r="11.20" fill={OX.obsidian} stroke={OX.orange} strokeWidth="5.60"/>
+      <circle cx="330.19" cy="270.39" r="14.00" fill={OX.yellow}/>
+      <circle cx="200.00" cy="348.00" r="11.20" fill={OX.obsidian} stroke={OX.orange} strokeWidth="5.60"/>
+      <circle cx="69.81" cy="270.39" r="11.20" fill={OX.obsidian} stroke={OX.orange} strokeWidth="5.60"/>
+      <circle cx="76.16" cy="118.96" r="14.00" fill={OX.yellow}/>
     </svg>
   );
 }

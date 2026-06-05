@@ -124,7 +124,7 @@ export function AlertQueueTable() {
                 className={`rounded-signalSm border px-3 py-1.5 text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-accent ${
                   sortMode === mode
                     ? "border-signal-accentBorder bg-signal-accentSubtle text-signal-accent"
-                    : "border-signal-border bg-white text-signal-body hover:bg-signal-muted"
+                    : "border-signal-border bg-signal-surface text-signal-body hover:bg-signal-muted"
                 }`}
               >
                 {label}

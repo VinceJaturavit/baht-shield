@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Verity committed design tokens (Spec-012) */
+/* Verity dark design tokens (Spec-020 — re-themed to Ourox dark system) */
 :root {
-  --signal-ink: #1b2436;
-  --signal-body: #3f4a5a;
-  --signal-slate: #647084;
-  --signal-meta: #8a94a6;
-  --signal-bg: #f8fafc;
-  --signal-surface: #ffffff;
-  --signal-border: #d9dee8;
-  --signal-indigo: #4b53c9;
-  --signal-amber: #d98a3d;
+  --signal-ink: #eceff3;
+  --signal-body: #b8c4d0;
+  --signal-slate: #7d8fa3;
+  --signal-meta: #647084;
+  --signal-bg: #0f1720;
+  --signal-surface: #1a2530;
+  --signal-border: #243040;
+  --signal-indigo: #ff8200;
+  --signal-amber: #ffc72c;
 }
 
 html {
@@ -38,7 +38,7 @@ body {
 }
 
 ::selection {
-  background: #eef0ff;
+  background: #2e1e0a;
   color: var(--signal-ink);
 }
 

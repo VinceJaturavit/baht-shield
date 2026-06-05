@@ -10,6 +10,7 @@ import { ArbiterKpiStrip } from './ArbiterKpiStrip';
 import { ArbiterEventTable } from './ArbiterEventTable';
 import { ArbiterExplainabilityDrawer } from './ArbiterExplainabilityDrawer';
 import { ArbiterScoreExplainer } from './ArbiterScoreExplainer';
+import { ArbiterSectionNav } from './ArbiterSectionNav';
 
 interface Props {
   initialEvents: ArbiterEvent[];
@@ -90,6 +91,9 @@ export function ArbiterScoreExplorer({ initialEvents }: Props) {
             )}
           </button>
         </div>
+
+        {/* Scoring / Tuning section nav */}
+        <ArbiterSectionNav />
 
         {/* Synthetic banner — always above the fold */}
         <ArbiterSyntheticBanner />

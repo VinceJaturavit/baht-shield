@@ -75,7 +75,7 @@ export function WalletSummaryPanel({ data }: WalletSummaryPanelProps) {
               <Row label="Decision" value={
                 <span className={`inline-flex items-center rounded-full border border-signal-border px-2 py-0.5 text-xs font-medium ${
                   latestKycEvent.decision === "approved"
-                    ? "bg-white text-signal-body"
+                    ? "bg-signal-surface text-signal-body"
                     : latestKycEvent.decision === "rejected"
                     ? "bg-signal-muted text-severity-critical"
                     : "bg-signal-muted text-signal-secondary"

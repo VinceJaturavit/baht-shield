@@ -37,7 +37,7 @@ export function CommandBar() {
           <line x1="10.5" y1="10.5" x2="14" y2="14" strokeLinecap="round" />
         </svg>
         <span className="hidden sm:inline">Search</span>
-        <kbd className="hidden rounded border border-signal-border bg-white px-1 py-0.5 font-mono text-[10px] sm:inline">
+        <kbd className="hidden rounded border border-signal-border bg-signal-surface px-1 py-0.5 font-mono text-[10px] sm:inline">
           ⌘K
         </kbd>
       </button>

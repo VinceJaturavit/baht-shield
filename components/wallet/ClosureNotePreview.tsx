@@ -34,7 +34,7 @@ export function ClosureNotePreview({ note }: ClosureNotePreviewProps) {
   return (
     <div className="space-y-3">
       {/* Section previews */}
-      <div className="rounded-signalSm border border-signal-border bg-white divide-y divide-signal-borderSubtle overflow-hidden">
+      <div className="rounded-signalSm border border-signal-border bg-signal-surface divide-y divide-signal-borderSubtle overflow-hidden">
         {SECTION_LABELS.map(({ key, title }) => {
           const rawText = note[key] as string;
           // Strip the "SectionTitle:\n" prefix for display since we render the title separately

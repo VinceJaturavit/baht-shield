@@ -1,10 +1,13 @@
-// Ourox platform home — / (Spec-019: uses OuroxShell for consistent chrome)
+// Ourox platform home — / (Spec-020: attribution + purpose added)
 // Calm enterprise launcher. One dominant area. Two products. Orange accent only.
 // No gradients-as-decoration, no illustrations, no animation, no card soup.
 
 import Link from "next/link";
 import { OuroxMark, OuroxWordmark } from "@/components/ourox/OuroxLogo";
 import { OuroxShell } from "@/components/ourox/OuroxShell";
+
+const LINKEDIN_URL = "https://www.linkedin.com/in/jaturavit-chaovalit/";
+const GITHUB_URL = "https://github.com/VinceJaturavit/baht-shield";
 
 const PRODUCTS = [
   {
@@ -49,19 +52,52 @@ export default function OuroxHomePage() {
             Ourox
           </h1>
 
+          {/* Purpose paragraph */}
           <p className="mb-5 text-base leading-7 text-ourox-ink/70 max-w-xl">
-            A synthetic fraud-tech platform for learning and demonstrating how investigation,
-            scoring, and governance concepts connect across a fraud operations stack.
+            Ourox is a synthetic learning and portfolio platform showing how analyst-curated
+            pattern intelligence in Verity and risk scoring/decisioning in Arbiter connect
+            across a fraud operations stack.
           </p>
 
           {/* Metadata line */}
           <p
-            className="text-xs text-ourox-ink/40 tracking-wide"
+            className="mb-8 text-xs text-ourox-ink/40 tracking-wide"
             style={{ fontFamily: "'Space Mono', monospace" }}
           >
             Synthetic data only&nbsp;&nbsp;·&nbsp;&nbsp;Fraud operations
             portfolio&nbsp;&nbsp;·&nbsp;&nbsp;Built for learning and demonstration
           </p>
+
+          {/* Builder attribution */}
+          <div className="border-t border-ourox-obsidianMid pt-6">
+            <p className="mb-1 text-sm text-ourox-ink/50">
+              Built by{" "}
+              <span className="font-medium text-ourox-ink/80">
+                Jaturavit &ldquo;Vince&rdquo; Chaovalit
+              </span>
+            </p>
+            <p className="mb-3 text-sm text-ourox-ink/40">
+              fraud operations professional — founding APAC fraud-team member; Chainalysis Reactor certified
+            </p>
+            <div className="flex gap-4 text-sm">
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ourox-orange/80 underline underline-offset-2 transition-colors hover:text-ourox-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ourox-obsidian rounded-sm"
+              >
+                LinkedIn
+              </a>
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ourox-orange/80 underline underline-offset-2 transition-colors hover:text-ourox-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ourox-obsidian rounded-sm"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Product entries — two rows, no card soup */}

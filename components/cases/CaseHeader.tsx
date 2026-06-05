@@ -61,18 +61,18 @@ export function CaseHeader({ caseDetail }: CaseHeaderProps) {
       {/* Meta grid */}
       <div className="grid grid-cols-2 gap-4 px-6 py-1.5 sm:grid-cols-3 lg:grid-cols-4">
         <div>
-          <div className="text-sm text-slate-500 uppercase tracking-wide font-medium mb-1">
+          <div className="text-sm text-signal-slate uppercase tracking-wide font-medium mb-1">
             DECISION / STATUS
           </div>
-          <div className="text-sm font-medium text-ink">{caseDetail.decision}</div>
+          <div className="text-sm font-medium text-signal-ink">{caseDetail.decision}</div>
           <span className="inline-flex items-center gap-1.5 mt-1">
             <span className={`w-2 h-2 rounded-full ${
-              caseDetail.investigation_status === 'open' ? 'bg-indigo-500' :
-              caseDetail.investigation_status === 'escalated' ? 'bg-amber-500' :
-              caseDetail.investigation_status === 'needs_closure' ? 'bg-amber-400' :
-              'bg-slate-400'
-            }`} />
-            <span className="text-sm text-slate-600 capitalize">
+              caseDetail.investigation_status === 'open' ? 'bg-signal-indigo' :
+              caseDetail.investigation_status === 'escalated' ? 'bg-signal-amber' :
+              caseDetail.investigation_status === 'needs_closure' ? 'bg-signal-amber' :
+              'bg-signal-faintSlate'
+            }`} aria-hidden="true" />
+            <span className="text-sm text-signal-slate capitalize">
               {caseDetail.investigation_status?.replace('_', ' ')}
             </span>
           </span>

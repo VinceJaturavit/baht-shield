@@ -19,46 +19,54 @@ const config: Config = {
         ],
       },
       colors: {
-        // Verity committed palette (Spec-012). Existing token NAMES are kept
-        // and remapped onto the committed values so the whole app adopts the
-        // palette at the token step; new semantic aliases are added below.
+        // Verity dark palette (Spec-020 re-theme to Ourox dark system).
+        // Token NAMES preserved for compatibility; values remapped to dark equivalents.
+        // Indigo accent remapped to Ourox orange throughout Verity.
         signal: {
-          // Backwards-compatible names (remapped to committed palette)
-          bg: "#F8FAFC",
-          card: "#FFFFFF",
-          muted: "#F3F6FA",
-          heading: "#1B2436",
-          body: "#3F4A5A",
-          secondary: "#647084",
-          faint: "#8A94A6",
-          border: "#D9DEE8",
-          borderSubtle: "#E6EAF1",
-          borderStrong: "#C4CAD6",
-          accent: "#4B53C9",
-          accentHover: "#3F46B5",
-          accentSubtle: "#EEF0FF",
-          accentBorder: "#C8CCF7",
+          // Background surfaces
+          bg: "#0F1720",
+          card: "#1A2530",
+          muted: "#131C28",
+
+          // Text
+          heading: "#ECEFF3",
+          body: "#B8C4D0",
+          secondary: "#7D8FA3",
+          faint: "#4A5568",
+
+          // Borders
+          border: "#243040",
+          borderSubtle: "#1C2B38",
+          borderStrong: "#2E3E52",
+
+          // Accent (orange replaces indigo)
+          accent: "#FF8200",
+          accentHover: "#E07200",
+          accentSubtle: "#1E1408",
+          accentBorder: "#2E1E0A",
 
           // Committed semantic aliases
-          ink: "#1B2436",
-          slate: "#647084",
-          meta: "#8A94A6",
-          faintSlate: "#B6BECA",
+          ink: "#ECEFF3",
+          slate: "#7D8FA3",
+          meta: "#647084",
+          faintSlate: "#4A5568",
 
-          surface: "#FFFFFF",
-          surfaceSubtle: "#F3F6FA",
-          surfaceSoft: "#EEF2F7",
+          surface: "#1A2530",
+          surfaceSubtle: "#131C28",
+          surfaceSoft: "#1E2A38",
 
-          indigo: "#4B53C9",
-          indigoHover: "#3F46B5",
-          indigoActive: "#353C9E",
-          indigoSubtle: "#EEF0FF",
-          indigoBorder: "#C8CCF7",
+          // Indigo → orange (primary accent throughout Verity)
+          indigo: "#FF8200",
+          indigoHover: "#E07200",
+          indigoActive: "#CC6600",
+          indigoSubtle: "#1E1408",
+          indigoBorder: "#2E1E0A",
 
-          amber: "#D98A3D",
-          amberHover: "#C8792D",
-          amberSubtle: "#FFF4E8",
-          amberBorder: "#F3D2AF",
+          // Amber kept for synthetic/warning banners (warm hue appropriate)
+          amber: "#FFC72C",
+          amberHover: "#E6B020",
+          amberSubtle: "#1E1C08",
+          amberBorder: "#2E2A0A",
         },
         // Risk/severity scale — muted, paired with text, never color-alone.
         risk: {

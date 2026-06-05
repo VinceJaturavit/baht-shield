@@ -10,7 +10,7 @@ interface PatternLibraryListProps {
 
 const STATUS_CLASSES: Record<string, string> = {
   verified: "border border-signal-accentBorder bg-signal-accentSubtle text-signal-accent",
-  probable: "border border-signal-border bg-white text-signal-body",
+  probable: "border border-signal-border bg-signal-surface text-signal-body",
   emerging: "border border-signal-border bg-signal-muted text-signal-secondary",
   retired: "border border-signal-border bg-signal-muted text-signal-faint line-through",
 };
@@ -24,7 +24,7 @@ export function PatternLibraryList({
     <div className="flex flex-col gap-2">
       {patterns.map((p) => {
         const isSelected = p.pattern_id === selectedPatternId;
-        const statusClass = STATUS_CLASSES[p.status] ?? "bg-gray-100 text-gray-600";
+        const statusClass = STATUS_CLASSES[p.status] ?? "bg-signal-surfaceSubtle text-signal-meta";
 
         return (
           <button

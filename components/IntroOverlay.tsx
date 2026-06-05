@@ -71,7 +71,7 @@ export function IntroOverlay({ open, onClose }: IntroOverlayProps) {
     >
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-signal-ink/40"
+        className="absolute inset-0 bg-black/60"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -79,7 +79,7 @@ export function IntroOverlay({ open, onClose }: IntroOverlayProps) {
       {/* Card */}
       <div
         ref={dialogRef}
-        className="relative z-10 w-full max-w-2xl rounded-signalLg bg-white shadow-signal border border-signal-border"
+        className="relative z-10 w-full max-w-2xl rounded-signalLg bg-signal-surface shadow-signal border border-signal-border"
       >
         {/* Close button */}
         <button

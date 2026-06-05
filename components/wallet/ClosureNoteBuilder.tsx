@@ -82,7 +82,7 @@ export function ClosureNoteBuilder({ caseData, walletProfile }: ClosureNoteBuild
       </div>
 
       {/* Tab bar */}
-      <div className="flex border-b border-signal-accentBorder bg-white">
+      <div className="flex border-b border-signal-accentBorder bg-signal-surface">
         <button
           onClick={() => setActiveTab("toggles")}
           className={`px-5 py-2.5 text-sm font-medium border-b-2 transition-colors ${

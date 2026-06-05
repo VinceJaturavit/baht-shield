@@ -66,7 +66,7 @@ export function EvidenceToggleGroup({ options, selectedIds, onToggle }: Evidence
                   className={`flex items-start gap-3 rounded-signalSm border px-3 py-2.5 cursor-pointer transition-colors ${
                     isSelected
                       ? "border-signal-accentBorder bg-signal-accentSubtle"
-                      : "border-signal-border bg-white hover:border-signal-borderStrong hover:bg-signal-muted"
+                      : "border-signal-border bg-signal-surface hover:border-signal-borderStrong hover:bg-signal-muted"
                   }`}
                 >
                   <input

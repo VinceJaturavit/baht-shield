@@ -44,7 +44,7 @@ export function DeviceSimPanel({ devices, simBindings }: DeviceSimPanelProps) {
                           {device.os} · First seen: {device.first_seen_at}
                         </p>
                       </div>
-                      <span className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-signal-border bg-white px-2.5 py-0.5 text-[11px] font-medium text-signal-body">
+                      <span className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-signal-border bg-signal-surface px-2.5 py-0.5 text-[11px] font-medium text-signal-body">
                         <span className={`inline-block h-1.5 w-1.5 rounded-full ${risk.dot}`} />
                         {risk.label} <span className="tabular-nums text-signal-secondary">({device.risk_score})</span>
                       </span>
@@ -75,7 +75,7 @@ export function DeviceSimPanel({ devices, simBindings }: DeviceSimPanelProps) {
                       <p className="text-xs font-mono text-signal-body">{sim.msisdn}</p>
                       <p className="text-xs text-signal-secondary mt-0.5">Binding ID: {sim.binding_id}</p>
                     </div>
-                    <span className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-signal-border bg-white px-2.5 py-0.5 text-[11px] font-medium text-signal-body">
+                    <span className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-signal-border bg-signal-surface px-2.5 py-0.5 text-[11px] font-medium text-signal-body">
                       {sim.sim_change_count >= 3 && (
                         <span className="inline-block h-1.5 w-1.5 rounded-full bg-severity-high" />
                       )}

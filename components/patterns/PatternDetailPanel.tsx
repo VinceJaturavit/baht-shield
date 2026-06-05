@@ -9,7 +9,7 @@ interface PatternDetailPanelProps {
 
 const STATUS_CLASSES: Record<string, string> = {
   verified: "border border-signal-accentBorder bg-signal-accentSubtle text-signal-accent",
-  probable: "border border-signal-border bg-white text-signal-body",
+  probable: "border border-signal-border bg-signal-surface text-signal-body",
   emerging: "border border-signal-border bg-signal-muted text-signal-secondary",
   retired: "border border-signal-border bg-signal-muted text-signal-faint",
 };
