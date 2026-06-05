@@ -1,9 +1,10 @@
-// Ourox platform home — / (Spec-018)
+// Ourox platform home — / (Spec-019: uses OuroxShell for consistent chrome)
 // Calm enterprise launcher. One dominant area. Two products. Orange accent only.
 // No gradients-as-decoration, no illustrations, no animation, no card soup.
 
 import Link from "next/link";
 import { OuroxMark, OuroxWordmark } from "@/components/ourox/OuroxLogo";
+import { OuroxShell } from "@/components/ourox/OuroxShell";
 
 const PRODUCTS = [
   {
@@ -28,38 +29,12 @@ const PRODUCTS = [
 
 export default function OuroxHomePage() {
   return (
-    <div
-      className="min-h-screen bg-ourox-obsidian text-ourox-ink"
-      style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
-    >
-      {/* Top bar */}
-      <header className="w-full border-b border-ourox-obsidianMid">
-        <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-4 px-6 h-11">
-          {/* Logo — links to self (home) */}
-          <span className="flex items-center gap-2" aria-label="Ourox">
-            <span style={{ display: "inline-flex", width: 22, height: 22 }}>
-              <OuroxMark s={22} />
-            </span>
-            <OuroxWordmark size={14} />
-          </span>
-
-          {/* Platform nav */}
-          <nav className="flex items-center gap-0.5" aria-label="Platform navigation">
-            {PRODUCTS.map((p) => (
-              <Link
-                key={p.key}
-                href={p.href}
-                className="rounded px-3 py-1 text-xs font-medium text-ourox-ink/60 transition-colors hover:bg-ourox-obsidianLight hover:text-ourox-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ourox-obsidian"
-              >
-                {p.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      </header>
-
+    <OuroxShell currentProduct="Ourox">
       {/* Main — generous outer spacing, one dominant area */}
-      <main className="mx-auto max-w-[1280px] px-6 py-16 lg:py-24">
+      <main
+        className="mx-auto max-w-[1280px] px-6 py-16 lg:py-24"
+        style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
+      >
         {/* Platform intro */}
         <div className="mb-16 max-w-2xl">
           {/* Large wordmark */}
@@ -84,7 +59,8 @@ export default function OuroxHomePage() {
             className="text-xs text-ourox-ink/40 tracking-wide"
             style={{ fontFamily: "'Space Mono', monospace" }}
           >
-            Synthetic data only&nbsp;&nbsp;·&nbsp;&nbsp;Fraud operations portfolio&nbsp;&nbsp;·&nbsp;&nbsp;Built for learning and demonstration
+            Synthetic data only&nbsp;&nbsp;·&nbsp;&nbsp;Fraud operations
+            portfolio&nbsp;&nbsp;·&nbsp;&nbsp;Built for learning and demonstration
           </p>
         </div>
 
@@ -135,18 +111,6 @@ export default function OuroxHomePage() {
           ))}
         </div>
       </main>
-
-      {/* Footer — synthetic data honesty */}
-      <footer className="border-t border-ourox-obsidianMid">
-        <div className="mx-auto max-w-[1280px] px-6 py-4">
-          <p
-            className="text-xs text-ourox-ink/30"
-            style={{ fontFamily: "'Space Mono', monospace" }}
-          >
-            All data is synthetic and illustrative. No real customer, employer, or production data.
-          </p>
-        </div>
-      </footer>
-    </div>
+    </OuroxShell>
   );
 }

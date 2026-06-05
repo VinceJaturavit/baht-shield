@@ -1865,8 +1865,8 @@
     "ip_country": "TH",
     "has_facial_scan": false,
     "geo": {
-      "lat": 49.8898,
-      "lon": 15.6959
+      "lat": 9.6225,
+      "lon": 103.6914
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -1937,8 +1937,8 @@
     "ip_country": "TH",
     "has_facial_scan": true,
     "geo": {
-      "lat": 54.8028,
-      "lon": 7.7247
+      "lat": 20.0802,
+      "lon": 99.9715
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -2009,8 +2009,8 @@
     "ip_country": "TH",
     "has_facial_scan": true,
     "geo": {
-      "lat": 50.7251,
-      "lon": 4.3029
+      "lat": 11.4006,
+      "lon": 98.3747
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -2081,8 +2081,8 @@
     "ip_country": "TH",
     "has_facial_scan": true,
     "geo": {
-      "lat": 50.1845,
-      "lon": 13.925
+      "lat": 10.2499,
+      "lon": 102.865
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -2153,8 +2153,8 @@
     "ip_country": "TH",
     "has_facial_scan": true,
     "geo": {
-      "lat": 54.7048,
-      "lon": 4.4646
+      "lat": 19.8717,
+      "lon": 98.4501
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -2225,8 +2225,8 @@
     "ip_country": "TH",
     "has_facial_scan": false,
     "geo": {
-      "lat": 49.6083,
-      "lon": 7.0222
+      "lat": 9.0234,
+      "lon": 99.6437
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -2297,8 +2297,8 @@
     "ip_country": "TH",
     "has_facial_scan": false,
     "geo": {
-      "lat": 50.3777,
-      "lon": 6.1663
+      "lat": 10.6612,
+      "lon": 99.2443
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -2369,8 +2369,8 @@
     "ip_country": "TH",
     "has_facial_scan": true,
     "geo": {
-      "lat": 53.5146,
-      "lon": 17.7359
+      "lat": 17.3381,
+      "lon": 104.6434
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -2441,8 +2441,8 @@
     "ip_country": "TH",
     "has_facial_scan": true,
     "geo": {
-      "lat": 50.2314,
-      "lon": 11.4408
+      "lat": 10.3497,
+      "lon": 101.7057
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -2513,8 +2513,8 @@
     "ip_country": "TH",
     "has_facial_scan": false,
     "geo": {
-      "lat": 54.7353,
-      "lon": 10.2982
+      "lat": 19.9366,
+      "lon": 101.1725
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -2585,8 +2585,8 @@
     "ip_country": "TH",
     "has_facial_scan": true,
     "geo": {
-      "lat": 50.5246,
-      "lon": 14.4826
+      "lat": 10.9738,
+      "lon": 103.1252
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"
@@ -2657,8 +2657,8 @@
     "ip_country": "TH",
     "has_facial_scan": true,
     "geo": {
-      "lat": 50.0451,
-      "lon": 6.0311
+      "lat": 9.9532,
+      "lon": 99.1812
     },
     "source": "mockingbird",
     "_scenario_label": "app_scam_cashout"

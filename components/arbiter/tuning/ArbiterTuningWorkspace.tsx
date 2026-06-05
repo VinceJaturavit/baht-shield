@@ -19,6 +19,16 @@ import WhatChangedSummary from './WhatChangedSummary';
 import RuleBacktestPanel from './RuleBacktestPanel';
 import ShadowModePanel from './ShadowModePanel';
 
+// Tradeoff preset: lowers REVIEW and BLOCK thresholds to show recall rising.
+// This preset is instructive — it demonstrates how lowering thresholds catches
+// more fraud (higher recall) at the cost of more false positives.
+// Does not permanently change defaults; user can reset.
+const TRADEOFF_PRESET_THRESHOLDS: ArbiterThresholds = {
+  approveStepUp: 25,
+  stepUpReview: 35,
+  reviewBlock: 55,
+};
+
 interface Props {
   tunedEvents: TunedEvent[];
   backtestEvents: BacktestEvent[];
@@ -27,6 +37,7 @@ interface Props {
 export default function ArbiterTuningWorkspace({ tunedEvents, backtestEvents }: Props) {
   const [thresholds, setThresholds] = useState<ArbiterThresholds>(DEFAULT_THRESHOLDS);
   const [weights, setWeights] = useState<Record<string, number>>(DEFAULT_WEIGHTS);
+  const [presetActive, setPresetActive] = useState(false);
 
   const tuningResult = useMemo(
     () => computeTuningResults(tunedEvents, thresholds, weights),
@@ -48,15 +59,37 @@ export default function ArbiterTuningWorkspace({ tunedEvents, backtestEvents }: 
     [tunedEvents],
   );
 
+  // Rule-inclusive BLOCK count from Explorer baseline decisions (Zen-Engine JDM).
+  const ruleInclusiveBlockCount = useMemo(
+    () => backtestEvents.filter((e) => e.baselineDecision === 'BLOCK').length,
+    [backtestEvents],
+  );
+
+  // Score-band BLOCK count at current thresholds.
+  const scoreBandBlockCount = useMemo(
+    () => tuningResult.events.filter((e) => e.decision === 'BLOCK').length,
+    [tuningResult],
+  );
+
+  function applyTradeoffPreset() {
+    setThresholds({ ...TRADEOFF_PRESET_THRESHOLDS });
+    setPresetActive(true);
+  }
+
+  function resetToDefault() {
+    setThresholds({ ...DEFAULT_THRESHOLDS });
+    setPresetActive(false);
+  }
+
   const [activeTab, setActiveTab] = useState<'tune' | 'backtest' | 'shadow'>('tune');
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       <TuningSyntheticBanner />
 
       {/* Header */}
       <div className="px-6 py-5 border-b border-ourox-obsidianLight bg-ourox-obsidianMid">
-        <div className="max-w-7xl mx-auto flex items-start justify-between">
+        <div className="max-w-7xl mx-auto flex items-start justify-between gap-6">
           <div>
             <h1 className="text-xl font-bold text-ourox-ink tracking-tight">
               Arbiter — Tuning Workspace
@@ -66,12 +99,49 @@ export default function ArbiterTuningWorkspace({ tunedEvents, backtestEvents }: 
               Scoring is precomputed — no API calls during slider movement.
             </p>
           </div>
-          <div className="text-right">
-            <div className="text-xs text-ourox-ink/30">Evaluation set</div>
-            <div className="text-sm font-semibold text-ourox-ink">
-              {tunedEvents.length} labeled events
+          <div className="flex items-start gap-4 flex-shrink-0">
+            <div className="text-right">
+              <div className="text-xs text-ourox-ink/30">Evaluation set</div>
+              <div className="text-sm font-semibold text-ourox-ink">
+                {tunedEvents.length} labeled events
+              </div>
             </div>
+            {/* Tradeoff preset button — Spec-019 instructive default */}
+            {!presetActive ? (
+              <button
+                onClick={applyTradeoffPreset}
+                className="rounded border border-ourox-orange/60 px-3 py-1.5 text-xs font-semibold text-ourox-orange hover:bg-ourox-orange hover:text-ourox-obsidian transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ourox-obsidianMid"
+              >
+                Show tradeoff preset
+              </button>
+            ) : (
+              <button
+                onClick={resetToDefault}
+                className="rounded border border-ourox-ink/20 px-3 py-1.5 text-xs font-semibold text-ourox-ink/50 hover:border-ourox-ink/40 hover:text-ourox-ink/70 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ourox-obsidianMid"
+              >
+                Reset defaults
+              </button>
+            )}
           </div>
+        </div>
+
+        {/* Preset active callout */}
+        {presetActive && (
+          <div className="max-w-7xl mx-auto mt-3">
+            <p className="text-xs text-ourox-orange/80 bg-ourox-orange/10 border border-ourox-orange/20 rounded px-3 py-2">
+              <span className="font-semibold">Tradeoff preset active</span> — REVIEW threshold lowered to 35, BLOCK to 55. Recall rises; false positives rise. This is a sandbox illustration of threshold movement, not a production recommendation. Reset to restore defaults.
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Score-band layer explainer — Spec-019 */}
+      <div className="border-b border-ourox-obsidianLight bg-ourox-obsidian px-6 py-3">
+        <div className="max-w-7xl mx-auto">
+          <ScoreBandExplainer
+            scoreBandBlock={scoreBandBlockCount}
+            ruleInclusiveBlock={ruleInclusiveBlockCount}
+          />
         </div>
       </div>
 
@@ -141,12 +211,52 @@ export default function ArbiterTuningWorkspace({ tunedEvents, backtestEvents }: 
           )}
         </div>
       </div>
+    </div>
+  );
+}
 
-      {/* Footer */}
-      <div className="border-t border-ourox-obsidianLight bg-ourox-obsidianMid px-6 py-3">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-[11px] text-ourox-ink/25">
-          <span>Arbiter Phase 2 — Tuning Sandbox · Synthetic data only · No ML / No SHAP / No live Verity</span>
-          <span>Phase 3 (ML Score) pending Tower review</span>
+// ScoreBandExplainer — Spec-019: explains the score-band layer vs rule-inclusive context.
+// Placed above the tab bar so it is always visible regardless of active tab.
+function ScoreBandExplainer({
+  scoreBandBlock,
+  ruleInclusiveBlock,
+}: {
+  scoreBandBlock: number;
+  ruleInclusiveBlock: number;
+}) {
+  const ruleOverrides = Math.max(0, ruleInclusiveBlock - scoreBandBlock);
+
+  return (
+    <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:gap-6">
+      {/* Explainer text */}
+      <div className="flex-1 min-w-0">
+        <p className="text-xs text-ourox-ink/50 leading-relaxed">
+          <span className="text-ourox-ink/70 font-medium">Score-band layer only.</span>{' '}
+          This matrix evaluates the score-band thresholds in isolation — REVIEW and BLOCK count
+          as positive interventions; APPROVE and STEP_UP as negative. A low default recall does
+          not mean Arbiter is failing: the score-band threshold is conservative and the
+          Zen-Engine rules carry additional interventions separately.
+        </p>
+      </div>
+
+      {/* Rule-inclusive comparison strip */}
+      <div className="flex-shrink-0 rounded border border-ourox-obsidianLight bg-ourox-obsidianMid px-4 py-2.5 text-xs">
+        <div className="text-[10px] text-ourox-ink/30 uppercase tracking-wider mb-1.5">
+          BLOCK comparison
+        </div>
+        <div className="space-y-1">
+          <div className="flex items-center justify-between gap-6">
+            <span className="text-ourox-ink/50">Score-band BLOCK (current thresholds)</span>
+            <span className="font-mono font-semibold tabular-nums text-ourox-ink">{scoreBandBlock}</span>
+          </div>
+          <div className="flex items-center justify-between gap-6">
+            <span className="text-ourox-ink/50">Rule-inclusive BLOCK (Explorer)</span>
+            <span className="font-mono font-semibold tabular-nums text-ourox-orange">{ruleInclusiveBlock}</span>
+          </div>
+          <div className="border-t border-ourox-obsidianLight pt-1 flex items-center justify-between gap-6">
+            <span className="text-ourox-ink/40">Rule overrides</span>
+            <span className="font-mono tabular-nums text-ourox-ink/60">+{ruleOverrides}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -167,6 +277,7 @@ function EventSummaryCard({ events }: { events: ReturnType<typeof computeTuningR
   return (
     <div className="bg-ourox-obsidianMid rounded-signal border border-ourox-obsidianLight p-5 space-y-3">
       <h3 className="text-ourox-ink text-sm font-semibold tracking-wide">Decision Distribution</h3>
+      <p className="text-ourox-ink/40 text-xs">Score-band decisions at current thresholds.</p>
       <div className="space-y-2">
         {(Object.entries(counts) as [keyof typeof COLORS, number][]).map(([dec, count]) => (
           <div key={dec} className="flex items-center gap-3">

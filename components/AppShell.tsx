@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { OuroxMark } from "./ourox/OuroxLogo";
+import { OuroxMark, OuroxWordmark } from "./ourox/OuroxLogo";
+import { OuroxFooter } from "./ourox/OuroxFooter";
 import { Logo } from "./Logo";
 import { SyntheticDataLabel } from "./SyntheticDataLabel";
 import { CommandBar } from "./command/CommandBar";
@@ -53,18 +54,19 @@ export function AppShell({ children }: AppShellProps) {
       <header className="w-full overflow-x-hidden border-b border-signal-border bg-white">
         <div className="mx-auto flex max-w-[1280px] items-center gap-3 px-4 lg:px-6">
           <div className="flex h-16 min-w-0 flex-1 items-center gap-3">
-            {/* Ourox platform brand — mark links to /, Verity product label */}
-            <div className="flex shrink-0 items-center gap-2.5">
+            {/* Ourox platform brand — mark+wordmark links to /, then / Verity product indicator */}
+            <div className="flex shrink-0 items-center gap-2">
               <Link
                 href="/"
                 aria-label="Ourox home"
-                className="flex shrink-0 items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-indigo focus-visible:ring-offset-2 rounded"
+                className="flex shrink-0 items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange focus-visible:ring-offset-2 rounded"
               >
-                <span style={{ display: "inline-flex", width: 24, height: 24 }}>
-                  <OuroxMark s={24} />
+                <span style={{ display: "inline-flex", width: 22, height: 22 }}>
+                  <OuroxMark s={22} />
                 </span>
+                <OuroxWordmark size={13} />
               </Link>
-              <span className="text-signal-border select-none" aria-hidden="true">/</span>
+              <span className="text-signal-borderStrong select-none" aria-hidden="true">/</span>
               {/* Verity product mark (existing SVG asset) */}
               <Logo compact />
               <span className="hidden font-medium text-sm text-signal-ink lg:block">
@@ -133,6 +135,9 @@ export function AppShell({ children }: AppShellProps) {
       <main className="mx-auto max-w-[1280px] px-4 py-8 lg:px-6 lg:py-10">
         {children}
       </main>
+
+      {/* Shared platform footer */}
+      <OuroxFooter variant="light" />
 
       {/* First-visit intro overlay */}
       <IntroOverlay open={overlayOpen} onClose={() => setOverlayOpen(false)} />

@@ -65,12 +65,10 @@ export default async function ArbiterTuningPage() {
 
   return (
     <OuroxShell currentProduct="Arbiter">
-      <main className="min-h-screen bg-ourox-obsidian">
-        <ArbiterTuningWorkspace
-          tunedEvents={tunedEvents}
-          backtestEvents={backtestEvents}
-        />
-      </main>
+      <ArbiterTuningWorkspace
+        tunedEvents={tunedEvents}
+        backtestEvents={backtestEvents}
+      />
     </OuroxShell>
   );
 }

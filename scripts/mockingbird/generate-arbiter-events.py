@@ -296,7 +296,11 @@ for i in range(1, 51):
     else:
         ben_id = f"BEN_NEW_{i:03d}"
 
-    geo = rand_geo_abroad() if i % 4 == 0 else rand_geo_th()
+    # Spec-019 geo-realism: APP scam cash-out wallets operate in Thailand.
+    # Geo abroad is reserved for the deliberate ATO events below (Section 5).
+    # Using rand_geo_th() here prevents IMPOSSIBLE_TRAVEL from appearing as a
+    # top driver on mule/APP-scam wallets where it would weaken typology realism.
+    geo = rand_geo_th()
     events.append({
         "event_id": f"EVT_APP_{i:04d}",
         "wallet_id": wallet_id,

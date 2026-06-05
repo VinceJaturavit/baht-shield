@@ -7,6 +7,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { OuroxMark, OuroxWordmark } from "./OuroxLogo";
+import { OuroxFooter } from "./OuroxFooter";
 
 export type OuroxProduct = "Ourox" | "Verity" | "Arbiter";
 
@@ -87,6 +88,9 @@ export function OuroxShell({ currentProduct = "Ourox", children }: OuroxShellPro
       <div className="flex-1 flex flex-col">
         {children}
       </div>
+
+      {/* Shared platform footer */}
+      <OuroxFooter variant="dark" />
     </div>
   );
 }
