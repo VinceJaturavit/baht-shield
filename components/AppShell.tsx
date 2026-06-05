@@ -23,6 +23,7 @@ const NAV_LINKS = [
   { href: "/entities", label: "Wallets / Entities" },
   { href: "/patterns", label: "Pattern Intelligence" },
   { href: "/analytics", label: "Analytics" },
+  { href: "/arbiter", label: "Arbiter" },
   { href: "/settings", label: "Settings" },
 ];
 

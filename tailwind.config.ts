@@ -75,6 +75,18 @@ const config: Config = {
           low: "#647084",
           unknown: "#8A94A6",
         },
+        // Ourox palette — used by Arbiter section only; does not replace SignalOS tokens.
+        ourox: {
+          obsidian: "#101820",
+          orange: "#FF8200",
+          yellow: "#FFC72C",
+          ink: "#ECEFF3",
+          obsidianLight: "#1A2530",
+          obsidianMid: "#243040",
+          orangeHover: "#E07200",
+          orangeSubtle: "#FFF3E8",
+          yellowSubtle: "#FFFBE8",
+        },
       },
       borderRadius: {
         signal: "12px",

@@ -48,7 +48,8 @@ export interface Transaction {
   channel: string;
   beneficiary_id: string;
   device_id: string;
-  // NO timestamp field — order via txn_id sequence only
+  timestamp?: string; // ISO-8601; added by Spec-001b migration
+  geo?: { lat: number; lon: number } | null; // synthetic geo; added by Spec-001b migration
 }
 
 export interface WalletAccount {

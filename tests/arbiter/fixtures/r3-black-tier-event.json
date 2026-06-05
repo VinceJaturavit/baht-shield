@@ -1,0 +1,17 @@
+[
+  {
+    "event_id": "EVT_R3_VERIFY_001",
+    "wallet_id": "WAL_BG_VERIFY",
+    "timestamp": "2026-05-30T12:00:00.000Z",
+    "amount_thb": 10000,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_VERIFY",
+    "device_id": "DEV_BG_VERIFY",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": { "lat": 13.7563, "lon": 100.5018 },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  }
+]

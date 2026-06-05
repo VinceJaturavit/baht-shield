@@ -1,0 +1,280 @@
+{
+  "contentType": "application/vnd.gorules.decision",
+  "nodes": [
+    {
+      "id": "node-input",
+      "name": "Arbiter Input",
+      "type": "inputNode",
+      "position": { "x": 0, "y": 200 }
+    },
+    {
+      "id": "node-rules",
+      "name": "Phase 1 Decisioning Rules",
+      "type": "decisionTableNode",
+      "content": {
+        "hitPolicy": "collect",
+        "_comment": "COLLECT policy fires ALL matching rows and returns an array. The rules adapter (lib/arbiter/rules.ts) then applies precedence: BLOCK > REVIEW > STEP_UP > score-band APPROVE. Rule conditions (R1-R6 + score bands) live here; no conditions are duplicated in TypeScript.",
+        "inputs": [
+          {
+            "id": "col-amt",
+            "field": "amount_thb",
+            "name": "Amount (THB)"
+          },
+          {
+            "id": "col-facial",
+            "field": "has_facial_scan",
+            "name": "Has Facial Scan"
+          },
+          {
+            "id": "col-geo",
+            "field": "geo_velocity",
+            "name": "Geo Velocity (km/h)"
+          },
+          {
+            "id": "col-ben-tier",
+            "field": "beneficiary_risk_tier",
+            "name": "Beneficiary Risk Tier"
+          },
+          {
+            "id": "col-age",
+            "field": "account_age_days",
+            "name": "Account Age (days)"
+          },
+          {
+            "id": "col-daily",
+            "field": "daily_cumulative_thb",
+            "name": "Daily Cumulative (THB)"
+          },
+          {
+            "id": "col-wadr",
+            "field": "withdrawal_after_deposit",
+            "name": "Withdrawal After Deposit"
+          },
+          {
+            "id": "col-dev-cnt",
+            "field": "device_account_count",
+            "name": "Device Account Count"
+          },
+          {
+            "id": "col-score",
+            "field": "score",
+            "name": "Composite Score"
+          }
+        ],
+        "outputs": [
+          {
+            "id": "col-action",
+            "field": "action",
+            "name": "Action"
+          },
+          {
+            "id": "col-rule-id",
+            "field": "rule_id",
+            "name": "Rule ID"
+          },
+          {
+            "id": "col-reason",
+            "field": "reason_code",
+            "name": "Reason Code"
+          },
+          {
+            "id": "col-explanation",
+            "field": "explanation",
+            "name": "Explanation"
+          }
+        ],
+        "rules": [
+          {
+            "_id": "rule-R1",
+            "_description": "R1: High-value transfer without facial scan — STEP_UP for liveness verification",
+            "col-amt": "> 50000",
+            "col-facial": "false",
+            "col-geo": "",
+            "col-ben-tier": "",
+            "col-age": "",
+            "col-daily": "",
+            "col-wadr": "",
+            "col-dev-cnt": "",
+            "col-score": "",
+            "col-action": "\"STEP_UP\"",
+            "col-rule-id": "\"R1\"",
+            "col-reason": "\"TH_FACIAL_SCAN_REQUIRED\"",
+            "col-explanation": "\"Transfer > ฿50,000 requires facial liveness scan under Thai e-payment guidelines.\""
+          },
+          {
+            "_id": "rule-R2",
+            "_description": "R2: Impossible travel detected — BLOCK",
+            "col-amt": "",
+            "col-facial": "",
+            "col-geo": "> 900",
+            "col-ben-tier": "",
+            "col-age": "",
+            "col-daily": "",
+            "col-wadr": "",
+            "col-dev-cnt": "",
+            "col-score": "",
+            "col-action": "\"BLOCK\"",
+            "col-rule-id": "\"R2\"",
+            "col-reason": "\"IMPOSSIBLE_TRAVEL\"",
+            "col-explanation": "\"Geo velocity exceeds 900 km/h — physically impossible and consistent with credential misuse.\""
+          },
+          {
+            "_id": "rule-R3",
+            "_description": "R3: Beneficiary on prohibited risk tier — BLOCK",
+            "col-amt": "",
+            "col-facial": "",
+            "col-geo": "",
+            "col-ben-tier": "[\"black\", \"dark_grey\"]",
+            "col-age": "",
+            "col-daily": "",
+            "col-wadr": "",
+            "col-dev-cnt": "",
+            "col-score": "",
+            "col-action": "\"BLOCK\"",
+            "col-rule-id": "\"R3\"",
+            "col-reason": "\"MULE_TARGET_PROHIBITED\"",
+            "col-explanation": "\"Beneficiary endpoint is on black or dark-grey mule/exit tier — transaction is blocked.\""
+          },
+          {
+            "_id": "rule-R4",
+            "_description": "R4: New-user daily cap exceeded — BLOCK",
+            "col-amt": "",
+            "col-facial": "",
+            "col-geo": "",
+            "col-ben-tier": "",
+            "col-age": "< 7",
+            "col-daily": "> 50000",
+            "col-wadr": "",
+            "col-dev-cnt": "",
+            "col-score": "",
+            "col-action": "\"BLOCK\"",
+            "col-rule-id": "\"R4\"",
+            "col-reason": "\"NEW_USER_DAILY_CAP\"",
+            "col-explanation": "\"Account < 7 days old with > ฿50,000 cumulative outbound today — new-user daily cap exceeded.\""
+          },
+          {
+            "_id": "rule-R5",
+            "_description": "R5: Rapid pass-through pattern in young account — REVIEW",
+            "col-amt": "",
+            "col-facial": "",
+            "col-geo": "",
+            "col-ben-tier": "",
+            "col-age": "< 30",
+            "col-daily": "",
+            "col-wadr": "> 0.9",
+            "col-dev-cnt": "",
+            "col-score": "",
+            "col-action": "\"REVIEW\"",
+            "col-rule-id": "\"R5\"",
+            "col-reason": "\"RAPID_PASS_THROUGH\"",
+            "col-explanation": "\"Outbound/inbound ratio > 0.9 in an account < 30 days old — rapid pass-through after funding.\""
+          },
+          {
+            "_id": "rule-R6",
+            "_description": "R6: Device shared across many wallets — REVIEW",
+            "col-amt": "",
+            "col-facial": "",
+            "col-geo": "",
+            "col-ben-tier": "",
+            "col-age": "",
+            "col-daily": "",
+            "col-wadr": "",
+            "col-dev-cnt": "> 3",
+            "col-score": "",
+            "col-action": "\"REVIEW\"",
+            "col-rule-id": "\"R6\"",
+            "col-reason": "\"DEVICE_SHARING\"",
+            "col-explanation": "\"Device is shared across > 3 wallet accounts — consistent with mule farm device reuse.\""
+          },
+          {
+            "_id": "rule-SB-BLOCK",
+            "_description": "Score band: high composite risk — BLOCK",
+            "col-amt": "",
+            "col-facial": "",
+            "col-geo": "",
+            "col-ben-tier": "",
+            "col-age": "",
+            "col-daily": "",
+            "col-wadr": "",
+            "col-dev-cnt": "",
+            "col-score": ">= 75",
+            "col-action": "\"BLOCK\"",
+            "col-rule-id": "\"SCORE_BAND\"",
+            "col-reason": "\"SCORE_HIGH_RISK\"",
+            "col-explanation": "\"Composite fraud score >= 75 — score-band BLOCK threshold.\""
+          },
+          {
+            "_id": "rule-SB-REVIEW",
+            "_description": "Score band: medium composite risk — REVIEW",
+            "col-amt": "",
+            "col-facial": "",
+            "col-geo": "",
+            "col-ben-tier": "",
+            "col-age": "",
+            "col-daily": "",
+            "col-wadr": "",
+            "col-dev-cnt": "",
+            "col-score": "[50..75)",
+            "col-action": "\"REVIEW\"",
+            "col-rule-id": "\"SCORE_BAND\"",
+            "col-reason": "\"SCORE_MEDIUM_RISK\"",
+            "col-explanation": "\"Composite fraud score 50–74 — score-band REVIEW threshold.\""
+          },
+          {
+            "_id": "rule-SB-STEP-UP",
+            "_description": "Score band: low composite risk — STEP_UP",
+            "col-amt": "",
+            "col-facial": "",
+            "col-geo": "",
+            "col-ben-tier": "",
+            "col-age": "",
+            "col-daily": "",
+            "col-wadr": "",
+            "col-dev-cnt": "",
+            "col-score": "[25..50)",
+            "col-action": "\"STEP_UP\"",
+            "col-rule-id": "\"SCORE_BAND\"",
+            "col-reason": "\"SCORE_LOW_RISK\"",
+            "col-explanation": "\"Composite fraud score 25–49 — score-band STEP_UP threshold.\""
+          },
+          {
+            "_id": "rule-SB-APPROVE",
+            "_description": "Score band: minimal composite risk — APPROVE",
+            "col-amt": "",
+            "col-facial": "",
+            "col-geo": "",
+            "col-ben-tier": "",
+            "col-age": "",
+            "col-daily": "",
+            "col-wadr": "",
+            "col-dev-cnt": "",
+            "col-score": "< 25",
+            "col-action": "\"APPROVE\"",
+            "col-rule-id": "\"SCORE_BAND\"",
+            "col-reason": "\"SCORE_MINIMAL_RISK\"",
+            "col-explanation": "\"Composite fraud score < 25 — score-band APPROVE threshold.\""
+          }
+        ]
+      },
+      "position": { "x": 300, "y": 0 }
+    },
+    {
+      "id": "node-output",
+      "name": "Decision Output",
+      "type": "outputNode",
+      "position": { "x": 700, "y": 200 }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-input-rules",
+      "sourceId": "node-input",
+      "targetId": "node-rules"
+    },
+    {
+      "id": "edge-rules-output",
+      "sourceId": "node-rules",
+      "targetId": "node-output"
+    }
+  ]
+}

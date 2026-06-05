@@ -1,0 +1,6356 @@
+[
+  {
+    "event_id": "EVT_MF_0001",
+    "wallet_id": "WAL_MF_001",
+    "timestamp": "2026-05-29T19:58:53.440018Z",
+    "amount_thb": 37639.27,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_001",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.9604,
+      "lon": 102.9667
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0002",
+    "wallet_id": "WAL_MF_002",
+    "timestamp": "2026-05-28T13:53:13.724403Z",
+    "amount_thb": 35681.95,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_002",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.2662,
+      "lon": 105.0172
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0003",
+    "wallet_id": "WAL_MF_003",
+    "timestamp": "2026-05-29T07:30:06.370611Z",
+    "amount_thb": 42322.44,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_003",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.349,
+      "lon": 103.2859
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0004",
+    "wallet_id": "WAL_MF_004",
+    "timestamp": "2026-05-28T20:26:12.235719Z",
+    "amount_thb": 34868.45,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_004",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.5189,
+      "lon": 104.0143
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0005",
+    "wallet_id": "WAL_MF_005",
+    "timestamp": "2026-05-29T01:14:06.232384Z",
+    "amount_thb": 56563.08,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_005",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.8819,
+      "lon": 105.5061
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0006",
+    "wallet_id": "WAL_MF_006",
+    "timestamp": "2026-05-28T20:08:40.996434Z",
+    "amount_thb": 41061.65,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_006",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.2938,
+      "lon": 101.1433
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0007",
+    "wallet_id": "WAL_MF_007",
+    "timestamp": "2026-05-28T23:04:18.692183Z",
+    "amount_thb": 34722.6,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_007",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.228,
+      "lon": 100.2644
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0008",
+    "wallet_id": "WAL_MF_008",
+    "timestamp": "2026-05-29T09:31:31.309903Z",
+    "amount_thb": 21969.16,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_008",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.5337,
+      "lon": 99.8527
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0009",
+    "wallet_id": "WAL_MF_009",
+    "timestamp": "2026-05-29T12:58:58.369883Z",
+    "amount_thb": 23444.91,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_009",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.1707,
+      "lon": 100.305
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0010",
+    "wallet_id": "WAL_MF_010",
+    "timestamp": "2026-05-29T06:26:31.216424Z",
+    "amount_thb": 17133.14,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_010",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.924,
+      "lon": 102.1241
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0011",
+    "wallet_id": "WAL_MF_011",
+    "timestamp": "2026-05-28T21:28:37.880201Z",
+    "amount_thb": 70868.4,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_001",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 6.1629,
+      "lon": 100.423
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0012",
+    "wallet_id": "WAL_MF_012",
+    "timestamp": "2026-05-29T02:13:16.739447Z",
+    "amount_thb": 73715.03,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_002",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 6.4839,
+      "lon": 100.942
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0013",
+    "wallet_id": "WAL_MF_013",
+    "timestamp": "2026-05-29T11:46:08.731803Z",
+    "amount_thb": 38475.4,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_003",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.1469,
+      "lon": 103.6288
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0014",
+    "wallet_id": "WAL_MF_014",
+    "timestamp": "2026-05-29T12:01:04.552031Z",
+    "amount_thb": 37841.26,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_004",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.4351,
+      "lon": 102.193
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0015",
+    "wallet_id": "WAL_MF_015",
+    "timestamp": "2026-05-28T21:02:54.096392Z",
+    "amount_thb": 66656.45,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_005",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 19.9195,
+      "lon": 102.9894
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0016",
+    "wallet_id": "WAL_MF_016",
+    "timestamp": "2026-05-29T03:23:18.566825Z",
+    "amount_thb": 68904.61,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_006",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 9.8611,
+      "lon": 100.5478
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0017",
+    "wallet_id": "WAL_MF_017",
+    "timestamp": "2026-05-29T15:16:11.537001Z",
+    "amount_thb": 37353.98,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_007",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.7293,
+      "lon": 99.7165
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0018",
+    "wallet_id": "WAL_MF_018",
+    "timestamp": "2026-05-29T17:50:55.850711Z",
+    "amount_thb": 16557.71,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_008",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.2409,
+      "lon": 103.4317
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0019",
+    "wallet_id": "WAL_MF_019",
+    "timestamp": "2026-05-28T23:23:00.807394Z",
+    "amount_thb": 17011.4,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_009",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.3703,
+      "lon": 101.3202
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0020",
+    "wallet_id": "WAL_MF_020",
+    "timestamp": "2026-05-29T09:53:13.013948Z",
+    "amount_thb": 67137.74,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_010",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 13.1882,
+      "lon": 99.0294
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0021",
+    "wallet_id": "WAL_MF_021",
+    "timestamp": "2026-05-29T02:54:46.047997Z",
+    "amount_thb": 46654.7,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_001",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.1928,
+      "lon": 101.8224
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0022",
+    "wallet_id": "WAL_MF_022",
+    "timestamp": "2026-05-29T07:28:58.463687Z",
+    "amount_thb": 69152.66,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_002",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.8455,
+      "lon": 98.8979
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0023",
+    "wallet_id": "WAL_MF_023",
+    "timestamp": "2026-05-29T01:19:43.694662Z",
+    "amount_thb": 43544.96,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_003",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.6147,
+      "lon": 103.3941
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0024",
+    "wallet_id": "WAL_MF_024",
+    "timestamp": "2026-05-29T12:34:42.252244Z",
+    "amount_thb": 53956.35,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_004",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.0119,
+      "lon": 102.0466
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0025",
+    "wallet_id": "WAL_MF_025",
+    "timestamp": "2026-05-29T05:16:11.214010Z",
+    "amount_thb": 54483.93,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_005",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 19.798,
+      "lon": 100.2245
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0026",
+    "wallet_id": "WAL_MF_026",
+    "timestamp": "2026-05-30T01:38:27.535941Z",
+    "amount_thb": 69822.2,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_006",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.8119,
+      "lon": 103.1009
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0027",
+    "wallet_id": "WAL_MF_027",
+    "timestamp": "2026-05-29T08:06:27.776889Z",
+    "amount_thb": 29699.91,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_007",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.9164,
+      "lon": 100.0804
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0028",
+    "wallet_id": "WAL_MF_028",
+    "timestamp": "2026-05-28T13:56:30.635109Z",
+    "amount_thb": 66431.28,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_008",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 7.4909,
+      "lon": 102.9141
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0029",
+    "wallet_id": "WAL_MF_029",
+    "timestamp": "2026-05-28T18:46:36.597129Z",
+    "amount_thb": 62872.44,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_009",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 10.7218,
+      "lon": 104.6404
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0030",
+    "wallet_id": "WAL_MF_030",
+    "timestamp": "2026-05-29T17:31:04.678390Z",
+    "amount_thb": 18273.14,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_010",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.9595,
+      "lon": 97.4863
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0031",
+    "wallet_id": "WAL_MF_031",
+    "timestamp": "2026-05-28T13:29:13.414936Z",
+    "amount_thb": 57337.48,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_001",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 8.1355,
+      "lon": 100.4615
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0032",
+    "wallet_id": "WAL_MF_032",
+    "timestamp": "2026-05-30T06:56:03.594228Z",
+    "amount_thb": 49954.62,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_002",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.4889,
+      "lon": 101.3055
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0033",
+    "wallet_id": "WAL_MF_033",
+    "timestamp": "2026-05-30T00:34:31.580377Z",
+    "amount_thb": 33109.31,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_003",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.1111,
+      "lon": 103.8104
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0034",
+    "wallet_id": "WAL_MF_034",
+    "timestamp": "2026-05-29T22:00:54.255520Z",
+    "amount_thb": 29870.26,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_004",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.9471,
+      "lon": 100.8981
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0035",
+    "wallet_id": "WAL_MF_035",
+    "timestamp": "2026-05-29T18:52:28.031651Z",
+    "amount_thb": 59102.11,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_005",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 7.222,
+      "lon": 100.4733
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0036",
+    "wallet_id": "WAL_MF_036",
+    "timestamp": "2026-05-29T23:54:10.793145Z",
+    "amount_thb": 51196.46,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_006",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.4176,
+      "lon": 102.0389
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0037",
+    "wallet_id": "WAL_MF_037",
+    "timestamp": "2026-05-28T17:10:30.223987Z",
+    "amount_thb": 63375.5,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_007",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.0629,
+      "lon": 99.272
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0038",
+    "wallet_id": "WAL_MF_038",
+    "timestamp": "2026-05-29T18:08:32.805763Z",
+    "amount_thb": 46176.69,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_008",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.6011,
+      "lon": 97.5183
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0039",
+    "wallet_id": "WAL_MF_039",
+    "timestamp": "2026-05-28T19:07:44.050169Z",
+    "amount_thb": 62461.76,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_009",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 6.445,
+      "lon": 105.6916
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0040",
+    "wallet_id": "WAL_MF_040",
+    "timestamp": "2026-05-28T21:14:44.538900Z",
+    "amount_thb": 23044.95,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_010",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.1419,
+      "lon": 103.7513
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0041",
+    "wallet_id": "WAL_MF_041",
+    "timestamp": "2026-05-28T13:34:51.797638Z",
+    "amount_thb": 58088.09,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_001",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 15.3788,
+      "lon": 101.1508
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0042",
+    "wallet_id": "WAL_MF_042",
+    "timestamp": "2026-05-30T08:33:17.303408Z",
+    "amount_thb": 44600.37,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_002",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.8713,
+      "lon": 102.675
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0043",
+    "wallet_id": "WAL_MF_043",
+    "timestamp": "2026-05-29T06:32:47.661632Z",
+    "amount_thb": 46371.36,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_003",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.3707,
+      "lon": 104.4259
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0044",
+    "wallet_id": "WAL_MF_044",
+    "timestamp": "2026-05-28T13:42:44.701105Z",
+    "amount_thb": 73352.35,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_004",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 13.5726,
+      "lon": 101.7955
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0045",
+    "wallet_id": "WAL_MF_045",
+    "timestamp": "2026-05-29T07:11:31.889975Z",
+    "amount_thb": 23763.78,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_005",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.9988,
+      "lon": 103.9619
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0046",
+    "wallet_id": "WAL_MF_046",
+    "timestamp": "2026-05-29T00:07:21.326517Z",
+    "amount_thb": 42090.45,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_006",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.4972,
+      "lon": 98.9979
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0047",
+    "wallet_id": "WAL_MF_047",
+    "timestamp": "2026-05-30T05:18:24.348966Z",
+    "amount_thb": 44516.54,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_007",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.1469,
+      "lon": 98.4457
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0048",
+    "wallet_id": "WAL_MF_048",
+    "timestamp": "2026-05-30T08:18:33.930964Z",
+    "amount_thb": 69938.36,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_001",
+    "device_id": "DEV_SHARED_MF_008",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 9.3171,
+      "lon": 101.8723
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0049",
+    "wallet_id": "WAL_MF_049",
+    "timestamp": "2026-05-29T07:40:26.750396Z",
+    "amount_thb": 72151.2,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_002",
+    "device_id": "DEV_SHARED_MF_009",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 10.2899,
+      "lon": 100.6834
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_MF_0050",
+    "wallet_id": "WAL_MF_050",
+    "timestamp": "2026-05-29T03:28:23.121361Z",
+    "amount_thb": 74772.79,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_AGENT_003",
+    "device_id": "DEV_SHARED_MF_010",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 10.6397,
+      "lon": 97.8491
+    },
+    "source": "mockingbird",
+    "_scenario_label": "onboarding_mule_farm"
+  },
+  {
+    "event_id": "EVT_SM_0001",
+    "wallet_id": "WAL_SM_001",
+    "timestamp": "2026-05-30T07:56:41.655050Z",
+    "amount_thb": 66869.39,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_001",
+    "device_id": "DEV_SM_001",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.2421,
+      "lon": 98.7089
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0002",
+    "wallet_id": "WAL_SM_002",
+    "timestamp": "2026-05-30T05:50:28.616689Z",
+    "amount_thb": 27723.42,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_002",
+    "device_id": "DEV_SM_002",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.7666,
+      "lon": 98.2957
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0003",
+    "wallet_id": "WAL_SM_003",
+    "timestamp": "2026-05-30T04:49:25.158287Z",
+    "amount_thb": 73238.25,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_003",
+    "device_id": "DEV_SM_003",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 16.4912,
+      "lon": 103.8433
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0004",
+    "wallet_id": "WAL_SM_004",
+    "timestamp": "2026-05-30T09:35:09.344228Z",
+    "amount_thb": 56295.69,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_004",
+    "device_id": "DEV_SM_004",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 9.0688,
+      "lon": 100.3333
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0005",
+    "wallet_id": "WAL_SM_005",
+    "timestamp": "2026-05-30T03:57:32.560454Z",
+    "amount_thb": 61432.53,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_005",
+    "device_id": "DEV_SM_005",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.4747,
+      "lon": 100.1226
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0006",
+    "wallet_id": "WAL_SM_006",
+    "timestamp": "2026-05-30T02:15:45.868212Z",
+    "amount_thb": 49621.76,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_006",
+    "device_id": "DEV_SM_006",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 12.074,
+      "lon": 98.2105
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0007",
+    "wallet_id": "WAL_SM_007",
+    "timestamp": "2026-05-30T06:22:01.081980Z",
+    "amount_thb": 53164.87,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_007",
+    "device_id": "DEV_SM_007",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.6228,
+      "lon": 105.6372
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0008",
+    "wallet_id": "WAL_SM_008",
+    "timestamp": "2026-05-30T10:10:09.743239Z",
+    "amount_thb": 65664.72,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_008",
+    "device_id": "DEV_SM_008",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 19.208,
+      "lon": 101.8218
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0009",
+    "wallet_id": "WAL_SM_009",
+    "timestamp": "2026-05-30T00:49:19.048459Z",
+    "amount_thb": 21032.75,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_009",
+    "device_id": "DEV_SM_009",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.4581,
+      "lon": 97.6949
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0010",
+    "wallet_id": "WAL_SM_010",
+    "timestamp": "2026-05-30T01:49:30.161779Z",
+    "amount_thb": 60259.37,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_010",
+    "device_id": "DEV_SM_010",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 10.8299,
+      "lon": 100.8689
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0011",
+    "wallet_id": "WAL_SM_011",
+    "timestamp": "2026-05-30T03:37:45.983853Z",
+    "amount_thb": 53690.78,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_011",
+    "device_id": "DEV_SM_011",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.01,
+      "lon": 103.3267
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0012",
+    "wallet_id": "WAL_SM_012",
+    "timestamp": "2026-05-30T02:19:23.743312Z",
+    "amount_thb": 30407.26,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_012",
+    "device_id": "DEV_SM_012",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.926,
+      "lon": 101.6479
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0013",
+    "wallet_id": "WAL_SM_013",
+    "timestamp": "2026-05-30T04:22:45.071770Z",
+    "amount_thb": 25855.11,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_013",
+    "device_id": "DEV_SM_013",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.3601,
+      "lon": 98.8734
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0014",
+    "wallet_id": "WAL_SM_014",
+    "timestamp": "2026-05-30T08:48:45.120565Z",
+    "amount_thb": 58167.14,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_014",
+    "device_id": "DEV_SM_014",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 7.9778,
+      "lon": 99.3343
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0015",
+    "wallet_id": "WAL_SM_015",
+    "timestamp": "2026-05-30T10:58:13.876728Z",
+    "amount_thb": 58845.26,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_015",
+    "device_id": "DEV_SM_015",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.9098,
+      "lon": 100.1093
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0016",
+    "wallet_id": "WAL_SM_016",
+    "timestamp": "2026-05-30T02:26:49.312580Z",
+    "amount_thb": 62347.37,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_016",
+    "device_id": "DEV_SM_016",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.1906,
+      "lon": 103.7032
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0017",
+    "wallet_id": "WAL_SM_017",
+    "timestamp": "2026-05-30T08:57:33.821061Z",
+    "amount_thb": 62260.94,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_017",
+    "device_id": "DEV_SM_017",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.2512,
+      "lon": 100.0697
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0018",
+    "wallet_id": "WAL_SM_018",
+    "timestamp": "2026-05-30T04:47:01.637596Z",
+    "amount_thb": 48282.79,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_018",
+    "device_id": "DEV_SM_018",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 7.7169,
+      "lon": 100.9429
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0019",
+    "wallet_id": "WAL_SM_019",
+    "timestamp": "2026-05-30T09:10:28.844451Z",
+    "amount_thb": 71786.39,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_019",
+    "device_id": "DEV_SM_019",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.8603,
+      "lon": 103.7292
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0020",
+    "wallet_id": "WAL_SM_020",
+    "timestamp": "2026-05-30T04:23:50.081603Z",
+    "amount_thb": 71498.69,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_020",
+    "device_id": "DEV_SM_020",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.0938,
+      "lon": 99.9596
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0021",
+    "wallet_id": "WAL_SM_021",
+    "timestamp": "2026-05-30T04:57:57.084885Z",
+    "amount_thb": 74100.17,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_021",
+    "device_id": "DEV_SM_021",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.835,
+      "lon": 105.3252
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0022",
+    "wallet_id": "WAL_SM_022",
+    "timestamp": "2026-05-30T00:29:27.209607Z",
+    "amount_thb": 73038.56,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_022",
+    "device_id": "DEV_SM_022",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 8.3635,
+      "lon": 100.6829
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0023",
+    "wallet_id": "WAL_SM_023",
+    "timestamp": "2026-05-30T10:07:38.236838Z",
+    "amount_thb": 63640.5,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_023",
+    "device_id": "DEV_SM_023",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.9249,
+      "lon": 102.4036
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0024",
+    "wallet_id": "WAL_SM_024",
+    "timestamp": "2026-05-30T04:36:44.175363Z",
+    "amount_thb": 42480.94,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_024",
+    "device_id": "DEV_SM_024",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.5201,
+      "lon": 101.2757
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0025",
+    "wallet_id": "WAL_SM_025",
+    "timestamp": "2026-05-30T07:27:08.365143Z",
+    "amount_thb": 70154.29,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_025",
+    "device_id": "DEV_SM_025",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 13.106,
+      "lon": 105.2719
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0026",
+    "wallet_id": "WAL_SM_026",
+    "timestamp": "2026-05-30T00:31:43.181353Z",
+    "amount_thb": 50555.53,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_026",
+    "device_id": "DEV_SM_026",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 20.4688,
+      "lon": 104.9626
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0027",
+    "wallet_id": "WAL_SM_027",
+    "timestamp": "2026-05-30T00:27:17.735502Z",
+    "amount_thb": 28444.03,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_027",
+    "device_id": "DEV_SM_027",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.2932,
+      "lon": 103.3561
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0028",
+    "wallet_id": "WAL_SM_028",
+    "timestamp": "2026-05-30T00:18:31.424283Z",
+    "amount_thb": 35335.87,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_028",
+    "device_id": "DEV_SM_028",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 11.696,
+      "lon": 100.0356
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0029",
+    "wallet_id": "WAL_SM_029",
+    "timestamp": "2026-05-30T04:39:43.198727Z",
+    "amount_thb": 68018.19,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_029",
+    "device_id": "DEV_SM_029",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.0596,
+      "lon": 103.7462
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0030",
+    "wallet_id": "WAL_SM_030",
+    "timestamp": "2026-05-30T11:22:21.708209Z",
+    "amount_thb": 55337.82,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_030",
+    "device_id": "DEV_SM_030",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 12.145,
+      "lon": 99.9229
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0031",
+    "wallet_id": "WAL_SM_031",
+    "timestamp": "2026-05-30T01:22:17.776620Z",
+    "amount_thb": 70849.08,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_031",
+    "device_id": "DEV_SM_031",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.0291,
+      "lon": 105.5049
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0032",
+    "wallet_id": "WAL_SM_032",
+    "timestamp": "2026-05-30T06:19:27.472974Z",
+    "amount_thb": 74342.99,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_032",
+    "device_id": "DEV_SM_032",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 5.7318,
+      "lon": 104.6763
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0033",
+    "wallet_id": "WAL_SM_033",
+    "timestamp": "2026-05-30T05:40:43.049998Z",
+    "amount_thb": 60452.59,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_033",
+    "device_id": "DEV_SM_033",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.6471,
+      "lon": 99.2454
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0034",
+    "wallet_id": "WAL_SM_034",
+    "timestamp": "2026-05-30T06:33:46.087621Z",
+    "amount_thb": 63971.57,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_034",
+    "device_id": "DEV_SM_034",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.1673,
+      "lon": 103.2625
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0035",
+    "wallet_id": "WAL_SM_035",
+    "timestamp": "2026-05-30T03:55:21.971270Z",
+    "amount_thb": 45867.16,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_035",
+    "device_id": "DEV_SM_035",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.1585,
+      "lon": 101.8165
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0036",
+    "wallet_id": "WAL_SM_036",
+    "timestamp": "2026-05-30T10:08:12.968627Z",
+    "amount_thb": 62595.34,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_036",
+    "device_id": "DEV_SM_036",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 18.2767,
+      "lon": 102.8068
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0037",
+    "wallet_id": "WAL_SM_037",
+    "timestamp": "2026-05-30T09:57:02.079015Z",
+    "amount_thb": 51366.77,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_037",
+    "device_id": "DEV_SM_037",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.0594,
+      "lon": 99.168
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0038",
+    "wallet_id": "WAL_SM_038",
+    "timestamp": "2026-05-30T05:34:18.257409Z",
+    "amount_thb": 20609.59,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_038",
+    "device_id": "DEV_SM_038",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 13.9385,
+      "lon": 100.3383
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0039",
+    "wallet_id": "WAL_SM_039",
+    "timestamp": "2026-05-30T07:17:40.507810Z",
+    "amount_thb": 75388.7,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_039",
+    "device_id": "DEV_SM_039",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.0703,
+      "lon": 99.1331
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0040",
+    "wallet_id": "WAL_SM_040",
+    "timestamp": "2026-05-30T09:15:34.531655Z",
+    "amount_thb": 39195.35,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_040",
+    "device_id": "DEV_SM_040",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.6923,
+      "lon": 104.8073
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0041",
+    "wallet_id": "WAL_SM_041",
+    "timestamp": "2026-05-30T05:34:51.520957Z",
+    "amount_thb": 73549.06,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_041",
+    "device_id": "DEV_SM_041",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 8.7737,
+      "lon": 103.5817
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0042",
+    "wallet_id": "WAL_SM_042",
+    "timestamp": "2026-05-30T01:13:53.228855Z",
+    "amount_thb": 35926.22,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_042",
+    "device_id": "DEV_SM_042",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 20.3187,
+      "lon": 100.4758
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0043",
+    "wallet_id": "WAL_SM_043",
+    "timestamp": "2026-05-30T02:12:53.917022Z",
+    "amount_thb": 29770.91,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_043",
+    "device_id": "DEV_SM_043",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.5809,
+      "lon": 98.8325
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0044",
+    "wallet_id": "WAL_SM_044",
+    "timestamp": "2026-05-30T08:00:05.724374Z",
+    "amount_thb": 79080.77,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_044",
+    "device_id": "DEV_SM_044",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.6291,
+      "lon": 99.2562
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0045",
+    "wallet_id": "WAL_SM_045",
+    "timestamp": "2026-05-30T05:47:06.795646Z",
+    "amount_thb": 36832.03,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_045",
+    "device_id": "DEV_SM_045",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 12.0062,
+      "lon": 98.3403
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0046",
+    "wallet_id": "WAL_SM_046",
+    "timestamp": "2026-05-30T03:14:39.488530Z",
+    "amount_thb": 58805.41,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_046",
+    "device_id": "DEV_SM_046",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.035,
+      "lon": 104.6806
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0047",
+    "wallet_id": "WAL_SM_047",
+    "timestamp": "2026-05-30T01:18:10.271605Z",
+    "amount_thb": 42424.6,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_047",
+    "device_id": "DEV_SM_047",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.323,
+      "lon": 103.127
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0048",
+    "wallet_id": "WAL_SM_048",
+    "timestamp": "2026-05-30T10:46:20.390088Z",
+    "amount_thb": 76383.16,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_048",
+    "device_id": "DEV_SM_048",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.5224,
+      "lon": 103.3747
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0049",
+    "wallet_id": "WAL_SM_049",
+    "timestamp": "2026-05-30T01:45:30.357585Z",
+    "amount_thb": 64295.52,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_049",
+    "device_id": "DEV_SM_049",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 6.6216,
+      "lon": 103.6761
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_SM_0050",
+    "wallet_id": "WAL_SM_050",
+    "timestamp": "2026-05-30T09:13:51.914460Z",
+    "amount_thb": 30012.8,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_XBDR_050",
+    "device_id": "DEV_SM_050",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.2704,
+      "lon": 102.3289
+    },
+    "source": "mockingbird",
+    "_scenario_label": "sleeper_activation"
+  },
+  {
+    "event_id": "EVT_APP_0001",
+    "wallet_id": "WAL_APP_001",
+    "timestamp": "2026-05-30T07:21:13.279298Z",
+    "amount_thb": 52886.49,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_001",
+    "device_id": "DEV_APP_001",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 16.2208,
+      "lon": 98.2517
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0002",
+    "wallet_id": "WAL_APP_002",
+    "timestamp": "2026-05-29T20:47:37.928214Z",
+    "amount_thb": 95245.45,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_002",
+    "device_id": "DEV_APP_002",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.763,
+      "lon": 101.6562
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0003",
+    "wallet_id": "WAL_APP_003",
+    "timestamp": "2026-05-29T14:17:38.843870Z",
+    "amount_thb": 74345.21,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_003",
+    "device_id": "DEV_APP_003",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.5555,
+      "lon": 104.9349
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0004",
+    "wallet_id": "WAL_APP_004",
+    "timestamp": "2026-05-29T20:35:29.485911Z",
+    "amount_thb": 72125.13,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_004",
+    "device_id": "DEV_APP_004",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 49.8898,
+      "lon": 15.6959
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0005",
+    "wallet_id": "WAL_APP_005",
+    "timestamp": "2026-05-29T15:31:43.840501Z",
+    "amount_thb": 78246.31,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_005",
+    "device_id": "DEV_APP_005",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 6.1814,
+      "lon": 97.3452
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0006",
+    "wallet_id": "WAL_APP_006",
+    "timestamp": "2026-05-30T11:19:35.190891Z",
+    "amount_thb": 71442.4,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_006",
+    "device_id": "DEV_APP_006",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 17.8334,
+      "lon": 100.6289
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0007",
+    "wallet_id": "WAL_APP_007",
+    "timestamp": "2026-05-30T01:20:14.527151Z",
+    "amount_thb": 91046.53,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_007",
+    "device_id": "DEV_APP_007",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.0037,
+      "lon": 104.2386
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0008",
+    "wallet_id": "WAL_APP_008",
+    "timestamp": "2026-05-30T02:50:56.034319Z",
+    "amount_thb": 77509.55,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_008",
+    "device_id": "DEV_APP_008",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 54.8028,
+      "lon": 7.7247
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0009",
+    "wallet_id": "WAL_APP_009",
+    "timestamp": "2026-05-30T00:04:59.790168Z",
+    "amount_thb": 32729.18,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_009",
+    "device_id": "DEV_APP_009",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.7,
+      "lon": 103.8262
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0010",
+    "wallet_id": "WAL_APP_010",
+    "timestamp": "2026-05-30T08:45:27.657351Z",
+    "amount_thb": 52867.87,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_010",
+    "device_id": "DEV_APP_010",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.1825,
+      "lon": 100.1651
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0011",
+    "wallet_id": "WAL_APP_011",
+    "timestamp": "2026-05-30T00:13:04.409360Z",
+    "amount_thb": 101496.74,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_011",
+    "device_id": "DEV_APP_011",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 8.9812,
+      "lon": 101.1978
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0012",
+    "wallet_id": "WAL_APP_012",
+    "timestamp": "2026-05-30T07:00:05.789051Z",
+    "amount_thb": 98326.18,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_012",
+    "device_id": "DEV_APP_012",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 50.7251,
+      "lon": 4.3029
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0013",
+    "wallet_id": "WAL_APP_013",
+    "timestamp": "2026-05-29T23:52:45.019357Z",
+    "amount_thb": 51517.89,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_013",
+    "device_id": "DEV_APP_013",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.0693,
+      "lon": 104.1239
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0014",
+    "wallet_id": "WAL_APP_014",
+    "timestamp": "2026-05-30T03:11:14.440215Z",
+    "amount_thb": 142382.22,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_014",
+    "device_id": "DEV_APP_014",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.5108,
+      "lon": 104.431
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0015",
+    "wallet_id": "WAL_APP_015",
+    "timestamp": "2026-05-29T18:59:26.280628Z",
+    "amount_thb": 74942.42,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_015",
+    "device_id": "DEV_APP_015",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.803,
+      "lon": 101.6663
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0016",
+    "wallet_id": "WAL_APP_016",
+    "timestamp": "2026-05-29T16:08:46.836978Z",
+    "amount_thb": 103777.88,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_016",
+    "device_id": "DEV_APP_016",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 50.1845,
+      "lon": 13.925
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0017",
+    "wallet_id": "WAL_APP_017",
+    "timestamp": "2026-05-30T04:53:34.495880Z",
+    "amount_thb": 75551.06,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_017",
+    "device_id": "DEV_APP_017",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.9711,
+      "lon": 98.2988
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0018",
+    "wallet_id": "WAL_APP_018",
+    "timestamp": "2026-05-30T07:54:23.372731Z",
+    "amount_thb": 157232.38,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_018",
+    "device_id": "DEV_APP_018",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 9.089,
+      "lon": 99.7138
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0019",
+    "wallet_id": "WAL_APP_019",
+    "timestamp": "2026-05-29T15:06:28.377296Z",
+    "amount_thb": 82036.02,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_019",
+    "device_id": "DEV_APP_019",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 19.7226,
+      "lon": 102.6747
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0020",
+    "wallet_id": "WAL_APP_020",
+    "timestamp": "2026-05-29T14:44:39.321764Z",
+    "amount_thb": 68816.32,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_020",
+    "device_id": "DEV_APP_020",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 54.7048,
+      "lon": 4.4646
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0021",
+    "wallet_id": "WAL_APP_021",
+    "timestamp": "2026-05-29T15:49:17.697240Z",
+    "amount_thb": 49208.73,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_021",
+    "device_id": "DEV_APP_021",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.1449,
+      "lon": 103.3262
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0022",
+    "wallet_id": "WAL_APP_022",
+    "timestamp": "2026-05-30T11:18:49.699971Z",
+    "amount_thb": 28735.76,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_022",
+    "device_id": "DEV_APP_022",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.2401,
+      "lon": 101.234
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0023",
+    "wallet_id": "WAL_APP_023",
+    "timestamp": "2026-05-30T02:22:49.526957Z",
+    "amount_thb": 76084.14,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_023",
+    "device_id": "DEV_APP_023",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.9345,
+      "lon": 99.2576
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0024",
+    "wallet_id": "WAL_APP_024",
+    "timestamp": "2026-05-29T18:24:10.615798Z",
+    "amount_thb": 95671.48,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_024",
+    "device_id": "DEV_APP_024",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 49.6083,
+      "lon": 7.0222
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0025",
+    "wallet_id": "WAL_APP_025",
+    "timestamp": "2026-05-29T18:50:35.780611Z",
+    "amount_thb": 29974.81,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_025",
+    "device_id": "DEV_APP_025",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.8408,
+      "lon": 105.4423
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0026",
+    "wallet_id": "WAL_APP_026",
+    "timestamp": "2026-05-29T21:58:17.985049Z",
+    "amount_thb": 72732.31,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_026",
+    "device_id": "DEV_APP_026",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 6.9685,
+      "lon": 103.3221
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0027",
+    "wallet_id": "WAL_APP_027",
+    "timestamp": "2026-05-29T12:45:07.213774Z",
+    "amount_thb": 102484.55,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_027",
+    "device_id": "DEV_APP_027",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 6.3615,
+      "lon": 104.931
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0028",
+    "wallet_id": "WAL_APP_028",
+    "timestamp": "2026-05-29T21:11:41.662523Z",
+    "amount_thb": 108550.33,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_028",
+    "device_id": "DEV_APP_028",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 50.3777,
+      "lon": 6.1663
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0029",
+    "wallet_id": "WAL_APP_029",
+    "timestamp": "2026-05-29T16:17:44.067577Z",
+    "amount_thb": 54123.11,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_029",
+    "device_id": "DEV_APP_029",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.5633,
+      "lon": 104.237
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0030",
+    "wallet_id": "WAL_APP_030",
+    "timestamp": "2026-05-29T23:42:54.746338Z",
+    "amount_thb": 68244.17,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_030",
+    "device_id": "DEV_APP_030",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.3414,
+      "lon": 102.1466
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0031",
+    "wallet_id": "WAL_APP_031",
+    "timestamp": "2026-05-29T22:08:15.613880Z",
+    "amount_thb": 54039.32,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_031",
+    "device_id": "DEV_APP_031",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.9046,
+      "lon": 100.442
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0032",
+    "wallet_id": "WAL_APP_032",
+    "timestamp": "2026-05-29T19:16:13.019050Z",
+    "amount_thb": 46676.88,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_032",
+    "device_id": "DEV_APP_032",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 53.5146,
+      "lon": 17.7359
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0033",
+    "wallet_id": "WAL_APP_033",
+    "timestamp": "2026-05-29T18:17:23.897159Z",
+    "amount_thb": 81563.3,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_033",
+    "device_id": "DEV_APP_033",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.0412,
+      "lon": 99.3582
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0034",
+    "wallet_id": "WAL_APP_034",
+    "timestamp": "2026-05-29T23:50:59.277527Z",
+    "amount_thb": 68400.87,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_034",
+    "device_id": "DEV_APP_034",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 17.2072,
+      "lon": 100.2846
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0035",
+    "wallet_id": "WAL_APP_035",
+    "timestamp": "2026-05-29T16:43:50.803660Z",
+    "amount_thb": 81663.83,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_035",
+    "device_id": "DEV_APP_035",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 11.5346,
+      "lon": 101.9715
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0036",
+    "wallet_id": "WAL_APP_036",
+    "timestamp": "2026-05-30T09:18:28.375679Z",
+    "amount_thb": 27576.83,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_036",
+    "device_id": "DEV_APP_036",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 50.2314,
+      "lon": 11.4408
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0037",
+    "wallet_id": "WAL_APP_037",
+    "timestamp": "2026-05-30T10:47:58.972787Z",
+    "amount_thb": 139773.28,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_037",
+    "device_id": "DEV_APP_037",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.4105,
+      "lon": 98.4277
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0038",
+    "wallet_id": "WAL_APP_038",
+    "timestamp": "2026-05-29T19:55:58.469464Z",
+    "amount_thb": 77980.76,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_038",
+    "device_id": "DEV_APP_038",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.4637,
+      "lon": 100.9152
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0039",
+    "wallet_id": "WAL_APP_039",
+    "timestamp": "2026-05-30T03:14:59.465563Z",
+    "amount_thb": 106983.1,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_039",
+    "device_id": "DEV_APP_039",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 16.2946,
+      "lon": 101.6813
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0040",
+    "wallet_id": "WAL_APP_040",
+    "timestamp": "2026-05-29T22:05:02.531609Z",
+    "amount_thb": 30208.32,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_040",
+    "device_id": "DEV_APP_040",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 54.7353,
+      "lon": 10.2982
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0041",
+    "wallet_id": "WAL_APP_041",
+    "timestamp": "2026-05-30T01:37:41.164616Z",
+    "amount_thb": 48327.79,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_041",
+    "device_id": "DEV_APP_041",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 12.498,
+      "lon": 102.9052
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0042",
+    "wallet_id": "WAL_APP_042",
+    "timestamp": "2026-05-30T08:49:34.967977Z",
+    "amount_thb": 27809.8,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_042",
+    "device_id": "DEV_APP_042",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 19.6673,
+      "lon": 104.7109
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0043",
+    "wallet_id": "WAL_APP_043",
+    "timestamp": "2026-05-29T14:39:27.593339Z",
+    "amount_thb": 28254.59,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_043",
+    "device_id": "DEV_APP_043",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.2642,
+      "lon": 99.7165
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0044",
+    "wallet_id": "WAL_APP_044",
+    "timestamp": "2026-05-29T21:19:44.388170Z",
+    "amount_thb": 28735.5,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_044",
+    "device_id": "DEV_APP_044",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 50.5246,
+      "lon": 14.4826
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0045",
+    "wallet_id": "WAL_APP_045",
+    "timestamp": "2026-05-29T21:21:43.173778Z",
+    "amount_thb": 53606.72,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_045",
+    "device_id": "DEV_APP_045",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.8984,
+      "lon": 100.6072
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0046",
+    "wallet_id": "WAL_APP_046",
+    "timestamp": "2026-05-30T05:22:48.703578Z",
+    "amount_thb": 102617.33,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_046",
+    "device_id": "DEV_APP_046",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.1612,
+      "lon": 102.203
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0047",
+    "wallet_id": "WAL_APP_047",
+    "timestamp": "2026-05-29T17:47:28.871175Z",
+    "amount_thb": 51178.67,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_047",
+    "device_id": "DEV_APP_047",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 8.5164,
+      "lon": 102.3143
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0048",
+    "wallet_id": "WAL_APP_048",
+    "timestamp": "2026-05-30T07:02:55.452787Z",
+    "amount_thb": 99711.6,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_HIGHRISK_048",
+    "device_id": "DEV_APP_048",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 50.0451,
+      "lon": 6.0311
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0049",
+    "wallet_id": "WAL_APP_049",
+    "timestamp": "2026-05-29T20:50:55.977605Z",
+    "amount_thb": 32724.2,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_MEDRISK_049",
+    "device_id": "DEV_APP_049",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 10.3928,
+      "lon": 102.4106
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_APP_0050",
+    "wallet_id": "WAL_APP_050",
+    "timestamp": "2026-05-30T06:37:51.692611Z",
+    "amount_thb": 106044.86,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_NEW_050",
+    "device_id": "DEV_APP_050",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.9199,
+      "lon": 100.6536
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_BG_0001",
+    "wallet_id": "WAL_BG_001",
+    "timestamp": "2026-05-30T08:19:09.527568Z",
+    "amount_thb": 2118.3,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000001",
+    "device_id": "DEV_BG_001",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.591,
+      "lon": 98.5382
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0002",
+    "wallet_id": "WAL_BG_002",
+    "timestamp": "2026-05-26T09:20:30.652208Z",
+    "amount_thb": 5144.89,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000002",
+    "device_id": "DEV_BG_002",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.0697,
+      "lon": 100.0734
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0003",
+    "wallet_id": "WAL_BG_003",
+    "timestamp": "2026-05-29T17:27:39.515631Z",
+    "amount_thb": 6830.5,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000003",
+    "device_id": "DEV_BG_003",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.7173,
+      "lon": 104.3778
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0004",
+    "wallet_id": "WAL_BG_004",
+    "timestamp": "2026-05-26T05:25:15.276076Z",
+    "amount_thb": 621.24,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000004",
+    "device_id": "DEV_BG_004",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.3486,
+      "lon": 99.0298
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0005",
+    "wallet_id": "WAL_BG_005",
+    "timestamp": "2026-05-24T21:25:31.119928Z",
+    "amount_thb": 6246.26,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000005",
+    "device_id": "DEV_BG_005",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.4137,
+      "lon": 97.9766
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0006",
+    "wallet_id": "WAL_BG_006",
+    "timestamp": "2026-05-27T02:25:50.740569Z",
+    "amount_thb": 5874.61,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000006",
+    "device_id": "DEV_BG_006",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.4665,
+      "lon": 102.5587
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0007",
+    "wallet_id": "WAL_BG_007",
+    "timestamp": "2026-05-25T10:35:31.297708Z",
+    "amount_thb": 3849.87,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000007",
+    "device_id": "DEV_BG_007",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.5786,
+      "lon": 97.916
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0008",
+    "wallet_id": "WAL_BG_008",
+    "timestamp": "2026-05-30T07:19:40.901587Z",
+    "amount_thb": 1533.08,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000008",
+    "device_id": "DEV_BG_008",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.9889,
+      "lon": 102.9741
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0009",
+    "wallet_id": "WAL_BG_009",
+    "timestamp": "2026-05-25T04:26:39.093863Z",
+    "amount_thb": 3270.0,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000009",
+    "device_id": "DEV_BG_009",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.0182,
+      "lon": 98.1969
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0010",
+    "wallet_id": "WAL_BG_010",
+    "timestamp": "2026-05-29T21:44:52.565963Z",
+    "amount_thb": 3286.09,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000010",
+    "device_id": "DEV_BG_010",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.9678,
+      "lon": 104.2681
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0011",
+    "wallet_id": "WAL_BG_011",
+    "timestamp": "2026-05-29T02:06:14.321940Z",
+    "amount_thb": 963.98,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000011",
+    "device_id": "DEV_BG_011",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.4219,
+      "lon": 103.1491
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0012",
+    "wallet_id": "WAL_BG_012",
+    "timestamp": "2026-05-27T20:22:25.468814Z",
+    "amount_thb": 4637.24,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000012",
+    "device_id": "DEV_BG_012",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.1802,
+      "lon": 101.4626
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0013",
+    "wallet_id": "WAL_BG_013",
+    "timestamp": "2026-05-27T05:58:18.192735Z",
+    "amount_thb": 5037.71,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000013",
+    "device_id": "DEV_BG_013",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.8085,
+      "lon": 103.5776
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0014",
+    "wallet_id": "WAL_BG_014",
+    "timestamp": "2026-05-30T06:26:56.372420Z",
+    "amount_thb": 3005.63,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000014",
+    "device_id": "DEV_BG_014",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.014,
+      "lon": 102.218
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0015",
+    "wallet_id": "WAL_BG_015",
+    "timestamp": "2026-05-28T08:04:38.957236Z",
+    "amount_thb": 6088.5,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000015",
+    "device_id": "DEV_BG_015",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.2862,
+      "lon": 97.6124
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0016",
+    "wallet_id": "WAL_BG_016",
+    "timestamp": "2026-05-23T14:26:31.300343Z",
+    "amount_thb": 3642.12,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000016",
+    "device_id": "DEV_BG_016",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.9102,
+      "lon": 101.9433
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0017",
+    "wallet_id": "WAL_BG_017",
+    "timestamp": "2026-05-24T15:44:37.882994Z",
+    "amount_thb": 2153.93,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000017",
+    "device_id": "DEV_BG_017",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.3718,
+      "lon": 102.3187
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0018",
+    "wallet_id": "WAL_BG_018",
+    "timestamp": "2026-05-26T19:44:42.089305Z",
+    "amount_thb": 3053.95,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000018",
+    "device_id": "DEV_BG_018",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.9128,
+      "lon": 99.5878
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0019",
+    "wallet_id": "WAL_BG_019",
+    "timestamp": "2026-05-24T13:50:05.481481Z",
+    "amount_thb": 2296.32,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000019",
+    "device_id": "DEV_BG_019",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.5673,
+      "lon": 97.3348
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0020",
+    "wallet_id": "WAL_BG_020",
+    "timestamp": "2026-05-27T02:34:23.992866Z",
+    "amount_thb": 2195.99,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000020",
+    "device_id": "DEV_BG_020",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.9233,
+      "lon": 104.3546
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0021",
+    "wallet_id": "WAL_BG_021",
+    "timestamp": "2026-05-29T08:25:17.759484Z",
+    "amount_thb": 5023.62,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000021",
+    "device_id": "DEV_BG_021",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 5.8695,
+      "lon": 102.6817
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0022",
+    "wallet_id": "WAL_BG_022",
+    "timestamp": "2026-05-25T17:35:36.591080Z",
+    "amount_thb": 4741.92,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000022",
+    "device_id": "DEV_BG_022",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.1867,
+      "lon": 103.7163
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0023",
+    "wallet_id": "WAL_BG_023",
+    "timestamp": "2026-05-29T04:33:41.554286Z",
+    "amount_thb": 2742.47,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000023",
+    "device_id": "DEV_BG_023",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.873,
+      "lon": 102.0539
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0024",
+    "wallet_id": "WAL_BG_024",
+    "timestamp": "2026-05-25T09:33:45.100798Z",
+    "amount_thb": 7090.59,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000024",
+    "device_id": "DEV_BG_024",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.0893,
+      "lon": 105.0603
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0025",
+    "wallet_id": "WAL_BG_025",
+    "timestamp": "2026-05-27T07:18:57.012465Z",
+    "amount_thb": 5178.67,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000025",
+    "device_id": "DEV_BG_025",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.9273,
+      "lon": 98.8173
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0026",
+    "wallet_id": "WAL_BG_026",
+    "timestamp": "2026-05-25T16:53:16.631299Z",
+    "amount_thb": 3712.8,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000026",
+    "device_id": "DEV_BG_026",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.2934,
+      "lon": 98.3188
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0027",
+    "wallet_id": "WAL_BG_027",
+    "timestamp": "2026-05-28T15:59:28.191000Z",
+    "amount_thb": 5697.03,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000027",
+    "device_id": "DEV_BG_027",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.6993,
+      "lon": 100.5607
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0028",
+    "wallet_id": "WAL_BG_028",
+    "timestamp": "2026-05-30T06:49:56.462256Z",
+    "amount_thb": 7857.18,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000028",
+    "device_id": "DEV_BG_028",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.993,
+      "lon": 99.517
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0029",
+    "wallet_id": "WAL_BG_029",
+    "timestamp": "2026-05-30T02:20:38.685748Z",
+    "amount_thb": 3822.08,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000029",
+    "device_id": "DEV_BG_029",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.1912,
+      "lon": 99.8279
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0030",
+    "wallet_id": "WAL_BG_030",
+    "timestamp": "2026-05-26T23:37:18.323257Z",
+    "amount_thb": 5242.85,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000030",
+    "device_id": "DEV_BG_030",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.9287,
+      "lon": 105.4394
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0031",
+    "wallet_id": "WAL_BG_031",
+    "timestamp": "2026-05-26T00:38:56.180175Z",
+    "amount_thb": 4173.61,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000031",
+    "device_id": "DEV_BG_031",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.0111,
+      "lon": 104.4528
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0032",
+    "wallet_id": "WAL_BG_032",
+    "timestamp": "2026-05-25T12:52:49.196774Z",
+    "amount_thb": 5624.95,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000032",
+    "device_id": "DEV_BG_032",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.1297,
+      "lon": 104.9179
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0033",
+    "wallet_id": "WAL_BG_033",
+    "timestamp": "2026-05-26T22:00:54.948287Z",
+    "amount_thb": 7781.44,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000033",
+    "device_id": "DEV_BG_033",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.3698,
+      "lon": 100.2623
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0034",
+    "wallet_id": "WAL_BG_034",
+    "timestamp": "2026-05-26T21:14:31.467488Z",
+    "amount_thb": 1969.25,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000034",
+    "device_id": "DEV_BG_034",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.6993,
+      "lon": 103.5588
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0035",
+    "wallet_id": "WAL_BG_035",
+    "timestamp": "2026-05-29T17:45:16.712495Z",
+    "amount_thb": 1870.7,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000035",
+    "device_id": "DEV_BG_035",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.3311,
+      "lon": 102.4512
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0036",
+    "wallet_id": "WAL_BG_036",
+    "timestamp": "2026-05-23T17:26:46.679283Z",
+    "amount_thb": 7711.39,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000036",
+    "device_id": "DEV_BG_036",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.0436,
+      "lon": 98.7477
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0037",
+    "wallet_id": "WAL_BG_037",
+    "timestamp": "2026-05-25T12:30:08.717656Z",
+    "amount_thb": 6043.58,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000037",
+    "device_id": "DEV_BG_037",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.2947,
+      "lon": 98.1289
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0038",
+    "wallet_id": "WAL_BG_038",
+    "timestamp": "2026-05-28T08:23:13.968123Z",
+    "amount_thb": 1078.79,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000038",
+    "device_id": "DEV_BG_038",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.4319,
+      "lon": 98.581
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0039",
+    "wallet_id": "WAL_BG_039",
+    "timestamp": "2026-05-24T16:50:35.462252Z",
+    "amount_thb": 4393.88,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000039",
+    "device_id": "DEV_BG_039",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.4083,
+      "lon": 105.3986
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0040",
+    "wallet_id": "WAL_BG_040",
+    "timestamp": "2026-05-27T01:43:29.807790Z",
+    "amount_thb": 3318.26,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000040",
+    "device_id": "DEV_BG_040",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.3087,
+      "lon": 105.1652
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0041",
+    "wallet_id": "WAL_BG_041",
+    "timestamp": "2026-05-28T17:27:20.687437Z",
+    "amount_thb": 793.73,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000041",
+    "device_id": "DEV_BG_041",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.9241,
+      "lon": 101.1876
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0042",
+    "wallet_id": "WAL_BG_042",
+    "timestamp": "2026-05-26T16:03:03.351650Z",
+    "amount_thb": 1503.57,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000042",
+    "device_id": "DEV_BG_042",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.3639,
+      "lon": 104.7806
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0043",
+    "wallet_id": "WAL_BG_043",
+    "timestamp": "2026-05-27T11:29:11.492558Z",
+    "amount_thb": 2975.54,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000043",
+    "device_id": "DEV_BG_043",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.0985,
+      "lon": 102.0416
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0044",
+    "wallet_id": "WAL_BG_044",
+    "timestamp": "2026-05-25T20:41:09.022069Z",
+    "amount_thb": 3453.75,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000044",
+    "device_id": "DEV_BG_044",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.9314,
+      "lon": 105.3563
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0045",
+    "wallet_id": "WAL_BG_045",
+    "timestamp": "2026-05-28T15:45:04.121806Z",
+    "amount_thb": 7393.72,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000045",
+    "device_id": "DEV_BG_045",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.6802,
+      "lon": 102.3513
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0046",
+    "wallet_id": "WAL_BG_046",
+    "timestamp": "2026-05-28T11:45:12.792183Z",
+    "amount_thb": 2841.92,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000046",
+    "device_id": "DEV_BG_046",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.0904,
+      "lon": 104.0937
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0047",
+    "wallet_id": "WAL_BG_047",
+    "timestamp": "2026-05-27T06:20:40.404182Z",
+    "amount_thb": 4401.78,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000047",
+    "device_id": "DEV_BG_047",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.7002,
+      "lon": 97.3277
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0048",
+    "wallet_id": "WAL_BG_048",
+    "timestamp": "2026-05-27T13:09:19.197060Z",
+    "amount_thb": 1219.11,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000048",
+    "device_id": "DEV_BG_048",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.1289,
+      "lon": 101.967
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0049",
+    "wallet_id": "WAL_BG_049",
+    "timestamp": "2026-05-27T04:12:27.502893Z",
+    "amount_thb": 6265.26,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000049",
+    "device_id": "DEV_BG_049",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.5644,
+      "lon": 99.4589
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0050",
+    "wallet_id": "WAL_BG_050",
+    "timestamp": "2026-05-23T12:50:44.946524Z",
+    "amount_thb": 3413.18,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000050",
+    "device_id": "DEV_BG_050",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.3238,
+      "lon": 99.5095
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0051",
+    "wallet_id": "WAL_BG_051",
+    "timestamp": "2026-05-27T13:50:59.972614Z",
+    "amount_thb": 6461.72,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000051",
+    "device_id": "DEV_BG_051",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.7917,
+      "lon": 99.4463
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0052",
+    "wallet_id": "WAL_BG_052",
+    "timestamp": "2026-05-28T03:29:05.837281Z",
+    "amount_thb": 4127.83,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000052",
+    "device_id": "DEV_BG_052",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.1933,
+      "lon": 102.5131
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0053",
+    "wallet_id": "WAL_BG_053",
+    "timestamp": "2026-05-24T01:20:41.204410Z",
+    "amount_thb": 2309.23,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000053",
+    "device_id": "DEV_BG_053",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.2811,
+      "lon": 104.9836
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0054",
+    "wallet_id": "WAL_BG_054",
+    "timestamp": "2026-05-27T12:04:21.606033Z",
+    "amount_thb": 4378.22,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000054",
+    "device_id": "DEV_BG_054",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.1584,
+      "lon": 98.5878
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0055",
+    "wallet_id": "WAL_BG_055",
+    "timestamp": "2026-05-29T15:17:45.159321Z",
+    "amount_thb": 6349.51,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000055",
+    "device_id": "DEV_BG_055",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.9083,
+      "lon": 101.3062
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0056",
+    "wallet_id": "WAL_BG_056",
+    "timestamp": "2026-05-26T23:06:03.503709Z",
+    "amount_thb": 5037.78,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000056",
+    "device_id": "DEV_BG_056",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.1882,
+      "lon": 105.2793
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0057",
+    "wallet_id": "WAL_BG_057",
+    "timestamp": "2026-05-29T06:36:01.470683Z",
+    "amount_thb": 3450.52,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000057",
+    "device_id": "DEV_BG_057",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.9535,
+      "lon": 104.4229
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0058",
+    "wallet_id": "WAL_BG_058",
+    "timestamp": "2026-05-29T04:33:32.048487Z",
+    "amount_thb": 3661.52,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000058",
+    "device_id": "DEV_BG_058",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.8501,
+      "lon": 105.2251
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0059",
+    "wallet_id": "WAL_BG_059",
+    "timestamp": "2026-05-26T13:39:46.732398Z",
+    "amount_thb": 4988.36,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000059",
+    "device_id": "DEV_BG_059",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.6839,
+      "lon": 102.7969
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0060",
+    "wallet_id": "WAL_BG_060",
+    "timestamp": "2026-05-24T08:48:23.041134Z",
+    "amount_thb": 3257.92,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000060",
+    "device_id": "DEV_BG_060",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.8839,
+      "lon": 104.0645
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0061",
+    "wallet_id": "WAL_BG_061",
+    "timestamp": "2026-05-27T11:15:14.565995Z",
+    "amount_thb": 2932.88,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000061",
+    "device_id": "DEV_BG_061",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.2472,
+      "lon": 100.2419
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0062",
+    "wallet_id": "WAL_BG_062",
+    "timestamp": "2026-05-27T21:39:33.807361Z",
+    "amount_thb": 7710.89,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000062",
+    "device_id": "DEV_BG_062",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.2932,
+      "lon": 100.4439
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0063",
+    "wallet_id": "WAL_BG_063",
+    "timestamp": "2026-05-26T05:25:39.253724Z",
+    "amount_thb": 6236.65,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000063",
+    "device_id": "DEV_BG_063",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.0265,
+      "lon": 97.3022
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0064",
+    "wallet_id": "WAL_BG_064",
+    "timestamp": "2026-05-26T18:11:30.187849Z",
+    "amount_thb": 2581.94,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000064",
+    "device_id": "DEV_BG_064",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.2128,
+      "lon": 99.1146
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0065",
+    "wallet_id": "WAL_BG_065",
+    "timestamp": "2026-05-27T13:59:20.242406Z",
+    "amount_thb": 3838.18,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000065",
+    "device_id": "DEV_BG_065",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.3506,
+      "lon": 99.5246
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0066",
+    "wallet_id": "WAL_BG_066",
+    "timestamp": "2026-05-30T09:27:53.449590Z",
+    "amount_thb": 5314.56,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000066",
+    "device_id": "DEV_BG_066",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.4637,
+      "lon": 97.7917
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0067",
+    "wallet_id": "WAL_BG_067",
+    "timestamp": "2026-05-27T02:53:59.765594Z",
+    "amount_thb": 7093.46,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000067",
+    "device_id": "DEV_BG_067",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.9397,
+      "lon": 104.2282
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0068",
+    "wallet_id": "WAL_BG_068",
+    "timestamp": "2026-05-29T12:21:50.639145Z",
+    "amount_thb": 5084.43,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000068",
+    "device_id": "DEV_BG_068",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.6187,
+      "lon": 104.8689
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0069",
+    "wallet_id": "WAL_BG_069",
+    "timestamp": "2026-05-26T23:39:42.276594Z",
+    "amount_thb": 2709.32,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000069",
+    "device_id": "DEV_BG_069",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.2038,
+      "lon": 104.8045
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0070",
+    "wallet_id": "WAL_BG_070",
+    "timestamp": "2026-05-25T15:53:37.534130Z",
+    "amount_thb": 3410.25,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000070",
+    "device_id": "DEV_BG_070",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.9202,
+      "lon": 103.3022
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0071",
+    "wallet_id": "WAL_BG_071",
+    "timestamp": "2026-05-28T02:46:49.770264Z",
+    "amount_thb": 2809.64,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000071",
+    "device_id": "DEV_BG_071",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.959,
+      "lon": 99.6471
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0072",
+    "wallet_id": "WAL_BG_072",
+    "timestamp": "2026-05-25T02:28:25.297832Z",
+    "amount_thb": 5357.73,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000072",
+    "device_id": "DEV_BG_072",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.3768,
+      "lon": 105.5169
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0073",
+    "wallet_id": "WAL_BG_073",
+    "timestamp": "2026-05-25T03:22:26.008141Z",
+    "amount_thb": 901.91,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000073",
+    "device_id": "DEV_BG_073",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.1586,
+      "lon": 99.1088
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0074",
+    "wallet_id": "WAL_BG_074",
+    "timestamp": "2026-05-27T06:05:13.311804Z",
+    "amount_thb": 5731.24,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000074",
+    "device_id": "DEV_BG_074",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.1749,
+      "lon": 102.8676
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0075",
+    "wallet_id": "WAL_BG_075",
+    "timestamp": "2026-05-28T08:33:39.090523Z",
+    "amount_thb": 6656.01,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000075",
+    "device_id": "DEV_BG_075",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.4797,
+      "lon": 102.5214
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0076",
+    "wallet_id": "WAL_BG_076",
+    "timestamp": "2026-05-27T11:26:52.576286Z",
+    "amount_thb": 6412.87,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000076",
+    "device_id": "DEV_BG_076",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.6024,
+      "lon": 104.764
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0077",
+    "wallet_id": "WAL_BG_077",
+    "timestamp": "2026-05-29T16:44:24.731035Z",
+    "amount_thb": 1099.69,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000077",
+    "device_id": "DEV_BG_077",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.6438,
+      "lon": 97.4207
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0078",
+    "wallet_id": "WAL_BG_078",
+    "timestamp": "2026-05-27T20:03:17.610388Z",
+    "amount_thb": 754.93,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000078",
+    "device_id": "DEV_BG_078",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.9185,
+      "lon": 102.9972
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0079",
+    "wallet_id": "WAL_BG_079",
+    "timestamp": "2026-05-27T16:22:08.064365Z",
+    "amount_thb": 895.94,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000079",
+    "device_id": "DEV_BG_079",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.1976,
+      "lon": 102.3434
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0080",
+    "wallet_id": "WAL_BG_080",
+    "timestamp": "2026-05-24T18:16:03.780427Z",
+    "amount_thb": 1017.3,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000080",
+    "device_id": "DEV_BG_080",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.2313,
+      "lon": 97.3101
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0081",
+    "wallet_id": "WAL_BG_081",
+    "timestamp": "2026-05-25T14:57:25.336173Z",
+    "amount_thb": 2645.75,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000081",
+    "device_id": "DEV_BG_081",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.3951,
+      "lon": 98.0707
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0082",
+    "wallet_id": "WAL_BG_082",
+    "timestamp": "2026-05-23T23:45:26.374646Z",
+    "amount_thb": 3854.43,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000082",
+    "device_id": "DEV_BG_082",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.2875,
+      "lon": 100.4282
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0083",
+    "wallet_id": "WAL_BG_083",
+    "timestamp": "2026-05-25T06:36:49.846177Z",
+    "amount_thb": 6851.3,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000083",
+    "device_id": "DEV_BG_083",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.8814,
+      "lon": 101.2544
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0084",
+    "wallet_id": "WAL_BG_084",
+    "timestamp": "2026-05-25T20:28:45.837925Z",
+    "amount_thb": 1752.38,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000084",
+    "device_id": "DEV_BG_084",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 5.7485,
+      "lon": 98.6512
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0085",
+    "wallet_id": "WAL_BG_085",
+    "timestamp": "2026-05-28T14:08:17.477461Z",
+    "amount_thb": 3664.74,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000085",
+    "device_id": "DEV_BG_085",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.4097,
+      "lon": 98.7764
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0086",
+    "wallet_id": "WAL_BG_086",
+    "timestamp": "2026-05-26T14:58:00.330126Z",
+    "amount_thb": 1283.57,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000086",
+    "device_id": "DEV_BG_086",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.8937,
+      "lon": 102.9673
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0087",
+    "wallet_id": "WAL_BG_087",
+    "timestamp": "2026-05-26T00:56:50.289904Z",
+    "amount_thb": 1559.7,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000087",
+    "device_id": "DEV_BG_087",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.6746,
+      "lon": 101.1228
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0088",
+    "wallet_id": "WAL_BG_088",
+    "timestamp": "2026-05-24T03:51:28.790377Z",
+    "amount_thb": 1313.14,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000088",
+    "device_id": "DEV_BG_088",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 5.8964,
+      "lon": 102.8859
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0089",
+    "wallet_id": "WAL_BG_089",
+    "timestamp": "2026-05-26T00:08:08.474769Z",
+    "amount_thb": 1460.43,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000089",
+    "device_id": "DEV_BG_089",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.9776,
+      "lon": 100.0962
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0090",
+    "wallet_id": "WAL_BG_090",
+    "timestamp": "2026-05-24T16:01:32.260574Z",
+    "amount_thb": 2335.06,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000090",
+    "device_id": "DEV_BG_090",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.7775,
+      "lon": 99.6374
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0091",
+    "wallet_id": "WAL_BG_091",
+    "timestamp": "2026-05-30T02:42:13.893017Z",
+    "amount_thb": 7982.35,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000091",
+    "device_id": "DEV_BG_091",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.2733,
+      "lon": 104.536
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0092",
+    "wallet_id": "WAL_BG_092",
+    "timestamp": "2026-05-24T10:48:22.654175Z",
+    "amount_thb": 6571.6,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000092",
+    "device_id": "DEV_BG_092",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.5876,
+      "lon": 103.6147
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0093",
+    "wallet_id": "WAL_BG_093",
+    "timestamp": "2026-05-24T14:33:41.978994Z",
+    "amount_thb": 2790.91,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000093",
+    "device_id": "DEV_BG_093",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.1569,
+      "lon": 99.3391
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0094",
+    "wallet_id": "WAL_BG_094",
+    "timestamp": "2026-05-29T22:30:39.770105Z",
+    "amount_thb": 5399.68,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000094",
+    "device_id": "DEV_BG_094",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.4716,
+      "lon": 105.3724
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0095",
+    "wallet_id": "WAL_BG_095",
+    "timestamp": "2026-05-29T20:35:59.132115Z",
+    "amount_thb": 3232.15,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000095",
+    "device_id": "DEV_BG_095",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 6.1579,
+      "lon": 100.9226
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0096",
+    "wallet_id": "WAL_BG_096",
+    "timestamp": "2026-05-24T23:54:24.443248Z",
+    "amount_thb": 6832.26,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000096",
+    "device_id": "DEV_BG_096",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.3217,
+      "lon": 104.5613
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0097",
+    "wallet_id": "WAL_BG_097",
+    "timestamp": "2026-05-24T22:08:05.699330Z",
+    "amount_thb": 7441.46,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000097",
+    "device_id": "DEV_BG_097",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.1933,
+      "lon": 98.7997
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0098",
+    "wallet_id": "WAL_BG_098",
+    "timestamp": "2026-05-26T05:25:06.857267Z",
+    "amount_thb": 1256.46,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000098",
+    "device_id": "DEV_BG_098",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.2234,
+      "lon": 102.0248
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0099",
+    "wallet_id": "WAL_BG_099",
+    "timestamp": "2026-05-27T01:04:26.488336Z",
+    "amount_thb": 669.94,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000099",
+    "device_id": "DEV_BG_099",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.493,
+      "lon": 100.3454
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0100",
+    "wallet_id": "WAL_BG_100",
+    "timestamp": "2026-05-24T06:06:01.984533Z",
+    "amount_thb": 1052.28,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000100",
+    "device_id": "DEV_BG_100",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.5277,
+      "lon": 102.5961
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0101",
+    "wallet_id": "WAL_BG_101",
+    "timestamp": "2026-05-28T19:45:18.779902Z",
+    "amount_thb": 2922.98,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000101",
+    "device_id": "DEV_BG_101",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 6.7199,
+      "lon": 100.4983
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0102",
+    "wallet_id": "WAL_BG_102",
+    "timestamp": "2026-05-24T11:31:48.596591Z",
+    "amount_thb": 7136.19,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000102",
+    "device_id": "DEV_BG_102",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.0003,
+      "lon": 99.7834
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0103",
+    "wallet_id": "WAL_BG_103",
+    "timestamp": "2026-05-28T02:17:55.140659Z",
+    "amount_thb": 1071.96,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000103",
+    "device_id": "DEV_BG_103",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.8363,
+      "lon": 97.7626
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0104",
+    "wallet_id": "WAL_BG_104",
+    "timestamp": "2026-05-24T08:47:53.215232Z",
+    "amount_thb": 6611.65,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000104",
+    "device_id": "DEV_BG_104",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 5.8622,
+      "lon": 103.6332
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0105",
+    "wallet_id": "WAL_BG_105",
+    "timestamp": "2026-05-25T02:09:50.340488Z",
+    "amount_thb": 4608.48,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000105",
+    "device_id": "DEV_BG_105",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.1785,
+      "lon": 101.992
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0106",
+    "wallet_id": "WAL_BG_106",
+    "timestamp": "2026-05-29T01:23:30.615175Z",
+    "amount_thb": 5630.26,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000106",
+    "device_id": "DEV_BG_106",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.9081,
+      "lon": 98.3068
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0107",
+    "wallet_id": "WAL_BG_107",
+    "timestamp": "2026-05-24T16:17:48.447675Z",
+    "amount_thb": 4943.04,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000107",
+    "device_id": "DEV_BG_107",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.6945,
+      "lon": 99.3415
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0108",
+    "wallet_id": "WAL_BG_108",
+    "timestamp": "2026-05-24T08:43:27.768085Z",
+    "amount_thb": 1137.94,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000108",
+    "device_id": "DEV_BG_108",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.3903,
+      "lon": 99.3786
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0109",
+    "wallet_id": "WAL_BG_109",
+    "timestamp": "2026-05-28T12:23:07.237208Z",
+    "amount_thb": 7442.66,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000109",
+    "device_id": "DEV_BG_109",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.1028,
+      "lon": 101.4178
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0110",
+    "wallet_id": "WAL_BG_110",
+    "timestamp": "2026-05-28T21:37:40.321604Z",
+    "amount_thb": 5445.81,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000110",
+    "device_id": "DEV_BG_110",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.0758,
+      "lon": 103.1992
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0111",
+    "wallet_id": "WAL_BG_111",
+    "timestamp": "2026-05-28T21:17:18.340213Z",
+    "amount_thb": 4466.02,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000111",
+    "device_id": "DEV_BG_111",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.8433,
+      "lon": 102.6606
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0112",
+    "wallet_id": "WAL_BG_112",
+    "timestamp": "2026-05-24T12:31:09.541169Z",
+    "amount_thb": 7746.51,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000112",
+    "device_id": "DEV_BG_112",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 6.143,
+      "lon": 98.8783
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0113",
+    "wallet_id": "WAL_BG_113",
+    "timestamp": "2026-05-25T20:42:24.661910Z",
+    "amount_thb": 7730.84,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000113",
+    "device_id": "DEV_BG_113",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.8839,
+      "lon": 104.1175
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0114",
+    "wallet_id": "WAL_BG_114",
+    "timestamp": "2026-05-26T10:17:51.106433Z",
+    "amount_thb": 7773.14,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000114",
+    "device_id": "DEV_BG_114",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.578,
+      "lon": 103.6246
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0115",
+    "wallet_id": "WAL_BG_115",
+    "timestamp": "2026-05-29T18:52:56.134076Z",
+    "amount_thb": 3829.03,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000115",
+    "device_id": "DEV_BG_115",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.8517,
+      "lon": 98.7601
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0116",
+    "wallet_id": "WAL_BG_116",
+    "timestamp": "2026-05-26T01:21:35.357977Z",
+    "amount_thb": 1374.89,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000116",
+    "device_id": "DEV_BG_116",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.0588,
+      "lon": 102.6324
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0117",
+    "wallet_id": "WAL_BG_117",
+    "timestamp": "2026-05-29T02:49:59.407426Z",
+    "amount_thb": 5193.11,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000117",
+    "device_id": "DEV_BG_117",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.6375,
+      "lon": 104.6172
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0118",
+    "wallet_id": "WAL_BG_118",
+    "timestamp": "2026-05-23T15:54:36.248775Z",
+    "amount_thb": 4925.12,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000118",
+    "device_id": "DEV_BG_118",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.4697,
+      "lon": 98.6155
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0119",
+    "wallet_id": "WAL_BG_119",
+    "timestamp": "2026-05-24T12:06:13.838668Z",
+    "amount_thb": 3738.49,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000119",
+    "device_id": "DEV_BG_119",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.0453,
+      "lon": 100.7051
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0120",
+    "wallet_id": "WAL_BG_120",
+    "timestamp": "2026-05-28T01:14:28.891881Z",
+    "amount_thb": 7317.54,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000120",
+    "device_id": "DEV_BG_120",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 6.3306,
+      "lon": 105.5753
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0121",
+    "wallet_id": "WAL_BG_121",
+    "timestamp": "2026-05-25T03:59:00.592517Z",
+    "amount_thb": 4488.54,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000121",
+    "device_id": "DEV_BG_121",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.9892,
+      "lon": 100.3642
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0122",
+    "wallet_id": "WAL_BG_122",
+    "timestamp": "2026-05-25T21:04:33.931107Z",
+    "amount_thb": 7824.36,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000122",
+    "device_id": "DEV_BG_122",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.278,
+      "lon": 99.5413
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0123",
+    "wallet_id": "WAL_BG_123",
+    "timestamp": "2026-05-24T09:36:39.577089Z",
+    "amount_thb": 1834.72,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000123",
+    "device_id": "DEV_BG_123",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.399,
+      "lon": 99.3032
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0124",
+    "wallet_id": "WAL_BG_124",
+    "timestamp": "2026-05-27T06:24:38.638026Z",
+    "amount_thb": 5885.67,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000124",
+    "device_id": "DEV_BG_124",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.2942,
+      "lon": 99.4134
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0125",
+    "wallet_id": "WAL_BG_125",
+    "timestamp": "2026-05-29T15:59:10.229198Z",
+    "amount_thb": 806.55,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000125",
+    "device_id": "DEV_BG_125",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.8239,
+      "lon": 105.2482
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0126",
+    "wallet_id": "WAL_BG_126",
+    "timestamp": "2026-05-26T21:12:47.401636Z",
+    "amount_thb": 2580.48,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000126",
+    "device_id": "DEV_BG_126",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.3104,
+      "lon": 100.8306
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0127",
+    "wallet_id": "WAL_BG_127",
+    "timestamp": "2026-05-30T04:27:04.496755Z",
+    "amount_thb": 4746.61,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000127",
+    "device_id": "DEV_BG_127",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.4086,
+      "lon": 99.5119
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0128",
+    "wallet_id": "WAL_BG_128",
+    "timestamp": "2026-05-29T08:12:43.221919Z",
+    "amount_thb": 4020.63,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000128",
+    "device_id": "DEV_BG_128",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.1185,
+      "lon": 99.7472
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0129",
+    "wallet_id": "WAL_BG_129",
+    "timestamp": "2026-05-27T06:02:47.175996Z",
+    "amount_thb": 7632.14,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000129",
+    "device_id": "DEV_BG_129",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.8348,
+      "lon": 101.4856
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0130",
+    "wallet_id": "WAL_BG_130",
+    "timestamp": "2026-05-27T02:18:03.322196Z",
+    "amount_thb": 5583.09,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000130",
+    "device_id": "DEV_BG_130",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 6.888,
+      "lon": 98.4284
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0131",
+    "wallet_id": "WAL_BG_131",
+    "timestamp": "2026-05-28T13:57:17.456895Z",
+    "amount_thb": 545.22,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000131",
+    "device_id": "DEV_BG_131",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.5447,
+      "lon": 103.2311
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0132",
+    "wallet_id": "WAL_BG_132",
+    "timestamp": "2026-05-25T14:54:43.802236Z",
+    "amount_thb": 6639.56,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000132",
+    "device_id": "DEV_BG_132",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.6564,
+      "lon": 101.3759
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0133",
+    "wallet_id": "WAL_BG_133",
+    "timestamp": "2026-05-25T07:43:57.395923Z",
+    "amount_thb": 2968.33,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000133",
+    "device_id": "DEV_BG_133",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.1913,
+      "lon": 97.6234
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0134",
+    "wallet_id": "WAL_BG_134",
+    "timestamp": "2026-05-24T09:16:56.643397Z",
+    "amount_thb": 5335.39,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000134",
+    "device_id": "DEV_BG_134",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.1497,
+      "lon": 99.2227
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0135",
+    "wallet_id": "WAL_BG_135",
+    "timestamp": "2026-05-29T14:10:47.046403Z",
+    "amount_thb": 2726.91,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000135",
+    "device_id": "DEV_BG_135",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.5638,
+      "lon": 104.8304
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0136",
+    "wallet_id": "WAL_BG_136",
+    "timestamp": "2026-05-30T10:47:26.247489Z",
+    "amount_thb": 3544.45,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000136",
+    "device_id": "DEV_BG_136",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.858,
+      "lon": 103.6781
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0137",
+    "wallet_id": "WAL_BG_137",
+    "timestamp": "2026-05-28T08:22:42.859390Z",
+    "amount_thb": 7592.32,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000137",
+    "device_id": "DEV_BG_137",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 6.3664,
+      "lon": 103.8756
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0138",
+    "wallet_id": "WAL_BG_138",
+    "timestamp": "2026-05-25T19:27:45.238474Z",
+    "amount_thb": 2893.67,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000138",
+    "device_id": "DEV_BG_138",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 9.219,
+      "lon": 103.8744
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0139",
+    "wallet_id": "WAL_BG_139",
+    "timestamp": "2026-05-24T10:17:47.722769Z",
+    "amount_thb": 5758.37,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000139",
+    "device_id": "DEV_BG_139",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.0122,
+      "lon": 98.7215
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0140",
+    "wallet_id": "WAL_BG_140",
+    "timestamp": "2026-05-27T01:33:08.859014Z",
+    "amount_thb": 2681.3,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000140",
+    "device_id": "DEV_BG_140",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.6004,
+      "lon": 103.9428
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0141",
+    "wallet_id": "WAL_BG_141",
+    "timestamp": "2026-05-24T20:49:02.618869Z",
+    "amount_thb": 4332.96,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000141",
+    "device_id": "DEV_BG_141",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.3127,
+      "lon": 104.337
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0142",
+    "wallet_id": "WAL_BG_142",
+    "timestamp": "2026-05-30T02:09:30.582392Z",
+    "amount_thb": 7804.13,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000142",
+    "device_id": "DEV_BG_142",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.1188,
+      "lon": 100.951
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0143",
+    "wallet_id": "WAL_BG_143",
+    "timestamp": "2026-05-30T01:17:34.853639Z",
+    "amount_thb": 4921.38,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000143",
+    "device_id": "DEV_BG_143",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.6801,
+      "lon": 101.1437
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0144",
+    "wallet_id": "WAL_BG_144",
+    "timestamp": "2026-05-28T22:52:18.480387Z",
+    "amount_thb": 5547.92,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000144",
+    "device_id": "DEV_BG_144",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.5361,
+      "lon": 102.7116
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0145",
+    "wallet_id": "WAL_BG_145",
+    "timestamp": "2026-05-28T01:07:32.776123Z",
+    "amount_thb": 2832.62,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000145",
+    "device_id": "DEV_BG_145",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.8846,
+      "lon": 101.8877
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0146",
+    "wallet_id": "WAL_BG_146",
+    "timestamp": "2026-05-25T14:25:37.940915Z",
+    "amount_thb": 1957.97,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000146",
+    "device_id": "DEV_BG_146",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.8788,
+      "lon": 103.8694
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0147",
+    "wallet_id": "WAL_BG_147",
+    "timestamp": "2026-05-26T19:46:58.245782Z",
+    "amount_thb": 2561.31,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000147",
+    "device_id": "DEV_BG_147",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.0635,
+      "lon": 99.1121
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0148",
+    "wallet_id": "WAL_BG_148",
+    "timestamp": "2026-05-29T21:58:04.985870Z",
+    "amount_thb": 4537.34,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000148",
+    "device_id": "DEV_BG_148",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.6508,
+      "lon": 102.6517
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0149",
+    "wallet_id": "WAL_BG_149",
+    "timestamp": "2026-05-26T03:09:01.330462Z",
+    "amount_thb": 4290.18,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000149",
+    "device_id": "DEV_BG_149",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.3841,
+      "lon": 98.9477
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0150",
+    "wallet_id": "WAL_BG_150",
+    "timestamp": "2026-05-25T15:43:10.719284Z",
+    "amount_thb": 1055.29,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000150",
+    "device_id": "DEV_BG_150",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.2174,
+      "lon": 98.077
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0151",
+    "wallet_id": "WAL_BG_151",
+    "timestamp": "2026-05-28T06:18:47.161615Z",
+    "amount_thb": 3098.15,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000151",
+    "device_id": "DEV_BG_151",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.6329,
+      "lon": 101.0083
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0152",
+    "wallet_id": "WAL_BG_152",
+    "timestamp": "2026-05-24T01:01:49.459687Z",
+    "amount_thb": 5844.31,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000152",
+    "device_id": "DEV_BG_152",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.6581,
+      "lon": 102.0622
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0153",
+    "wallet_id": "WAL_BG_153",
+    "timestamp": "2026-05-25T18:15:56.415459Z",
+    "amount_thb": 7809.65,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000153",
+    "device_id": "DEV_BG_153",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.1332,
+      "lon": 102.9717
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0154",
+    "wallet_id": "WAL_BG_154",
+    "timestamp": "2026-05-23T21:21:58.091301Z",
+    "amount_thb": 4685.96,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000154",
+    "device_id": "DEV_BG_154",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.0597,
+      "lon": 102.0184
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0155",
+    "wallet_id": "WAL_BG_155",
+    "timestamp": "2026-05-27T09:43:26.101798Z",
+    "amount_thb": 3697.2,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000155",
+    "device_id": "DEV_BG_155",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.4884,
+      "lon": 103.676
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0156",
+    "wallet_id": "WAL_BG_156",
+    "timestamp": "2026-05-29T14:22:33.598901Z",
+    "amount_thb": 5113.46,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000156",
+    "device_id": "DEV_BG_156",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.4377,
+      "lon": 104.0642
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0157",
+    "wallet_id": "WAL_BG_157",
+    "timestamp": "2026-05-24T04:21:14.556362Z",
+    "amount_thb": 3965.1,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000157",
+    "device_id": "DEV_BG_157",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.2585,
+      "lon": 104.7821
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0158",
+    "wallet_id": "WAL_BG_158",
+    "timestamp": "2026-05-28T10:06:13.469557Z",
+    "amount_thb": 4588.27,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000158",
+    "device_id": "DEV_BG_158",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.087,
+      "lon": 98.6917
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0159",
+    "wallet_id": "WAL_BG_159",
+    "timestamp": "2026-05-26T19:17:07.541568Z",
+    "amount_thb": 6217.1,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000159",
+    "device_id": "DEV_BG_159",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.169,
+      "lon": 103.9381
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0160",
+    "wallet_id": "WAL_BG_160",
+    "timestamp": "2026-05-26T05:36:42.316333Z",
+    "amount_thb": 6470.71,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000160",
+    "device_id": "DEV_BG_160",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.4449,
+      "lon": 100.8443
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0161",
+    "wallet_id": "WAL_BG_161",
+    "timestamp": "2026-05-26T12:18:26.974939Z",
+    "amount_thb": 3391.81,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000161",
+    "device_id": "DEV_BG_161",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.7988,
+      "lon": 105.5541
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0162",
+    "wallet_id": "WAL_BG_162",
+    "timestamp": "2026-05-27T21:46:38.890354Z",
+    "amount_thb": 6544.99,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000162",
+    "device_id": "DEV_BG_162",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.4741,
+      "lon": 98.5847
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0163",
+    "wallet_id": "WAL_BG_163",
+    "timestamp": "2026-05-26T01:04:17.187235Z",
+    "amount_thb": 1364.6,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000163",
+    "device_id": "DEV_BG_163",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.9833,
+      "lon": 98.4084
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0164",
+    "wallet_id": "WAL_BG_164",
+    "timestamp": "2026-05-25T04:44:23.202622Z",
+    "amount_thb": 6954.51,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000164",
+    "device_id": "DEV_BG_164",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 6.4379,
+      "lon": 98.6376
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0165",
+    "wallet_id": "WAL_BG_165",
+    "timestamp": "2026-05-25T06:44:59.500908Z",
+    "amount_thb": 4614.43,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000165",
+    "device_id": "DEV_BG_165",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.2516,
+      "lon": 102.5083
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0166",
+    "wallet_id": "WAL_BG_166",
+    "timestamp": "2026-05-30T03:21:31.292075Z",
+    "amount_thb": 7975.55,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000166",
+    "device_id": "DEV_BG_166",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.1628,
+      "lon": 101.2976
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0167",
+    "wallet_id": "WAL_BG_167",
+    "timestamp": "2026-05-24T08:09:51.660941Z",
+    "amount_thb": 7780.36,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000167",
+    "device_id": "DEV_BG_167",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 20.3381,
+      "lon": 101.5036
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0168",
+    "wallet_id": "WAL_BG_168",
+    "timestamp": "2026-05-23T22:45:19.086631Z",
+    "amount_thb": 4640.42,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000168",
+    "device_id": "DEV_BG_168",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.7041,
+      "lon": 102.68
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0169",
+    "wallet_id": "WAL_BG_169",
+    "timestamp": "2026-05-28T01:46:59.532004Z",
+    "amount_thb": 7282.41,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000169",
+    "device_id": "DEV_BG_169",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.4333,
+      "lon": 97.6357
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0170",
+    "wallet_id": "WAL_BG_170",
+    "timestamp": "2026-05-24T00:38:37.639878Z",
+    "amount_thb": 7878.18,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000170",
+    "device_id": "DEV_BG_170",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.4887,
+      "lon": 98.8007
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0171",
+    "wallet_id": "WAL_BG_171",
+    "timestamp": "2026-05-23T13:27:36.835825Z",
+    "amount_thb": 1033.81,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000171",
+    "device_id": "DEV_BG_171",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.8396,
+      "lon": 99.9999
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0172",
+    "wallet_id": "WAL_BG_172",
+    "timestamp": "2026-05-23T22:20:53.055369Z",
+    "amount_thb": 3478.95,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000172",
+    "device_id": "DEV_BG_172",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 12.7216,
+      "lon": 100.7288
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0173",
+    "wallet_id": "WAL_BG_173",
+    "timestamp": "2026-05-24T23:08:41.936343Z",
+    "amount_thb": 4201.21,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000173",
+    "device_id": "DEV_BG_173",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.6065,
+      "lon": 103.3412
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0174",
+    "wallet_id": "WAL_BG_174",
+    "timestamp": "2026-05-24T10:50:59.022730Z",
+    "amount_thb": 5393.05,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000174",
+    "device_id": "DEV_BG_174",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.7124,
+      "lon": 98.5002
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0175",
+    "wallet_id": "WAL_BG_175",
+    "timestamp": "2026-05-25T20:17:30.133336Z",
+    "amount_thb": 389.65,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000175",
+    "device_id": "DEV_BG_175",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.4368,
+      "lon": 101.9423
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0176",
+    "wallet_id": "WAL_BG_176",
+    "timestamp": "2026-05-25T13:28:05.774286Z",
+    "amount_thb": 1746.68,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000176",
+    "device_id": "DEV_BG_176",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.9639,
+      "lon": 100.9235
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0177",
+    "wallet_id": "WAL_BG_177",
+    "timestamp": "2026-05-26T13:03:52.945511Z",
+    "amount_thb": 6833.51,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000177",
+    "device_id": "DEV_BG_177",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.5447,
+      "lon": 97.468
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0178",
+    "wallet_id": "WAL_BG_178",
+    "timestamp": "2026-05-25T03:14:22.207259Z",
+    "amount_thb": 4596.64,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000178",
+    "device_id": "DEV_BG_178",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.0529,
+      "lon": 100.2782
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0179",
+    "wallet_id": "WAL_BG_179",
+    "timestamp": "2026-05-26T19:49:46.110277Z",
+    "amount_thb": 3218.08,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000179",
+    "device_id": "DEV_BG_179",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.9505,
+      "lon": 104.1604
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0180",
+    "wallet_id": "WAL_BG_180",
+    "timestamp": "2026-05-28T14:06:04.323170Z",
+    "amount_thb": 5444.77,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000180",
+    "device_id": "DEV_BG_180",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 13.5743,
+      "lon": 105.3269
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0181",
+    "wallet_id": "WAL_BG_181",
+    "timestamp": "2026-05-29T09:37:44.889296Z",
+    "amount_thb": 6978.14,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000181",
+    "device_id": "DEV_BG_181",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.1783,
+      "lon": 100.6204
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0182",
+    "wallet_id": "WAL_BG_182",
+    "timestamp": "2026-05-26T07:54:20.146898Z",
+    "amount_thb": 7133.83,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000182",
+    "device_id": "DEV_BG_182",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.0792,
+      "lon": 100.4188
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0183",
+    "wallet_id": "WAL_BG_183",
+    "timestamp": "2026-05-30T00:13:58.153990Z",
+    "amount_thb": 218.47,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000183",
+    "device_id": "DEV_BG_183",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.0814,
+      "lon": 98.6712
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0184",
+    "wallet_id": "WAL_BG_184",
+    "timestamp": "2026-05-27T21:36:04.607924Z",
+    "amount_thb": 5308.18,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000184",
+    "device_id": "DEV_BG_184",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.7332,
+      "lon": 99.5314
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0185",
+    "wallet_id": "WAL_BG_185",
+    "timestamp": "2026-05-30T09:02:07.626119Z",
+    "amount_thb": 7437.2,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000185",
+    "device_id": "DEV_BG_185",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.1459,
+      "lon": 100.6583
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0186",
+    "wallet_id": "WAL_BG_186",
+    "timestamp": "2026-05-24T17:53:14.482337Z",
+    "amount_thb": 2080.63,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000186",
+    "device_id": "DEV_BG_186",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.1545,
+      "lon": 97.3204
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0187",
+    "wallet_id": "WAL_BG_187",
+    "timestamp": "2026-05-25T14:23:50.088570Z",
+    "amount_thb": 4294.95,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000187",
+    "device_id": "DEV_BG_187",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 7.3538,
+      "lon": 104.8206
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0188",
+    "wallet_id": "WAL_BG_188",
+    "timestamp": "2026-05-28T02:07:56.478829Z",
+    "amount_thb": 641.52,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000188",
+    "device_id": "DEV_BG_188",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.6014,
+      "lon": 105.6059
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0189",
+    "wallet_id": "WAL_BG_189",
+    "timestamp": "2026-05-28T22:01:23.611658Z",
+    "amount_thb": 3484.86,
+    "direction": "inbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_000189",
+    "device_id": "DEV_BG_189",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 15.9191,
+      "lon": 102.0388
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0190",
+    "wallet_id": "WAL_BG_190",
+    "timestamp": "2026-05-25T11:39:28.348067Z",
+    "amount_thb": 6962.86,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000190",
+    "device_id": "DEV_BG_190",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 17.1367,
+      "lon": 100.6651
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0191",
+    "wallet_id": "WAL_BG_191",
+    "timestamp": "2026-05-27T08:52:17.410231Z",
+    "amount_thb": 3615.01,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000191",
+    "device_id": "DEV_BG_191",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.9221,
+      "lon": 102.9386
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0192",
+    "wallet_id": "WAL_BG_192",
+    "timestamp": "2026-05-26T09:48:23.571862Z",
+    "amount_thb": 4174.63,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000192",
+    "device_id": "DEV_BG_192",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.8064,
+      "lon": 100.5582
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0193",
+    "wallet_id": "WAL_BG_193",
+    "timestamp": "2026-05-23T13:00:44.184369Z",
+    "amount_thb": 3459.98,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000193",
+    "device_id": "DEV_BG_193",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.2437,
+      "lon": 101.186
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0194",
+    "wallet_id": "WAL_BG_194",
+    "timestamp": "2026-05-24T09:15:47.260675Z",
+    "amount_thb": 5625.5,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000194",
+    "device_id": "DEV_BG_194",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 14.0757,
+      "lon": 98.8926
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0195",
+    "wallet_id": "WAL_BG_195",
+    "timestamp": "2026-05-25T18:20:51.734039Z",
+    "amount_thb": 3263.31,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000195",
+    "device_id": "DEV_BG_195",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 18.4295,
+      "lon": 97.9042
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0196",
+    "wallet_id": "WAL_BG_196",
+    "timestamp": "2026-05-24T04:39:55.828249Z",
+    "amount_thb": 3079.61,
+    "direction": "outbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000196",
+    "device_id": "DEV_BG_196",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 16.5595,
+      "lon": 102.6159
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0197",
+    "wallet_id": "WAL_BG_197",
+    "timestamp": "2026-05-28T15:28:53.806135Z",
+    "amount_thb": 936.21,
+    "direction": "inbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000197",
+    "device_id": "DEV_BG_197",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 19.7704,
+      "lon": 101.5587
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0198",
+    "wallet_id": "WAL_BG_198",
+    "timestamp": "2026-05-27T09:40:41.940117Z",
+    "amount_thb": 2884.65,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000198",
+    "device_id": "DEV_BG_198",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 11.9906,
+      "lon": 105.0156
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0199",
+    "wallet_id": "WAL_BG_199",
+    "timestamp": "2026-05-27T08:53:25.281007Z",
+    "amount_thb": 7881.01,
+    "direction": "outbound",
+    "rail": "internal",
+    "beneficiary_id": "BEN_000199",
+    "device_id": "DEV_BG_199",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 8.894,
+      "lon": 100.4579
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_BG_0200",
+    "wallet_id": "WAL_BG_200",
+    "timestamp": "2026-05-29T10:26:25.734368Z",
+    "amount_thb": 6406.8,
+    "direction": "inbound",
+    "rail": "promptpay",
+    "beneficiary_id": "BEN_000200",
+    "device_id": "DEV_BG_200",
+    "ip_country": "TH",
+    "has_facial_scan": true,
+    "geo": {
+      "lat": 10.8011,
+      "lon": 103.3644
+    },
+    "source": "mockingbird",
+    "_scenario_label": "background"
+  },
+  {
+    "event_id": "EVT_ATO_0001",
+    "wallet_id": "WAL_000001",
+    "timestamp": "2026-05-30T10:00:00.000Z",
+    "amount_thb": 34557.29,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_HIGHRISK_ATO1",
+    "device_id": "DEV_WAL_000001",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 35.6762,
+      "lon": 139.6503
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_ATO_0002",
+    "wallet_id": "WAL_000003",
+    "timestamp": "2026-05-30T09:30:00.000Z",
+    "amount_thb": 22470.97,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_HIGHRISK_ATO2",
+    "device_id": "DEV_WAL_000003",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": -33.8688,
+      "lon": 151.2093
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  },
+  {
+    "event_id": "EVT_ATO_0003",
+    "wallet_id": "WAL_000004",
+    "timestamp": "2026-05-30T09:15:00.000Z",
+    "amount_thb": 44815.73,
+    "direction": "outbound",
+    "rail": "bank_transfer",
+    "beneficiary_id": "BEN_MEDRISK_ATO3",
+    "device_id": "DEV_WAL_000004",
+    "ip_country": "TH",
+    "has_facial_scan": false,
+    "geo": {
+      "lat": 52.52,
+      "lon": 13.405
+    },
+    "source": "mockingbird",
+    "_scenario_label": "app_scam_cashout"
+  }
+]
