@@ -8,7 +8,7 @@ import {
   useMemo,
 } from "react";
 import { useRouter } from "next/navigation";
-import { searchSignalOS, groupSearchResults } from "@/lib/search-index";
+import { searchVerity, groupSearchResults } from "@/lib/search-index";
 import type { SearchResult, SearchResultType } from "@/lib/types";
 import { CommandResultItem } from "./CommandResultItem";
 
@@ -33,7 +33,7 @@ export function CommandModal({ isOpen, onClose }: CommandModalProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const results = useMemo(() => searchSignalOS(query), [query]);
+  const results = useMemo(() => searchVerity(query), [query]);
   const grouped = useMemo(() => groupSearchResults(results), [results]);
 
   // Flatten results preserving group order for keyboard nav
@@ -123,7 +123,7 @@ export function CommandModal({ isOpen, onClose }: CommandModalProps) {
             role="combobox"
             aria-expanded={true}
             aria-autocomplete="list"
-            aria-label="Search SignalOS"
+            aria-label="Search Verity"
             placeholder="Search wallet, alert, case, pattern, device, endpoint…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}

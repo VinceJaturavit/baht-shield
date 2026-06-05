@@ -1,4 +1,4 @@
-// SignalOS shared class maps (Spec-012).
+// Verity shared class maps (Spec-012).
 // This file contains class-name strings ONLY — no logic, no data, no computation.
 // It exists so screens can share a single source of surface/type treatments.
 

@@ -1,4 +1,4 @@
-// Local in-memory search index for the SignalOS command bar.
+// Local in-memory search index for the Verity command bar.
 // No backend, no API, no external search library.
 // Sources: lib/seed-data.ts only.
 
@@ -250,7 +250,7 @@ const TYPE_PRIORITY: Record<SearchResultType, number> = {
   endpoint: 6,
 };
 
-export function searchSignalOS(query: string): SearchResult[] {
+export function searchVerity(query: string): SearchResult[] {
   const index = buildSearchIndex();
   const q = query.trim().toLowerCase();
 

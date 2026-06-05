@@ -16,6 +16,7 @@ import { applyThresholdsToScore } from '@/lib/arbiter/tuning';
 import type { TunedEvent } from '@/lib/arbiter/tuning';
 import type { BacktestEvent } from '@/lib/arbiter/rule-backtest';
 import ArbiterTuningWorkspace from '@/components/arbiter/tuning/ArbiterTuningWorkspace';
+import { OuroxShell } from '@/components/ourox/OuroxShell';
 import mockingbirdRaw from '@/data/arbiter/mockingbird-events.json';
 
 async function buildTuningData(): Promise<{ tunedEvents: TunedEvent[]; backtestEvents: BacktestEvent[] }> {
@@ -63,11 +64,13 @@ export default async function ArbiterTuningPage() {
   const { tunedEvents, backtestEvents } = await buildTuningData();
 
   return (
-    <main className="min-h-screen bg-ourox-obsidian">
-      <ArbiterTuningWorkspace
-        tunedEvents={tunedEvents}
-        backtestEvents={backtestEvents}
-      />
-    </main>
+    <OuroxShell currentProduct="Arbiter">
+      <main className="min-h-screen bg-ourox-obsidian">
+        <ArbiterTuningWorkspace
+          tunedEvents={tunedEvents}
+          backtestEvents={backtestEvents}
+        />
+      </main>
+    </OuroxShell>
   );
 }

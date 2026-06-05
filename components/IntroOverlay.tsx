@@ -107,7 +107,7 @@ export function IntroOverlay({ open, onClose }: IntroOverlayProps) {
             id="intro-title"
             className="mb-3 text-signal-section font-semibold text-signal-ink"
           >
-            SignalOS — Analyst-Curated Fraud Intelligence
+            Verity — Analyst-Curated Fraud Intelligence
           </h2>
 
           {/* Description */}
@@ -191,7 +191,7 @@ export function IntroOverlay({ open, onClose }: IntroOverlayProps) {
                   same judgment is applied consistently across every analyst and every case.
                 </p>
                 <p className="text-signal-body text-signal-slate leading-relaxed">
-                  SignalOS demonstrates this as a layer that sits alongside scores and rules — not
+                  Verity demonstrates this as a layer that sits alongside scores and rules — not
                   replacing them. The example scenarios (onboarding mule farms, sleeper-mule
                   activation, APP-scam cash-out rings) are built so a naive standalone score
                   under-flags them, while the curated pattern catches the cluster. Every output is

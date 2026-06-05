@@ -1,14 +1,16 @@
 {
   "name": "baht-shield-app",
   "version": "0.1.0",
-  "description": "SignalOS — Analyst-Curated Fraud Intelligence (synthetic data only)",
+  "description": "Ourox — Synthetic Fraud-Tech Platform (Verity + Arbiter, synthetic data only)",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest run",
+    "test": "vitest run --exclude '**/score-distribution.test.ts'",
+    "test:slow": "vitest run tests/arbiter/score-distribution.test.ts",
+    "test:all": "vitest run",
     "seed:generate": "tsx scripts/generate-seed.ts",
     "seed:validate": "tsx scripts/validate-seed.ts",
     "test:arbiter-rules": "node tests/arbiter/rules.integration.mjs"

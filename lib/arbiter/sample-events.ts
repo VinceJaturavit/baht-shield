@@ -19,7 +19,7 @@ const mockingbirdEvents = mockingbirdRaw as ArbiterEvent[];
 
 // ---------------------------------------------------------------------------
 // Seed-derived events
-// Build a representative sample from the existing SignalOS seed transactions.
+// Build a representative sample from the existing Verity seed transactions.
 // We take the first 20 distinct wallets that have outbound transactions,
 // create a synthetic ArbiterEvent for each, preserving their real amounts
 // and device IDs. Timestamps are synthesized from user.created_at + offset.

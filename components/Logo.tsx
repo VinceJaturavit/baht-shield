@@ -11,7 +11,7 @@ export function Logo({ compact = false, className }: LogoProps) {
         viewBox="0 0 48 48"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
-        aria-label="SignalOS"
+        aria-label="Verity"
         height="28"
         width="28"
         className={`shrink-0 ${className ?? ""}`}
@@ -39,7 +39,7 @@ export function Logo({ compact = false, className }: LogoProps) {
       viewBox="0 0 232 56"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="SignalOS"
+      aria-label="Verity"
       height="32"
       className={`shrink-0 ${className ?? ""}`}
       style={{ width: "auto" }}
@@ -78,8 +78,7 @@ export function Logo({ compact = false, className }: LogoProps) {
         fontWeight="600"
         letterSpacing="-0.3"
       >
-        <tspan fill="#1B2436">Signal</tspan>
-        <tspan fill="#4B53C9">OS</tspan>
+        <tspan fill="#1B2436">Verity</tspan>
       </text>
     </svg>
   );

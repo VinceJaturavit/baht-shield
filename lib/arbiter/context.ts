@@ -1,7 +1,7 @@
 // Arbiter Phase 1/2 — Historical Context Adapter
 //
 // This module derives wallet/beneficiary/device history from the existing
-// SignalOS synthetic seed (static JSON, no database). It is called server-side
+// Ourox synthetic seed (static JSON, no database). It is called server-side
 // only; context is never accepted from client payloads.
 //
 // Spec-001b: transactions now have ISO-8601 timestamp and geo fields.

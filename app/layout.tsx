@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat, Space_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,10 +8,35 @@ const inter = Inter({
   display: "swap",
 });
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["700"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "SignalOS — Analyst-Curated Fraud Intelligence",
+  title: "Ourox — Synthetic Fraud-Tech Platform",
   description:
-    "Synthetic fraud-operations demo for analyst-curated pattern intelligence. All data illustrative.",
+    "A synthetic fraud-tech portfolio platform demonstrating investigation, risk scoring, and fraud operations workflows across Verity and Arbiter.",
+  openGraph: {
+    title: "Ourox — Synthetic Fraud-Tech Platform",
+    description:
+      "A synthetic fraud-tech portfolio platform demonstrating investigation, risk scoring, and fraud operations workflows across Verity and Arbiter.",
+    type: "website",
+  },
+  twitter: {
+    title: "Ourox — Synthetic Fraud-Tech Platform",
+    description:
+      "A synthetic fraud-tech portfolio platform demonstrating investigation, risk scoring, and fraud operations workflows across Verity and Arbiter.",
+  },
 };
 
 export default function RootLayout({
@@ -20,7 +45,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} font-sans`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${montserrat.variable} ${spaceMono.variable} font-sans`}
+    >
       <body className="font-sans bg-signal-bg text-signal-body antialiased">
         {children}
       </body>

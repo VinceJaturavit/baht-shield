@@ -19,7 +19,7 @@ const config: Config = {
         ],
       },
       colors: {
-        // SignalOS committed palette (Spec-012). Existing token NAMES are kept
+        // Verity committed palette (Spec-012). Existing token NAMES are kept
         // and remapped onto the committed values so the whole app adopts the
         // palette at the token step; new semantic aliases are added below.
         signal: {
@@ -75,7 +75,7 @@ const config: Config = {
           low: "#647084",
           unknown: "#8A94A6",
         },
-        // Ourox palette — used by Arbiter section only; does not replace SignalOS tokens.
+        // Ourox palette — used by Arbiter and Ourox home; does not replace Verity tokens.
         ourox: {
           obsidian: "#101820",
           orange: "#FF8200",

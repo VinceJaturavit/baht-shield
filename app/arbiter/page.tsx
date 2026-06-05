@@ -1,9 +1,10 @@
 // Arbiter Phase 1 — /arbiter route
 // Server component: loads sample events, passes to client explorer.
-// Ourox palette applied via bg-ourox-obsidian on the explorer wrapper.
+// OuroxShell provides the platform top bar.
 
 import { getArbiterSampleEvents } from '@/lib/arbiter/sample-events';
 import { ArbiterScoreExplorer } from '@/components/arbiter/ArbiterScoreExplorer';
+import { OuroxShell } from '@/components/ourox/OuroxShell';
 
 export const metadata = {
   title: 'Arbiter — Fraud Scoring & Decisioning · Ourox',
@@ -13,5 +14,9 @@ export const metadata = {
 
 export default async function ArbiterPage() {
   const events = await getArbiterSampleEvents();
-  return <ArbiterScoreExplorer initialEvents={events} />;
+  return (
+    <OuroxShell currentProduct="Arbiter">
+      <ArbiterScoreExplorer initialEvents={events} />
+    </OuroxShell>
+  );
 }

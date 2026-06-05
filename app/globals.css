@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* SignalOS committed design tokens (Spec-012) */
+/* Verity committed design tokens (Spec-012) */
 :root {
   --signal-ink: #1b2436;
   --signal-body: #3f4a5a;

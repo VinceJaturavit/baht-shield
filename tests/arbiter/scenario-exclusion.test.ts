@@ -5,8 +5,40 @@
 // must produce identical features, scores, and decisions.
 //
 // This test is the explicit safety / IP gate proof required by Spec-001.
+//
+// lib/seed-data is mocked so this file never loads transactions.json (2.2M
+// lines). The IP gate proof is differential — it only requires that every
+// label produces IDENTICAL output for the SAME event, which holds regardless
+// of seed content.
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+
+// vi.mock is hoisted — must be declared before all other imports.
+// Inline values only; no references to top-level consts.
+vi.mock('@/lib/seed-data', () => ({
+  transactions: [],
+  walletAccounts: [
+    {
+      wallet_id: 'WAL_BG_005',
+      user_id: 'USR_BG_005',
+      status: 'active',
+      balance: 5000,
+      last_active_at: '2026-05-29T00:00:00.000Z',
+    },
+  ],
+  users: [
+    {
+      user_id: 'USR_BG_005',
+      created_at: '2025-01-01T00:00:00.000Z',
+      country: 'TH',
+      kyc_tier: 'verified',
+      segment: 'personal',
+    },
+  ],
+  devices: [],
+  beneficiaries: [],
+  graphEdges: [],
+}));
 import { stripScenarioLabel } from '@/lib/arbiter/contract';
 import { computeArbiterFeatures } from '@/lib/arbiter/features';
 import { computeWeightedScore } from '@/lib/arbiter/score';

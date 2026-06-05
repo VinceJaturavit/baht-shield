@@ -6,6 +6,8 @@ export default defineConfig({
     globals: true,
     environment: 'node',
     include: ['tests/**/*.test.ts'],
+    pool: 'forks',
+    maxWorkers: 2,
   },
   resolve: {
     alias: {

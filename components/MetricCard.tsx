@@ -11,7 +11,7 @@ export function MetricCard({
   description,
   accent = "default",
 }: MetricCardProps) {
-  // Accent is retained as a prop for API compatibility. In the SignalOS design
+  // Accent is retained as a prop for API compatibility. In the Verity design
   // system indigo is reserved for one or two key figures; everything else uses
   // ink so the dashboard does not become equal-weight card soup.
   const valueClass =

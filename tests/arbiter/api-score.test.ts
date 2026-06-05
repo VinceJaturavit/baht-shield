@@ -4,8 +4,31 @@
 // (computeArbiterFeatures + computeWeightedScore + runArbiterRules) directly,
 // since mocking the Next.js route handler is unnecessary complexity.
 // This proves the full pipeline contract without requiring an HTTP server.
+//
+// lib/seed-data is mocked so this file never loads transactions.json (2.2M
+// lines). All assertions are structural/contract checks (score range, feature
+// key presence, rule action types) — not tied to specific seed-derived values.
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+
+// vi.mock is hoisted — must be declared before all other imports.
+// Inline values only; no references to top-level consts.
+vi.mock('@/lib/seed-data', () => ({
+  transactions: [],
+  walletAccounts: [
+    { wallet_id: 'WAL_MF_001', user_id: 'USR_MF_001', status: 'active', balance: 10000, last_active_at: '2026-05-29T00:00:00.000Z' },
+    { wallet_id: 'WAL_BG_001', user_id: 'USR_BG_001', status: 'active', balance: 5000,  last_active_at: '2026-05-29T00:00:00.000Z' },
+    { wallet_id: 'WAL_SM_001', user_id: 'USR_SM_001', status: 'active', balance: 8000,  last_active_at: '2026-05-29T00:00:00.000Z' },
+  ],
+  users: [
+    { user_id: 'USR_MF_001', created_at: '2025-01-01T00:00:00.000Z', country: 'TH', kyc_tier: 'verified', segment: 'personal' },
+    { user_id: 'USR_BG_001', created_at: '2025-03-01T00:00:00.000Z', country: 'TH', kyc_tier: 'verified', segment: 'personal' },
+    { user_id: 'USR_SM_001', created_at: '2024-06-01T00:00:00.000Z', country: 'TH', kyc_tier: 'verified', segment: 'freelancer' },
+  ],
+  devices: [],
+  beneficiaries: [],
+  graphEdges: [],
+}));
 import { stripScenarioLabel } from '@/lib/arbiter/contract';
 import { computeArbiterFeatures } from '@/lib/arbiter/features';
 import { computeWeightedScore } from '@/lib/arbiter/score';

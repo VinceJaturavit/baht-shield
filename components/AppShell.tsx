@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { OuroxMark } from "./ourox/OuroxLogo";
 import { Logo } from "./Logo";
 import { SyntheticDataLabel } from "./SyntheticDataLabel";
 import { CommandBar } from "./command/CommandBar";
@@ -17,7 +18,7 @@ interface AppShellProps {
 }
 
 const NAV_LINKS = [
-  { href: "/", label: "Dashboard" },
+  { href: "/verity", label: "Dashboard" },
   { href: "/alerts", label: "Alert Queue" },
   { href: "/cases", label: "Cases" },
   { href: "/entities", label: "Wallets / Entities" },
@@ -31,7 +32,7 @@ function isActive(pathname: string | null, href: string): boolean {
   if (!pathname) return false;
   // /wallet/* maps to Wallets / Entities (/entities)
   if (href === "/entities" && pathname.startsWith("/wallet")) return true;
-  if (href === "/") return pathname === "/";
+  if (href === "/verity") return pathname === "/verity";
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
@@ -52,12 +53,22 @@ export function AppShell({ children }: AppShellProps) {
       <header className="w-full overflow-x-hidden border-b border-signal-border bg-white">
         <div className="mx-auto flex max-w-[1280px] items-center gap-3 px-4 lg:px-6">
           <div className="flex h-16 min-w-0 flex-1 items-center gap-3">
-            {/* Brand */}
-            <div className="flex shrink-0 items-center gap-3">
-              <Logo />
-              <span className="hidden h-5 w-px bg-signal-border 2xl:block" />
-              <span className="hidden truncate text-xs text-signal-secondary 2xl:block">
-                Analyst-Curated Fraud Intelligence
+            {/* Ourox platform brand — mark links to /, Verity product label */}
+            <div className="flex shrink-0 items-center gap-2.5">
+              <Link
+                href="/"
+                aria-label="Ourox home"
+                className="flex shrink-0 items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-indigo focus-visible:ring-offset-2 rounded"
+              >
+                <span style={{ display: "inline-flex", width: 24, height: 24 }}>
+                  <OuroxMark s={24} />
+                </span>
+              </Link>
+              <span className="text-signal-border select-none" aria-hidden="true">/</span>
+              {/* Verity product mark (existing SVG asset) */}
+              <Logo compact />
+              <span className="hidden font-medium text-sm text-signal-ink lg:block">
+                Verity
               </span>
             </div>
 
