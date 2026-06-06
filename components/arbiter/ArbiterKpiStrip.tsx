@@ -10,7 +10,7 @@ interface Props {
 interface KpiItem {
   label: string;
   value: string | number;
-  icon: string;
+  dot: string;
   colorClass: string;
 }
 
@@ -38,12 +38,12 @@ export function ArbiterKpiStrip({ results }: Props) {
     results.reduce((sum, r) => sum + r.score.score, 0) / total;
 
   const kpis: KpiItem[] = [
-    { label: 'Total', value: total, icon: '📋', colorClass: 'text-ourox-ink' },
-    { label: 'Approve', value: counts['APPROVE'] ?? 0, icon: '✅', colorClass: 'text-green-400' },
-    { label: 'Step Up', value: counts['STEP_UP'] ?? 0, icon: '🔐', colorClass: 'text-blue-400' },
-    { label: 'Review', value: counts['REVIEW'] ?? 0, icon: '🔍', colorClass: 'text-ourox-yellow' },
-    { label: 'Block', value: counts['BLOCK'] ?? 0, icon: '⛔', colorClass: 'text-ourox-orange' },
-    { label: 'Avg Score', value: avgScore.toFixed(1), icon: '📊', colorClass: 'text-ourox-ink' },
+    { label: 'Total', value: total, dot: 'bg-ourox-ink/30', colorClass: 'text-ourox-ink' },
+    { label: 'Approve', value: counts['APPROVE'] ?? 0, dot: 'bg-green-400', colorClass: 'text-green-400' },
+    { label: 'Step Up', value: counts['STEP_UP'] ?? 0, dot: 'bg-blue-400', colorClass: 'text-blue-400' },
+    { label: 'Review', value: counts['REVIEW'] ?? 0, dot: 'bg-ourox-yellow', colorClass: 'text-ourox-yellow' },
+    { label: 'Block', value: counts['BLOCK'] ?? 0, dot: 'bg-ourox-orange', colorClass: 'text-ourox-orange' },
+    { label: 'Avg Score', value: avgScore.toFixed(1), dot: 'bg-ourox-ink/30', colorClass: 'text-ourox-ink' },
   ];
 
   return (
@@ -54,7 +54,7 @@ export function ArbiterKpiStrip({ results }: Props) {
           className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight px-4 py-3"
         >
           <div className="mb-1 flex items-center gap-1.5">
-            <span className="text-sm" aria-hidden="true">{kpi.icon}</span>
+            <span className={`inline-block h-1.5 w-1.5 shrink-0 rounded-full ${kpi.dot}`} aria-hidden="true" />
             <span className="text-xs font-medium text-ourox-ink/60">{kpi.label}</span>
           </div>
           <div className={`text-2xl font-bold tabular-nums ${kpi.colorClass}`}>

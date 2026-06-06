@@ -59,10 +59,14 @@ export function ArbiterScoreExplorer({ initialEvents }: Props) {
         {/* Page header */}
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <div className="flex items-center gap-2">
-              <h1 className="text-2xl font-bold tracking-tight text-ourox-ink">
-                Arbiter
-              </h1>
+            {/* Arbiter lockup — SVG served from public/arbiter/ */}
+            <div className="mb-2 flex items-center gap-3">
+              <img
+                src="/arbiter/arbiter-lockup-dark.svg"
+                alt="Arbiter"
+                height={52}
+                style={{ height: 52, width: 'auto' }}
+              />
               <span className="rounded-full border border-ourox-orange/30 bg-ourox-orange/10 px-2 py-0.5 text-xs font-semibold text-ourox-orange">
                 Phase 1 — Scoring Core
               </span>

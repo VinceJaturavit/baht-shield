@@ -9,14 +9,13 @@ export function ArbiterSyntheticBanner() {
       aria-label="Synthetic data notice"
     >
       <span
-        className="mt-0.5 shrink-0 text-sm font-bold text-ourox-yellow"
+        className="mt-0.5 shrink-0 text-[10px] font-bold tracking-widest text-ourox-yellow uppercase"
         aria-hidden="true"
       >
-        ⚗
+        SYNTHETIC DATA
       </span>
       <p className="text-sm leading-relaxed text-ourox-ink/80">
-        <span className="font-semibold text-ourox-yellow">Synthetic data only</span>
-        {' '}— Arbiter is a learning prototype for fraud scoring and decisioning.
+        Arbiter is a learning prototype for fraud scoring and decisioning.
         No real customer data, no production decisions.
       </p>
     </div>

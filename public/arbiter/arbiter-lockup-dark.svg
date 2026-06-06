@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 130" width="470" height="130" fill="none" role="img" aria-label="Arbiter">
+  <defs></defs>
+  <rect x="0" y="0" width="470" height="130" rx="14" fill="#101820"></rect>
+  <g transform="translate(14,19.68) scale(1.06)">
+    <path d="M 8.06 57.73 A 42 42 0 0 1 19.74 30.88 L 30.55 41.28 A 27 27 0 0 0 23.04 58.54 Z" fill="#5C6B7A"></path>
+    <path d="M 21.41 29.23 A 42 42 0 0 1 48.46 18.03 L 49.01 33.02 A 27 27 0 0 0 31.62 40.22 Z" fill="#FFC72C"></path>
+    <path d="M 51.54 18.03 A 42 42 0 0 1 78.59 29.23 L 68.38 40.22 A 27 27 0 0 0 50.99 33.02 Z" fill="#FF8200"></path>
+    <path d="M 80.26 30.88 A 42 42 0 0 1 91.94 57.73 L 76.96 58.54 A 27 27 0 0 0 69.45 41.28 Z" fill="#C2541A"></path>
+    <line x1="50" y1="60" x2="63" y2="24.29" stroke="#ECEFF3" stroke-width="3.4" stroke-linecap="round"></line>
+    <circle cx="50" cy="60" r="6.2" fill="#101820" stroke="#ECEFF3" stroke-width="2.4"></circle>
+    <circle cx="50" cy="60" r="1.8" fill="#FF8200"></circle>
+    </g>
+  <text x="146" y="64" font-family="Archivo, sans-serif" font-weight="700" font-size="50" letter-spacing="5" fill="#ECEFF3">ARBITER</text>
+  <text x="149" y="90" font-family="&#39;Space Mono&#39;, monospace" font-weight="400" font-size="13" letter-spacing="4.4" fill="#FF8200">FRAUD DECISIONING</text>
+</svg>

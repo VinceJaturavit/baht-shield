@@ -10,28 +10,28 @@ export const VARIABLE_CATEGORY_STYLES: Record<
   { dot: string; chip: string; label: string }
 > = {
   "Device/SIM": {
-    dot: "bg-indigo-600",
-    chip: "border-indigo-200 bg-indigo-50 text-indigo-900",
+    dot: "bg-indigo-400",
+    chip: "border-indigo-800/60 bg-indigo-950/50 text-indigo-200",
     label: "Device / SIM",
   },
   "Endpoint/Beneficiary": {
-    dot: "bg-emerald-700",
-    chip: "border-emerald-200 bg-emerald-50 text-emerald-900",
+    dot: "bg-emerald-400",
+    chip: "border-emerald-800/60 bg-emerald-950/50 text-emerald-300",
     label: "Endpoint / Beneficiary",
   },
   "Behavior/Velocity": {
-    dot: "bg-sky-700",
-    chip: "border-sky-200 bg-sky-50 text-sky-900",
+    dot: "bg-sky-400",
+    chip: "border-sky-800/60 bg-sky-950/50 text-sky-300",
     label: "Behavior / Velocity",
   },
   "Identity/KYC": {
-    dot: "bg-amber-700",
-    chip: "border-amber-200 bg-amber-50 text-amber-900",
+    dot: "bg-amber-400",
+    chip: "border-amber-800/60 bg-amber-950/50 text-amber-300",
     label: "Identity / KYC",
   },
   Other: {
-    dot: "bg-neutral-500",
-    chip: "border-neutral-200 bg-neutral-50 text-neutral-800",
+    dot: "bg-slate-500",
+    chip: "border-slate-700/70 bg-slate-800/70 text-slate-300",
     label: "Other",
   },
 };

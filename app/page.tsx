@@ -68,18 +68,36 @@ export default function OuroxHomePage() {
             portfolio&nbsp;&nbsp;·&nbsp;&nbsp;Built for learning and demonstration
           </p>
 
-          {/* Builder attribution */}
-          <div className="border-t border-ourox-obsidianMid pt-6">
-            <p className="mb-1 text-sm text-ourox-ink/50">
+          {/* Builder story */}
+          <div className="border-t border-ourox-obsidianMid pt-6 space-y-3">
+            <p className="text-sm leading-relaxed text-ourox-ink/70">
               Built by{" "}
-              <span className="font-medium text-ourox-ink/80">
+              <span className="font-medium text-ourox-ink/90">
                 Jaturavit &ldquo;Vince&rdquo; Chaovalit
-              </span>
+              </span>{" "}
+              — seven years in crypto fraud operations, most of it in the investigations seat:
+              working cases, not tuning the score.
             </p>
-            <p className="mb-3 text-sm text-ourox-ink/40">
-              fraud operations professional — founding APAC fraud-team member; Chainalysis Reactor certified
+            <p className="text-sm leading-relaxed text-ourox-ink/60">
+              That vantage point is why Ourox exists. The fraud that actually costs money — mule
+              farms, sleeper-account activation, scam cash-out rings — rarely trips a vendor&rsquo;s
+              transaction score. It shows up in casework: the device shared across forty
+              &ldquo;clean&rdquo; accounts, the dormant wallet that wakes up and fans out, the
+              beneficiary every scam victim was told to pay. Analysts see the cluster; isolated
+              scoring doesn&rsquo;t.
             </p>
-            <div className="flex gap-4 text-sm">
+            <p className="text-sm leading-relaxed text-ourox-ink/60">
+              Ourox is my argument for treating that analyst-curated intelligence as a first-class
+              layer. Verity is the investigation and pattern side I know. Arbiter is the
+              scoring-and-decisioning side I&rsquo;m teaching myself to own — features, rules,
+              thresholds, and the precision/recall tradeoffs a fraud strategy team lives in.
+              Together they close a loop: investigation sharpens scoring, scoring routes the next
+              investigation.
+            </p>
+            <p className="text-xs text-ourox-ink/40 tracking-wide">
+              Everything here is synthetic. The thinking is real. Chainalysis Reactor certified.
+            </p>
+            <div className="flex gap-4 text-sm pt-1">
               <a
                 href={LINKEDIN_URL}
                 target="_blank"

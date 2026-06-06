@@ -97,7 +97,7 @@ export default function ShadowModePanel({ backtestEvents }: Props) {
 
           <div className="bg-yellow-900/10 border border-yellow-500/20 rounded-signalSm px-3 py-2">
             <p className="text-[11px] text-yellow-400/80 font-semibold">
-              ⚠ Logging only — not affecting decision
+              Note: Logging only — not affecting decision
             </p>
             <p className="text-[10px] text-ourox-ink/40 mt-0.5">
               The {hits.length} shadow hit(s) above show what the candidate rule WOULD have done.
