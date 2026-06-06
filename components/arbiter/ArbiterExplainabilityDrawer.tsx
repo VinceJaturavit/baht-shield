@@ -4,8 +4,9 @@
 // Shows event summary, decision, score contributions, fired rules, and precedence.
 
 import { useEffect, useRef } from 'react';
-import type { ArbiterScoreResponseItem, ArbiterDecision } from '@/lib/arbiter/contract';
-import { DECISION_META, SCENARIO_META } from '@/lib/arbiter/scenario';
+import type { ArbiterScoreResponseItem } from '@/lib/arbiter/contract';
+import { SCENARIO_META } from '@/lib/arbiter/scenario';
+import { ArbiterDecisionBadge } from './ArbiterDecisionBadge';
 
 interface Props {
   item: ArbiterScoreResponseItem | null;
@@ -14,18 +15,6 @@ interface Props {
 
 const MAX_BAR = 100;
 
-function DecisionBadge({ action }: { action: ArbiterDecision }) {
-  const meta = DECISION_META[action];
-  return (
-    <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm font-semibold ${meta.bgClass} ${meta.borderClass} ${meta.textClass}`}
-      aria-label={`Decision: ${meta.displayName}`}
-    >
-      <span aria-hidden="true">{meta.icon}</span>
-      {meta.displayName}
-    </span>
-  );
-}
 
 export function ArbiterExplainabilityDrawer({ item, onClose }: Props) {
   const drawerRef = useRef<HTMLDivElement>(null);
@@ -122,7 +111,7 @@ export function ArbiterExplainabilityDrawer({ item, onClose }: Props) {
               Decision
             </h3>
             <div className="flex items-center gap-4 rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight p-4">
-              <DecisionBadge action={final_decision.action} />
+              <ArbiterDecisionBadge decision={final_decision.action} size="md" />
               <div>
                 <div className="text-3xl font-bold tabular-nums text-ourox-ink">
                   {score.score.toFixed(1)}
@@ -198,7 +187,6 @@ export function ArbiterExplainabilityDrawer({ item, onClose }: Props) {
               </h3>
               <div className="space-y-2">
                 {final_decision.reasons.map((rule, idx) => {
-                  const dm = DECISION_META[rule.action];
                   return (
                     <div
                       key={`${rule.rule_id}-${idx}`}
@@ -208,12 +196,7 @@ export function ArbiterExplainabilityDrawer({ item, onClose }: Props) {
                         <span className="font-mono text-xs font-semibold text-ourox-ink">
                           {rule.rule_id}
                         </span>
-                        <span
-                          className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-medium ${dm.bgClass} ${dm.borderClass} ${dm.textClass}`}
-                        >
-                          <span aria-hidden="true">{dm.icon}</span>
-                          {dm.displayName}
-                        </span>
+                        <ArbiterDecisionBadge decision={rule.action} />
                       </div>
                       <p className="mt-1 font-mono text-xs font-bold text-ourox-yellow">
                         {rule.reason_code}

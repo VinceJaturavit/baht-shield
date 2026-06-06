@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import { OuroxMark, OuroxWordmark } from "./OuroxLogo";
 import { OuroxFooter } from "./OuroxFooter";
 
-export type OuroxProduct = "Ourox" | "Verity" | "Arbiter";
+export type OuroxProduct = "Ourox" | "Verity" | "Arbiter" | "Guide";
 
 interface OuroxShellProps {
   currentProduct?: OuroxProduct;
@@ -19,6 +19,7 @@ interface OuroxShellProps {
 const NAV: { href: string; label: string; product: OuroxProduct }[] = [
   { href: "/verity", label: "Verity", product: "Verity" },
   { href: "/arbiter", label: "Arbiter", product: "Arbiter" },
+  { href: "/guide", label: "Guide", product: "Guide" },
 ];
 
 export function OuroxShell({ currentProduct = "Ourox", children }: OuroxShellProps) {

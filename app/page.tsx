@@ -1,5 +1,5 @@
-// Ourox platform home — / (Spec-020: attribution + purpose added)
-// Calm enterprise launcher. One dominant area. Two products. Orange accent only.
+// Ourox platform home — / (Spec-022: attribution tightened, guide entry added)
+// Calm enterprise launcher. One dominant area. Two products + guide. Orange accent only.
 // No gradients-as-decoration, no illustrations, no animation, no card soup.
 
 import Link from "next/link";
@@ -39,7 +39,7 @@ export default function OuroxHomePage() {
         style={{ fontFamily: "var(--font-inter), system-ui, sans-serif" }}
       >
         {/* Platform intro */}
-        <div className="mb-16 max-w-2xl">
+        <div className="mb-12 max-w-2xl">
           {/* Large wordmark */}
           <div className="mb-8 flex items-center gap-4">
             <span style={{ display: "inline-flex", width: 52, height: 52 }}>
@@ -68,34 +68,32 @@ export default function OuroxHomePage() {
             portfolio&nbsp;&nbsp;·&nbsp;&nbsp;Built for learning and demonstration
           </p>
 
-          {/* Builder story */}
+          {/* Builder attribution — project-led, separation-compliant */}
           <div className="border-t border-ourox-obsidianMid pt-6 space-y-3">
             <p className="text-sm leading-relaxed text-ourox-ink/70">
               Built by{" "}
               <span className="font-medium text-ourox-ink/90">
                 Jaturavit &ldquo;Vince&rdquo; Chaovalit
               </span>{" "}
-              — seven years in crypto fraud operations, most of it in the investigations seat:
-              working cases, not tuning the score.
+              — seven years in crypto fraud operations. Chainalysis Reactor certified.
             </p>
             <p className="text-sm leading-relaxed text-ourox-ink/60">
-              That vantage point is why Ourox exists. The fraud that actually costs money — mule
-              farms, sleeper-account activation, scam cash-out rings — rarely trips a vendor&rsquo;s
+              Ourox is an argument for treating analyst-curated intelligence as a first-class
+              fraud-detection layer. The fraud that actually costs money — mule farms,
+              sleeper-account activation, scam cash-out rings — rarely trips a vendor&rsquo;s
               transaction score. It shows up in casework: the device shared across forty
               &ldquo;clean&rdquo; accounts, the dormant wallet that wakes up and fans out, the
               beneficiary every scam victim was told to pay. Analysts see the cluster; isolated
               scoring doesn&rsquo;t.
             </p>
             <p className="text-sm leading-relaxed text-ourox-ink/60">
-              Ourox is my argument for treating that analyst-curated intelligence as a first-class
-              layer. Verity is the investigation and pattern side I know. Arbiter is the
-              scoring-and-decisioning side I&rsquo;m teaching myself to own — features, rules,
-              thresholds, and the precision/recall tradeoffs a fraud strategy team lives in.
-              Together they close a loop: investigation sharpens scoring, scoring routes the next
-              investigation.
+              Verity is the investigation and pattern-intelligence side. Arbiter is the
+              scoring-and-decisioning side — features, rules, thresholds, and the
+              precision/recall tradeoffs a fraud strategy team works with. Together they close a
+              loop: investigation sharpens scoring, scoring routes the next investigation.
             </p>
             <p className="text-xs text-ourox-ink/40 tracking-wide">
-              Everything here is synthetic. The thinking is real. Chainalysis Reactor certified.
+              Everything here is synthetic. The thinking is real.
             </p>
             <div className="flex gap-4 text-sm pt-1">
               <a
@@ -115,6 +113,36 @@ export default function OuroxHomePage() {
                 GitHub
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Guide entry — calm, prominent, one click from landing */}
+        <div className="mb-6 rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-8 py-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
+            <div className="flex-1 min-w-0">
+              <div className="mb-1 flex items-center gap-3">
+                <span className="text-base font-semibold text-ourox-ink">How Ourox works</span>
+              </div>
+              <p className="text-sm leading-6 text-ourox-ink/60">
+                A structured guide to the platform, its two products, the synthetic data
+                boundary, and the roadmap.
+              </p>
+            </div>
+            <Link
+              href="/guide"
+              className="inline-flex shrink-0 items-center gap-2 rounded border border-ourox-obsidianMid px-5 py-2 text-sm font-medium text-ourox-ink/70 transition-colors hover:border-ourox-orange/60 hover:text-ourox-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ourox-obsidianLight"
+            >
+              Read the guide
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path
+                  d="M2.5 7h9M7.5 3.5 11 7l-3.5 3.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
 

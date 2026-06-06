@@ -8,6 +8,7 @@ import { useState, useMemo } from 'react';
 import type { ArbiterScoreResponseItem, ArbiterDecision } from '@/lib/arbiter/contract';
 import type { ArbiterScenarioLabel } from '@/lib/arbiter/contract';
 import { DECISION_META, SCENARIO_META } from '@/lib/arbiter/scenario';
+import { ArbiterDecisionBadge } from './ArbiterDecisionBadge';
 
 interface Props {
   results: ArbiterScoreResponseItem[];
@@ -33,19 +34,6 @@ function getTopDriver(item: ArbiterScoreResponseItem): string {
   return top ? top.key : '—';
 }
 
-function DecisionChip({ action }: { action: ArbiterDecision }) {
-  const m = DECISION_META[action];
-  return (
-    <span
-      className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-semibold ${m.bgClass} ${m.borderClass} ${m.textClass}`}
-      title={m.displayName}
-      aria-label={`Decision: ${m.displayName}`}
-    >
-      <span aria-hidden="true">{m.icon}</span>
-      {m.displayName}
-    </span>
-  );
-}
 
 function ScoreBar({ score }: { score: number }) {
   const color =
@@ -230,7 +218,7 @@ export function ArbiterEventTable({ results, onRowClick }: Props) {
                       </span>
                     </td>
                     <td className="px-4 py-3">
-                      <DecisionChip action={item.final_decision.action} />
+                      <ArbiterDecisionBadge decision={item.final_decision.action} />
                     </td>
                     <td className="px-4 py-3">
                       <ScoreBar score={item.score.score} />
