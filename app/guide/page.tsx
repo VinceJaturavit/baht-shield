@@ -667,12 +667,13 @@ export default function GuidePage() {
                     "Verity: investigation workspace, alert triage queue, case workflow and closure-note builder, wallet and entity view, pattern intelligence library, analytics.",
                     "Arbiter: scoring explorer with 12 features and full explainability, GoRules Zen-Engine JDM rule evaluation, decision precedence, tuning workspace, confusion matrix, precision / recall / FPR / F1 metrics, per-typology breakdown, rule back-testing, shadow mode.",
                     "Arbiter Phase 3 — ML score: offline-trained logistic-regression score shown beside the transparent rule score, with learned importance vs hand weights, calibration bins, held-out metrics, and ML-vs-rule disagreement cases. Learning-grade second opinion on synthetic data; rules remain the decisioning authority.",
+                    "Feedback-loop demonstration v1 — model-vs-rule disagreement cases are grouped into a miss pattern, converted into one simulated candidate refinement, and back-tested before any human decision.",
                   ]}
                 />
                 <RoadmapBand
                   phase="Next"
                   items={[
-                    "Feedback-loop integration: show case outcomes and analyst-curated patterns flowing back into scoring as labels or rule suggestions.",
+                    "Live Verity → Arbiter feedback wiring: case outcomes and analyst-curated patterns flowing back into scoring as labels or rule suggestions.",
                   ]}
                 />
                 <RoadmapBand
