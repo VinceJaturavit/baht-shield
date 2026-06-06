@@ -11,15 +11,12 @@ Output:
   data/arbiter/mockingbird-events.json    (scored events, 353 total)
   data/arbiter/mockingbird-history.json   (prior tx history for rolling windows)
 
-Phase 2 changes vs Phase 1:
-  - Fraud scenarios now have time-clustered bursts so velocity_1h,
-    withdrawal_after_deposit, and daily_cumulative_thb fire properly.
-  - mockingbird-history.json provides prior transaction context for
-    Mockingbird wallets so context.ts can compute real rolling windows.
-  - Counts expanded: 200 background, 50+ per fraud scenario.
-  - Cold-start: background wallets get diffuse prior history so
-    walletMeanOutbound30d is non-zero; fraud wallets get burst history.
-  - _scenario_label remains metadata only; it never enters scoring.
+Spec-004 changes:
+  - Realistic overlap zone: partial-signal fraud + incidentally elevated background.
+  - Geo clustering: mule/sleeper/background use locally clustered Thailand geo so
+    geo_velocity does not act as a label proxy. Impossible travel reserved for ATO.
+  - Marginal noise on amounts, delays, dormancy, device sharing.
+  - Softened feature-label proxies (beneficiary tier, device sharing, velocity).
 
 Scenario counts:
   background:            200
@@ -48,95 +45,212 @@ HISTORY_PATH = os.path.join(
     os.path.dirname(__file__), "..", "..", "data", "arbiter", "mockingbird-history.json"
 )
 
+# ── Overlap zone configuration (Spec-004) ────────────────────────────────────
+FRAUD_PARTIAL_FRACTION = 0.45       # ~45% of fraud events with weaker signals
+BACKGROUND_ELEVATED_FRACTION = 0.28  # ~28% of background with one elevated feature
+NOISE_PCT = 0.20                     # ±20% marginal noise on numeric values
+
+# Thailand city centers for geo clustering (plausible local movement)
+TH_CITIES = [
+    {"lat": 13.7563, "lon": 100.5018},   # Bangkok
+    {"lat": 18.7883, "lon": 98.9853},    # Chiang Mai
+    {"lat": 7.8804,  "lon": 98.3923},    # Phuket
+    {"lat": 16.4419, "lon": 102.8360},   # Khon Kaen
+    {"lat": 12.9236, "lon": 100.8825},   # Pattaya
+    {"lat": 14.9799, "lon": 102.0978},   # Nakhon Ratchasima
+]
+
+# Per-wallet geo cluster cache
+_wallet_geo_clusters: dict = {}
+
 # ── Helpers ──────────────────────────────────────────────────────────────────
 
 def ts_offset(base: datetime, hours_ago: float) -> str:
     return (base - timedelta(hours=hours_ago)).isoformat().replace("+00:00", "Z")
 
-def rand_geo_th():
-    return {"lat": round(random.uniform(5.6, 20.5), 4), "lon": round(random.uniform(97.3, 105.7), 4)}
+
+def add_noise(value: float, pct: float = NOISE_PCT) -> float:
+    """Apply modest marginal noise; keeps typology shape."""
+    return round(value * random.uniform(1.0 - pct, 1.0 + pct), 2)
+
+
+def get_wallet_geo_cluster(wallet_id: str) -> dict:
+    """Assign each wallet a stable Thailand city-center cluster."""
+    if wallet_id not in _wallet_geo_clusters:
+        city = random.choice(TH_CITIES)
+        _wallet_geo_clusters[wallet_id] = {
+            "lat": round(city["lat"] + random.uniform(-0.03, 0.03), 4),
+            "lon": round(city["lon"] + random.uniform(-0.03, 0.03), 4),
+        }
+    return _wallet_geo_clusters[wallet_id]
+
+
+def geo_near_cluster(wallet_id: str, max_km: float = 20.0) -> dict:
+    """Small jitter around wallet cluster — keeps geo_velocity plausible (<100 km/h)."""
+    center = get_wallet_geo_cluster(wallet_id)
+    jitter_deg = max_km / 111.0
+    return {
+        "lat": round(center["lat"] + random.uniform(-jitter_deg, jitter_deg), 4),
+        "lon": round(center["lon"] + random.uniform(-jitter_deg, jitter_deg), 4),
+    }
+
+
+def geo_travel_plausible(wallet_id: str, hours_apart: float) -> dict:
+    """For legitimate traveller background: move to a nearby city over several hours."""
+    origin = get_wallet_geo_cluster(wallet_id)
+    dest_city = random.choice([c for c in TH_CITIES if c != origin])
+    # Blend toward destination proportional to travel time (max ~400 km/h)
+    blend = min(hours_apart / 6.0, 0.6)
+    return {
+        "lat": round(origin["lat"] + (dest_city["lat"] - origin["lat"]) * blend
+                     + random.uniform(-0.01, 0.01), 4),
+        "lon": round(origin["lon"] + (dest_city["lon"] - origin["lon"]) * blend
+                     + random.uniform(-0.01, 0.01), 4),
+    }
+
 
 def rand_geo_abroad():
     return {"lat": round(random.uniform(48.0, 55.0), 4), "lon": round(random.uniform(2.0, 20.0), 4)}
 
+
 def rand_amount_normal():
-    """Normal background transaction: 200–8 000 THB."""
-    return round(random.uniform(200, 8_000), 2)
+    return add_noise(round(random.uniform(200, 8_000), 2))
 
-def rand_amount_mule():
-    """Mule farm transaction: 15 000–75 000 THB."""
-    return round(random.uniform(15_000, 75_000), 2)
 
-def rand_amount_sleeper():
-    """Sleeper burst transaction: 20 000–80 000 THB."""
-    return round(random.uniform(20_000, 80_000), 2)
+def rand_amount_mule(partial: bool = False):
+    if partial:
+        return add_noise(round(random.uniform(5_000, 20_000), 2))
+    return add_noise(round(random.uniform(15_000, 75_000), 2))
 
-def rand_amount_scam():
-    """APP scam cashout: 30 000–150 000 THB."""
-    return round(random.choice([30_000, 50_000, 75_000, 100_000, 150_000]) * random.uniform(0.9, 1.1), 2)
+
+def rand_amount_sleeper(partial: bool = False):
+    if partial:
+        return add_noise(round(random.uniform(8_000, 25_000), 2))
+    return add_noise(round(random.uniform(20_000, 80_000), 2))
+
+
+def rand_amount_scam(partial: bool = False):
+    if partial:
+        return add_noise(round(random.uniform(12_000, 40_000), 2))
+    return add_noise(round(random.choice([30_000, 50_000, 75_000, 100_000, 150_000])
+                           * random.uniform(0.9, 1.1), 2))
+
+
+def pick_app_scam_beneficiary(i: int, partial: bool = False) -> str:
+    """Softened beneficiary tier distribution — black is predictive, not deterministic."""
+    if partial:
+        r = random.random()
+        if r < 0.45:
+            return f"BEN_NEW_{i:03d}"          # new, clean tier
+        elif r < 0.75:
+            return f"BEN_{(i * 11) % 100:06d}"  # established clean
+        else:
+            return f"BEN_MEDRISK_{i:03d}"       # dark_grey, not black
+    r = random.random()
+    if r < 0.52:
+        return f"BEN_HIGHRISK_{i:03d}"          # black
+    elif r < 0.77:
+        return f"BEN_MEDRISK_{i:03d}"           # dark_grey
+    elif r < 0.90:
+        return f"BEN_NEW_{i:03d}"               # new, clean tier
+    else:
+        return f"BEN_{(i * 11) % 100:06d}"      # established clean
+
+
+def is_partial_fraud() -> bool:
+    return random.random() < FRAUD_PARTIAL_FRACTION
+
+
+def add_geo_anchor_history(
+    wallet_id: str, device_id: str, cluster_ts: datetime, channel: str, *, recent: bool = True
+) -> None:
+    """Anchor prior geo near wallet cluster so seed-transaction geo cannot leak velocity."""
+    history.append({
+        "wallet_id": wallet_id,
+        "timestamp": ts_offset(cluster_ts, random.uniform(2.0, 4.0)),
+        "amount": add_noise(round(random.uniform(500, 2_000), 2)),
+        "direction": "outbound",
+        "device_id": device_id,
+        "beneficiary_id": f"BEN_{hash(wallet_id) % 200:06d}",
+        "geo": geo_near_cluster(wallet_id, max_km=5.0),
+        "channel": channel,
+    })
+    if recent:
+        # Recent anchor overrides seed prior-geo lookup (fraud wallets only;
+        # skipped for background to avoid inflating withdrawal_after_deposit).
+        history.append({
+            "wallet_id": wallet_id,
+            "timestamp": ts_offset(cluster_ts, random.uniform(0.4, 0.9)),
+            "amount": add_noise(round(random.uniform(300, 1_500), 2)),
+            "direction": "outbound",
+            "device_id": device_id,
+            "beneficiary_id": f"BEN_{(hash(wallet_id) + 1) % 200:06d}",
+            "geo": geo_near_cluster(wallet_id, max_km=8.0),
+            "channel": channel,
+        })
+
 
 # ── Output lists ─────────────────────────────────────────────────────────────
-events = []    # goes to mockingbird-events.json
-history = []   # goes to mockingbird-history.json
+events = []
+history = []
 
 # ────────────────────────────────────────────────────────────────────────────
 # 1. ONBOARDING MULE FARM (50 events)
-#
-#    Temporal shape:
-#      - 10 shared devices; 5 wallets per device (50 wallets total)
-#      - Each wallet has a "cluster timestamp" T (event time)
-#      - History: 1 inbound at T-120min, then 3 rapid outbound at
-#        T-45, T-30, T-15 min.
-#      - These 3 history outbounds are also in the 30d window, giving
-#        a non-zero walletMeanOutbound30d.
-#
-#    Drives: velocity_1h (3 prior outbound in window),
-#            withdrawal_after_deposit (inbound then rapid outbound),
-#            daily_cumulative_thb (burst outbound sum),
-#            device_account_count (5 wallets per device)
 # ────────────────────────────────────────────────────────────────────────────
-shared_devices_mf = [f"DEV_SHARED_MF_{i:03d}" for i in range(1, 11)]  # 10 shared devices
+shared_devices_mf = [f"DEV_SHARED_MF_{i:03d}" for i in range(1, 11)]
 
 for i in range(1, 51):
     wallet_id = f"WAL_MF_{i:03d}"
-    device_id = shared_devices_mf[(i - 1) % len(shared_devices_mf)]
-    # Cluster timestamp: random within last 48h of BASE_TS
+    partial = is_partial_fraud()
+
+    if partial:
+        # Partial: solo or lightly shared device, weaker burst, smaller amounts
+        device_id = f"DEV_MF_SOLO_{i:03d}" if random.random() < 0.65 else shared_devices_mf[(i - 1) % len(shared_devices_mf)]
+        burst_count = random.randint(0, 1)
+        burst_delays = [35][:burst_count]
+    else:
+        device_id = shared_devices_mf[(i - 1) % len(shared_devices_mf)]
+        burst_count = random.randint(2, 3)
+        burst_delays = [45, 30, 15][:burst_count]
+
     hours_ago = random.uniform(1, 47)
     cluster_ts = BASE_TS - timedelta(hours=hours_ago)
     cluster_iso = cluster_ts.isoformat().replace("+00:00", "Z")
 
-    # Burst history: 3 outbound transactions in the 45 min before cluster_ts
-    # These drive velocity_1h AND establish walletMeanOutbound30d
-    burst_amounts = [rand_amount_mule() for _ in range(3)]
-    for j, (delay_min, burst_amt) in enumerate(zip([45, 30, 15], burst_amounts)):
+    add_geo_anchor_history(wallet_id, device_id, cluster_ts, "promptpay")
+
+    burst_amounts = [rand_amount_mule(partial=partial) for _ in range(burst_count)]
+    for j, (delay_min, burst_amt) in enumerate(zip(burst_delays, burst_amounts)):
+        ben_id = f"BEN_{(i * 13 + j) % 200:06d}" if partial else f"BEN_AGENT_{((i + j) % 3) + 1:03d}"
         history.append({
             "wallet_id": wallet_id,
             "timestamp": ts_offset(cluster_ts, delay_min / 60),
             "amount": burst_amt,
             "direction": "outbound",
             "device_id": device_id,
-            "beneficiary_id": f"BEN_AGENT_{((i + j) % 3) + 1:03d}",
-            "geo": rand_geo_th(),
+            "beneficiary_id": ben_id,
+            "geo": geo_near_cluster(wallet_id),
             "channel": "promptpay",
         })
 
-    # Inbound: 1 large deposit ~2h before burst (drives withdrawal_after_deposit)
-    inbound_amount = round(sum(burst_amounts) * random.uniform(0.9, 1.3), 2)
-    history.append({
-        "wallet_id": wallet_id,
-        "timestamp": ts_offset(cluster_ts, 2.0 + random.uniform(0, 0.5)),
-        "amount": inbound_amount,
-        "direction": "inbound",
-        "device_id": device_id,
-        "beneficiary_id": None,
-        "geo": rand_geo_th(),
-        "channel": "promptpay",
-    })
+    if burst_count > 0 or not partial:
+        inbound_amount = add_noise(round(max(sum(burst_amounts), 3000) * random.uniform(0.85, 1.2), 2))
+        history.append({
+            "wallet_id": wallet_id,
+            "timestamp": ts_offset(cluster_ts, 2.0 + random.uniform(0, 0.5)),
+            "amount": inbound_amount,
+            "direction": "inbound",
+            "device_id": device_id,
+            "beneficiary_id": None,
+            "geo": geo_near_cluster(wallet_id),
+            "channel": "promptpay",
+        })
 
-    # Main scored event
-    amount = rand_amount_mule()
+    amount = rand_amount_mule(partial=partial)
     has_facial = amount <= 50_000 or random.random() > 0.6
     ben_suffix = f"{(i % 3) + 1:03d}"
+    ben_id = f"BEN_{(i * 17) % 200:06d}" if partial else f"BEN_AGENT_{ben_suffix}"
+
     events.append({
         "event_id": f"EVT_MF_{i:04d}",
         "wallet_id": wallet_id,
@@ -144,41 +258,38 @@ for i in range(1, 51):
         "amount_thb": amount,
         "direction": "outbound",
         "rail": "promptpay",
-        "beneficiary_id": f"BEN_AGENT_{ben_suffix}",
+        "beneficiary_id": ben_id,
         "device_id": device_id,
         "ip_country": "TH",
         "has_facial_scan": has_facial,
-        "geo": rand_geo_th(),
+        "geo": geo_near_cluster(wallet_id),
         "source": "mockingbird",
         "_scenario_label": "onboarding_mule_farm",
     })
 
 # ────────────────────────────────────────────────────────────────────────────
 # 2. SLEEPER ACTIVATION (50 events)
-#
-#    Temporal shape:
-#      - Older wallets: dormancy 90–300 days
-#      - Old history: 5 transactions at T-150d to T-200d (180d baseline)
-#      - 1 inbound at T-120min
-#      - Burst: 3 outbound at T-50, T-30, T-10 min
-#      - Main event at T (outbound)
-#
-#    Drives: sleeper_velocity_shock (long dormancy + 24h outbound burst),
-#            velocity_1h (3 prior outbound in 60min),
-#            daily_cumulative_thb (large burst sum),
-#            withdrawal_after_deposit (inbound then rapid outbound)
 # ────────────────────────────────────────────────────────────────────────────
 for i in range(1, 51):
     wallet_id = f"WAL_SM_{i:03d}"
     device_id = f"DEV_SM_{i:03d}"
-    dormancy_days = random.randint(90, 300)
+    partial = is_partial_fraud()
+
+    if partial:
+        dormancy_days = random.randint(31, 55)   # shorter dormancy, weaker shock
+        burst_delays = [40] if random.random() > 0.45 else []
+    else:
+        dormancy_days = random.randint(70, 260)
+        burst_delays = [50, 30, 10] if random.random() > 0.2 else [40, 20]
+
     hours_ago = random.uniform(0.5, 12)
     cluster_ts = BASE_TS - timedelta(hours=hours_ago)
     cluster_iso = cluster_ts.isoformat().replace("+00:00", "Z")
 
-    # Old history: 5 transactions to establish 180d mean/std baseline
-    old_amounts = [round(random.uniform(5_000, 25_000), 2) for _ in range(5)]
-    old_offset_days = random.uniform(150, 200)
+    add_geo_anchor_history(wallet_id, device_id, cluster_ts, "bank_transfer")
+
+    old_amounts = [add_noise(round(random.uniform(5_000, 25_000), 2)) for _ in range(5)]
+    old_offset_days = random.uniform(150, 200) if not partial else random.uniform(80, 140)
     for j, old_amt in enumerate(old_amounts):
         history.append({
             "wallet_id": wallet_id,
@@ -187,38 +298,40 @@ for i in range(1, 51):
             "direction": "outbound",
             "device_id": device_id,
             "beneficiary_id": f"BEN_{(i * 7 + j) % 100:06d}",
-            "geo": rand_geo_th(),
+            "geo": geo_near_cluster(wallet_id),
             "channel": "bank_transfer",
         })
 
-    # Inbound deposit 2h before burst (drives withdrawal_after_deposit)
-    inbound_amount = round(random.uniform(40_000, 120_000), 2)
-    history.append({
-        "wallet_id": wallet_id,
-        "timestamp": ts_offset(cluster_ts, 2.0 + random.uniform(0, 0.5)),
-        "amount": inbound_amount,
-        "direction": "inbound",
-        "device_id": device_id,
-        "beneficiary_id": None,
-        "geo": rand_geo_th(),
-        "channel": "bank_transfer",
-    })
+    if burst_delays or not partial:
+        inbound_amount = add_noise(round(random.uniform(15_000 if partial else 40_000,
+                                                      45_000 if partial else 120_000), 2))
+        inbound_delay = random.uniform(2.5, 5.0) if partial else random.uniform(1.8, 2.5)
+        history.append({
+            "wallet_id": wallet_id,
+            "timestamp": ts_offset(cluster_ts, inbound_delay),
+            "amount": inbound_amount,
+            "direction": "inbound",
+            "device_id": device_id,
+            "beneficiary_id": None,
+            "geo": geo_near_cluster(wallet_id),
+            "channel": "bank_transfer",
+        })
 
-    # Rapid outbound burst: 3 transactions in the 50min before cluster_ts
-    for delay_min in [50, 30, 10]:
+    for delay_min in burst_delays:
+        ben_id = f"BEN_{(i * 19) % 100:06d}" if partial else f"BEN_XBDR_{i:03d}"
         history.append({
             "wallet_id": wallet_id,
             "timestamp": ts_offset(cluster_ts, delay_min / 60),
-            "amount": rand_amount_sleeper(),
+            "amount": rand_amount_sleeper(partial=partial),
             "direction": "outbound",
             "device_id": device_id,
-            "beneficiary_id": f"BEN_XBDR_{i:03d}",
-            "geo": rand_geo_th(),
+            "beneficiary_id": ben_id,
+            "geo": geo_near_cluster(wallet_id),
             "channel": "bank_transfer",
         })
 
-    # Main scored event
-    amount = rand_amount_sleeper()
+    amount = rand_amount_sleeper(partial=partial)
+    ben_id = f"BEN_{(i * 19) % 100:06d}" if partial else f"BEN_XBDR_{i:03d}"
     events.append({
         "event_id": f"EVT_SM_{i:04d}",
         "wallet_id": wallet_id,
@@ -226,56 +339,50 @@ for i in range(1, 51):
         "amount_thb": amount,
         "direction": "outbound",
         "rail": "bank_transfer",
-        "beneficiary_id": f"BEN_XBDR_{i:03d}",
+        "beneficiary_id": ben_id,
         "device_id": device_id,
         "ip_country": "TH",
         "has_facial_scan": random.random() > 0.3,
-        "geo": rand_geo_th(),
+        "geo": geo_near_cluster(wallet_id),
         "source": "mockingbird",
         "_scenario_label": "sleeper_activation",
     })
 
 # ────────────────────────────────────────────────────────────────────────────
 # 3. APP SCAM CASH-OUT (50 events)
-#
-#    Temporal shape:
-#      - Large inbound transfer at T-40min (victim funds arrive)
-#      - 3 prior outbound transactions at T-20d, T-15d, T-10d
-#        (establishes walletMeanOutbound30d for amt_to_mean_ratio)
-#      - Main event at T: large outbound to new/black/dark-grey beneficiary
-#
-#    Drives: withdrawal_after_deposit (large inbound then near-equal outbound),
-#            beneficiary_risk_tier (black/dark-grey),
-#            is_new_beneficiary (BEN_NEW_ prefix),
-#            amt_to_mean_ratio (current amount >> established 30d mean)
 # ────────────────────────────────────────────────────────────────────────────
 for i in range(1, 51):
     wallet_id = f"WAL_APP_{i:03d}"
     device_id = f"DEV_APP_{i:03d}"
+    partial = is_partial_fraud()
     hours_ago = random.uniform(0.5, 24)
     cluster_ts = BASE_TS - timedelta(hours=hours_ago)
     cluster_iso = cluster_ts.isoformat().replace("+00:00", "Z")
 
-    # Scam amount (the victim's funds that get cashed out)
-    scam_amount = rand_amount_scam()
+    scam_amount = rand_amount_scam(partial=partial)
+    add_geo_anchor_history(wallet_id, device_id, cluster_ts, "promptpay")
 
-    # Large inbound 30–60 min before the outbound (the victim transfer arrives)
-    inbound_amount = round(scam_amount * random.uniform(0.95, 1.05), 2)
-    history.append({
-        "wallet_id": wallet_id,
-        "timestamp": ts_offset(cluster_ts, random.uniform(0.5, 1.0)),
-        "amount": inbound_amount,
-        "direction": "inbound",
-        "device_id": device_id,
-        "beneficiary_id": None,
-        "geo": rand_geo_th(),
-        "channel": "promptpay",
-    })
+    if partial:
+        # Delayed outbound: inbound 3–6 h before, less perfect pass-through
+        inbound_delay_h = random.uniform(3.0, 6.0)
+        inbound_amount = add_noise(round(scam_amount * random.uniform(0.55, 0.85), 2))
+    else:
+        inbound_delay_h = random.uniform(0.5, 1.2)
+        inbound_amount = add_noise(round(scam_amount * random.uniform(0.90, 1.05), 2))
 
-    # 3 prior outbound transactions to establish a 30d mean
-    # These are at normal amounts (smaller than the scam), creating a
-    # large amt_to_mean_ratio for the current scam event.
-    prior_normal_amounts = [round(random.uniform(1_000, 8_000), 2) for _ in range(3)]
+    if not partial or random.random() > 0.25:
+        history.append({
+            "wallet_id": wallet_id,
+            "timestamp": ts_offset(cluster_ts, inbound_delay_h),
+            "amount": inbound_amount,
+            "direction": "inbound",
+            "device_id": device_id,
+            "beneficiary_id": None,
+            "geo": geo_near_cluster(wallet_id),
+            "channel": "promptpay",
+        })
+
+    prior_normal_amounts = [add_noise(round(random.uniform(1_000, 8_000), 2)) for _ in range(3)]
     for j, prior_amt in enumerate(prior_normal_amounts):
         history.append({
             "wallet_id": wallet_id,
@@ -284,23 +391,11 @@ for i in range(1, 51):
             "direction": "outbound",
             "device_id": device_id,
             "beneficiary_id": f"BEN_{(i * 11 + j) % 100:06d}",
-            "geo": rand_geo_th(),
+            "geo": geo_near_cluster(wallet_id),
             "channel": "promptpay",
         })
 
-    # Beneficiary: mix of black, dark-grey, and new
-    if i % 3 == 0:
-        ben_id = f"BEN_HIGHRISK_{i:03d}"
-    elif i % 3 == 1:
-        ben_id = f"BEN_MEDRISK_{i:03d}"
-    else:
-        ben_id = f"BEN_NEW_{i:03d}"
-
-    # Spec-019 geo-realism: APP scam cash-out wallets operate in Thailand.
-    # Geo abroad is reserved for the deliberate ATO events below (Section 5).
-    # Using rand_geo_th() here prevents IMPOSSIBLE_TRAVEL from appearing as a
-    # top driver on mule/APP-scam wallets where it would weaken typology realism.
-    geo = rand_geo_th()
+    ben_id = pick_app_scam_beneficiary(i, partial=partial)
     events.append({
         "event_id": f"EVT_APP_{i:04d}",
         "wallet_id": wallet_id,
@@ -312,25 +407,20 @@ for i in range(1, 51):
         "device_id": device_id,
         "ip_country": "TH",
         "has_facial_scan": random.random() > 0.4,
-        "geo": geo,
+        "geo": geo_near_cluster(wallet_id),
         "source": "mockingbird",
         "_scenario_label": "app_scam_cashout",
     })
 
 # ────────────────────────────────────────────────────────────────────────────
 # 4. BACKGROUND (200 events)
-#
-#    Temporal shape:
-#      - Temporally diffuse: events spread over last 7 days
-#      - ~100 wallets get modest diffuse prior history (5–10 transactions
-#        in the last 30d at various spacings) to establish a non-zero mean
-#      - ~100 wallets have no prior history (cold-start guard applies)
-#      - No burst activity, no clustering
-#
-#    Avoids: inflated velocity_1h, withdrawal_after_deposit,
-#             daily_cumulative_thb
 # ────────────────────────────────────────────────────────────────────────────
 rails = ["promptpay", "bank_transfer", "internal"]
+
+# Pre-select which background events get elevated features (~15%)
+elevated_bg_indices = set(
+    random.sample(range(1, 201), k=int(200 * BACKGROUND_ELEVATED_FRACTION))
+)
 
 for i in range(1, 201):
     wallet_id = f"WAL_BG_{i:03d}"
@@ -338,29 +428,97 @@ for i in range(1, 201):
     hours_ago = random.uniform(1, 168)
     event_ts = BASE_TS - timedelta(hours=hours_ago)
     event_iso = event_ts.isoformat().replace("+00:00", "Z")
+    elevated = i in elevated_bg_indices
+    elevated_type = random.choice(["traveller", "large_transfer", "new_beneficiary", "high_activity"]) if elevated else None
 
-    # First 100 background wallets get diffuse prior history
-    # (gives a stable low walletMeanOutbound30d so amt_to_mean_ratio doesn't
-    # pin at cold-start neutral for all background events)
+    add_geo_anchor_history(wallet_id, device_id, event_ts, random.choice(rails), recent=False)
+
     if i <= 100:
         num_prior = random.randint(3, 8)
         for j in range(num_prior):
-            # Scatter prior transactions across last 30d, but NOT in last 2h
-            # (keeps velocity_1h = 0 and withdrawal_after_deposit = 0)
-            prior_hours = random.uniform(3, 720)  # 3h to 30d ago
+            # Keep priors outside 48h window so withdrawal_after_deposit stays near 0
+            prior_hours = random.uniform(48, 720)
             history.append({
                 "wallet_id": wallet_id,
                 "timestamp": ts_offset(event_ts, prior_hours),
                 "amount": rand_amount_normal(),
-                "direction": random.choice(["outbound", "inbound"]),
+                "direction": "outbound",
                 "device_id": device_id,
                 "beneficiary_id": f"BEN_{(i * 13 + j) % 200:06d}",
-                "geo": rand_geo_th(),
+                "geo": geo_near_cluster(wallet_id),
                 "channel": random.choice(rails),
             })
 
-    amount = rand_amount_normal()
-    direction = random.choice(["outbound", "inbound"])
+    # Elevated-feature history injections
+    if elevated_type == "traveller":
+        if random.random() < 0.35:
+            device_id = f"DEV_BG_SHARED_{(i % 8) + 1:02d}"
+        travel_hours = random.uniform(4.0, 8.0)
+        history.append({
+            "wallet_id": wallet_id,
+            "timestamp": ts_offset(event_ts, travel_hours),
+            "amount": rand_amount_normal(),
+            "direction": "outbound",
+            "device_id": device_id,
+            "beneficiary_id": f"BEN_{(i * 7) % 200:06d}",
+            "geo": geo_near_cluster(wallet_id),
+            "channel": "promptpay",
+        })
+    elif elevated_type == "high_activity":
+        # Modest inbound well before burst keeps withdrawal_after_deposit plausible
+        history.append({
+            "wallet_id": wallet_id,
+            "timestamp": ts_offset(event_ts, random.uniform(6.0, 12.0)),
+            "amount": add_noise(round(random.uniform(3_000, 8_000), 2)),
+            "direction": "inbound",
+            "device_id": device_id,
+            "beneficiary_id": None,
+            "geo": geo_near_cluster(wallet_id),
+            "channel": "promptpay",
+        })
+        for delay_min in [55, 40]:
+            history.append({
+                "wallet_id": wallet_id,
+                "timestamp": ts_offset(event_ts, delay_min / 60),
+                "amount": add_noise(round(random.uniform(1_000, 4_000), 2)),
+                "direction": "outbound",
+                "device_id": device_id,
+                "beneficiary_id": f"BEN_{(i * 5) % 200:06d}",
+                "geo": geo_near_cluster(wallet_id),
+                "channel": "promptpay",
+            })
+    elif elevated_type == "large_transfer":
+        for j in range(3):
+            history.append({
+                "wallet_id": wallet_id,
+                "timestamp": ts_offset(event_ts, random.uniform(24, 168)),
+                "amount": add_noise(round(random.uniform(2_000, 6_000), 2)),
+                "direction": "outbound",
+                "device_id": device_id,
+                "beneficiary_id": f"BEN_{(i * 11 + j) % 200:06d}",
+                "geo": geo_near_cluster(wallet_id),
+                "channel": "bank_transfer",
+            })
+
+    # Event-level properties
+    if elevated_type == "large_transfer":
+        amount = add_noise(round(random.uniform(55_000, 95_000), 2))
+        direction = "outbound"
+        beneficiary_id = f"BEN_{i:06d}"
+    elif elevated_type == "new_beneficiary":
+        amount = add_noise(round(random.uniform(15_000, 45_000), 2))
+        direction = "outbound"
+        beneficiary_id = f"BEN_NEW_BG_{i:03d}"
+    else:
+        amount = rand_amount_normal()
+        direction = random.choice(["outbound", "inbound"])
+        beneficiary_id = f"BEN_{i:06d}"
+
+    if elevated_type == "traveller":
+        event_geo = geo_travel_plausible(wallet_id, random.uniform(3.0, 6.0))
+    else:
+        event_geo = geo_near_cluster(wallet_id)
+
     events.append({
         "event_id": f"EVT_BG_{i:04d}",
         "wallet_id": wallet_id,
@@ -368,24 +526,17 @@ for i in range(1, 201):
         "amount_thb": amount,
         "direction": direction,
         "rail": random.choice(rails),
-        "beneficiary_id": f"BEN_{i:06d}",
+        "beneficiary_id": beneficiary_id,
         "device_id": device_id,
         "ip_country": "TH",
         "has_facial_scan": True,
-        "geo": rand_geo_th(),
+        "geo": event_geo,
         "source": "mockingbird",
         "_scenario_label": "background",
     })
 
 # ────────────────────────────────────────────────────────────────────────────
 # 5. ATO-STYLE GEO VELOCITY EVENTS (3 events — R2 test coverage)
-#
-#    Uses seed wallet IDs (WAL_000001, WAL_000003, WAL_000004).
-#    The migrate-transactions.ts script places a Bangkok-geo transaction
-#    on each of these wallets at a specific anchor timestamp.
-#    These events occur 30 min after the anchor, with Tokyo/Sydney/Berlin geo.
-#    geo_velocity > 9000 km/h → R2 fires.
-#    Labelled app_scam_cashout — no new ArbiterScenarioLabel needed.
 # ────────────────────────────────────────────────────────────────────────────
 ATO_ANCHORS = [
     ("WAL_000001", "2026-05-30T09:30:00.000Z", "2026-05-30T10:00:00.000Z",
@@ -401,7 +552,7 @@ for (wallet_id, _anchor_ts, ato_ts, geo_abroad, event_id, ben_id) in ATO_ANCHORS
         "event_id": event_id,
         "wallet_id": wallet_id,
         "timestamp": ato_ts,
-        "amount_thb": round(random.uniform(20_000, 50_000), 2),
+        "amount_thb": add_noise(round(random.uniform(20_000, 50_000), 2)),
         "direction": "outbound",
         "rail": "bank_transfer",
         "beneficiary_id": ben_id,
@@ -422,8 +573,8 @@ with open(EVENTS_PATH, "w", encoding="utf-8") as f:
 with open(HISTORY_PATH, "w", encoding="utf-8") as f:
     json.dump(history, f, ensure_ascii=False, indent=2)
 
-print(f"Mockingbird Phase 2: wrote {len(events)} events to {EVENTS_PATH}")
-print(f"Mockingbird Phase 2: wrote {len(history)} history records to {HISTORY_PATH}")
+print(f"Mockingbird Phase 2 (Spec-004): wrote {len(events)} events to {EVENTS_PATH}")
+print(f"Mockingbird Phase 2 (Spec-004): wrote {len(history)} history records to {HISTORY_PATH}")
 
 breakdown = {}
 for e in events:
@@ -433,11 +584,6 @@ print("\nEvent breakdown:")
 for label, count in sorted(breakdown.items()):
     print(f"  {label}: {count} events")
 
-history_breakdown = {}
-for h in history:
-    wid = h["wallet_id"].split("_")[1]
-    key = f"WAL_{wid}_*"
-    history_breakdown[key] = history_breakdown.get(key, 0) + 1
 print(f"\nTotal history records: {len(history)}")
 print("\nATO events:")
 for e in events:

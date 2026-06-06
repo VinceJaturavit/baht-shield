@@ -1,8 +1,11 @@
-// Ourox Guide — /guide (Spec-022)
-// Comprehensive living guide: 8 sections, calm enterprise document, anchor-friendly.
+// Ourox Guide — /guide (Spec-022, Spec-004)
+// Comprehensive living guide: 9 sections, calm enterprise document, anchor-friendly.
 // No marketing splash. No animation. No decorative illustrations.
 // Roadmap structured for future updates.
 
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { OuroxShell } from "@/components/ourox/OuroxShell";
 
@@ -20,7 +23,8 @@ const SECTIONS: Section[] = [
   { id: "how-they-connect", number: "5", title: "How they connect — the loop" },
   { id: "typologies", number: "6", title: "Typologies demonstrated" },
   { id: "synthetic-data", number: "7", title: "Synthetic data & boundaries" },
-  { id: "roadmap", number: "8", title: "Roadmap" },
+  { id: "technical-architecture", number: "8", title: "Technical architecture" },
+  { id: "roadmap", number: "9", title: "Roadmap" },
 ];
 
 function SectionHeading({
@@ -59,6 +63,37 @@ function FeatureItem({ name, description }: { name: string; description: string 
     <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/50 px-5 py-4">
       <div className="mb-1 text-sm font-semibold text-ourox-ink">{name}</div>
       <p className="text-sm leading-6 text-ourox-ink/60">{description}</p>
+    </div>
+  );
+}
+
+function ArchitectureExpander({ title, children }: { title: string; children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="flex w-full items-center justify-between px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange"
+        aria-expanded={open}
+      >
+        <span className="text-sm font-semibold text-ourox-ink">{title}</span>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          className={`shrink-0 text-ourox-ink/50 transition-transform ${open ? "rotate-180" : ""}`}
+          aria-hidden="true"
+        >
+          <path d="M8 10.707l-4.354-4.353a1 1 0 00-1.414 1.414l5.061 5.061a1 1 0 001.414 0l5.061-5.06a1 1 0 00-1.414-1.415L8 10.707z" />
+        </svg>
+      </button>
+      {open && (
+        <div className="border-t border-ourox-obsidianMid px-5 pb-5 pt-4">
+          <div className="space-y-4 text-sm leading-7 text-ourox-ink/70">{children}</div>
+        </div>
+      )}
     </div>
   );
 }
@@ -548,9 +583,76 @@ export default function GuidePage() {
               </div>
             </section>
 
-            {/* Section 8 — Roadmap */}
+            {/* Section 8 — Technical architecture */}
+            <section aria-labelledby="technical-architecture">
+              <SectionHeading
+                id="technical-architecture"
+                number="8"
+                title="Technical architecture"
+              />
+              <Prose>
+                <p>
+                  Ourox uses procedurally generated synthetic data. The dataset is not
+                  copied from real customers or prior employer systems. Background activity
+                  is randomized for variety, while fraud scenarios are deliberately shaped
+                  around public fraud typologies such as mule onboarding, sleeper mule
+                  activation, and APP scam cash-out.
+                </p>
+              </Prose>
+
+              <div className="mt-6 space-y-3">
+                <ArchitectureExpander title="How the synthetic data is made">
+                  <p>
+                    The dataset has two layers. The first is a base synthetic seed
+                    containing wallets, users, transactions, alerts, cases, devices,
+                    patterns, and graph links. That seed is enriched with timestamps and
+                    geo fields so temporal features such as velocity, dormancy,
+                    pass-through behaviour, and geo movement can be demonstrated.
+                  </p>
+                  <p>
+                    The second layer is an offline Python scenario generator. It creates
+                    targeted fraud-typology events with the temporal and structural shape
+                    the features need: mule onboarding, sleeper-mule activation, and APP
+                    scam cash-out. The generator also adds a realistic overlap zone: some
+                    fraud has weaker or partial signals, and some background activity has
+                    incidentally elevated features. That makes the model and tuning views
+                    less toy-like and more useful for learning.
+                  </p>
+                </ArchitectureExpander>
+
+                <ArchitectureExpander title="How Arbiter scores">
+                  <p>
+                    Arbiter starts with deterministic features computed from synthetic
+                    events and history. Those features feed a transparent weighted score,
+                    then explicit rules run through a GoRules Zen-Engine JDM. Rule
+                    precedence is visible: a rule can block an event even when the score
+                    band alone would approve it.
+                  </p>
+                  <p>
+                    The ML model is separate. It is trained offline on synthetic labels
+                    and exported as static JSON artifacts. The app imports those artifacts
+                    to compare model score, learned importance, calibration, and
+                    disagreement cases. There is no runtime model inference. The rule
+                    engine remains the decisioning authority; ML is shown as a second
+                    opinion for analysis.
+                  </p>
+                </ArchitectureExpander>
+
+                <ArchitectureExpander title="Stack">
+                  <p>
+                    Ourox is built as a Next.js application deployed on Vercel.
+                    Arbiter&apos;s rules use a GoRules Zen-Engine JDM file. Synthetic data
+                    generation and ML training run offline in Python. The deployed app
+                    reads generated JSON artifacts; it does not run Python, a model
+                    server, or request-time inference.
+                  </p>
+                </ArchitectureExpander>
+              </div>
+            </section>
+
+            {/* Section 9 — Roadmap */}
             <section aria-labelledby="roadmap">
-              <SectionHeading id="roadmap" number="8" title="Roadmap" />
+              <SectionHeading id="roadmap" number="9" title="Roadmap" />
               <Prose>
                 <p>
                   The roadmap is structured in three horizons. It is designed to be updated

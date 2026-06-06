@@ -1,111 +1,111 @@
 {
   "model": "logistic_regression",
   "label_source": "_scenario_label (offline synthetic label only — not a runtime feature)",
-  "intercept": -0.439037,
+  "intercept": -0.344693,
   "features": [
     {
-      "feature": "geo_velocity",
-      "coefficient": 1.821213,
-      "abs_coefficient": 1.821213,
+      "feature": "velocity_1h",
+      "coefficient": 2.484633,
+      "abs_coefficient": 2.484633,
       "rank": 1,
       "direction": "fraud_positive",
-      "scaler_mean": 0.405692,
-      "scaler_std": 0.468989
+      "scaler_mean": 0.195455,
+      "scaler_std": 0.265108
     },
     {
       "feature": "amt_to_mean_ratio",
-      "coefficient": 1.513334,
-      "abs_coefficient": 1.513334,
+      "coefficient": 1.71379,
+      "abs_coefficient": 1.71379,
       "rank": 2,
       "direction": "fraud_positive",
-      "scaler_mean": 0.237686,
-      "scaler_std": 0.29851
-    },
-    {
-      "feature": "beneficiary_risk_tier",
-      "coefficient": 0.994081,
-      "abs_coefficient": 0.994081,
-      "rank": 3,
-      "direction": "fraud_positive",
-      "scaler_mean": 0.154545,
-      "scaler_std": 0.306585
-    },
-    {
-      "feature": "is_new_beneficiary",
-      "coefficient": 0.814841,
-      "abs_coefficient": 0.814841,
-      "rank": 4,
-      "direction": "fraud_positive",
-      "scaler_mean": 0.049242,
-      "scaler_std": 0.216374
-    },
-    {
-      "feature": "withdrawal_after_deposit",
-      "coefficient": 0.795861,
-      "abs_coefficient": 0.795861,
-      "rank": 5,
-      "direction": "fraud_positive",
-      "scaler_mean": 0.266008,
-      "scaler_std": 0.428137
-    },
-    {
-      "feature": "velocity_1h",
-      "coefficient": 0.776671,
-      "abs_coefficient": 0.776671,
-      "rank": 6,
-      "direction": "fraud_positive",
-      "scaler_mean": 0.165152,
-      "scaler_std": 0.266852
-    },
-    {
-      "feature": "daily_cumulative_thb",
-      "coefficient": 0.771906,
-      "abs_coefficient": 0.771906,
-      "rank": 7,
-      "direction": "fraud_positive",
-      "scaler_mean": 0.271681,
-      "scaler_std": 0.440534
+      "scaler_mean": 0.336735,
+      "scaler_std": 0.335012
     },
     {
       "feature": "account_age_days",
-      "coefficient": 0.514392,
-      "abs_coefficient": 0.514392,
-      "rank": 8,
+      "coefficient": 1.112265,
+      "abs_coefficient": 1.112265,
+      "rank": 3,
       "direction": "fraud_positive",
-      "scaler_mean": 0.216428,
-      "scaler_std": 0.337412
+      "scaler_mean": 0.216594,
+      "scaler_std": 0.337263
+    },
+    {
+      "feature": "geo_velocity",
+      "coefficient": 1.102021,
+      "abs_coefficient": 1.102021,
+      "rank": 4,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.038973,
+      "scaler_std": 0.109934
+    },
+    {
+      "feature": "beneficiary_risk_tier",
+      "coefficient": 0.82511,
+      "abs_coefficient": 0.82511,
+      "rank": 5,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.129545,
+      "scaler_std": 0.275307
     },
     {
       "feature": "pattern_match_count",
-      "coefficient": 0.371077,
-      "abs_coefficient": 0.371077,
-      "rank": 9,
+      "coefficient": 0.796872,
+      "abs_coefficient": 0.796872,
+      "rank": 6,
       "direction": "fraud_positive",
       "scaler_mean": 0.05303,
       "scaler_std": 0.12192
     },
     {
-      "feature": "device_account_count",
-      "coefficient": 0.266724,
-      "abs_coefficient": 0.266724,
-      "rank": 10,
+      "feature": "withdrawal_after_deposit",
+      "coefficient": 0.659617,
+      "abs_coefficient": 0.659617,
+      "rank": 7,
       "direction": "fraud_positive",
-      "scaler_mean": 0.143939,
-      "scaler_std": 0.351028
+      "scaler_mean": 0.32755,
+      "scaler_std": 0.453605
+    },
+    {
+      "feature": "is_new_beneficiary",
+      "coefficient": 0.657911,
+      "abs_coefficient": 0.657911,
+      "rank": 8,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.087121,
+      "scaler_std": 0.282013
+    },
+    {
+      "feature": "daily_cumulative_thb",
+      "coefficient": 0.268306,
+      "abs_coefficient": 0.268306,
+      "rank": 9,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.176398,
+      "scaler_std": 0.338115
     },
     {
       "feature": "is_night_transaction",
-      "coefficient": 0.170944,
-      "abs_coefficient": 0.170944,
+      "coefficient": 0.162286,
+      "abs_coefficient": 0.162286,
+      "rank": 10,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.147727,
+      "scaler_std": 0.354829
+    },
+    {
+      "feature": "device_account_count",
+      "coefficient": 0.126082,
+      "abs_coefficient": 0.126082,
       "rank": 11,
       "direction": "fraud_positive",
-      "scaler_mean": 0.185606,
-      "scaler_std": 0.388788
+      "scaler_mean": 0.086174,
+      "scaler_std": 0.274221
     },
     {
       "feature": "sleeper_velocity_shock",
-      "coefficient": 0.07735,
-      "abs_coefficient": 0.07735,
+      "coefficient": 0.008295,
+      "abs_coefficient": 0.008295,
       "rank": 12,
       "direction": "fraud_positive",
       "scaler_mean": 0.002885,
