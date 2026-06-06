@@ -1,7 +1,7 @@
 "use client";
 
 // ArbiterSectionNav — secondary nav tab strip within the Arbiter section.
-// Connects /arbiter (Scoring) ↔ /arbiter/tuning (Tuning).
+// Connects /arbiter (Scoring) ↔ /arbiter/tuning (Tuning) ↔ /arbiter/model (Model).
 // Placed below the page header, above the synthetic banner.
 
 import Link from "next/link";
@@ -17,6 +17,11 @@ const TABS = [
     href: "/arbiter/tuning",
     label: "Tuning",
     description: "Threshold tradeoffs",
+  },
+  {
+    href: "/arbiter/model",
+    label: "Model",
+    description: "ML vs rules",
   },
 ] as const;
 

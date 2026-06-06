@@ -1,0 +1,41 @@
+{
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "roc_auc": 1.0,
+  "threshold": 0.5,
+  "confusion_matrix": {
+    "tn": 50,
+    "fp": 0,
+    "fn": 0,
+    "tp": 39
+  },
+  "support": {
+    "total_test": 89,
+    "fraud_test": 39,
+    "background_test": 50
+  },
+  "train_test_split": {
+    "total": 353,
+    "train": 264,
+    "test": 89,
+    "test_fraction": 0.25,
+    "random_seed": 42
+  },
+  "per_typology_recall": {
+    "onboarding_mule_farm": {
+      "support": 12,
+      "recall": 1.0
+    },
+    "sleeper_activation": {
+      "support": 16,
+      "recall": 1.0
+    },
+    "app_scam_cashout": {
+      "support": 11,
+      "recall": 1.0
+    }
+  },
+  "model": "logistic_regression",
+  "label_source": "_scenario_label (offline synthetic label only)"
+}

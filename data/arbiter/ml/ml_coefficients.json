@@ -1,0 +1,129 @@
+{
+  "model": "logistic_regression",
+  "label_source": "_scenario_label (offline synthetic label only — not a runtime feature)",
+  "intercept": -0.439037,
+  "features": [
+    {
+      "feature": "geo_velocity",
+      "coefficient": 1.821213,
+      "abs_coefficient": 1.821213,
+      "rank": 1,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.405692,
+      "scaler_std": 0.468989
+    },
+    {
+      "feature": "amt_to_mean_ratio",
+      "coefficient": 1.513334,
+      "abs_coefficient": 1.513334,
+      "rank": 2,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.237686,
+      "scaler_std": 0.29851
+    },
+    {
+      "feature": "beneficiary_risk_tier",
+      "coefficient": 0.994081,
+      "abs_coefficient": 0.994081,
+      "rank": 3,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.154545,
+      "scaler_std": 0.306585
+    },
+    {
+      "feature": "is_new_beneficiary",
+      "coefficient": 0.814841,
+      "abs_coefficient": 0.814841,
+      "rank": 4,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.049242,
+      "scaler_std": 0.216374
+    },
+    {
+      "feature": "withdrawal_after_deposit",
+      "coefficient": 0.795861,
+      "abs_coefficient": 0.795861,
+      "rank": 5,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.266008,
+      "scaler_std": 0.428137
+    },
+    {
+      "feature": "velocity_1h",
+      "coefficient": 0.776671,
+      "abs_coefficient": 0.776671,
+      "rank": 6,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.165152,
+      "scaler_std": 0.266852
+    },
+    {
+      "feature": "daily_cumulative_thb",
+      "coefficient": 0.771906,
+      "abs_coefficient": 0.771906,
+      "rank": 7,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.271681,
+      "scaler_std": 0.440534
+    },
+    {
+      "feature": "account_age_days",
+      "coefficient": 0.514392,
+      "abs_coefficient": 0.514392,
+      "rank": 8,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.216428,
+      "scaler_std": 0.337412
+    },
+    {
+      "feature": "pattern_match_count",
+      "coefficient": 0.371077,
+      "abs_coefficient": 0.371077,
+      "rank": 9,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.05303,
+      "scaler_std": 0.12192
+    },
+    {
+      "feature": "device_account_count",
+      "coefficient": 0.266724,
+      "abs_coefficient": 0.266724,
+      "rank": 10,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.143939,
+      "scaler_std": 0.351028
+    },
+    {
+      "feature": "is_night_transaction",
+      "coefficient": 0.170944,
+      "abs_coefficient": 0.170944,
+      "rank": 11,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.185606,
+      "scaler_std": 0.388788
+    },
+    {
+      "feature": "sleeper_velocity_shock",
+      "coefficient": 0.07735,
+      "abs_coefficient": 0.07735,
+      "rank": 12,
+      "direction": "fraud_positive",
+      "scaler_mean": 0.002885,
+      "scaler_std": 0.046788
+    }
+  ],
+  "feature_order": [
+    "amt_to_mean_ratio",
+    "velocity_1h",
+    "account_age_days",
+    "is_new_beneficiary",
+    "device_account_count",
+    "withdrawal_after_deposit",
+    "sleeper_velocity_shock",
+    "geo_velocity",
+    "is_night_transaction",
+    "daily_cumulative_thb",
+    "beneficiary_risk_tier",
+    "pattern_match_count"
+  ]
+}
