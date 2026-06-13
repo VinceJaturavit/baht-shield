@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import { OuroxMark, OuroxWordmark } from "./OuroxLogo";
 import { OuroxFooter } from "./OuroxFooter";
 
-export type OuroxProduct = "Ourox" | "Verity" | "Arbiter" | "Guide";
+export type OuroxProduct = "Ourox" | "Verity" | "Arbiter" | "Ops" | "Guide";
 
 interface OuroxShellProps {
   currentProduct?: OuroxProduct;
@@ -19,6 +19,7 @@ interface OuroxShellProps {
 const NAV: { href: string; label: string; product: OuroxProduct }[] = [
   { href: "/verity", label: "Verity", product: "Verity" },
   { href: "/arbiter", label: "Arbiter", product: "Arbiter" },
+  { href: "/ops", label: "Ops", product: "Ops" },
   { href: "/guide", label: "Guide", product: "Guide" },
 ];
 
@@ -46,7 +47,24 @@ export function OuroxShell({ currentProduct = "Ourox", children }: OuroxShellPro
           {currentProduct !== "Ourox" && (
             <span className="flex items-center gap-2 min-w-0">
               <span className="text-ourox-ink/30 select-none" aria-hidden="true">/</span>
-              {currentProduct === "Arbiter" ? (
+              {currentProduct === "Ops" ? (
+                <span className="flex items-center gap-1.5 min-w-0">
+                  <img
+                    src="/logos/ourox-ops-icon.svg"
+                    alt=""
+                    width={16}
+                    height={16}
+                    className="shrink-0"
+                    aria-hidden="true"
+                  />
+                  <span
+                    className="font-mono text-xs text-ourox-ink/60 truncate"
+                    style={{ fontFamily: "'Space Mono', monospace" }}
+                  >
+                    {currentProduct}
+                  </span>
+                </span>
+              ) : currentProduct === "Arbiter" ? (
                 <span className="flex items-center gap-1.5 min-w-0">
                   {/* Arbiter dial icon — inline SVG, no font dependency */}
                   <svg

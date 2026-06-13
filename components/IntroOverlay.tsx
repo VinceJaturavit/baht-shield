@@ -209,7 +209,7 @@ export function IntroOverlay({ open, onClose }: IntroOverlayProps) {
             <p className="mb-2 text-signal-body text-signal-slate">
               Built by{" "}
               <span className="font-medium text-signal-ink">Vince Chaovalit</span> — fraud &amp;
-              financial-crime operations, ex-Kraken. Chainalysis Reactor certified.
+              financial-crime operations, global exchange background. Chainalysis Reactor certified.
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1 text-signal-body">
               <a
