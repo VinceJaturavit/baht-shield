@@ -7,6 +7,7 @@ import { OpsSyntheticBanner } from "./OpsSyntheticBanner";
 import { OpsSideNav, type OpsWorkspaceView } from "./OpsSideNav";
 import { OpsQueueWorkspace } from "./OpsQueueWorkspace";
 import { OpsAgingDashboard } from "./OpsAgingDashboard";
+import { OpsRosterWorkspace } from "./OpsRosterWorkspace";
 import { OpsSlaDrawer } from "./OpsSlaDrawer";
 
 const WORKSPACE_BADGE: Record<OpsWorkspaceView, string> = {
@@ -55,6 +56,7 @@ export function OpsWorkspace() {
               />
             )}
             {workspace === "aging" && <OpsAgingDashboard cases={OPS_CASES} />}
+            {workspace === "roster" && <OpsRosterWorkspace cases={OPS_CASES} />}
           </div>
         </div>
       </div>

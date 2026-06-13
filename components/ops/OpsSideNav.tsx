@@ -12,7 +12,7 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { id: "queue", label: "Queue Board" },
   { id: "aging", label: "Aging & SLA" },
-  { id: "roster", label: "Roster", disabled: true, suffix: "Coming" },
+  { id: "roster", label: "Roster" },
   { id: "kpi", label: "KPI", disabled: true, suffix: "Coming" },
 ];
 
