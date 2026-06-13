@@ -12,6 +12,10 @@ import {
   sortOpsCases,
   OPS_REFERENCE_NOW,
 } from "@/lib/ops/sla";
+import {
+  buildSortedQueueSections,
+  partitionOpsQueue,
+} from "@/lib/ops/queue";
 import type { OpsCase } from "@/lib/ops/types";
 
 const FORBIDDEN = ["TrueMoney", "Kraken", "Payward", "SignalOS"];
@@ -121,5 +125,26 @@ describe("getSlaPressure", () => {
     expect(pressures.size).toBeGreaterThanOrEqual(3);
     expect(pressures.has("Breached")).toBe(true);
     expect(pressures.has("On track")).toBe(true);
+  });
+});
+
+describe("partitionOpsQueue", () => {
+  it("separates urgent overlay cases from the main queue without duplication", () => {
+    const { urgentCases, mainQueueCases } = partitionOpsQueue(OPS_CASES);
+    expect(urgentCases.every((c) => c.priorityTier === "Urgent")).toBe(true);
+    expect(mainQueueCases.every((c) => c.priorityTier !== "Urgent")).toBe(true);
+    expect(urgentCases.length + mainQueueCases.length).toBe(OPS_CASES.length);
+
+    const urgentIds = new Set(urgentCases.map((c) => c.id));
+    for (const c of mainQueueCases) {
+      expect(urgentIds.has(c.id)).toBe(false);
+    }
+  });
+
+  it("buildSortedQueueSections keeps urgent cases out of the main list", () => {
+    const { urgentCases, mainQueueCases } = buildSortedQueueSections(OPS_CASES, "all");
+    expect(urgentCases.length).toBeGreaterThan(0);
+    expect(mainQueueCases.length).toBe(OPS_CASES.length - urgentCases.length);
+    expect(mainQueueCases.some((c) => c.priorityTier === "Urgent")).toBe(false);
   });
 });

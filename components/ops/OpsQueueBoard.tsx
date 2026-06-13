@@ -1,11 +1,10 @@
 "use client";
 
-import { useMemo } from "react";
-import type { OpsCase } from "@/lib/ops/types";
-import { OPS_STREAMS } from "@/lib/ops/streams";
-import { sortOpsCases, OPS_REFERENCE_NOW } from "@/lib/ops/sla";
-import { OpsStreamColumn } from "./OpsStreamColumn";
-import { OpsCaseCard } from "./OpsCaseCard";
+import { useMemo, useState } from "react";
+import type { OpsCase, OpsStreamCode } from "@/lib/ops/types";
+import { OPS_STREAM_CODES } from "@/lib/ops/streams";
+import { buildSortedQueueSections } from "@/lib/ops/queue";
+import { OpsQueueList } from "./OpsQueueList";
 
 interface Props {
   cases: OpsCase[];
@@ -13,91 +12,110 @@ interface Props {
   onSelect: (caseItem: OpsCase) => void;
 }
 
+type StreamFilter = "all" | OpsStreamCode;
+
+const STREAM_FILTERS: { value: StreamFilter; label: string }[] = [
+  { value: "all", label: "All streams" },
+  ...OPS_STREAM_CODES.map((code) => ({ value: code as StreamFilter, label: code })),
+];
+
 export function OpsQueueBoard({ cases, selectedId, onSelect }: Props) {
-  const urgentCases = useMemo(
-    () =>
-      sortOpsCases(
-        cases.filter((c) => c.priorityTier === "Urgent"),
-        OPS_REFERENCE_NOW,
-      ),
-    [cases],
+  const [streamFilter, setStreamFilter] = useState<StreamFilter>("all");
+
+  const { urgentCases, mainQueueCases } = useMemo(
+    () => buildSortedQueueSections(cases, streamFilter),
+    [cases, streamFilter],
   );
 
-  const streamCases = useMemo(() => {
-    const byStream: Record<string, OpsCase[]> = {};
-    for (const stream of OPS_STREAMS) {
-      byStream[stream.code] = cases.filter(
-        (c) => c.stream === stream.code && c.priorityTier !== "Urgent",
-      );
-    }
-    return byStream;
-  }, [cases]);
-
   return (
-    <div className="space-y-6">
-      {/* Urgent overlay band */}
-      <section
-        aria-labelledby="ops-urgent-overlay"
-        className="rounded-xl border-2 border-dashed border-ourox-orange/40 bg-ourox-orange/[0.04] p-4"
-      >
-        <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+    <div className="space-y-8">
+      <section aria-labelledby="ops-urgent-overlay">
+        <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
           <div>
             <div className="flex items-center gap-2">
               <span
-                className="inline-flex h-5 w-5 items-center justify-center rounded border border-ourox-orange/50 bg-ourox-obsidian text-[10px] font-bold text-ourox-orange"
+                className="inline-flex h-4 w-4 items-center justify-center rounded border border-ourox-orange/50 text-[9px] font-bold text-ourox-orange"
                 aria-hidden="true"
               >
                 !
               </span>
               <h2
                 id="ops-urgent-overlay"
-                className="text-sm font-semibold uppercase tracking-wider text-ourox-ink"
+                className="text-xs font-semibold uppercase tracking-wider text-ourox-ink"
               >
                 Urgent overlay
               </h2>
-              <span className="rounded-full border border-ourox-orange/30 bg-ourox-orange/10 px-2 py-0.5 text-[11px] font-semibold text-ourox-orange">
+              <span className="text-[11px] tabular-nums text-ourox-ink/50">
                 {urgentCases.length} cases
               </span>
             </div>
-            <p className="mt-1 max-w-2xl text-xs leading-relaxed text-ourox-ink/60">
+            <p className="mt-1 max-w-2xl text-xs leading-relaxed text-ourox-ink/55">
               Cross-stream cases routed above standard queues because cost of delay is high.
             </p>
           </div>
         </div>
 
-        {urgentCases.length === 0 ? (
-          <p className="text-xs text-ourox-ink/45">No urgent cases in the overlay.</p>
-        ) : (
-          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-            {urgentCases.map((caseItem) => (
-              <OpsCaseCard
-                key={caseItem.id}
-                caseItem={caseItem}
-                selected={selectedId === caseItem.id}
-                onSelect={onSelect}
-              />
-            ))}
-          </div>
-        )}
+        <OpsQueueList
+          cases={urgentCases}
+          selectedId={selectedId}
+          onSelect={onSelect}
+          labelledBy="ops-urgent-overlay"
+          emptyMessage="No urgent cases in the overlay."
+        />
       </section>
 
-      {/* Stream columns */}
-      <div>
-        <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-ourox-ink/50">
-          Stream queues — priority then SLA pressure
-        </h2>
-        <div className="grid gap-4 xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2">
-          {OPS_STREAMS.map((stream) => (
-            <OpsStreamColumn
-              key={stream.code}
-              stream={stream.code}
-              cases={streamCases[stream.code] ?? []}
-              selectedId={selectedId}
-              onSelect={onSelect}
-            />
-          ))}
+      <section aria-labelledby="ops-main-queue">
+        <div className="mb-3 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2
+              id="ops-main-queue"
+              className="text-xs font-semibold uppercase tracking-wider text-ourox-ink/70"
+            >
+              Stream queue — priority then SLA pressure
+            </h2>
+            <p className="mt-1 text-[11px] text-ourox-ink/45">
+              {mainQueueCases.length} cases · urgent overlay excluded
+            </p>
+          </div>
+
+          <div
+            className="flex flex-wrap items-center gap-1"
+            role="group"
+            aria-label="Filter by stream"
+          >
+            {STREAM_FILTERS.map(({ value, label }) => {
+              const active = streamFilter === value;
+              return (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setStreamFilter(value)}
+                  aria-pressed={active}
+                  className={`rounded border px-2.5 py-1 text-[11px] font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange ${
+                    active
+                      ? "border-ourox-orange/40 bg-ourox-orange/10 text-ourox-orange"
+                      : "border-ourox-obsidianMid text-ourox-ink/60 hover:border-ourox-obsidianMid hover:bg-ourox-obsidianLight/50 hover:text-ourox-ink"
+                  }`}
+                >
+                  {label}
+                </button>
+              );
+            })}
+          </div>
         </div>
-      </div>
+
+        <OpsQueueList
+          cases={mainQueueCases}
+          selectedId={selectedId}
+          onSelect={onSelect}
+          labelledBy="ops-main-queue"
+          emptyMessage={
+            streamFilter === "all"
+              ? "No cases in the main queue."
+              : `No ${streamFilter} cases in the main queue.`
+          }
+        />
+      </section>
     </div>
   );
 }

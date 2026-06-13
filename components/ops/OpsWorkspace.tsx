@@ -18,8 +18,8 @@ export function OpsWorkspace() {
             <img
               src="/logos/ourox-ops-horizontal.svg"
               alt="Ourox Ops"
-              height={52}
-              style={{ height: 52, width: "auto" }}
+              height={40}
+              style={{ height: 40, width: "auto" }}
             />
             <span className="rounded-full border border-ourox-orange/30 bg-ourox-orange/10 px-2 py-0.5 text-xs font-semibold text-ourox-orange">
               Queue Board
