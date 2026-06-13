@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 export type OpsWorkspaceView = "queue" | "aging" | "roster" | "kpi";
 
 interface NavItem {
@@ -21,7 +24,20 @@ interface Props {
   onSelect: (view: OpsWorkspaceView) => void;
 }
 
+function navItemClass(isActive: boolean, disabled?: boolean) {
+  if (disabled) {
+    return "cursor-not-allowed border-transparent text-ourox-ink/30";
+  }
+  if (isActive) {
+    return "border-ourox-orange/35 bg-ourox-orange/[0.08] text-ourox-ink";
+  }
+  return "border-transparent text-ourox-ink/65 hover:border-ourox-obsidianMid hover:bg-ourox-obsidianLight/40 hover:text-ourox-ink";
+}
+
 export function OpsSideNav({ active, onSelect }: Props) {
+  const pathname = usePathname();
+  const guideActive = pathname === "/ops/guide";
+
   return (
     <nav
       aria-label="Ops workspaces"
@@ -29,7 +45,7 @@ export function OpsSideNav({ active, onSelect }: Props) {
     >
       <ul className="flex gap-1 lg:flex-col lg:gap-0.5">
         {NAV_ITEMS.map(({ id, label, disabled, suffix }) => {
-          const isActive = !disabled && active === id;
+          const isActive = !disabled && !guideActive && active === id;
           return (
             <li key={id} className="flex-1 lg:flex-none">
               <button
@@ -37,13 +53,7 @@ export function OpsSideNav({ active, onSelect }: Props) {
                 disabled={disabled}
                 onClick={() => !disabled && onSelect(id)}
                 aria-current={isActive ? "page" : undefined}
-                className={`w-full rounded border px-2.5 py-2 text-left text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange lg:px-3 lg:py-2.5 ${
-                  disabled
-                    ? "cursor-not-allowed border-transparent text-ourox-ink/30"
-                    : isActive
-                      ? "border-ourox-orange/35 bg-ourox-orange/[0.08] text-ourox-ink"
-                      : "border-transparent text-ourox-ink/65 hover:border-ourox-obsidianMid hover:bg-ourox-obsidianLight/40 hover:text-ourox-ink"
-                }`}
+                className={`w-full rounded border px-2.5 py-2 text-left text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange lg:px-3 lg:py-2.5 ${navItemClass(isActive, disabled)}`}
               >
                 <span className="block truncate">{label}</span>
                 {suffix && (
@@ -55,6 +65,15 @@ export function OpsSideNav({ active, onSelect }: Props) {
             </li>
           );
         })}
+        <li className="flex-1 lg:mt-1 lg:flex-none lg:border-t lg:border-ourox-obsidianMid lg:pt-1.5">
+          <Link
+            href="/ops/guide"
+            aria-current={guideActive ? "page" : undefined}
+            className={`block w-full rounded border px-2.5 py-2 text-left text-xs font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange lg:px-3 lg:py-2.5 ${navItemClass(guideActive)}`}
+          >
+            Guide
+          </Link>
+        </li>
       </ul>
     </nav>
   );

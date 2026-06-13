@@ -17,14 +17,15 @@ interface Section {
 
 const SECTIONS: Section[] = [
   { id: "what-ourox-is", number: "1", title: "What Ourox is" },
-  { id: "two-products", number: "2", title: "The two products" },
-  { id: "verity-features", number: "3", title: "Verity — features & functions" },
-  { id: "arbiter-features", number: "4", title: "Arbiter — features & functions" },
-  { id: "how-they-connect", number: "5", title: "How they connect — the loop" },
-  { id: "typologies", number: "6", title: "Typologies demonstrated" },
-  { id: "synthetic-data", number: "7", title: "Synthetic data & boundaries" },
-  { id: "technical-architecture", number: "8", title: "Technical architecture" },
-  { id: "roadmap", number: "9", title: "Roadmap" },
+  { id: "three-pillars", number: "2", title: "The three pillars" },
+  { id: "ops-features", number: "3", title: "Ops — fraud operations management" },
+  { id: "verity-features", number: "4", title: "Verity — features & functions" },
+  { id: "arbiter-features", number: "5", title: "Arbiter — features & functions" },
+  { id: "how-they-connect", number: "6", title: "How they connect — the loop" },
+  { id: "typologies", number: "7", title: "Typologies demonstrated" },
+  { id: "synthetic-data", number: "8", title: "Synthetic data & boundaries" },
+  { id: "technical-architecture", number: "9", title: "Technical architecture" },
+  { id: "roadmap", number: "10", title: "Roadmap" },
 ];
 
 function SectionHeading({
@@ -203,7 +204,7 @@ export default function GuidePage() {
                 How Ourox works
               </h1>
               <p className="max-w-xl text-base leading-7 text-ourox-ink/60">
-                A structured guide to the platform, its two products, the synthetic data
+                A structured guide to the platform, its three pillars, the synthetic data
                 boundary, and the roadmap.
               </p>
               <p
@@ -227,7 +228,8 @@ export default function GuidePage() {
                 <p>
                   The thesis is simple: fraud teams should not treat analyst judgment as a
                   loose note at the end of an investigation. Pattern intelligence can become
-                  structured input back into scoring and decisioning. Verity demonstrates the
+                  structured input back into scoring and decisioning. Ops demonstrates how the
+                  fraud function is run after work becomes a case. Verity demonstrates the
                   investigation layer. Arbiter demonstrates the scoring and tuning layer.
                 </p>
                 <p>
@@ -237,16 +239,41 @@ export default function GuidePage() {
               </Prose>
             </section>
 
-            {/* Section 2 — The two products */}
-            <section aria-labelledby="two-products">
-              <SectionHeading id="two-products" number="2" title="The two products" />
+            {/* Section 2 — The three pillars */}
+            <section aria-labelledby="three-pillars">
+              <SectionHeading id="three-pillars" number="2" title="The three pillars" />
               <Prose>
                 <p>
-                  Ourox has two products. They are designed to be explored together, but each
-                  is usable independently.
+                  Ourox has three pillars: Ops runs the fraud operation, Verity investigates
+                  and captures pattern intelligence, and Arbiter scores, tunes, and compares
+                  decisioning logic. They are designed to be explored together, but each is
+                  usable independently.
                 </p>
               </Prose>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight p-6">
+                  <div className="mb-2 flex items-center gap-2">
+                    <span className="text-base font-semibold text-ourox-ink">Ops</span>
+                    <span
+                      className="text-xs text-ourox-ink/40 tracking-wide"
+                      style={{ fontFamily: "'Space Mono', monospace" }}
+                    >
+                      Fraud Operations
+                    </span>
+                  </div>
+                  <p className="text-sm leading-6 text-ourox-ink/60">
+                    Ops is the operations layer after an alert becomes a case. It shows queues,
+                    priority, SLA, aging, roster coverage, protected capacity, and fair KPIs.
+                  </p>
+                  <div className="mt-4">
+                    <Link
+                      href="/ops"
+                      className="text-xs text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange transition-colors"
+                    >
+                      Open Ops
+                    </Link>
+                  </div>
+                </div>
                 <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight p-6">
                   <div className="mb-2 flex items-center gap-2">
                     <span className="text-base font-semibold text-ourox-ink">Verity</span>
@@ -299,11 +326,41 @@ export default function GuidePage() {
               </div>
             </section>
 
-            {/* Section 3 — Verity features */}
+            {/* Section 3 — Ops */}
+            <section aria-labelledby="ops-features">
+              <SectionHeading
+                id="ops-features"
+                number="3"
+                title="Ops — fraud operations management"
+              />
+              <Prose>
+                <p>
+                  Ops is the fraud operations management layer of Ourox. It shows how work is
+                  managed after an alert becomes a case: queues, priority, SLA, aging, roster
+                  coverage, protected capacity, and fair KPIs.
+                </p>
+                <p>
+                  The Ops layer makes visible the management choices behind a fraud function:
+                  which work is urgent, which clock is running, who owns the queue, whether the
+                  team has decision authority on shift, and whether performance is measured
+                  fairly.
+                </p>
+                <p>
+                  <Link
+                    href="/ops/guide"
+                    className="text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange transition-colors"
+                  >
+                    Read the Ops guide
+                  </Link>
+                </p>
+              </Prose>
+            </section>
+
+            {/* Section 4 — Verity features */}
             <section aria-labelledby="verity-features">
               <SectionHeading
                 id="verity-features"
-                number="3"
+                number="4"
                 title="Verity — features & functions"
               />
               <Prose>
@@ -341,11 +398,11 @@ export default function GuidePage() {
               </div>
             </section>
 
-            {/* Section 4 — Arbiter features */}
+            {/* Section 5 — Arbiter features */}
             <section aria-labelledby="arbiter-features">
               <SectionHeading
                 id="arbiter-features"
-                number="4"
+                number="5"
                 title="Arbiter — features & functions"
               />
               <Prose>
@@ -450,49 +507,33 @@ export default function GuidePage() {
               </div>
             </section>
 
-            {/* Section 5 — How they connect */}
+            {/* Section 6 — How they connect */}
             <section aria-labelledby="how-they-connect">
               <SectionHeading
                 id="how-they-connect"
-                number="5"
+                number="6"
                 title="How they connect — the loop"
               />
               <Prose>
                 <p>
                   The name Ourox references the Ouroboros — the symbol of a loop that feeds
-                  itself. Verity captures what analysts learn from investigations: patterns,
-                  matched variables, case outcomes, and evidence. Arbiter shows how scoring
-                  and rules route events into decisions. The intended loop is that confirmed
-                  investigations sharpen scoring, while scoring routes the next investigation.
+                  itself. Arbiter scores and routes work. Verity captures what analysts learn
+                  from investigations: patterns, matched variables, case outcomes, and
+                  evidence. Ops runs the operation after work becomes a case: ownership, SLA,
+                  staffing, quality, and performance.
                 </p>
                 <p>
-                  In the current prototype, the products are demonstrated as connected
-                  concepts using synthetic data. The guide and roadmap track which parts of
-                  the loop are live now and which are planned.
+                  The intended loop is that scoring routes investigation, investigation
+                  explains what is happening, operations manages the work to completion, and
+                  operational outcomes feed back into better detection and routing. In the
+                  current platform, the pillars are demonstrated as connected concepts using
+                  synthetic data. The guide and roadmap track which parts of the loop are live
+                  now and which are planned.
                 </p>
               </Prose>
 
               <div className="mt-6 rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-5 py-5">
                 <div className="flex flex-wrap items-center gap-2 text-sm">
-                  <span className="font-medium text-ourox-ink">Verity</span>
-                  <span className="text-xs text-ourox-ink/40">investigation &amp; patterns</span>
-                  <svg
-                    width="20"
-                    height="14"
-                    viewBox="0 0 20 14"
-                    fill="none"
-                    aria-hidden="true"
-                    className="mx-1"
-                  >
-                    <path
-                      d="M2 7h16M12 3l4 4-4 4"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-ourox-orange/50"
-                    />
-                  </svg>
                   <span className="font-medium text-ourox-ink">Arbiter</span>
                   <span className="text-xs text-ourox-ink/40">scoring &amp; decisioning</span>
                   <svg
@@ -512,16 +553,54 @@ export default function GuidePage() {
                       className="text-ourox-orange/50"
                     />
                   </svg>
-                  <span className="font-medium text-ourox-ink">next investigation</span>
+                  <span className="font-medium text-ourox-ink">Verity</span>
+                  <span className="text-xs text-ourox-ink/40">investigation &amp; patterns</span>
+                  <svg
+                    width="20"
+                    height="14"
+                    viewBox="0 0 20 14"
+                    fill="none"
+                    aria-hidden="true"
+                    className="mx-1"
+                  >
+                    <path
+                      d="M2 7h16M12 3l4 4-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-ourox-orange/50"
+                    />
+                  </svg>
+                  <span className="font-medium text-ourox-ink">Ops</span>
+                  <span className="text-xs text-ourox-ink/40">operations &amp; performance</span>
+                  <svg
+                    width="20"
+                    height="14"
+                    viewBox="0 0 20 14"
+                    fill="none"
+                    aria-hidden="true"
+                    className="mx-1"
+                  >
+                    <path
+                      d="M2 7h16M12 3l4 4-4 4"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="text-ourox-orange/50"
+                    />
+                  </svg>
+                  <span className="font-medium text-ourox-ink">next detection cycle</span>
                 </div>
               </div>
             </section>
 
-            {/* Section 6 — Typologies */}
+            {/* Section 7 — Typologies */}
             <section aria-labelledby="typologies">
               <SectionHeading
                 id="typologies"
-                number="6"
+                number="7"
                 title="Typologies demonstrated"
               />
               <Prose>
@@ -547,11 +626,11 @@ export default function GuidePage() {
               </div>
             </section>
 
-            {/* Section 7 — Synthetic data */}
+            {/* Section 8 — Synthetic data */}
             <section aria-labelledby="synthetic-data">
               <SectionHeading
                 id="synthetic-data"
-                number="7"
+                number="8"
                 title="Synthetic data & boundaries"
               />
               <Prose>
@@ -583,11 +662,11 @@ export default function GuidePage() {
               </div>
             </section>
 
-            {/* Section 8 — Technical architecture */}
+            {/* Section 9 — Technical architecture */}
             <section aria-labelledby="technical-architecture">
               <SectionHeading
                 id="technical-architecture"
-                number="8"
+                number="9"
                 title="Technical architecture"
               />
               <Prose>
@@ -650,9 +729,9 @@ export default function GuidePage() {
               </div>
             </section>
 
-            {/* Section 9 — Roadmap */}
+            {/* Section 10 — Roadmap */}
             <section aria-labelledby="roadmap">
-              <SectionHeading id="roadmap" number="9" title="Roadmap" />
+              <SectionHeading id="roadmap" number="10" title="Roadmap" />
               <Prose>
                 <p>
                   The roadmap is structured in three horizons. It is designed to be updated
@@ -664,6 +743,7 @@ export default function GuidePage() {
                 <RoadmapBand
                   phase="Current"
                   items={[
+                    "Ops MVP shipped: Queue Board, Aging & SLA, Roster & Assignment, KPI Board, and Ops Guide.",
                     "Verity: investigation workspace, alert triage queue, case workflow and closure-note builder, wallet and entity view, pattern intelligence library, analytics.",
                     "Arbiter: scoring explorer with 12 features and full explainability, GoRules Zen-Engine JDM rule evaluation, decision precedence, tuning workspace, confusion matrix, precision / recall / FPR / F1 metrics, per-typology breakdown, rule back-testing, shadow mode.",
                     "Arbiter Phase 3 — ML score: offline-trained logistic-regression score shown beside the transparent rule score, with learned importance vs hand weights, calibration bins, held-out metrics, and ML-vs-rule disagreement cases. Learning-grade second opinion on synthetic data; rules remain the decisioning authority.",
@@ -674,6 +754,7 @@ export default function GuidePage() {
                   phase="Next"
                   items={[
                     "Live Verity → Arbiter feedback wiring: case outcomes and analyst-curated patterns flowing back into scoring as labels or rule suggestions.",
+                    "Next Ops loops may extend reporting, QA review, assignment simulation, or Verity/Ops wiring.",
                   ]}
                 />
                 <RoadmapBand
@@ -697,6 +778,12 @@ export default function GuidePage() {
                 className="text-sm text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange transition-colors"
               >
                 ← Back to Ourox
+              </Link>
+              <Link
+                href="/ops"
+                className="text-sm text-ourox-ink/40 underline underline-offset-2 hover:text-ourox-ink transition-colors"
+              >
+                Open Ops
               </Link>
               <Link
                 href="/verity"
