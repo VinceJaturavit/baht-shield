@@ -32,12 +32,9 @@ export function OpsRosterWorkspace({ cases }: Props) {
 
       <OpsProtectedCapacityNote />
 
-      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-        <div className="space-y-5">
-          <OpsRosterTable members={officers} groupLabel="Officers" />
-          <OpsRosterTable members={contractors} groupLabel="Contractors" />
-        </div>
-
+      <div className="space-y-5">
+        <OpsRosterTable members={officers} groupLabel="Officers" />
+        <OpsRosterTable members={contractors} groupLabel="Contractors" />
         <OpsQueueOwnershipTable rows={OPS_QUEUE_OWNERSHIP} />
       </div>
     </div>

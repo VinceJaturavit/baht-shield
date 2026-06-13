@@ -25,9 +25,10 @@ const LOAD_STATUS_STYLES: Record<
 
 interface Props {
   member: OpsTeamMemberWithLoad;
+  compact?: boolean;
 }
 
-export function OpsRosterLoadBar({ member }: Props) {
+export function OpsRosterLoadBar({ member, compact = false }: Props) {
   const loadStatus = getLoadStatus(member, member.currentLoad);
   const statusStyles = LOAD_STATUS_STYLES[loadStatus];
   const isOfficer = member.role === "Officer";
@@ -46,20 +47,20 @@ export function OpsRosterLoadBar({ member }: Props) {
       : 0;
 
   return (
-    <div className="space-y-1.5">
-      <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5 text-[11px] tabular-nums">
+    <div className={compact ? "space-y-1" : "space-y-1.5"}>
+      <div className="flex flex-wrap items-baseline gap-x-1.5 gap-y-0.5 text-[11px] tabular-nums">
         <span className="font-medium text-ourox-ink/85">
-          {currentLoad} / {isOfficer ? `${assignmentCapacity} assignment` : totalCapacity}
+          {currentLoad} / {isOfficer ? assignmentCapacity : totalCapacity}
         </span>
         {isOfficer && (
-          <span className="text-ourox-ink/45">
-            {totalCapacity} total · {protectedReserve} protected
+          <span className="text-[10px] text-ourox-ink/45">
+            {protectedReserve} protected
           </span>
         )}
       </div>
 
       <div
-        className="flex h-2 w-full max-w-[10rem] overflow-hidden rounded-sm bg-ourox-obsidianLight/50"
+        className={`flex h-1.5 overflow-hidden rounded-sm bg-ourox-obsidianLight/50 ${compact ? "w-full max-w-[7rem]" : "h-2 w-full max-w-[10rem]"}`}
         role="img"
         aria-label={
           isOfficer
@@ -90,15 +91,17 @@ export function OpsRosterLoadBar({ member }: Props) {
         )}
       </div>
 
-      <span
-        className={`inline-flex items-center gap-1.5 text-[10px] font-medium ${statusStyles.text}`}
-      >
+      {!compact && (
         <span
-          className={`h-1.5 w-1.5 shrink-0 rounded-full ${statusStyles.indicator}`}
-          aria-hidden="true"
-        />
-        {loadStatus}
-      </span>
+          className={`inline-flex items-center gap-1.5 text-[10px] font-medium ${statusStyles.text}`}
+        >
+          <span
+            className={`h-1.5 w-1.5 shrink-0 rounded-full ${statusStyles.indicator}`}
+            aria-hidden="true"
+          />
+          {loadStatus}
+        </span>
+      )}
     </div>
   );
 }

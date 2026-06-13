@@ -18,16 +18,14 @@ export function OpsRosterTable({ members, groupLabel }: Props) {
       <h3 className="text-xs font-semibold uppercase tracking-wider text-ourox-ink/50">
         {groupLabel}
       </h3>
-      <div className="overflow-x-auto rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
-        <table className="w-full min-w-[720px] border-collapse text-left text-xs">
+      <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
+        <table className="w-full table-fixed border-collapse text-left text-xs">
           <thead>
             <tr className="border-b border-ourox-obsidianMid text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45">
-              <th className="px-3 py-2 font-semibold">Name</th>
-              <th className="px-3 py-2 font-semibold">Role</th>
-              <th className="px-3 py-2 font-semibold">Streams</th>
-              <th className="px-3 py-2 font-semibold">Load / capacity</th>
-              <th className="px-3 py-2 font-semibold">Shift</th>
-              <th className="px-3 py-2 font-semibold">Attendance</th>
+              <th className="w-[22%] px-2.5 py-2 font-semibold">Name</th>
+              <th className="w-[18%] px-2.5 py-2 font-semibold">Streams</th>
+              <th className="w-[28%] px-2.5 py-2 font-semibold">Load</th>
+              <th className="w-[32%] px-2.5 py-2 font-semibold">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -36,19 +34,25 @@ export function OpsRosterTable({ members, groupLabel }: Props) {
                 key={member.id}
                 className="border-b border-ourox-obsidianMid/70 last:border-b-0"
               >
-                <td className="px-3 py-2.5 font-medium text-ourox-ink">{member.name}</td>
-                <td className="px-3 py-2.5">
-                  <OpsRoleBadge role={member.role} />
+                <td className="px-2.5 py-2">
+                  <span className="block font-medium text-ourox-ink">{member.name}</span>
+                  <span className="mt-0.5 block">
+                    <OpsRoleBadge role={member.role} />
+                  </span>
                 </td>
-                <td className="px-3 py-2.5 text-ourox-ink/70">
-                  {member.streamsCovered.join(" · ")}
+                <td className="px-2.5 py-2">
+                  <span className="text-[11px] text-ourox-ink/70">
+                    {member.streamsCovered.join(" · ")}
+                  </span>
                 </td>
-                <td className="px-3 py-2.5">
-                  <OpsRosterLoadBar member={member} />
+                <td className="px-2.5 py-2">
+                  <OpsRosterLoadBar member={member} compact />
                 </td>
-                <td className="px-3 py-2.5 text-ourox-ink/70">{member.shift}</td>
-                <td className="px-3 py-2.5">
-                  <OpsAttendanceBadge attendance={member.attendance} />
+                <td className="px-2.5 py-2">
+                  <span className="block text-[11px] text-ourox-ink/70">{member.shift}</span>
+                  <span className="mt-0.5 block">
+                    <OpsAttendanceBadge attendance={member.attendance} />
+                  </span>
                 </td>
               </tr>
             ))}

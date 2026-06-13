@@ -41,33 +41,33 @@ export function OpsAgingBucketTable({ rows, groupLabel }: Props) {
   }
 
   return (
-    <div className="overflow-x-auto rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
-      <table className="w-full min-w-[880px] border-collapse text-left text-xs">
+    <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
+      <table className="w-full table-fixed border-collapse text-left text-xs">
         <thead>
           <tr className="border-b border-ourox-obsidianMid text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45">
-            <th className="px-3 py-2 font-semibold">{groupLabel}</th>
-            <th className="px-3 py-2 text-right font-semibold">Total</th>
-            <th className="px-3 py-2 text-right font-semibold">Fresh 0–25%</th>
-            <th className="px-3 py-2 text-right font-semibold">Mid 25–75%</th>
+            <th className="w-[18%] px-2.5 py-2 font-semibold">{groupLabel}</th>
+            <th className="w-[8%] px-2.5 py-2 text-right font-semibold">Total</th>
+            <th className="w-[10%] px-2.5 py-2 text-right font-semibold">Fresh</th>
+            <th className="w-[10%] px-2.5 py-2 text-right font-semibold">Mid</th>
             <th
-              className="border-l border-ourox-orange/20 bg-ourox-orange/[0.04] px-3 py-2 text-right font-semibold text-ourox-orange"
+              className="w-[12%] border-l border-ourox-orange/20 bg-ourox-orange/[0.04] px-2.5 py-2 text-right font-semibold text-ourox-orange"
               scope="col"
             >
               <span className="inline-flex items-center justify-end gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-ourox-orange" aria-hidden="true" />
-                At-Risk 75–100%
+                At-Risk
               </span>
             </th>
-            <th className="px-3 py-2 text-right font-semibold">
+            <th className="w-[12%] px-2.5 py-2 text-right font-semibold">
               <span className="inline-flex items-center justify-end gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-red-500/70" aria-hidden="true" />
-                Breached &gt;100%
+                Breached
               </span>
             </th>
-            <th className="border-l border-ourox-obsidianMid px-3 py-2 text-right font-semibold">
-              Waiting on us
+            <th className="w-[15%] border-l border-ourox-obsidianMid px-2.5 py-2 text-right font-semibold">
+              On us
             </th>
-            <th className="px-3 py-2 text-right font-semibold">Waiting on external</th>
+            <th className="w-[15%] px-2.5 py-2 text-right font-semibold">External</th>
           </tr>
         </thead>
         <tbody>
@@ -76,24 +76,24 @@ export function OpsAgingBucketTable({ rows, groupLabel }: Props) {
               key={row.groupKey}
               className="border-b border-ourox-obsidianMid/70 last:border-b-0"
             >
-              <td className="px-3 py-2 font-medium text-ourox-ink">{row.groupLabel}</td>
-              <td className="px-3 py-2 text-right tabular-nums text-ourox-ink/75">{row.total}</td>
-              <td className="px-3 py-2 text-right">
+              <td className="px-2.5 py-2 font-medium text-ourox-ink">{row.groupLabel}</td>
+              <td className="px-2.5 py-2 text-right tabular-nums text-ourox-ink/75">{row.total}</td>
+              <td className="px-2.5 py-2 text-right">
                 <CountCell count={row.fresh} />
               </td>
-              <td className="px-3 py-2 text-right">
+              <td className="px-2.5 py-2 text-right">
                 <CountCell count={row.mid} />
               </td>
-              <td className="border-l border-ourox-orange/15 bg-ourox-orange/[0.03] px-3 py-2 text-right">
+              <td className="border-l border-ourox-orange/15 bg-ourox-orange/[0.03] px-2.5 py-2 text-right">
                 <CountCell count={row.atRisk} emphasis="at-risk" />
               </td>
-              <td className="px-3 py-2 text-right">
+              <td className="px-2.5 py-2 text-right">
                 <CountCell count={row.breached} emphasis="breached" />
               </td>
-              <td className="border-l border-ourox-obsidianMid px-3 py-2 text-right">
+              <td className="border-l border-ourox-obsidianMid px-2.5 py-2 text-right">
                 <CountCell count={row.waitingOnUs} />
               </td>
-              <td className="px-3 py-2 text-right">
+              <td className="px-2.5 py-2 text-right">
                 <CountCell count={row.waitingOnExternal} />
               </td>
             </tr>

@@ -20,7 +20,7 @@ const EXPECTED_NAV = [
   { id: "queue", label: "Queue Board", disabled: false },
   { id: "aging", label: "Aging & SLA", disabled: false },
   { id: "roster", label: "Roster", disabled: false },
-  { id: "kpi", label: "KPI", disabled: true },
+  { id: "kpi", label: "KPI", disabled: false },
 ];
 
 const FORBIDDEN = ["TrueMoney", "Kraken", "Payward", "SignalOS"];
@@ -200,11 +200,11 @@ describe("OPS_QUEUE_OWNERSHIP", () => {
 });
 
 describe("ops side-nav config", () => {
-  it("roster is active and KPI remains placeholder", () => {
+  it("roster and KPI are active", () => {
     const roster = EXPECTED_NAV.find((n) => n.id === "roster")!;
     const kpi = EXPECTED_NAV.find((n) => n.id === "kpi")!;
     expect(roster.disabled).toBeFalsy();
-    expect(kpi.disabled).toBe(true);
+    expect(kpi.disabled).toBeFalsy();
   });
 });
 

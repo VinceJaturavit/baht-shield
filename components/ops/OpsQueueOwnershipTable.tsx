@@ -13,23 +13,18 @@ export function OpsQueueOwnershipTable({ rows }: Props) {
           Decision-bearing queues have officer ownership. Structured intake queues can be
           contractor-owned under SOP, with officer escalation available.
         </p>
-        <p className="mt-1 max-w-3xl text-[11px] leading-relaxed text-ourox-ink/45">
-          Officers own RFR, LAR, Urgent, and escalation-heavy work. Contractors support DSP and PRF
-          intake under SOP. This keeps decision-bearing queues covered while protecting officer
-          capacity for complex cases.
-        </p>
       </div>
 
-      <div className="overflow-x-auto rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
-        <table className="w-full min-w-[800px] border-collapse text-left text-xs">
+      <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
+        <table className="w-full table-fixed border-collapse text-left text-xs">
           <thead>
             <tr className="border-b border-ourox-obsidianMid text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45">
-              <th className="px-3 py-2 font-semibold">Queue</th>
-              <th className="px-3 py-2 font-semibold">Ownership rule</th>
-              <th className="px-3 py-2 font-semibold">Owner today</th>
-              <th className="px-3 py-2 font-semibold">Backup</th>
-              <th className="px-3 py-2 font-semibold">Next rotation</th>
-              <th className="px-3 py-2 font-semibold">Rotation</th>
+              <th className="w-[18%] px-2.5 py-2 font-semibold">Queue</th>
+              <th className="w-[22%] px-2.5 py-2 font-semibold">Rule</th>
+              <th className="w-[16%] px-2.5 py-2 font-semibold">Owner</th>
+              <th className="w-[14%] px-2.5 py-2 font-semibold">Backup</th>
+              <th className="w-[14%] px-2.5 py-2 font-semibold">Next</th>
+              <th className="w-[16%] px-2.5 py-2 font-semibold">Rotation</th>
             </tr>
           </thead>
           <tbody>
@@ -38,23 +33,23 @@ export function OpsQueueOwnershipTable({ rows }: Props) {
                 key={row.queueCode}
                 className="border-b border-ourox-obsidianMid/70 last:border-b-0"
               >
-                <td className="px-3 py-2.5">
-                  <span className="font-medium text-ourox-ink">{row.queueLabel}</span>
-                  <span className="ml-1.5 text-[10px] text-ourox-ink/40">{row.queueCode}</span>
+                <td className="px-2.5 py-2">
+                  <span className="block font-medium text-ourox-ink">{row.queueLabel}</span>
+                  <span className="text-[10px] text-ourox-ink/40">{row.queueCode}</span>
                 </td>
-                <td className="max-w-[12rem] px-3 py-2.5 text-[11px] leading-snug text-ourox-ink/60">
+                <td className="px-2.5 py-2 text-[11px] leading-snug text-ourox-ink/60">
                   {row.ownershipRule}
                 </td>
-                <td className="px-3 py-2.5 font-medium text-ourox-ink">{row.ownerOfDay}</td>
-                <td className="px-3 py-2.5 text-ourox-ink/75">{row.backup}</td>
-                <td className="px-3 py-2.5 text-ourox-ink/75">{row.nextOwner}</td>
-                <td className="px-3 py-2.5">
+                <td className="px-2.5 py-2 font-medium text-ourox-ink">{row.ownerOfDay}</td>
+                <td className="px-2.5 py-2 text-ourox-ink/75">{row.backup}</td>
+                <td className="px-2.5 py-2 text-ourox-ink/75">{row.nextOwner}</td>
+                <td className="px-2.5 py-2">
                   <span className="inline-flex items-center gap-1.5 text-[11px] text-ourox-ink/65">
                     <span
                       className="h-1.5 w-1.5 shrink-0 rounded-full bg-ourox-orange/70"
                       aria-hidden="true"
                     />
-                    {row.rotationNote}
+                    <span className="line-clamp-2">{row.rotationNote}</span>
                   </span>
                 </td>
               </tr>

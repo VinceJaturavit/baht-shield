@@ -21,21 +21,19 @@ interface Props {
 }
 
 const GRID_COLS =
-  "grid-cols-[minmax(5.5rem,6.5rem)_minmax(6.5rem,7.5rem)_3rem_minmax(9rem,1fr)_minmax(6.5rem,7.5rem)_minmax(5.5rem,6.5rem)_minmax(5.5rem,6.5rem)_3rem_minmax(4.5rem,5.5rem)_minmax(5.5rem,7rem)]";
+  "grid-cols-[minmax(4.5rem,5.5rem)_minmax(5.5rem,6.5rem)_2.5rem_minmax(0,1fr)_minmax(6rem,7.5rem)_minmax(3.5rem,4.5rem)_minmax(4.5rem,5.5rem)_minmax(4.5rem,6rem)]";
 
 function QueueListHeader() {
   return (
     <div
-      className={`hidden lg:grid ${GRID_COLS} min-w-[980px] gap-x-2 border-b border-ourox-obsidianMid px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45`}
+      className={`hidden lg:grid ${GRID_COLS} gap-x-2 border-b border-ourox-obsidianMid px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45`}
       aria-hidden="true"
     >
       <span>Priority</span>
       <span>Case ID</span>
-      <span>Stream</span>
+      <span>Str</span>
       <span>Type / reason</span>
-      <span>SLA status</span>
-      <span>SLA due</span>
-      <span>Remaining</span>
+      <span>SLA</span>
       <span>Age</span>
       <span>Owner</span>
       <span>Status</span>
@@ -60,7 +58,7 @@ function QueueListRow({
       type="button"
       onClick={() => onSelect(caseItem)}
       aria-pressed={selected}
-      className={`grid w-full min-w-[980px] gap-x-2 gap-y-0.5 border-b border-ourox-obsidianMid/70 px-3 py-1.5 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ourox-orange lg:items-center ${GRID_COLS} ${
+      className={`grid w-full gap-x-2 gap-y-0.5 border-b border-ourox-obsidianMid/70 px-3 py-1.5 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ourox-orange lg:items-center ${GRID_COLS} ${
         selected
           ? "bg-ourox-orange/[0.06]"
           : "hover:bg-ourox-obsidianLight/40"
@@ -92,21 +90,11 @@ function QueueListRow({
         </span>
       </span>
 
-      <span className="flex items-center lg:col-start-auto">
+      <span className="flex min-w-0 flex-col gap-0.5 lg:col-span-1">
         <OpsSlaPressureBadge pressure={pressure} />
-      </span>
-
-      <span className="text-[11px] tabular-nums text-ourox-ink/75">
-        {new Date(caseItem.slaDue).toLocaleString(undefined, {
-          month: "short",
-          day: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-        })}
-      </span>
-
-      <span className="text-[11px] tabular-nums text-ourox-ink/75">
-        {formatTimeRemaining(caseItem, OPS_REFERENCE_NOW)}
+        <span className="truncate text-[10px] tabular-nums text-ourox-ink/55">
+          {formatTimeRemaining(caseItem, OPS_REFERENCE_NOW)}
+        </span>
       </span>
 
       <span className="text-[11px] tabular-nums text-ourox-ink/60">
@@ -135,7 +123,7 @@ export function OpsQueueList({ cases, selectedId, onSelect, emptyMessage, labell
     <div
       role="table"
       aria-labelledby={labelledBy}
-      className="overflow-x-auto rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30"
+      className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30"
     >
       <QueueListHeader />
       <div role="rowgroup">
