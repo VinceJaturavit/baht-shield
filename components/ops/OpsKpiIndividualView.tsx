@@ -67,8 +67,8 @@ function RoleSection({
 }
 
 export function OpsKpiIndividualView({ kpis }: Props) {
-  const officers = kpis.filter((k) => k.role === "Officer");
-  const contractors = kpis.filter((k) => k.role === "Contractor");
+  const fraudAnalysts = kpis.filter((k) => k.role === "Fraud Analyst");
+  const juniorAnalysts = kpis.filter((k) => k.role === "Junior Analyst");
 
   return (
     <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
@@ -86,8 +86,11 @@ export function OpsKpiIndividualView({ kpis }: Props) {
           </tr>
         </thead>
         <tbody>
-          <RoleSection label="Officers — decision-bearing metrics" rows={officers} />
-          <RoleSection label="Contractors — intake metrics" rows={contractors} />
+          <RoleSection
+            label="Fraud Analysts — decision-bearing metrics"
+            rows={fraudAnalysts}
+          />
+          <RoleSection label="Junior Analysts — intake metrics" rows={juniorAnalysts} />
         </tbody>
       </table>
     </div>

@@ -1,5 +1,5 @@
 // Ourox platform home — / (Spec-022: attribution tightened, guide entry added)
-// Calm enterprise launcher. One dominant area. Two products + guide. Orange accent only.
+// Calm enterprise launcher. One dominant area. Three products + guide. Orange accent only.
 // No gradients-as-decoration, no illustrations, no animation, no card soup.
 
 import Link from "next/link";
@@ -10,6 +10,15 @@ const LINKEDIN_URL = "https://www.linkedin.com/in/jaturavit-chaovalit/";
 const GITHUB_URL = "https://github.com/VinceJaturavit/baht-shield";
 
 const PRODUCTS = [
+  {
+    key: "ops",
+    name: "Ops",
+    href: "/ops",
+    label: "Fraud Operations Management",
+    description:
+      "Case management, queues, SLA, roster, and KPI control — the operations layer after an alert becomes a case.",
+    cta: "Enter Ops",
+  },
   {
     key: "verity",
     name: "Verity",
@@ -54,9 +63,9 @@ export default function OuroxHomePage() {
 
           {/* Purpose paragraph */}
           <p className="mb-5 text-base leading-7 text-ourox-ink/70 max-w-xl">
-            Ourox is a synthetic learning and portfolio platform showing how analyst-curated
-            pattern intelligence in Verity and risk scoring/decisioning in Arbiter connect
-            across a fraud operations stack.
+            Ourox shows the fraud-operations lifecycle end to end: Ops runs the case operation,
+            Verity investigates and captures patterns, and Arbiter scores, tunes, and tests
+            decisioning logic.
           </p>
 
           {/* Metadata line */}
@@ -87,10 +96,10 @@ export default function OuroxHomePage() {
               scoring doesn&rsquo;t.
             </p>
             <p className="text-sm leading-relaxed text-ourox-ink/60">
-              Verity is the investigation and pattern-intelligence side. Arbiter is the
-              scoring-and-decisioning side — features, rules, thresholds, and the
-              precision/recall tradeoffs a fraud strategy team works with. Together they close a
-              loop: investigation sharpens scoring, scoring routes the next investigation.
+              Ops is the operations layer — case management, queues, SLA, roster, and KPI after an
+              alert becomes a case. Verity is the investigation and pattern-intelligence side.
+              Arbiter is the scoring-and-decisioning side — features, rules, thresholds, and the
+              precision/recall tradeoffs a fraud strategy team works with.
             </p>
             <p className="text-xs text-ourox-ink/40 tracking-wide">
               Everything here is synthetic. The thinking is real.
@@ -124,7 +133,7 @@ export default function OuroxHomePage() {
                 <span className="text-base font-semibold text-ourox-ink">How Ourox works</span>
               </div>
               <p className="text-sm leading-6 text-ourox-ink/60">
-                A structured guide to the platform, its two products, the synthetic data
+                A structured guide to the platform, its three products, the synthetic data
                 boundary, and the roadmap.
               </p>
             </div>
@@ -146,7 +155,7 @@ export default function OuroxHomePage() {
           </div>
         </div>
 
-        {/* Product entries — two rows, no card soup */}
+        {/* Product entries — three rows, no card soup */}
         <div className="space-y-px border border-ourox-obsidianMid rounded-lg overflow-hidden">
           {PRODUCTS.map((p) => (
             <div

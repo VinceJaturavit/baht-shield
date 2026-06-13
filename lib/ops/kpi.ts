@@ -52,29 +52,29 @@ function sumWeightedThroughput(caseItems: OpsCase[]): number {
   return Math.round(total * 10) / 10;
 }
 
-function getContractorsForStream(
+function getJuniorAnalystsForStream(
   roster: OpsTeamMember[],
   stream: OpsStreamCode,
 ): OpsTeamMember[] {
   return roster
-    .filter((m) => m.role === "Contractor" && m.streamsCovered.includes(stream))
+    .filter((m) => m.role === "Junior Analyst" && m.streamsCovered.includes(stream))
     .sort((a, b) => a.id.localeCompare(b.id));
 }
 
-function attributeIntakeCaseToContractor(
+function attributeIntakeCaseToJuniorAnalyst(
   caseItem: OpsCase,
   member: OpsTeamMember,
   roster: OpsTeamMember[],
   caseIndex: number,
 ): boolean {
-  const eligible = getContractorsForStream(roster, caseItem.stream);
+  const eligible = getJuniorAnalystsForStream(roster, caseItem.stream);
   if (eligible.length === 0) return false;
   const memberIndex = eligible.findIndex((m) => m.id === member.id);
   if (memberIndex < 0) return false;
   return caseIndex % eligible.length === memberIndex;
 }
 
-function getContractorAttributedCases(
+function getJuniorAnalystAttributedCases(
   cases: OpsCase[],
   member: OpsTeamMember,
   roster: OpsTeamMember[],
@@ -84,7 +84,7 @@ function getContractorAttributedCases(
     (c) => INTAKE_STREAMS.includes(c.stream) && filter(c),
   );
   return intakeCases.filter((c, i) =>
-    attributeIntakeCaseToContractor(c, member, roster, i),
+    attributeIntakeCaseToJuniorAnalyst(c, member, roster, i),
   );
 }
 
@@ -137,19 +137,19 @@ export function getIndividualKpis(
   return roster.map((member) => {
     const quality = OPS_SYNTHETIC_QUALITY_SCORES[member.id];
 
-    if (member.role === "Officer") {
+    if (member.role === "Fraud Analyst") {
       const owned = cases.filter((c) => c.owner === member.name);
       const handled = owned.filter(isClosed);
       const slaCases = owned.filter(
         (c) => isActiveAgingCase(c) && DECISION_STREAMS.includes(c.stream),
       );
-      const officerQuality =
-        quality?.role === "Officer"
+      const fraudAnalystQuality =
+        quality?.role === "Fraud Analyst"
           ? quality
           : { qaQuality: 90, escalationAccuracy: 88, decisionDocumentation: 90 };
 
       const slaComplianceRate = getSlaComplianceRate(slaCases);
-      const primaryQuality = officerQuality.qaQuality;
+      const primaryQuality = fraudAnalystQuality.qaQuality;
 
       return {
         memberId: member.id,
@@ -160,27 +160,27 @@ export function getIndividualKpis(
         weightedThroughput: sumWeightedThroughput(handled),
         slaComplianceRate,
         primaryQualityMetricLabel: "QA quality",
-        primaryQualityMetricValue: officerQuality.qaQuality,
+        primaryQualityMetricValue: fraudAnalystQuality.qaQuality,
         secondaryMetricLabel: "Escalation accuracy",
-        secondaryMetricValue: officerQuality.escalationAccuracy,
+        secondaryMetricValue: fraudAnalystQuality.escalationAccuracy,
         status: getIndividualStatus(slaComplianceRate, primaryQuality),
       };
     }
 
-    const handled = getContractorAttributedCases(cases, member, roster, isClosed);
-    const activeIntake = getContractorAttributedCases(
+    const handled = getJuniorAnalystAttributedCases(cases, member, roster, isClosed);
+    const activeIntake = getJuniorAnalystAttributedCases(
       cases,
       member,
       roster,
       (c) => isActiveAgingCase(c),
     );
-    const contractorQuality =
-      quality?.role === "Contractor"
+    const juniorAnalystQuality =
+      quality?.role === "Junior Analyst"
         ? quality
         : { evidenceCompleteness: 90, sopAdherence: 90, handoffQuality: 88 };
 
     const slaComplianceRate = getSlaComplianceRate(activeIntake);
-    const primaryQuality = contractorQuality.evidenceCompleteness;
+    const primaryQuality = juniorAnalystQuality.evidenceCompleteness;
 
     return {
       memberId: member.id,
@@ -191,9 +191,9 @@ export function getIndividualKpis(
       weightedThroughput: sumWeightedThroughput(handled),
       slaComplianceRate,
       primaryQualityMetricLabel: "Evidence completeness",
-      primaryQualityMetricValue: contractorQuality.evidenceCompleteness,
+      primaryQualityMetricValue: juniorAnalystQuality.evidenceCompleteness,
       secondaryMetricLabel: "SOP adherence",
-      secondaryMetricValue: contractorQuality.sopAdherence,
+      secondaryMetricValue: juniorAnalystQuality.sopAdherence,
       status: getIndividualStatus(slaComplianceRate, primaryQuality),
     };
   });

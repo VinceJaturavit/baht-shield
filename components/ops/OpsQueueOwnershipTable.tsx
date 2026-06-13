@@ -10,8 +10,8 @@ export function OpsQueueOwnershipTable({ rows }: Props) {
       <div>
         <h3 className="text-xs font-semibold text-ourox-ink">Daily queue ownership</h3>
         <p className="mt-1 max-w-3xl text-[11px] leading-relaxed text-ourox-ink/55">
-          Decision-bearing queues have officer ownership. Structured intake queues can be
-          contractor-owned under SOP, with officer escalation available.
+          Fraud Analysts own RFR, LAR, Urgent, and escalation-heavy work. Junior Analysts support
+          DSP and PRF intake under SOP.
         </p>
       </div>
 

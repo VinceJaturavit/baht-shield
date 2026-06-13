@@ -5,19 +5,27 @@ import { OpsRosterLoadBar } from "./OpsRosterLoadBar";
 
 interface Props {
   members: OpsTeamMemberWithLoad[];
-  groupLabel: "Officers" | "Contractors";
+  groupLabel: "Fraud Analysts" | "Junior Analysts";
+  caption?: string;
 }
 
-export function OpsRosterTable({ members, groupLabel }: Props) {
+export function OpsRosterTable({ members, groupLabel, caption }: Props) {
   if (members.length === 0) {
     return null;
   }
 
   return (
     <div className="space-y-2">
-      <h3 className="text-xs font-semibold uppercase tracking-wider text-ourox-ink/50">
-        {groupLabel}
-      </h3>
+      <div>
+        <h3 className="text-xs font-semibold uppercase tracking-wider text-ourox-ink/50">
+          {groupLabel}
+        </h3>
+        {caption && (
+          <p className="mt-1 max-w-3xl text-[11px] leading-relaxed text-ourox-ink/55">
+            {caption}
+          </p>
+        )}
+      </div>
       <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
         <table className="w-full table-fixed border-collapse text-left text-xs">
           <thead>

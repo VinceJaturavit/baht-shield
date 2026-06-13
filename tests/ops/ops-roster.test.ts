@@ -1,9 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { OPS_TEAM, OPS_OFFICER_COUNT, OPS_CONTRACTOR_COUNT } from "@/data/ops/ops-team";
+import { OPS_TEAM, OPS_FRAUD_ANALYST_COUNT, OPS_JUNIOR_ANALYST_COUNT } from "@/data/ops/ops-team";
 import {
   OPS_QUEUE_OWNERSHIP,
-  OFFICER_OWNED_QUEUES,
-  CONTRACTOR_OWNED_QUEUES,
+  FRAUD_ANALYST_OWNED_QUEUES,
+  JUNIOR_ANALYST_OWNED_QUEUES,
 } from "@/data/ops/ops-queue-ownership";
 import { OPS_CASES } from "@/data/ops/ops-cases";
 import {
@@ -12,10 +12,10 @@ import {
   getTeamWithLoad,
   getAssignmentCapacity,
   isMemberOverloaded,
+  hasDecisionAuthority,
 } from "@/lib/ops/roster";
 import type { OpsTeamMember } from "@/lib/ops/roster-types";
 
-// Mirror of expected side-nav state (NAV_ITEMS is not exported from OpsSideNav)
 const EXPECTED_NAV = [
   { id: "queue", label: "Queue Board", disabled: false },
   { id: "aging", label: "Aging & SLA", disabled: false },
@@ -24,28 +24,30 @@ const EXPECTED_NAV = [
 ];
 
 const FORBIDDEN = ["TrueMoney", "Kraken", "Payward", "SignalOS"];
+const LEGACY_ROLES = ["Officer", "Contractor"];
 
-const OFFICER_NAMES = new Set(
-  OPS_TEAM.filter((m) => m.role === "Officer").map((m) => m.name),
+const FRAUD_ANALYST_NAMES = new Set(
+  OPS_TEAM.filter((m) => m.role === "Fraud Analyst").map((m) => m.name),
 );
 
 describe("OPS_TEAM", () => {
-  it("has around 10–14 people", () => {
+  it("has around 10–15 people", () => {
     expect(OPS_TEAM.length).toBeGreaterThanOrEqual(10);
-    expect(OPS_TEAM.length).toBeLessThanOrEqual(14);
-    expect(OPS_TEAM).toHaveLength(12);
+    expect(OPS_TEAM.length).toBeLessThanOrEqual(15);
+    expect(OPS_TEAM).toHaveLength(15);
   });
 
-  it("has around 4 officers and around 8 contractors", () => {
-    expect(OPS_OFFICER_COUNT).toBe(4);
-    expect(OPS_CONTRACTOR_COUNT).toBe(8);
+  it("has Fraud Analysts and Junior Analysts", () => {
+    expect(OPS_FRAUD_ANALYST_COUNT).toBe(6);
+    expect(OPS_JUNIOR_ANALYST_COUNT).toBe(9);
   });
 
   it("every person has required fields", () => {
     for (const member of OPS_TEAM) {
       expect(member.id).toBeTruthy();
       expect(member.name).toBeTruthy();
-      expect(["Officer", "Contractor"]).toContain(member.role);
+      expect(["Fraud Analyst", "Junior Analyst"]).toContain(member.role);
+      expect(LEGACY_ROLES).not.toContain(member.role);
       expect(member.streamsCovered.length).toBeGreaterThan(0);
       expect(member.capacity).toBeGreaterThan(0);
       expect(member.shift).toBeTruthy();
@@ -53,32 +55,43 @@ describe("OPS_TEAM", () => {
     }
   });
 
-  it("officers have protected reserve", () => {
-    const officers = OPS_TEAM.filter((m) => m.role === "Officer");
-    for (const officer of officers) {
-      expect(officer.protectedCapacityReserve).toBeGreaterThan(0);
+  it("Fraud Analysts have decision authority and protected reserve", () => {
+    const fraudAnalysts = OPS_TEAM.filter((m) => m.role === "Fraud Analyst");
+    for (const analyst of fraudAnalysts) {
+      expect(hasDecisionAuthority(analyst)).toBe(true);
+      expect(analyst.protectedCapacityReserve).toBeGreaterThan(0);
     }
   });
 
-  it("contractors do not require protected reserve", () => {
-    const contractors = OPS_TEAM.filter((m) => m.role === "Contractor");
-    for (const contractor of contractors) {
-      expect(contractor.protectedCapacityReserve).toBeUndefined();
+  it("Junior Analysts do not have final decision authority", () => {
+    const juniorAnalysts = OPS_TEAM.filter((m) => m.role === "Junior Analyst");
+    for (const analyst of juniorAnalysts) {
+      expect(hasDecisionAuthority(analyst)).toBe(false);
+      expect(analyst.protectedCapacityReserve).toBeUndefined();
     }
   });
 
-  it("reuses existing case owner names for officers", () => {
-    const officerNames = OPS_TEAM.filter((m) => m.role === "Officer").map((m) => m.name);
-    expect(officerNames).toContain("Ops Lead");
-    expect(officerNames).toContain("Analyst A");
-    expect(officerNames).toContain("Analyst B");
-    expect(officerNames).toContain("Queue Owner");
+  it("reuses existing case owner names for Fraud Analysts", () => {
+    const fraudAnalystNames = OPS_TEAM.filter((m) => m.role === "Fraud Analyst").map(
+      (m) => m.name,
+    );
+    expect(fraudAnalystNames).toContain("Ops Lead");
+    expect(fraudAnalystNames).toContain("Analyst A");
+    expect(fraudAnalystNames).toContain("Analyst B");
+    expect(fraudAnalystNames).toContain("Queue Owner");
   });
 
   it("does not contain forbidden names", () => {
     const blob = JSON.stringify(OPS_TEAM);
     for (const term of FORBIDDEN) {
       expect(blob).not.toContain(term);
+    }
+  });
+
+  it("does not use legacy role labels in roster data", () => {
+    const blob = JSON.stringify(OPS_TEAM);
+    for (const role of LEGACY_ROLES) {
+      expect(blob).not.toContain(role);
     }
   });
 });
@@ -111,37 +124,37 @@ describe("roster load derivation", () => {
     }
   });
 
-  it("uses assignment capacity for officer overload", () => {
+  it("uses assignment capacity for Fraud Analyst overload", () => {
     const teamWithLoad = getTeamWithLoad(OPS_TEAM, OPS_CASES);
-    const officers = teamWithLoad.filter((m) => m.role === "Officer");
+    const fraudAnalysts = teamWithLoad.filter((m) => m.role === "Fraud Analyst");
 
-    for (const officer of officers) {
+    for (const analyst of fraudAnalysts) {
       const expectedOverloaded =
-        officer.currentLoad > getAssignmentCapacity(officer);
-      expect(officer.isOverloaded).toBe(expectedOverloaded);
-      expect(isMemberOverloaded(officer, officer.currentLoad)).toBe(
+        analyst.currentLoad > getAssignmentCapacity(analyst);
+      expect(analyst.isOverloaded).toBe(expectedOverloaded);
+      expect(isMemberOverloaded(analyst, analyst.currentLoad)).toBe(
         expectedOverloaded,
       );
     }
   });
 
-  it("officer assignment capacity equals total minus protected reserve", () => {
-    const officers = OPS_TEAM.filter((m) => m.role === "Officer");
-    for (const officer of officers) {
-      expect(getAssignmentCapacity(officer)).toBe(
-        officer.capacity - (officer.protectedCapacityReserve ?? 0),
+  it("Fraud Analyst assignment capacity equals total minus protected reserve", () => {
+    const fraudAnalysts = OPS_TEAM.filter((m) => m.role === "Fraud Analyst");
+    for (const analyst of fraudAnalysts) {
+      expect(getAssignmentCapacity(analyst)).toBe(
+        analyst.capacity - (analyst.protectedCapacityReserve ?? 0),
       );
     }
   });
 
-  it("contractor assignment capacity equals total capacity", () => {
-    const contractors = OPS_TEAM.filter((m) => m.role === "Contractor");
-    for (const contractor of contractors) {
-      expect(getAssignmentCapacity(contractor)).toBe(contractor.capacity);
+  it("Junior Analyst assignment capacity equals total capacity", () => {
+    const juniorAnalysts = OPS_TEAM.filter((m) => m.role === "Junior Analyst");
+    for (const analyst of juniorAnalysts) {
+      expect(getAssignmentCapacity(analyst)).toBe(analyst.capacity);
     }
   });
 
-  it("at least one officer shows derived load from cases", () => {
+  it("at least one Fraud Analyst shows derived load from cases", () => {
     const teamWithLoad = getTeamWithLoad(OPS_TEAM, OPS_CASES);
     const withLoad = teamWithLoad.filter((m) => m.currentLoad > 0);
     expect(withLoad.length).toBeGreaterThan(0);
@@ -170,31 +183,38 @@ describe("OPS_QUEUE_OWNERSHIP", () => {
     }
   });
 
-  it("Urgent/RFR/LAR owners are officers", () => {
-    for (const code of OFFICER_OWNED_QUEUES) {
+  it("Urgent/RFR/LAR owners are Fraud Analysts", () => {
+    for (const code of FRAUD_ANALYST_OWNED_QUEUES) {
       const row = OPS_QUEUE_OWNERSHIP.find((q) => q.queueCode === code)!;
-      expect(OFFICER_NAMES.has(row.ownerOfDay)).toBe(true);
-      expect(OFFICER_NAMES.has(row.backup)).toBe(true);
+      expect(FRAUD_ANALYST_NAMES.has(row.ownerOfDay)).toBe(true);
+      expect(FRAUD_ANALYST_NAMES.has(row.backup)).toBe(true);
     }
   });
 
-  it("PRO has officer owner and backup", () => {
+  it("PRO has Fraud Analyst owner and backup", () => {
     const pro = OPS_QUEUE_OWNERSHIP.find((q) => q.queueCode === "PRO")!;
-    expect(OFFICER_NAMES.has(pro.ownerOfDay)).toBe(true);
-    expect(OFFICER_NAMES.has(pro.backup)).toBe(true);
+    expect(FRAUD_ANALYST_NAMES.has(pro.ownerOfDay)).toBe(true);
+    expect(FRAUD_ANALYST_NAMES.has(pro.backup)).toBe(true);
   });
 
-  it("DSP/PRF can be contractor-owned", () => {
-    for (const code of CONTRACTOR_OWNED_QUEUES) {
+  it("DSP/PRF supported by Junior Analysts under SOP", () => {
+    for (const code of JUNIOR_ANALYST_OWNED_QUEUES) {
       const row = OPS_QUEUE_OWNERSHIP.find((q) => q.queueCode === code)!;
       const owner = OPS_TEAM.find((m) => m.name === row.ownerOfDay);
-      expect(owner?.role).toBe("Contractor");
+      expect(owner?.role).toBe("Junior Analyst");
     }
   });
 
   it("shows rotation concept", () => {
     for (const row of OPS_QUEUE_OWNERSHIP) {
       expect(row.rotationNote.toLowerCase()).toContain("rotates");
+    }
+  });
+
+  it("does not use legacy role labels in ownership copy", () => {
+    const blob = JSON.stringify(OPS_QUEUE_OWNERSHIP);
+    for (const role of LEGACY_ROLES) {
+      expect(blob).not.toContain(role);
     }
   });
 });
@@ -208,17 +228,16 @@ describe("ops side-nav config", () => {
   });
 });
 
-// Type-level guard for officer protected reserve
-function assertOfficerReserve(member: OpsTeamMember) {
-  if (member.role === "Officer") {
+function assertFraudAnalystReserve(member: OpsTeamMember) {
+  if (member.role === "Fraud Analyst") {
     expect(member.protectedCapacityReserve).toBeDefined();
   }
 }
 
-describe("officer protected reserve type guard", () => {
-  it("all officers have reserve defined", () => {
-    for (const m of OPS_TEAM.filter((x) => x.role === "Officer")) {
-      assertOfficerReserve(m);
+describe("Fraud Analyst protected reserve type guard", () => {
+  it("all Fraud Analysts have reserve defined", () => {
+    for (const m of OPS_TEAM.filter((x) => x.role === "Fraud Analyst")) {
+      assertFraudAnalystReserve(m);
     }
   });
 });

@@ -8,7 +8,7 @@ export const OPS_QUEUE_OWNERSHIP: OpsQueueOwnership[] = [
     backup: "Analyst A",
     nextOwner: "Analyst B",
     rotationNote: "Rotates daily",
-    ownershipRule: "Officer-owned — decision-bearing priority overlay",
+    ownershipRule: "Decision-bearing queue — Fraud Analyst owner required",
   },
   {
     queueCode: "RFR",
@@ -17,7 +17,7 @@ export const OPS_QUEUE_OWNERSHIP: OpsQueueOwnership[] = [
     backup: "Analyst A",
     nextOwner: "Analyst B",
     rotationNote: "Rotates daily",
-    ownershipRule: "Officer-owned — statutory deadline",
+    ownershipRule: "Decision-bearing queue — Fraud Analyst owner required",
   },
   {
     queueCode: "LAR",
@@ -26,7 +26,7 @@ export const OPS_QUEUE_OWNERSHIP: OpsQueueOwnership[] = [
     backup: "Queue Owner",
     nextOwner: "Ops Lead",
     rotationNote: "Rotates daily",
-    ownershipRule: "Officer-owned — authority deadline",
+    ownershipRule: "Decision-bearing queue — Fraud Analyst owner required",
   },
   {
     queueCode: "PRO",
@@ -35,27 +35,27 @@ export const OPS_QUEUE_OWNERSHIP: OpsQueueOwnership[] = [
     backup: "Ops Lead",
     nextOwner: "Analyst B",
     rotationNote: "Rotates daily",
-    ownershipRule: "Officer-owned — funds-in-flight escalation path",
+    ownershipRule: "Decision-bearing queue — Fraud Analyst owner required",
   },
   {
     queueCode: "DSP",
     queueLabel: "Dispute & Complaint",
-    ownerOfDay: "Contractor A",
-    backup: "Contractor B",
-    nextOwner: "Contractor C",
+    ownerOfDay: "Junior Analyst A",
+    backup: "Junior Analyst B",
+    nextOwner: "Junior Analyst C",
     rotationNote: "Rotates daily",
-    ownershipRule: "Contractor-owned intake under SOP — officer escalation available",
+    ownershipRule: "Structured intake — Junior Analyst owner allowed under SOP",
   },
   {
     queueCode: "PRF",
     queueLabel: "Profile Review",
-    ownerOfDay: "Contractor E",
-    backup: "Contractor B",
-    nextOwner: "Contractor H",
+    ownerOfDay: "Junior Analyst E",
+    backup: "Junior Analyst B",
+    nextOwner: "Junior Analyst H",
     rotationNote: "Rotates daily",
-    ownershipRule: "Contractor-owned intake under SOP — officer escalation available",
+    ownershipRule: "Structured intake — Junior Analyst owner allowed under SOP",
   },
 ];
 
-export const OFFICER_OWNED_QUEUES = ["Urgent", "RFR", "LAR"] as const;
-export const CONTRACTOR_OWNED_QUEUES = ["DSP", "PRF"] as const;
+export const FRAUD_ANALYST_OWNED_QUEUES = ["Urgent", "RFR", "LAR"] as const;
+export const JUNIOR_ANALYST_OWNED_QUEUES = ["DSP", "PRF"] as const;

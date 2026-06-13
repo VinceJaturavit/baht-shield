@@ -31,7 +31,7 @@ interface Props {
 export function OpsRosterLoadBar({ member, compact = false }: Props) {
   const loadStatus = getLoadStatus(member, member.currentLoad);
   const statusStyles = LOAD_STATUS_STYLES[loadStatus];
-  const isOfficer = member.role === "Officer";
+  const isFraudAnalyst = member.role === "Fraud Analyst";
   const protectedReserve = member.protectedCapacityReserve ?? 0;
   const totalCapacity = member.capacity;
   const assignmentCapacity = member.assignmentCapacity;
@@ -42,7 +42,7 @@ export function OpsRosterLoadBar({ member, compact = false }: Props) {
   const protectedPct =
     totalCapacity > 0 ? (protectedReserve / totalCapacity) * 100 : 0;
   const overloadPct =
-    isOfficer && currentLoad > assignmentCapacity
+    isFraudAnalyst && currentLoad > assignmentCapacity
       ? Math.min(((currentLoad - assignmentCapacity) / totalCapacity) * 100, 20)
       : 0;
 
@@ -50,9 +50,9 @@ export function OpsRosterLoadBar({ member, compact = false }: Props) {
     <div className={compact ? "space-y-1" : "space-y-1.5"}>
       <div className="flex flex-wrap items-baseline gap-x-1.5 gap-y-0.5 text-[11px] tabular-nums">
         <span className="font-medium text-ourox-ink/85">
-          {currentLoad} / {isOfficer ? assignmentCapacity : totalCapacity}
+          {currentLoad} / {isFraudAnalyst ? assignmentCapacity : totalCapacity}
         </span>
-        {isOfficer && (
+        {isFraudAnalyst && (
           <span className="text-[10px] text-ourox-ink/45">
             {protectedReserve} protected
           </span>
@@ -63,7 +63,7 @@ export function OpsRosterLoadBar({ member, compact = false }: Props) {
         className={`flex h-1.5 overflow-hidden rounded-sm bg-ourox-obsidianLight/50 ${compact ? "w-full max-w-[7rem]" : "h-2 w-full max-w-[10rem]"}`}
         role="img"
         aria-label={
-          isOfficer
+          isFraudAnalyst
             ? `Load ${currentLoad} of ${assignmentCapacity} assignment capacity, ${protectedReserve} protected reserve`
             : `Load ${currentLoad} of ${totalCapacity} capacity`
         }
@@ -76,7 +76,7 @@ export function OpsRosterLoadBar({ member, compact = false }: Props) {
             style={{ width: `${assignedPct}%` }}
           />
         )}
-        {isOfficer && protectedPct > 0 && (
+        {isFraudAnalyst && protectedPct > 0 && (
           <div
             className="h-full shrink-0 border-l border-ourox-obsidianMid/80 bg-ourox-orange/25"
             style={{ width: `${protectedPct}%` }}

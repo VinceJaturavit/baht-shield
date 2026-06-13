@@ -1,8 +1,10 @@
 import type { OpsStreamCode } from "./types";
 
-export type OpsTeamRole = "Officer" | "Contractor";
+export type OpsTeamRole = "Fraud Analyst" | "Junior Analyst";
 
 export type OpsAttendanceStatus = "Present" | "Off" | "Leave";
+
+export type OpsShiftName = "Day" | "Evening" | "Night / On-call";
 
 export interface OpsTeamMember {
   id: string;
@@ -11,8 +13,9 @@ export interface OpsTeamMember {
   streamsCovered: OpsStreamCode[];
   capacity: number;
   protectedCapacityReserve?: number;
-  shift: string;
+  shift: OpsShiftName;
   attendance: OpsAttendanceStatus;
+  decisionAuthority?: boolean;
 }
 
 export interface OpsTeamMemberWithLoad extends OpsTeamMember {

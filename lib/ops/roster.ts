@@ -3,9 +3,17 @@ import type {
   OpsLoadStatus,
   OpsTeamMember,
   OpsTeamMemberWithLoad,
+  OpsTeamRole,
 } from "./roster-types";
 
 const CLOSED_STATUS = "Closed";
+
+export function hasDecisionAuthority(member: OpsTeamMember): boolean {
+  if (member.decisionAuthority !== undefined) {
+    return member.decisionAuthority;
+  }
+  return member.role === "Fraud Analyst";
+}
 
 export function getOpenOpsCases(cases: OpsCase[]): OpsCase[] {
   return cases.filter((c) => c.status !== CLOSED_STATUS);
@@ -20,7 +28,7 @@ export function getCurrentLoadByOwner(cases: OpsCase[]): Record<string, number> 
 }
 
 export function getAssignmentCapacity(member: OpsTeamMember): number {
-  if (member.role === "Officer") {
+  if (member.role === "Fraud Analyst") {
     return member.capacity - (member.protectedCapacityReserve ?? 0);
   }
   return member.capacity;
@@ -73,7 +81,11 @@ export function getTeamWithLoad(
 
 export function partitionTeamByRole(team: OpsTeamMemberWithLoad[]) {
   return {
-    officers: team.filter((m) => m.role === "Officer"),
-    contractors: team.filter((m) => m.role === "Contractor"),
+    fraudAnalysts: team.filter((m) => m.role === "Fraud Analyst"),
+    juniorAnalysts: team.filter((m) => m.role === "Junior Analyst"),
   };
+}
+
+export function isFraudAnalystRole(role: OpsTeamRole): boolean {
+  return role === "Fraud Analyst";
 }

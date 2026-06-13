@@ -35,8 +35,8 @@ export function OpsKpiWorkspace({ cases }: Props) {
           uses complexity-weighted productivity and role-appropriate metrics.
         </p>
         <p className="mt-1 max-w-3xl text-[11px] leading-relaxed text-ourox-ink/45">
-          Officers and contractors are measured differently because their authority, risk, and work
-          type are different.
+          Fraud Analysts and Junior Analysts are measured differently because their authority,
+          risk, and work type are different.
         </p>
       </div>
 

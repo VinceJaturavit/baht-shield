@@ -13,6 +13,8 @@ import {
 } from "@/lib/ops/kpi";
 import type { OpsCase } from "@/lib/ops/types";
 
+const LEGACY_ROLES = ["Officer", "Contractor"];
+
 describe("OPS_STREAM_COMPLEXITY_WEIGHTS", () => {
   it("defines weights for all five streams", () => {
     expect(OPS_STREAM_COMPLEXITY_WEIGHTS).toHaveLength(5);
@@ -70,38 +72,47 @@ describe("getTeamKpiSummary", () => {
 });
 
 describe("getIndividualKpis", () => {
-  it("includes officer QA / escalation metrics", () => {
+  it("includes Fraud Analyst QA / escalation / documentation metrics", () => {
     const kpis = getIndividualKpis(OPS_CASES, OPS_TEAM);
-    const officers = kpis.filter((k) => k.role === "Officer");
+    const fraudAnalysts = kpis.filter((k) => k.role === "Fraud Analyst");
 
-    expect(officers.length).toBe(4);
-    for (const officer of officers) {
-      expect(officer.primaryQualityMetricLabel).toBe("QA quality");
-      expect(officer.secondaryMetricLabel).toBe("Escalation accuracy");
-      const quality = OPS_SYNTHETIC_QUALITY_SCORES[officer.memberId];
-      expect(quality?.role).toBe("Officer");
-      if (quality?.role === "Officer") {
-        expect(officer.primaryQualityMetricValue).toBe(quality.qaQuality);
-        expect(officer.secondaryMetricValue).toBe(quality.escalationAccuracy);
+    expect(fraudAnalysts.length).toBe(6);
+    for (const analyst of fraudAnalysts) {
+      expect(analyst.primaryQualityMetricLabel).toBe("QA quality");
+      expect(analyst.secondaryMetricLabel).toBe("Escalation accuracy");
+      const quality = OPS_SYNTHETIC_QUALITY_SCORES[analyst.memberId];
+      expect(quality?.role).toBe("Fraud Analyst");
+      if (quality?.role === "Fraud Analyst") {
+        expect(analyst.primaryQualityMetricValue).toBe(quality.qaQuality);
+        expect(analyst.secondaryMetricValue).toBe(quality.escalationAccuracy);
+        expect(quality.decisionDocumentation).toBeGreaterThan(0);
       }
     }
   });
 
-  it("includes contractor evidence / SOP / hand-off metrics", () => {
+  it("includes Junior Analyst evidence / SOP / hand-off metrics", () => {
     const kpis = getIndividualKpis(OPS_CASES, OPS_TEAM);
-    const contractors = kpis.filter((k) => k.role === "Contractor");
+    const juniorAnalysts = kpis.filter((k) => k.role === "Junior Analyst");
 
-    expect(contractors.length).toBe(8);
-    for (const contractor of contractors) {
-      expect(contractor.primaryQualityMetricLabel).toBe("Evidence completeness");
-      expect(contractor.secondaryMetricLabel).toBe("SOP adherence");
-      const quality = OPS_SYNTHETIC_QUALITY_SCORES[contractor.memberId];
-      expect(quality?.role).toBe("Contractor");
-      if (quality?.role === "Contractor") {
-        expect(contractor.primaryQualityMetricValue).toBe(quality.evidenceCompleteness);
-        expect(contractor.secondaryMetricValue).toBe(quality.sopAdherence);
+    expect(juniorAnalysts.length).toBe(9);
+    for (const analyst of juniorAnalysts) {
+      expect(analyst.primaryQualityMetricLabel).toBe("Evidence completeness");
+      expect(analyst.secondaryMetricLabel).toBe("SOP adherence");
+      const quality = OPS_SYNTHETIC_QUALITY_SCORES[analyst.memberId];
+      expect(quality?.role).toBe("Junior Analyst");
+      if (quality?.role === "Junior Analyst") {
+        expect(analyst.primaryQualityMetricValue).toBe(quality.evidenceCompleteness);
+        expect(analyst.secondaryMetricValue).toBe(quality.sopAdherence);
         expect(quality.handoffQuality).toBeGreaterThan(0);
       }
+    }
+  });
+
+  it("does not use legacy role labels", () => {
+    const kpis = getIndividualKpis(OPS_CASES, OPS_TEAM);
+    const blob = JSON.stringify(kpis);
+    for (const role of LEGACY_ROLES) {
+      expect(blob).not.toContain(role);
     }
   });
 

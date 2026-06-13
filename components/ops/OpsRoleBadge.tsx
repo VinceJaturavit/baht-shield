@@ -4,12 +4,12 @@ const ROLE_STYLES: Record<
   OpsTeamRole,
   { border: string; text: string; indicator: string }
 > = {
-  Officer: {
+  "Fraud Analyst": {
     border: "border-ourox-orange/30",
     text: "text-ourox-ink/85",
     indicator: "bg-ourox-orange",
   },
-  Contractor: {
+  "Junior Analyst": {
     border: "border-ourox-obsidianMid",
     text: "text-ourox-ink/70",
     indicator: "bg-ourox-ink/40",
