@@ -3,13 +3,13 @@
 import type { OpsCase } from "@/lib/ops/types";
 import { getStreamDefinition } from "@/lib/ops/streams";
 import {
-  formatDuration,
   formatTimeRemaining,
   getSlaPressure,
   OPS_REFERENCE_NOW,
 } from "@/lib/ops/sla";
 import { OpsPriorityBadge } from "./OpsPriorityBadge";
 import { OpsSlaPressureBadge } from "./OpsSlaPressureBadge";
+import { OpsImpactBadge } from "./OpsImpactBadge";
 import { OpsStatusBadge } from "./OpsStatusBadge";
 
 interface Props {
@@ -21,20 +21,21 @@ interface Props {
 }
 
 const GRID_COLS =
-  "grid-cols-[minmax(4.5rem,5.5rem)_minmax(5.5rem,6.5rem)_2.5rem_minmax(0,1fr)_minmax(6rem,7.5rem)_minmax(3.5rem,4.5rem)_minmax(4.5rem,5.5rem)_minmax(4.5rem,6rem)]";
+  "grid-cols-[minmax(3.5rem,4.5rem)_minmax(5rem,5.75rem)_minmax(4rem,4.75rem)_minmax(5rem,6rem)_2rem_minmax(0,1fr)_minmax(4.5rem,5.5rem)_minmax(3.5rem,4.5rem)_minmax(4.5rem,5.5rem)]";
 
 function QueueListHeader() {
   return (
     <div
-      className={`hidden lg:grid ${GRID_COLS} gap-x-2 border-b border-ourox-obsidianMid px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45`}
+      className={`hidden lg:grid ${GRID_COLS} gap-x-1.5 border-b border-ourox-obsidianMid px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45`}
       aria-hidden="true"
     >
       <span>Priority</span>
+      <span>SLA</span>
+      <span>Impact</span>
       <span>Case ID</span>
       <span>Str</span>
       <span>Type / reason</span>
-      <span>SLA</span>
-      <span>Age</span>
+      <span>Due</span>
       <span>Owner</span>
       <span>Status</span>
     </div>
@@ -58,7 +59,7 @@ function QueueListRow({
       type="button"
       onClick={() => onSelect(caseItem)}
       aria-pressed={selected}
-      className={`grid w-full gap-x-2 gap-y-0.5 border-b border-ourox-obsidianMid/70 px-3 py-1.5 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ourox-orange lg:items-center ${GRID_COLS} ${
+      className={`grid w-full gap-x-1.5 gap-y-0.5 border-b border-ourox-obsidianMid/70 px-3 py-1.5 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ourox-orange lg:items-center ${GRID_COLS} ${
         selected
           ? "bg-ourox-orange/[0.06]"
           : "hover:bg-ourox-obsidianLight/40"
@@ -66,6 +67,14 @@ function QueueListRow({
     >
       <span className="flex items-center">
         <OpsPriorityBadge tier={caseItem.priorityTier} compact />
+      </span>
+
+      <span className="flex items-center">
+        <OpsSlaPressureBadge pressure={pressure} compact />
+      </span>
+
+      <span className="flex items-center">
+        <OpsImpactBadge tier={caseItem.impact.impactTier} compact />
       </span>
 
       <span
@@ -90,15 +99,8 @@ function QueueListRow({
         </span>
       </span>
 
-      <span className="flex min-w-0 flex-col gap-0.5 lg:col-span-1">
-        <OpsSlaPressureBadge pressure={pressure} />
-        <span className="truncate text-[10px] tabular-nums text-ourox-ink/55">
-          {formatTimeRemaining(caseItem, OPS_REFERENCE_NOW)}
-        </span>
-      </span>
-
-      <span className="text-[11px] tabular-nums text-ourox-ink/60">
-        {formatDuration(caseItem.ageMinutes)}
+      <span className="truncate text-[10px] tabular-nums text-ourox-ink/55">
+        {formatTimeRemaining(caseItem, OPS_REFERENCE_NOW)}
       </span>
 
       <span className="truncate text-[11px] text-ourox-ink/75">{caseItem.owner}</span>

@@ -1,7 +1,21 @@
-import type { OpsCase, OpsCaseStatus, OpsPriorityTier, OpsStreamCode } from "@/lib/ops/types";
+import type {
+  OpsCase,
+  OpsCaseStatus,
+  OpsIncidentSeverity,
+  OpsPriorityTier,
+  OpsSocialPressure,
+  OpsStreamCode,
+} from "@/lib/ops/types";
 import { getStreamDefinition } from "@/lib/ops/streams";
 import { getSlaRuleForStream } from "@/lib/ops/sla-rules";
 import { getSlaPressure, OPS_REFERENCE_NOW } from "@/lib/ops/sla";
+import { buildCaseImpact } from "@/lib/ops/impact";
+
+type ImpactSeed = {
+  financialExposureThb: number;
+  socialPressure: OpsSocialPressure;
+  incidentSeverity: OpsIncidentSeverity;
+};
 
 type CaseSeed = {
   stream: OpsStreamCode;
@@ -14,6 +28,7 @@ type CaseSeed = {
   minutesUntilDue: number;
   status: OpsCaseStatus;
   owner: string;
+  impact?: ImpactSeed;
 };
 
 const OWNERS = ["Unassigned", "Analyst A", "Analyst B", "Ops Lead", "Queue Owner"] as const;
@@ -26,7 +41,72 @@ const STATUSES: OpsCaseStatus[] = [
   "Closed",
 ];
 
-function buildCase(seed: CaseSeed, streamIndex: number): OpsCase {
+/** Default impact profiles — independent of SLA timing; index-aligned with SEEDS order. */
+const DEFAULT_IMPACT_PROFILES: ImpactSeed[] = [
+  // RFR (10)
+  { financialExposureThb: 3_200_000, socialPressure: "Elevated", incidentSeverity: "Active incident" },
+  { financialExposureThb: 1_800_000, socialPressure: "High", incidentSeverity: "Linked" },
+  { financialExposureThb: 2_400_000, socialPressure: "Elevated", incidentSeverity: "Linked" },
+  { financialExposureThb: 900_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 1_200_000, socialPressure: "Elevated", incidentSeverity: "None" },
+  { financialExposureThb: 120_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 380_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 6_500_000, socialPressure: "High", incidentSeverity: "Active incident" },
+  { financialExposureThb: 85_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 210_000, socialPressure: "None", incidentSeverity: "None" },
+  // LAR (10)
+  { financialExposureThb: 2_100_000, socialPressure: "High", incidentSeverity: "Linked" },
+  { financialExposureThb: 4_800_000, socialPressure: "High", incidentSeverity: "Active incident" },
+  { financialExposureThb: 1_600_000, socialPressure: "Elevated", incidentSeverity: "Linked" },
+  { financialExposureThb: 750_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 520_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 290_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 95_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 1_400_000, socialPressure: "Elevated", incidentSeverity: "None" },
+  { financialExposureThb: 45_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 180_000, socialPressure: "None", incidentSeverity: "None" },
+  // PRO (12)
+  { financialExposureThb: 5_200_000, socialPressure: "High", incidentSeverity: "Active incident" },
+  { financialExposureThb: 3_600_000, socialPressure: "Elevated", incidentSeverity: "Linked" },
+  { financialExposureThb: 2_800_000, socialPressure: "High", incidentSeverity: "Linked" },
+  { financialExposureThb: 7_200_000, socialPressure: "High", incidentSeverity: "Active incident" },
+  { financialExposureThb: 680_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 420_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 950_000, socialPressure: "Elevated", incidentSeverity: "None" },
+  { financialExposureThb: 8_500_000, socialPressure: "High", incidentSeverity: "Active incident" },
+  { financialExposureThb: 110_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 75_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 340_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 1_100_000, socialPressure: "Elevated", incidentSeverity: "Linked" },
+  // DSP (14)
+  { financialExposureThb: 620_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 880_000, socialPressure: "Elevated", incidentSeverity: "None" },
+  { financialExposureThb: 1_050_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 55_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 240_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 90_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 35_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 410_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 720_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 65_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 28_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 310_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 150_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 540_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  // PRF (10)
+  { financialExposureThb: 980_000, socialPressure: "Elevated", incidentSeverity: "None" },
+  { financialExposureThb: 1_300_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 160_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 420_000, socialPressure: "Emerging", incidentSeverity: "None" },
+  { financialExposureThb: 70_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 25_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 380_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 40_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 130_000, socialPressure: "None", incidentSeverity: "None" },
+  { financialExposureThb: 860_000, socialPressure: "Emerging", incidentSeverity: "None" },
+];
+
+function buildCase(seed: CaseSeed, streamIndex: number, globalIndex: number): OpsCase {
   const streamDef = getStreamDefinition(seed.stream);
   const rule = getSlaRuleForStream(seed.stream);
   const seq = String(streamIndex + 1).padStart(3, "0");
@@ -44,6 +124,8 @@ function buildCase(seed: CaseSeed, streamIndex: number): OpsCase {
       ? "Urgent Overlay"
       : `${seed.stream} Queue`;
 
+  const impactSeed = seed.impact ?? DEFAULT_IMPACT_PROFILES[globalIndex];
+
   return {
     id,
     stream: seed.stream,
@@ -58,6 +140,7 @@ function buildCase(seed: CaseSeed, streamIndex: number): OpsCase {
     status: seed.status,
     owner: seed.owner,
     queue,
+    impact: buildCaseImpact(impactSeed),
   };
 }
 
@@ -71,7 +154,7 @@ const SEEDS: CaseSeed[] = [
   { stream: "RFR", type: "Registry submission follow-up", priorityTier: "Standard", urgencyReason: "RFR routine follow-up on prior submission", createdMinutesAgo: 90, minutesUntilDue: 270, status: "Awaiting external", owner: "Analyst B" },
   { stream: "RFR", type: "Suspicious transaction report", priorityTier: "Standard", urgencyReason: "RFR standard intake — mid-SLA review", createdMinutesAgo: 200, minutesUntilDue: 160, status: "In progress", owner: "Queue Owner" },
   { stream: "RFR", type: "Statutory fraud report", priorityTier: "High", urgencyReason: "RFR breached submission window — remediation required", createdMinutesAgo: 400, minutesUntilDue: -40, status: "Blocked", owner: "Ops Lead" },
-  { stream: "RFR", type: "Suspicious transaction report", priorityTier: "Standard", urgencyReason: "RFR low-complexity report — on track", createdMinutesAgo: 60, minutesUntilDue: 300, status: "New", owner: "Unassigned" },
+  { stream: "RFR", type: "Suspicious transaction report", priorityTier: "Standard", urgencyReason: "RFR low-complexity report — on track", createdMinutesAgo: 60, minutesUntilDue: 300, status: "New", owner: "Unassigned", impact: { financialExposureThb: 6_800_000, socialPressure: "High", incidentSeverity: "Active incident" } },
   { stream: "RFR", type: "Cross-border fraud report", priorityTier: "Standard", urgencyReason: "RFR closed-loop verification", createdMinutesAgo: 350, minutesUntilDue: 10, status: "Closed", owner: "Analyst A" },
 
   // LAR — authority requests (10 cases)
@@ -94,7 +177,7 @@ const SEEDS: CaseSeed[] = [
   { stream: "PRO", type: "Mule network alert", priorityTier: "High", urgencyReason: "PRO escalated alert — pattern match without confirmed movement", createdMinutesAgo: 60, minutesUntilDue: 60, status: "In progress", owner: "Analyst A" },
   { stream: "PRO", type: "Velocity anomaly alert", priorityTier: "High", urgencyReason: "PRO repeated small transfers — investigation opened", createdMinutesAgo: 45, minutesUntilDue: 75, status: "New", owner: "Unassigned" },
   { stream: "PRO", type: "Account takeover signal", priorityTier: "High", urgencyReason: "PRO device change plus outbound attempt", createdMinutesAgo: 70, minutesUntilDue: 50, status: "In progress", owner: "Analyst B" },
-  { stream: "PRO", type: "Funds-in-flight alert", priorityTier: "Standard", urgencyReason: "PRO standard proactive alert — on track", createdMinutesAgo: 30, minutesUntilDue: 90, status: "New", owner: "Queue Owner" },
+  { stream: "PRO", type: "Funds-in-flight alert", priorityTier: "Standard", urgencyReason: "PRO standard proactive alert — on track", createdMinutesAgo: 30, minutesUntilDue: 90, status: "New", owner: "Queue Owner", impact: { financialExposureThb: 5_500_000, socialPressure: "High", incidentSeverity: "Active incident" } },
   { stream: "PRO", type: "Mule network alert", priorityTier: "Standard", urgencyReason: "PRO low-risk signal — routine triage", createdMinutesAgo: 20, minutesUntilDue: 100, status: "New", owner: "Unassigned" },
   { stream: "PRO", type: "Velocity anomaly alert", priorityTier: "Standard", urgencyReason: "PRO mid-SLA review — no active movement", createdMinutesAgo: 55, minutesUntilDue: 65, status: "Awaiting external", owner: "Analyst A" },
   { stream: "PRO", type: "Account takeover signal", priorityTier: "High", urgencyReason: "PRO near funds-in-flight breach", createdMinutesAgo: 115, minutesUntilDue: 5, status: "In progress", owner: "Ops Lead" },
@@ -123,7 +206,7 @@ const SEEDS: CaseSeed[] = [
   { stream: "PRF", type: "Enhanced due diligence", priorityTier: "Standard", urgencyReason: "PRF mid-SLA dashboard review", createdMinutesAgo: 2800, minutesUntilDue: 1520, status: "In progress", owner: "Queue Owner" },
   { stream: "PRF", type: "Periodic profile review", priorityTier: "Standard", urgencyReason: "PRF standard backlog item", createdMinutesAgo: 800, minutesUntilDue: 3520, status: "New", owner: "Unassigned" },
   { stream: "PRF", type: "Document re-verification", priorityTier: "Standard", urgencyReason: "PRF awaiting document upload", createdMinutesAgo: 3600, minutesUntilDue: 720, status: "Awaiting external", owner: "Analyst A" },
-  { stream: "PRF", type: "Enhanced due diligence", priorityTier: "Standard", urgencyReason: "PRF near review deadline", createdMinutesAgo: 4000, minutesUntilDue: 320, status: "In progress", owner: "Analyst B" },
+  { stream: "PRF", type: "Enhanced due diligence", priorityTier: "Standard", urgencyReason: "PRF near review deadline", createdMinutesAgo: 4000, minutesUntilDue: 320, status: "In progress", owner: "Analyst B", impact: { financialExposureThb: 15_000, socialPressure: "None", incidentSeverity: "None" } },
   { stream: "PRF", type: "Periodic profile review", priorityTier: "Standard", urgencyReason: "PRF breached review SLA — backlog hygiene", createdMinutesAgo: 4500, minutesUntilDue: -180, status: "Blocked", owner: "Ops Lead" },
   { stream: "PRF", type: "Document re-verification", priorityTier: "Standard", urgencyReason: "PRF closed after verification", createdMinutesAgo: 4200, minutesUntilDue: 120, status: "Closed", owner: "Analyst A" },
   { stream: "PRF", type: "Periodic profile review", priorityTier: "High", urgencyReason: "PRF elevated risk tier — dashboard priority", createdMinutesAgo: 2000, minutesUntilDue: 2320, status: "In progress", owner: "Queue Owner" },
@@ -140,7 +223,8 @@ export const OPS_CASES: OpsCase[] = (() => {
   return SEEDS.map((seed) => {
     const idx = streamCounters[seed.stream];
     streamCounters[seed.stream] += 1;
-    return buildCase(seed, idx);
+    const globalIndex = SEEDS.indexOf(seed);
+    return buildCase(seed, idx, globalIndex);
   });
 })();
 

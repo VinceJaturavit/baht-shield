@@ -13,6 +13,7 @@ import {
 import { OpsPriorityBadge } from "./OpsPriorityBadge";
 import { OpsStatusBadge } from "./OpsStatusBadge";
 import { OpsSlaPressureBadge } from "./OpsSlaPressureBadge";
+import { OpsImpactBreakdown } from "./OpsImpactBreakdown";
 
 interface Props {
   caseItem: OpsCase | null;
@@ -156,6 +157,17 @@ export function OpsSlaDrawer({ caseItem, onClose }: Props) {
               Why this case sits here
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-ourox-ink/85">{rationale}</p>
+          </section>
+
+          <section>
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-ourox-orange">
+              Impact breakdown
+            </h3>
+            <p className="mb-3 text-xs leading-relaxed text-ourox-ink/55">
+              Impact = consequence of delay (financial, social, incident). SLA = time to breach.
+              Triage on both.
+            </p>
+            <OpsImpactBreakdown impact={caseItem.impact} />
           </section>
         </div>
       </div>

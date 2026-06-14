@@ -1,11 +1,13 @@
 import type { OpsAgingBucket } from "./aging";
 import { getAgingBucket } from "./aging";
-import type { OpsCase, OpsStreamCode } from "./types";
+import type { OpsCase, OpsImpactTier, OpsStreamCode } from "./types";
 import type { OpsTeamRole } from "./roster-types";
 
 export type OpsStreamFilter = "all" | OpsStreamCode | "Urgent";
 
 export type OpsAgingBucketFilter = "all" | OpsAgingBucket;
+
+export type OpsImpactTierFilter = "all" | OpsImpactTier;
 
 export type OpsRoleFilter = "all" | OpsTeamRole;
 
@@ -49,6 +51,10 @@ export function getCaseSearchValues(caseItem: OpsCase): Array<string | number> {
     caseItem.owner,
     caseItem.status,
     caseItem.queue,
+    caseItem.impact.impactTier,
+    caseItem.impact.financialExposureBand,
+    caseItem.impact.socialPressure,
+    caseItem.impact.incidentSeverity,
   ];
 }
 
@@ -69,10 +75,19 @@ export function matchesAgingBucketFilter(
   return getAgingBucket(caseItem) === bucket;
 }
 
+export function matchesImpactTierFilter(
+  caseItem: OpsCase,
+  tier: OpsImpactTierFilter,
+): boolean {
+  if (tier === "all") return true;
+  return caseItem.impact.impactTier === tier;
+}
+
 export interface OpsCaseFilterState {
   text: string;
   stream: OpsStreamFilter;
   bucket: OpsAgingBucketFilter;
+  impactTier: OpsImpactTierFilter;
 }
 
 export function filterOpsCases(
@@ -87,6 +102,9 @@ export function filterOpsCases(
       return false;
     }
     if (!matchesAgingBucketFilter(caseItem, filters.bucket)) {
+      return false;
+    }
+    if (!matchesImpactTierFilter(caseItem, filters.impactTier)) {
       return false;
     }
     return true;
@@ -162,6 +180,14 @@ export const OPS_AGING_BUCKET_OPTIONS: { value: OpsAgingBucketFilter; label: str
   { value: "Breached", label: "Breached" },
 ];
 
+export const OPS_IMPACT_TIER_OPTIONS: { value: OpsImpactTierFilter; label: string }[] = [
+  { value: "all", label: "All impact tiers" },
+  { value: "Critical", label: "Critical" },
+  { value: "High", label: "High" },
+  { value: "Moderate", label: "Moderate" },
+  { value: "Low", label: "Low" },
+];
+
 export const OPS_ROLE_FILTER_OPTIONS: { value: OpsRoleFilter; label: string }[] = [
   { value: "all", label: "All roles" },
   { value: "Fraud Analyst", label: "Fraud Analyst" },
@@ -172,6 +198,7 @@ export const EMPTY_CASE_FILTERS: OpsCaseFilterState = {
   text: "",
   stream: "all",
   bucket: "all",
+  impactTier: "all",
 };
 
 export const EMPTY_MEMBER_FILTERS: OpsMemberFilterState = {

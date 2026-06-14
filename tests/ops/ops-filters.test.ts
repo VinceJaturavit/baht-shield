@@ -58,6 +58,7 @@ describe("filterOpsCases", () => {
       text: target.id.slice(0, 4),
       stream: "RFR",
       bucket: "all",
+      impactTier: "all",
     });
 
     expect(filtered.every((c) => c.stream === "RFR")).toBe(true);
@@ -83,6 +84,42 @@ describe("filterOpsCases", () => {
       text: "zzz-no-match-zzz",
       stream: "all",
       bucket: "all",
+      impactTier: "all",
+    });
+    expect(filtered.length).toBe(0);
+  });
+
+  it("filters by impact tier", () => {
+    const critical = OPS_CASES.filter((c) => c.impact.impactTier === "Critical");
+    if (critical.length === 0) return;
+
+    const filtered = filterOpsCases(OPS_CASES, {
+      ...EMPTY_CASE_FILTERS,
+      impactTier: "Critical",
+    });
+    expect(filtered.every((c) => c.impact.impactTier === "Critical")).toBe(true);
+    expect(filtered.length).toBe(critical.length);
+  });
+
+  it("combines impact tier with stream and SLA bucket using AND", () => {
+    const target = OPS_CASES.find((c) => c.impact.impactTier === "High");
+    expect(target).toBeDefined();
+
+    const filtered = filterOpsCases(OPS_CASES, {
+      text: "",
+      stream: target!.stream,
+      bucket: "all",
+      impactTier: "High",
+    });
+    expect(filtered.every((c) => c.stream === target!.stream)).toBe(true);
+    expect(filtered.every((c) => c.impact.impactTier === "High")).toBe(true);
+  });
+
+  it("empty state can trigger when impact filter excludes all rows", () => {
+    const filtered = filterOpsCases(OPS_CASES, {
+      ...EMPTY_CASE_FILTERS,
+      impactTier: "Critical",
+      text: "zzz-no-match-zzz",
     });
     expect(filtered.length).toBe(0);
   });
@@ -135,9 +172,18 @@ describe("filterRowsByMemberFilters", () => {
 
 describe("clear state helpers", () => {
   it("detects active filters", () => {
-    expect(hasAnyActiveFilter({ text: "", stream: "all", bucket: "all" })).toBe(false);
-    expect(hasAnyActiveFilter({ text: "case", stream: "all", bucket: "all" })).toBe(true);
-    expect(hasAnyActiveFilter({ text: "", stream: "RFR", bucket: "all" })).toBe(true);
+    expect(hasAnyActiveFilter({ text: "", stream: "all", bucket: "all", impactTier: "all" })).toBe(
+      false,
+    );
+    expect(hasAnyActiveFilter({ text: "case", stream: "all", bucket: "all", impactTier: "all" })).toBe(
+      true,
+    );
+    expect(hasAnyActiveFilter({ text: "", stream: "RFR", bucket: "all", impactTier: "all" })).toBe(
+      true,
+    );
+    expect(hasAnyActiveFilter({ text: "", stream: "all", bucket: "all", impactTier: "Critical" })).toBe(
+      true,
+    );
   });
 
   it("empty result condition when count is zero", () => {
@@ -145,13 +191,15 @@ describe("clear state helpers", () => {
       text: "no-match-query",
       stream: "all",
       bucket: "all",
+      impactTier: "all",
     });
     expect(filtered.length).toBe(0);
   });
 
-  it("EMPTY filters reset state", () => {
+  it("EMPTY filters reset state including impact tier", () => {
     expect(EMPTY_CASE_FILTERS.text).toBe("");
     expect(EMPTY_CASE_FILTERS.stream).toBe("all");
+    expect(EMPTY_CASE_FILTERS.impactTier).toBe("all");
     expect(EMPTY_MEMBER_FILTERS.role).toBe("all");
   });
 });

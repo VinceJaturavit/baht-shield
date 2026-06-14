@@ -15,7 +15,9 @@ export function OpsQueueWorkspace({ cases, selectedId, onSelect }: Props) {
       <div>
         <h2 className="text-sm font-semibold text-ourox-ink">Queue Board</h2>
         <p className="mt-1 max-w-2xl text-xs leading-relaxed text-ourox-ink/55">
-          Priority overlay and stream queues — sorted by urgency and SLA pressure.
+          Cases read on two axes: priority and SLA pressure (time to breach), and impact tier
+          (consequence of delay). A fresh but Critical case should not be buried by a pure SLA
+          sort; a near-breach Low-impact case still needs action, but for a different reason.
         </p>
       </div>
 

@@ -28,13 +28,14 @@ const PRESSURE_STYLES: Record<
 
 interface Props {
   pressure: OpsSlaPressure;
+  compact?: boolean;
 }
 
-export function OpsSlaPressureBadge({ pressure }: Props) {
+export function OpsSlaPressureBadge({ pressure, compact }: Props) {
   const styles = PRESSURE_STYLES[pressure];
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded border px-2 py-0.5 text-[11px] font-medium ${styles.border} ${styles.text}`}
+      className={`inline-flex items-center gap-1.5 rounded border px-2 py-0.5 font-medium ${styles.border} ${styles.text} ${compact ? "text-[10px]" : "text-[11px]"}`}
     >
       <span
         className={`h-1.5 w-1.5 shrink-0 rounded-full ${styles.indicator}`}

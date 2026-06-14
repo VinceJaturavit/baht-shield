@@ -33,6 +33,7 @@ const REQUIRED_FIELDS: (keyof OpsCase)[] = [
   "status",
   "owner",
   "queue",
+  "impact",
 ];
 
 describe("OPS_STREAMS", () => {
