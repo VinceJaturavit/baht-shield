@@ -15,15 +15,20 @@ describe("Ops guide route", () => {
 });
 
 describe("OPS_GUIDE_SECTIONS", () => {
-  it("defines eight sections with stable anchor IDs", () => {
-    expect(OPS_GUIDE_SECTIONS).toHaveLength(8);
+  it("defines thirteen sections with stable anchor IDs", () => {
+    expect(OPS_GUIDE_SECTIONS).toHaveLength(13);
     expect(OPS_GUIDE_SECTION_IDS).toEqual([
       "what-ops-is",
       "intake-streams",
       "queues-priority",
       "sla-aging",
-      "roster-capacity-shifts",
-      "fair-kpis",
+      "roster-sub-views",
+      "weekly-schedule-coverage",
+      "fairness",
+      "performance",
+      "qa-behaviour",
+      "four-signals",
+      "reviews",
       "how-it-connects",
       "synthetic-boundary",
     ]);
@@ -38,6 +43,23 @@ describe("OPS_GUIDE_SECTIONS", () => {
     expect(guideSource).toContain("Junior Analyst");
     expect(guideSource).not.toMatch(/\bOfficer\b/);
     expect(guideSource).not.toMatch(/\bContractor\b/);
+  });
+
+  it("covers people-management topics added in Phase 1.5", () => {
+    const guideSource = readFileSync(
+      resolve(ROOT, "components/ops/guide/OpsGuidePage.tsx"),
+      "utf8"
+    );
+    expect(guideSource).toContain("Roster sub-views");
+    expect(guideSource).toContain("Weekly Schedule");
+    expect(guideSource).toContain("Fairness");
+    expect(guideSource).toContain("weighted throughput");
+    expect(guideSource).toContain("SLA-pickup");
+    expect(guideSource).toContain("four-signals principle");
+    expect(guideSource).toContain("Reviews");
+    expect(guideSource).not.toMatch(/\bTrueMoney\b/i);
+    expect(guideSource).not.toMatch(/\bKraken\b/i);
+    expect(guideSource).not.toMatch(/\bSignalOS\b/i);
   });
 });
 

@@ -263,7 +263,8 @@ export default function GuidePage() {
                   </div>
                   <p className="text-sm leading-6 text-ourox-ink/60">
                     Ops is the operations layer after an alert becomes a case. It shows queues,
-                    priority, SLA, aging, roster coverage, protected capacity, and fair KPIs.
+                    priority, SLA, aging, roster coverage, the people-management suite, and fair
+                    performance signals.
                   </p>
                   <div className="mt-4">
                     <Link
@@ -337,13 +338,20 @@ export default function GuidePage() {
                 <p>
                   Ops is the fraud operations management layer of Ourox. It shows how work is
                   managed after an alert becomes a case: queues, priority, SLA, aging, roster
-                  coverage, protected capacity, and fair KPIs.
+                  coverage, protected capacity, and a people-management suite built on four
+                  separate signals — fairness, performance, quality, and behaviour.
                 </p>
                 <p>
                   The Ops layer makes visible the management choices behind a fraud function:
                   which work is urgent, which clock is running, who owns the queue, whether the
-                  team has decision authority on shift, and whether performance is measured
-                  fairly.
+                  team has decision authority on shift, whether hard work is distributed fairly
+                  within each role, and whether performance is measured without a cases-closed
+                  rank.
+                </p>
+                <p>
+                  Roster sub-views cover daily ownership, weekly schedule, fairness, performance,
+                  and QA. Reviews compacts those signals into a per-analyst pack with a mock AI
+                  copilot for decision-support review drafting.
                 </p>
                 <p>
                   <Link
@@ -743,7 +751,7 @@ export default function GuidePage() {
                 <RoadmapBand
                   phase="Current"
                   items={[
-                    "Ops MVP shipped: Queue Board, Aging & SLA, Roster & Assignment, KPI Board, and Ops Guide.",
+                    "Ops Phase 1.5 shipped: Queue Board, Aging & SLA, Roster sub-views (Daily Ownership, Weekly Schedule, Fairness, Performance, QA), Reviews with per-analyst pack and mock AI copilot, KPI Board, and Ops Guide.",
                     "Verity: investigation workspace, alert triage queue, case workflow and closure-note builder, wallet and entity view, pattern intelligence library, analytics.",
                     "Arbiter: scoring explorer with 12 features and full explainability, GoRules Zen-Engine JDM rule evaluation, decision precedence, tuning workspace, confusion matrix, precision / recall / FPR / F1 metrics, per-typology breakdown, rule back-testing, shadow mode.",
                     "Arbiter Phase 3 — ML score: offline-trained logistic-regression score shown beside the transparent rule score, with learned importance vs hand weights, calibration bins, held-out metrics, and ML-vs-rule disagreement cases. Learning-grade second opinion on synthetic data; rules remain the decisioning authority.",
