@@ -16,31 +16,28 @@ const TASK_TAGS: OpsWeeklyTaskTag[] = [
 
 export function OpsWeeklyScheduleLegend() {
   return (
-    <div className="space-y-2 rounded-lg border border-ourox-obsidianMid/70 bg-ourox-obsidian/20 px-3 py-2.5">
-      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-        <span className="text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/40">
-          Shifts
+    <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-ourox-obsidianMid/50 pb-2">
+      <span className="text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/35">
+        Shifts
+      </span>
+      {SHIFT_CODES.map((code) => (
+        <span key={code} className="text-[10px] text-ourox-ink/45">
+          <span className="font-medium text-ourox-ink/60">{code}</span>
+          {" · "}
+          {getShiftCodeLabel(code)}
         </span>
-        {SHIFT_CODES.map((code) => (
-          <span key={code} className="text-[10px] text-ourox-ink/55">
-            <span className="font-medium text-ourox-ink/70">{code}</span>
-            {" = "}
-            {getShiftCodeLabel(code)}
-          </span>
-        ))}
-      </div>
-      <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-        <span className="text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/40">
-          Tasks
+      ))}
+      <span className="mx-1 hidden h-3 w-px bg-ourox-obsidianMid sm:inline" aria-hidden="true" />
+      <span className="text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/35">
+        Tasks
+      </span>
+      {TASK_TAGS.map((tag) => (
+        <span key={tag} className="text-[10px] text-ourox-ink/45">
+          <span className="font-medium text-ourox-ink/60">{tag}</span>
+          {" · "}
+          {getTaskTagLabel(tag)}
         </span>
-        {TASK_TAGS.map((tag) => (
-          <span key={tag} className="text-[10px] text-ourox-ink/55">
-            <span className="font-medium text-ourox-ink/70">{tag}</span>
-            {" = "}
-            {getTaskTagLabel(tag)}
-          </span>
-        ))}
-      </div>
+      ))}
     </div>
   );
 }

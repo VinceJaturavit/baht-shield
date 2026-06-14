@@ -38,10 +38,10 @@ function ScheduleGroupTable({
 
   return (
     <>
-      <tr className="border-b border-ourox-obsidianMid bg-ourox-obsidian/50">
+      <tr>
         <td
           colSpan={8}
-          className="px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45"
+          className="border-y border-ourox-obsidianMid/80 bg-ourox-obsidian/40 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/40"
         >
           {groupLabel}
         </td>
@@ -49,10 +49,10 @@ function ScheduleGroupTable({
       {rows.map(({ member, assignmentsByDay }) => (
         <tr
           key={member.id}
-          className="border-b border-ourox-obsidianMid/70 last:border-b-0"
+          className="border-b border-ourox-obsidianMid/50 last:border-b-0"
         >
-          <td className="px-2 py-2">
-            <span className="block truncate text-[11px] font-medium text-ourox-ink">
+          <td className="px-2 py-1">
+            <span className="block truncate text-[10px] font-medium text-ourox-ink/85">
               {member.name}
             </span>
           </td>
@@ -60,13 +60,13 @@ function ScheduleGroupTable({
             const assignment = assignmentsByDay[day];
             if (!assignment) {
               return (
-                <td key={day} className="px-0.5 py-1 text-center text-[10px] text-ourox-ink/30">
+                <td key={day} className="px-0.5 py-0.5 text-center text-[10px] text-ourox-ink/25">
                   —
                 </td>
               );
             }
             return (
-              <td key={day} className="px-0.5 py-1">
+              <td key={day} className="px-0.5 py-0.5">
                 <OpsScheduleCell
                   assignment={assignment}
                   onClick={() => onCellClick(member, assignment)}
@@ -109,23 +109,16 @@ export function OpsWeeklyScheduleGrid({
   };
 
   return (
-    <div className="min-w-0 space-y-4">
-      <div>
-        <h3 className="text-xs font-semibold text-ourox-ink">Weekly schedule</h3>
-        <p className="mt-1 max-w-3xl text-[11px] leading-relaxed text-ourox-ink/55">
-          Planned shift and queue assignment for the week. Click a cell for full detail.
-        </p>
-      </div>
-
+    <div className="min-w-0 space-y-3">
       <OpsWeeklyScheduleLegend />
 
-      <div className="min-w-0 rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
+      <div className="min-w-0 overflow-hidden border border-ourox-obsidianMid/70 bg-ourox-obsidian/15">
         <table className="w-full table-fixed border-collapse text-left text-xs">
           <thead>
-            <tr className="border-b border-ourox-obsidianMid text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45">
-              <th className="w-[14%] px-2 py-2 font-semibold">Person</th>
+            <tr className="border-b border-ourox-obsidianMid/80 text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/40">
+              <th className="w-[13%] px-2 py-1.5 font-semibold">Person</th>
               {OPS_WEEKDAYS.map((day) => (
-                <th key={day} className="px-0.5 py-2 text-center font-semibold">
+                <th key={day} className="px-0.5 py-1.5 text-center font-semibold">
                   {day}
                 </th>
               ))}

@@ -7,53 +7,50 @@ interface Props {
 
 export function OpsWeeklyCoverageSummary({ days }: Props) {
   return (
-    <div className="space-y-2">
-      <div>
-        <h3 className="text-xs font-semibold text-ourox-ink">Weekly coverage</h3>
-        <p className="mt-1 max-w-3xl text-[11px] leading-relaxed text-ourox-ink/55">
-          The schedule&apos;s job is to keep decision authority and intake capacity present every
-          day. Tight-SLA streams such as RFR, LAR, and PRO need clean coverage and explicit
-          handoffs so work does not stall across shift boundaries.
-        </p>
-      </div>
+    <div className="min-w-0 space-y-2">
+      <h4 className="text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/40">
+        Weekly coverage
+      </h4>
 
-      <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
+      <div className="min-w-0 overflow-hidden border border-ourox-obsidianMid/70 bg-ourox-obsidian/15">
         <table className="w-full table-fixed border-collapse text-left text-xs">
           <thead>
-            <tr className="border-b border-ourox-obsidianMid text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45">
-              <th className="w-[10%] px-2 py-2 font-semibold">Day</th>
-              <th className="w-[16%] px-2 py-2 font-semibold">Status</th>
-              <th className="w-[12%] px-2 py-2 font-semibold">Fraud Analysts</th>
-              <th className="w-[12%] px-2 py-2 font-semibold">Junior Analysts</th>
-              <th className="w-[10%] px-2 py-2 font-semibold">Handoffs</th>
-              <th className="w-[40%] px-2 py-2 font-semibold">Authority / Intake</th>
+            <tr className="border-b border-ourox-obsidianMid/80 text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/40">
+              <th className="w-[9%] px-2 py-1.5 font-semibold">Day</th>
+              <th className="w-[14%] px-2 py-1.5 font-semibold">Status</th>
+              <th className="w-[11%] px-2 py-1.5 font-semibold">Fraud</th>
+              <th className="w-[11%] px-2 py-1.5 font-semibold">Junior</th>
+              <th className="w-[9%] px-2 py-1.5 font-semibold">Handoffs</th>
+              <th className="w-[46%] px-2 py-1.5 font-semibold">Authority / Intake</th>
             </tr>
           </thead>
           <tbody>
             {days.map((day) => (
               <tr
                 key={day.day}
-                className="border-b border-ourox-obsidianMid/70 last:border-b-0"
+                className="border-b border-ourox-obsidianMid/50 last:border-b-0"
               >
-                <td className="px-2 py-2 font-medium text-ourox-ink">{day.day}</td>
-                <td className="px-2 py-2">
+                <td className="px-2 py-1.5 text-[11px] font-medium text-ourox-ink/80">
+                  {day.day}
+                </td>
+                <td className="px-2 py-1.5">
                   <OpsIndicatorLabel
                     label={day.status}
                     tone={day.status === "Covered" ? "good" : "risk"}
                     detail={day.gapReason}
                   />
                 </td>
-                <td className="px-2 py-2 text-[11px] text-ourox-ink/70">
+                <td className="px-2 py-1.5 tabular-nums text-[10px] text-ourox-ink/55">
                   {day.fraudAnalystCount}
                 </td>
-                <td className="px-2 py-2 text-[11px] text-ourox-ink/70">
+                <td className="px-2 py-1.5 tabular-nums text-[10px] text-ourox-ink/55">
                   {day.juniorAnalystCount}
                 </td>
-                <td className="px-2 py-2 text-[11px] text-ourox-ink/70">
+                <td className="px-2 py-1.5 tabular-nums text-[10px] text-ourox-ink/55">
                   {day.handoffCount}
                 </td>
-                <td className="px-2 py-2">
-                  <span className="flex flex-wrap items-center gap-x-3 gap-y-0.5">
+                <td className="px-2 py-1.5">
+                  <span className="flex flex-wrap items-center gap-x-2 gap-y-0.5">
                     <OpsIndicatorLabel
                       label={day.hasDecisionAuthority ? "Authority" : "No authority"}
                       tone={day.hasDecisionAuthority ? "good" : "risk"}

@@ -16,7 +16,7 @@ export function OpsScheduleCell({ assignment, onClick }: Props) {
     <button
       type="button"
       onClick={onClick}
-      className={`w-full rounded px-1 py-1.5 text-center text-[10px] font-medium leading-tight transition hover:bg-ourox-obsidianMid/60 focus:outline-none focus-visible:ring-1 focus-visible:ring-ourox-yellow/50 ${
+      className={`w-full rounded-sm px-0.5 py-1 text-center text-[10px] font-medium leading-tight transition hover:bg-ourox-obsidianMid/40 focus:outline-none focus-visible:ring-1 focus-visible:ring-ourox-yellow/50 ${
         isOff
           ? "text-ourox-ink/35"
           : assignment.shiftCode === "N"
