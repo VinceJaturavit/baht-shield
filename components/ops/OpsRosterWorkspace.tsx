@@ -10,6 +10,7 @@ import { OpsProtectedCapacityNote } from "./OpsProtectedCapacityNote";
 import { OpsRosterTable } from "./OpsRosterTable";
 import { OpsQueueOwnershipTable } from "./OpsQueueOwnershipTable";
 import { OpsShiftCoverageGrid } from "./OpsShiftCoverageGrid";
+import { OpsWeeklyScheduleGrid } from "./OpsWeeklyScheduleGrid";
 
 interface Props {
   cases: OpsCase[];
@@ -51,6 +52,11 @@ export function OpsRosterWorkspace({ cases }: Props) {
         />
         <OpsQueueOwnershipTable rows={OPS_QUEUE_OWNERSHIP} />
         <OpsShiftCoverageGrid rows={shiftCoverage} />
+        <OpsWeeklyScheduleGrid
+          fraudAnalysts={fraudAnalysts}
+          juniorAnalysts={juniorAnalysts}
+          teamWithLoad={teamWithLoad}
+        />
       </div>
     </div>
   );
