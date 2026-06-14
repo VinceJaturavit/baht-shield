@@ -13,6 +13,8 @@ import { OpsShiftCoverageGrid } from "./OpsShiftCoverageGrid";
 import { OpsWeeklyScheduleGrid } from "./OpsWeeklyScheduleGrid";
 import { OpsRosterSubNav, type OpsRosterSubView } from "./OpsRosterSubNav";
 import { OpsRosterFairnessView } from "./OpsRosterFairnessView";
+import { OpsRosterPerformanceView } from "./OpsRosterPerformanceView";
+import { OpsRosterQaView } from "./OpsRosterQaView";
 
 interface Props {
   cases: OpsCase[];
@@ -41,6 +43,16 @@ const SUB_VIEW_HEADERS: Record<
     title: "Fairness",
     description:
       "Weekly workload-equity check based on assigned difficulty only — separate from volume or performance.",
+  },
+  performance: {
+    title: "Performance",
+    description:
+      "Throughput for the synthetic review week — raw volume beside complexity-weighted output.",
+  },
+  qa: {
+    title: "QA",
+    description:
+      "Sampled quality and SLA-pickup behaviour — separate from throughput and fairness.",
   },
 };
 
@@ -72,7 +84,7 @@ export function OpsRosterWorkspace({ cases }: Props) {
       <OpsRosterSubNav active={subView} onSelect={setSubView} />
 
       <div className="min-w-0 space-y-4">
-        {subView !== "fairness" && (
+        {subView !== "fairness" && subView !== "performance" && subView !== "qa" && (
           <div>
             <h3 className="text-xs font-semibold text-ourox-ink">{header.title}</h3>
             <p className="mt-1 max-w-3xl text-[11px] leading-relaxed text-ourox-ink/55">
@@ -113,6 +125,10 @@ export function OpsRosterWorkspace({ cases }: Props) {
         )}
 
         {subView === "fairness" && <OpsRosterFairnessView teamWithLoad={teamWithLoad} />}
+
+        {subView === "performance" && <OpsRosterPerformanceView />}
+
+        {subView === "qa" && <OpsRosterQaView />}
       </div>
     </div>
   );

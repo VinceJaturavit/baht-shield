@@ -4,7 +4,9 @@ export type OpsRosterSubView =
   | "roster"
   | "dailyOwnership"
   | "weeklySchedule"
-  | "fairness";
+  | "fairness"
+  | "performance"
+  | "qa";
 
 interface NavItem {
   id: OpsRosterSubView;
@@ -16,6 +18,8 @@ const NAV_ITEMS: NavItem[] = [
   { id: "dailyOwnership", label: "Daily Ownership" },
   { id: "weeklySchedule", label: "Weekly Schedule" },
   { id: "fairness", label: "Fairness" },
+  { id: "performance", label: "Performance" },
+  { id: "qa", label: "QA" },
 ];
 
 interface Props {
