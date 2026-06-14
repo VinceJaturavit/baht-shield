@@ -52,7 +52,7 @@ export function OpsReviewPack({ analystId, onBack }: Props) {
         </p>
       </div>
 
-      <div className="grid min-w-0 gap-3 lg:grid-cols-2">
+      <div className="min-w-0 border border-ourox-obsidianMid/70 bg-ourox-obsidian/20">
         <OpsReviewSignalSection
           title="Workload"
           caption="Workload is difficulty distribution, not performance. It shows whether this analyst was assigned harder work than role peers."
@@ -139,6 +139,7 @@ export function OpsReviewPack({ analystId, onBack }: Props) {
             { label: "Handoff count", value: String(pack.reliability.handoffCount) },
             { label: "Attendance summary", value: pack.reliability.attendanceSummary },
           ]}
+          isLast
         />
       </div>
 

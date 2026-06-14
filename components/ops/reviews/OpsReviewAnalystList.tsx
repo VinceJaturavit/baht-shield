@@ -23,12 +23,12 @@ export function OpsReviewAnalystList({
       <div className="min-w-0 border border-ourox-obsidianMid/70 bg-ourox-obsidian/20">
         <table className="w-full table-fixed border-collapse text-left">
           <thead>
-            <tr className="border-b border-ourox-obsidianMid text-[11px] font-semibold uppercase tracking-wide text-ourox-ink/45">
-              <th className="w-[14%] px-3 py-2 font-semibold">Name</th>
-              <th className="w-[14%] px-3 py-2 font-semibold">Role</th>
-              <th className="w-[14%] px-3 py-2 font-semibold">Streams</th>
-              <th className="w-[46%] px-3 py-2 font-semibold">Headline</th>
-              <th className="w-[12%] px-3 py-2 font-semibold">Action</th>
+            <tr className="border-b border-ourox-obsidianMid text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45">
+              <th className="w-[14%] px-2.5 py-2 font-semibold">Name</th>
+              <th className="w-[14%] px-2.5 py-2 font-semibold">Role</th>
+              <th className="w-[14%] px-2.5 py-2 font-semibold">Streams</th>
+              <th className="w-[46%] px-2.5 py-2 font-semibold">Headline</th>
+              <th className="w-[12%] px-2.5 py-2 font-semibold">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -37,19 +37,19 @@ export function OpsReviewAnalystList({
                 key={analyst.analystId}
                 className="border-b border-ourox-obsidianMid/60 last:border-b-0"
               >
-                <td className="px-3 py-2">
+                <td className="px-2.5 py-2">
                   <span className="block truncate text-xs font-medium text-ourox-ink">
                     {analyst.name}
                   </span>
                 </td>
-                <td className="px-3 py-2 text-xs text-ourox-ink/60">{analyst.role}</td>
-                <td className="px-3 py-2 text-xs text-ourox-ink/60">
+                <td className="px-2.5 py-2 text-xs text-ourox-ink/60">{analyst.role}</td>
+                <td className="px-2.5 py-2 text-xs text-ourox-ink/60">
                   {analyst.streamsCovered.join(", ")}
                 </td>
-                <td className="px-3 py-2 text-xs leading-snug text-ourox-ink/70">
+                <td className="px-2.5 py-2 text-xs leading-snug text-ourox-ink/70">
                   {getHeadline(analyst)}
                 </td>
-                <td className="px-3 py-2">
+                <td className="px-2.5 py-2">
                   <button
                     type="button"
                     onClick={() => onOpenReview(analyst.analystId)}
