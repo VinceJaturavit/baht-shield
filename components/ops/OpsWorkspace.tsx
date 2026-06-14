@@ -9,12 +9,14 @@ import { OpsQueueWorkspace } from "./OpsQueueWorkspace";
 import { OpsAgingDashboard } from "./OpsAgingDashboard";
 import { OpsRosterWorkspace } from "./OpsRosterWorkspace";
 import { OpsKpiWorkspace } from "./OpsKpiWorkspace";
+import { OpsReviewsWorkspace } from "./reviews/OpsReviewsWorkspace";
 import { OpsSlaDrawer } from "./OpsSlaDrawer";
 
 const WORKSPACE_BADGE: Record<OpsWorkspaceView, string> = {
   queue: "Queue Board",
   aging: "Aging & SLA",
   roster: "Roster",
+  reviews: "Reviews",
   kpi: "KPI",
 };
 
@@ -58,6 +60,7 @@ export function OpsWorkspace() {
             )}
             {workspace === "aging" && <OpsAgingDashboard cases={OPS_CASES} />}
             {workspace === "roster" && <OpsRosterWorkspace cases={OPS_CASES} />}
+            {workspace === "reviews" && <OpsReviewsWorkspace />}
             {workspace === "kpi" && <OpsKpiWorkspace cases={OPS_CASES} />}
           </div>
         </div>

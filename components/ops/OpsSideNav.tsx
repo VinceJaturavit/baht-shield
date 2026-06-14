@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export type OpsWorkspaceView = "queue" | "aging" | "roster" | "kpi";
+export type OpsWorkspaceView = "queue" | "aging" | "roster" | "reviews" | "kpi";
 
 interface NavItem {
   id: OpsWorkspaceView;
@@ -16,6 +16,7 @@ const NAV_ITEMS: NavItem[] = [
   { id: "queue", label: "Queue Board" },
   { id: "aging", label: "Aging & SLA" },
   { id: "roster", label: "Roster" },
+  { id: "reviews", label: "Reviews" },
   { id: "kpi", label: "KPI" },
 ];
 
