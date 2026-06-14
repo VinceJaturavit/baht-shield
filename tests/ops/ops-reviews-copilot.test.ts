@@ -33,26 +33,38 @@ describe("generateMockCopilotReview", () => {
     expect(review.scorecard.reliability).toBeTruthy();
   });
 
-  it("outputs disposition as label not number", () => {
+  it("scorecard has exactly five signal lines", () => {
     const review = generateMockCopilotReview(pack);
+    const lines = Object.values(review.scorecard);
+    expect(lines).toHaveLength(5);
+    expect(lines.every((line) => line.length > 0)).toBe(true);
+  });
+
+  it("has analyst-facing summary with required fields", () => {
+    const review = generateMockCopilotReview(pack);
+    expect(review.analystFacingSummary.whatWentWell.length).toBeGreaterThan(0);
+    expect(review.analystFacingSummary.whatToImprove.length).toBeGreaterThan(0);
+    expect(review.analystFacingSummary.workloadReassurance).toBeTruthy();
+    expect(review.analystFacingSummary.suggestedFocusActions.length).toBeGreaterThanOrEqual(1);
+    expect(review.analystFacingSummary.suggestedFocusActions.length).toBeLessThanOrEqual(2);
+  });
+
+  it("has manager decision summary with required fields", () => {
+    const review = generateMockCopilotReview(pack);
+    const summary = review.managerDecisionSummary;
     expect([
       "Strong — recognise",
       "Solid — maintain",
       "Developing — coach",
       "Watch — review",
-    ]).toContain(review.disposition);
-    expect(review.dispositionReason).toBeTruthy();
-  });
-
-  it("outputs 1–2 manager actions", () => {
-    const review = generateMockCopilotReview(pack);
-    expect(review.managerActions.length).toBeGreaterThanOrEqual(1);
-    expect(review.managerActions.length).toBeLessThanOrEqual(2);
-  });
-
-  it("closing line includes manager decision framing", () => {
-    const review = generateMockCopilotReview(pack);
-    expect(review.closingLine).toMatch(/decision-support|manager.*final call/i);
+    ]).toContain(summary.disposition);
+    expect(summary.dispositionReason).toBeTruthy();
+    expect(summary.strongestEvidence.length).toBeGreaterThan(0);
+    expect(summary.mainRiskOrCoachingPoint).toBeTruthy();
+    expect(summary.managerActions.length).toBeGreaterThanOrEqual(1);
+    expect(summary.managerActions.length).toBeLessThanOrEqual(2);
+    expect(summary.confidenceAndCaveats.length).toBeGreaterThan(0);
+    expect(summary.humanInLoopClosingLine).toMatch(/decision-support|manager.*final call/i);
   });
 
   it("does not include a single numeric overall score", () => {
@@ -67,21 +79,38 @@ describe("generateMockCopilotReview", () => {
       if (!p || !p.quality.lowSample) continue;
       const review = generateMockCopilotReview(p);
       expect(review.scorecard.quality).toMatch(/provisional|n<5/i);
+      const caveatText = review.managerDecisionSummary.confidenceAndCaveats.join(" ");
+      expect(caveatText).toMatch(/provisional|n=/i);
     }
   });
 
-  it("does not penalise hard workload in scorecard", () => {
+  it("does not penalise hard workload in scorecard or analyst summary", () => {
     const overloaded = getReviewPackByAnalystId("FA-001");
     if (overloaded?.workload.fairnessTag === "Over-loaded") {
       const review = generateMockCopilotReview(overloaded);
-      expect(review.scorecard.workloadContext).toMatch(/not an analyst penalty|distribution|equity/i);
+      expect(review.scorecard.workloadContext).toMatch(/not an analyst penalty|distribution|equity|rostering/i);
       expect(review.scorecard.workloadContext).not.toMatch(/poor|underperform|penal/i);
+      expect(review.analystFacingSummary.workloadReassurance).toMatch(
+        /rostering|should not be counted against you|manager/i,
+      );
+      const managerCaveats = review.managerDecisionSummary.confidenceAndCaveats.join(" ");
+      expect(managerCaveats).toMatch(/manager-controlled|do not downgrade/i);
     }
   });
 
   it("marks generatedBy as mock deterministic copilot", () => {
     const review = generateMockCopilotReview(pack);
     expect(review.generatedBy).toBe("Mock deterministic copilot");
+  });
+
+  it("analyst-facing summary is written to the analyst", () => {
+    const review = generateMockCopilotReview(pack);
+    const combined = [
+      ...review.analystFacingSummary.whatWentWell,
+      review.analystFacingSummary.workloadReassurance,
+      ...review.analystFacingSummary.suggestedFocusActions,
+    ].join(" ");
+    expect(combined).toMatch(/\bYou\b|\byour\b/i);
   });
 });
 

@@ -23,24 +23,24 @@ export function OpsReviewSignalSection({
   caveat,
 }: Props) {
   return (
-    <section className="min-w-0 border border-ourox-obsidianMid/60 bg-ourox-obsidian/15 px-3 py-2.5">
-      <h3 className="text-[11px] font-semibold text-ourox-ink">{title}</h3>
-      <p className="mt-1 text-[10px] leading-relaxed text-ourox-ink/50">{caption}</p>
-      <dl className="mt-2 space-y-1">
+    <section className="min-w-0 border border-ourox-obsidianMid/60 bg-ourox-obsidian/15 px-3 py-3">
+      <h3 className="[font-family:var(--font-montserrat),system-ui,sans-serif] text-xs font-semibold text-ourox-ink">{title}</h3>
+      <p className="mt-1 text-[11px] leading-relaxed text-ourox-ink/55">{caption}</p>
+      <dl className="mt-2.5 space-y-1.5">
         {metrics.map(({ label, value }) => (
-          <div key={label} className="flex flex-wrap gap-x-2 text-[10px]">
-            <dt className="shrink-0 text-ourox-ink/45">{label}</dt>
-            <dd className="text-ourox-ink/75">{value}</dd>
+          <div key={label} className="flex min-w-0 flex-wrap gap-x-2 text-xs">
+            <dt className="shrink-0 text-ourox-ink/50">{label}</dt>
+            <dd className="min-w-0 break-words text-ourox-ink/85">{value}</dd>
           </div>
         ))}
       </dl>
       {readLabel && readTone && (
-        <div className="mt-2">
+        <div className="mt-2.5">
           <OpsIndicatorLabel label={readLabel} tone={readTone} />
         </div>
       )}
       {caveat && (
-        <p className="mt-1.5 text-[10px] text-ourox-orange/90">{caveat}</p>
+        <p className="mt-2 text-[11px] text-ourox-orange/90">{caveat}</p>
       )}
     </section>
   );

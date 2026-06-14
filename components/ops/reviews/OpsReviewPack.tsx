@@ -27,18 +27,30 @@ export function OpsReviewPack({ analystId, onBack }: Props) {
         <button
           type="button"
           onClick={onBack}
-          className="text-[10px] font-medium text-ourox-ink/50 hover:text-ourox-orange"
+          className="text-xs font-medium text-ourox-ink/55 hover:text-ourox-orange focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange"
         >
           Back to Reviews
         </button>
-        <p className="text-xs text-ourox-ink/60">Analyst not found.</p>
+        <p className="text-sm text-ourox-ink/65">Analyst not found.</p>
       </div>
     );
   }
 
   return (
-    <div className="min-w-0 space-y-4">
+    <div className="min-w-0 space-y-5">
       <OpsReviewPackHeader pack={pack} onBack={onBack} />
+
+      <OpsMockCopilotPanel pack={pack} />
+
+      <div className="min-w-0 space-y-1">
+        <h3 className="[font-family:var(--font-montserrat),system-ui,sans-serif] text-xs font-semibold uppercase tracking-wide text-ourox-ink/60">
+          Supporting signal detail
+        </h3>
+        <p className="text-xs text-ourox-ink/50">
+          Five separate signals from synthetic review-pack data. Use alongside the generated review
+          above.
+        </p>
+      </div>
 
       <div className="grid min-w-0 gap-3 lg:grid-cols-2">
         <OpsReviewSignalSection
@@ -130,7 +142,6 @@ export function OpsReviewPack({ analystId, onBack }: Props) {
         />
       </div>
 
-      <OpsMockCopilotPanel pack={pack} />
       <OpsCopilotRubricPanel />
       <OpsCopilotRoadmapPanel />
     </div>

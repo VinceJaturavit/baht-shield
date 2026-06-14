@@ -12,10 +12,10 @@ export function OpsReviewsLanding({ analysts, onOpenReview }: Props) {
   const juniorAnalysts = analysts.filter((a) => a.role === "Junior Analyst");
 
   return (
-    <div className="min-w-0 space-y-4">
+    <div className="min-w-0 space-y-5">
       <div>
-        <h2 className="text-sm font-semibold text-ourox-ink">Reviews</h2>
-        <p className="mt-1 max-w-3xl text-xs leading-relaxed text-ourox-ink/60">
+        <h2 className="[font-family:var(--font-montserrat),system-ui,sans-serif] text-base font-semibold text-ourox-ink">Reviews</h2>
+        <p className="mt-1.5 max-w-3xl text-sm leading-relaxed text-ourox-ink/65">
           Review packs bring workload, performance, quality, behaviour, and reliability into one
           read-only view for fair analyst conversations.
         </p>
