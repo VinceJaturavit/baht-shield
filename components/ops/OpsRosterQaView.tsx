@@ -1,21 +1,32 @@
 "use client";
 
 import { useMemo } from "react";
+import { filterRowsByMemberFilters, type OpsMemberFilterState } from "@/lib/ops/filters";
 import { getQaRows, QA_REOPEN_LINKAGE_NOTE } from "@/lib/ops/qa";
 import { OpsPeopleManagementStory } from "./OpsPeopleManagementStory";
 import { OpsQaSamplingPanel } from "./OpsQaSamplingPanel";
 import { OpsQaSignalCaption } from "./OpsQaSignalCaption";
 import { OpsSlaPickupPanel } from "./OpsSlaPickupPanel";
+import { OpsFilterEmptyState } from "./filters/OpsFilterEmptyState";
 
-export function OpsRosterQaView() {
+interface Props {
+  memberFilters: OpsMemberFilterState;
+  memberResultCount: number;
+}
+
+export function OpsRosterQaView({ memberFilters, memberResultCount }: Props) {
   const rows = useMemo(() => getQaRows(), []);
+  const filteredRows = useMemo(
+    () => filterRowsByMemberFilters(rows, memberFilters),
+    [rows, memberFilters],
+  );
   const fraudAnalysts = useMemo(
-    () => rows.filter((r) => r.role === "Fraud Analyst"),
-    [rows],
+    () => filteredRows.filter((r) => r.role === "Fraud Analyst"),
+    [filteredRows],
   );
   const juniorAnalysts = useMemo(
-    () => rows.filter((r) => r.role === "Junior Analyst"),
-    [rows],
+    () => filteredRows.filter((r) => r.role === "Junior Analyst"),
+    [filteredRows],
   );
 
   return (
@@ -28,8 +39,18 @@ export function OpsRosterQaView() {
       </div>
 
       <OpsPeopleManagementStory />
-      <OpsQaSamplingPanel fraudAnalysts={fraudAnalysts} juniorAnalysts={juniorAnalysts} />
-      <OpsSlaPickupPanel rows={rows} />
+
+      {memberResultCount === 0 ? (
+        <OpsFilterEmptyState
+          title="No analysts match the current filters."
+          description="Clear filters or search for another analyst."
+        />
+      ) : (
+        <>
+          <OpsQaSamplingPanel fraudAnalysts={fraudAnalysts} juniorAnalysts={juniorAnalysts} />
+          <OpsSlaPickupPanel rows={filteredRows} />
+        </>
+      )}
 
       <p className="max-w-3xl border border-ourox-obsidianMid/50 bg-ourox-obsidian/15 px-3 py-2 text-[10px] leading-relaxed text-ourox-ink/50">
         {QA_REOPEN_LINKAGE_NOTE}

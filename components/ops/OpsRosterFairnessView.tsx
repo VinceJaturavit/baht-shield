@@ -2,17 +2,34 @@
 
 import { useMemo } from "react";
 import type { OpsTeamMemberWithLoad } from "@/lib/ops/roster-types";
+import { filterRowsByMemberFilters, type OpsMemberFilterState } from "@/lib/ops/filters";
 import { getFairnessResult } from "@/lib/ops/fairness";
 import { OpsFairnessLegend } from "./OpsFairnessLegend";
 import { OpsFairnessSummary } from "./OpsFairnessSummary";
 import { OpsFairnessTable } from "./OpsFairnessTable";
+import { OpsFilterEmptyState } from "./filters/OpsFilterEmptyState";
 
 interface Props {
   teamWithLoad: OpsTeamMemberWithLoad[];
+  memberFilters: OpsMemberFilterState;
+  memberResultCount: number;
 }
 
-export function OpsRosterFairnessView({ teamWithLoad }: Props) {
+export function OpsRosterFairnessView({
+  teamWithLoad,
+  memberFilters,
+  memberResultCount,
+}: Props) {
   const result = useMemo(() => getFairnessResult(teamWithLoad), [teamWithLoad]);
+
+  const fraudAnalysts = useMemo(
+    () => filterRowsByMemberFilters(result.fraudAnalysts, memberFilters),
+    [result.fraudAnalysts, memberFilters],
+  );
+  const juniorAnalysts = useMemo(
+    () => filterRowsByMemberFilters(result.juniorAnalysts, memberFilters),
+    [result.juniorAnalysts, memberFilters],
+  );
 
   return (
     <div className="min-w-0 space-y-4">
@@ -26,10 +43,16 @@ export function OpsRosterFairnessView({ teamWithLoad }: Props) {
       </div>
 
       <OpsFairnessSummary summaries={result.roleSummaries} />
-      <OpsFairnessTable
-        fraudAnalysts={result.fraudAnalysts}
-        juniorAnalysts={result.juniorAnalysts}
-      />
+
+      {memberResultCount === 0 ? (
+        <OpsFilterEmptyState
+          title="No analysts match the current filters."
+          description="Clear filters or search for another analyst."
+        />
+      ) : (
+        <OpsFairnessTable fraudAnalysts={fraudAnalysts} juniorAnalysts={juniorAnalysts} />
+      )}
+
       <OpsFairnessLegend />
     </div>
   );

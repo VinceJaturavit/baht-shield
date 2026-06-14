@@ -17,10 +17,10 @@ export function OpsReviewAnalystList({
 
   return (
     <div className="min-w-0 space-y-2">
-      <h3 className="[font-family:var(--font-montserrat),system-ui,sans-serif] text-xs font-semibold uppercase tracking-wide text-ourox-ink/60">
+      <h3 className="text-xs font-semibold uppercase tracking-wider text-ourox-ink/50">
         {groupLabel}
       </h3>
-      <div className="min-w-0 border border-ourox-obsidianMid/70 bg-ourox-obsidian/20">
+      <div className="min-w-0 rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
         <table className="w-full table-fixed border-collapse text-left">
           <thead>
             <tr className="border-b border-ourox-obsidianMid text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45">
@@ -35,7 +35,7 @@ export function OpsReviewAnalystList({
             {analysts.map((analyst) => (
               <tr
                 key={analyst.analystId}
-                className="border-b border-ourox-obsidianMid/60 last:border-b-0"
+                className="border-b border-ourox-obsidianMid/70 last:border-b-0"
               >
                 <td className="px-2.5 py-2">
                   <span className="block truncate text-xs font-medium text-ourox-ink">

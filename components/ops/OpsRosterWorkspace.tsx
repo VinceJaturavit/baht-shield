@@ -4,6 +4,12 @@ import { useMemo, useState } from "react";
 import type { OpsCase } from "@/lib/ops/types";
 import { OPS_TEAM } from "@/data/ops/ops-team";
 import { OPS_QUEUE_OWNERSHIP } from "@/data/ops/ops-queue-ownership";
+import {
+  EMPTY_MEMBER_FILTERS,
+  filterByMemberFilters,
+  OPS_ROLE_FILTER_OPTIONS,
+  type OpsRoleFilter,
+} from "@/lib/ops/filters";
 import { getTeamWithLoad, partitionTeamByRole } from "@/lib/ops/roster";
 import { getShiftCoverage } from "@/lib/ops/shift-coverage";
 import { OpsProtectedCapacityNote } from "./OpsProtectedCapacityNote";
@@ -15,6 +21,9 @@ import { OpsRosterSubNav, type OpsRosterSubView } from "./OpsRosterSubNav";
 import { OpsRosterFairnessView } from "./OpsRosterFairnessView";
 import { OpsRosterPerformanceView } from "./OpsRosterPerformanceView";
 import { OpsRosterQaView } from "./OpsRosterQaView";
+import { OpsFilterBar } from "./filters/OpsFilterBar";
+import { OpsFilterSelect } from "./filters/OpsFilterSelect";
+import { OpsFilterEmptyState } from "./filters/OpsFilterEmptyState";
 
 interface Props {
   cases: OpsCase[];
@@ -56,13 +65,26 @@ const SUB_VIEW_HEADERS: Record<
   },
 };
 
+const MEMBER_FILTER_VIEWS: OpsRosterSubView[] = [
+  "roster",
+  "weeklySchedule",
+  "fairness",
+  "performance",
+  "qa",
+];
+
 export function OpsRosterWorkspace({ cases }: Props) {
   const [subView, setSubView] = useState<OpsRosterSubView>("roster");
+  const [memberFilters, setMemberFilters] = useState(EMPTY_MEMBER_FILTERS);
 
   const teamWithLoad = useMemo(() => getTeamWithLoad(OPS_TEAM, cases), [cases]);
+  const filteredTeam = useMemo(
+    () => filterByMemberFilters(teamWithLoad, memberFilters),
+    [teamWithLoad, memberFilters],
+  );
   const { fraudAnalysts, juniorAnalysts } = useMemo(
-    () => partitionTeamByRole(teamWithLoad),
-    [teamWithLoad],
+    () => partitionTeamByRole(filteredTeam),
+    [filteredTeam],
   );
   const shiftCoverage = useMemo(
     () => getShiftCoverage(teamWithLoad, cases),
@@ -70,18 +92,45 @@ export function OpsRosterWorkspace({ cases }: Props) {
   );
 
   const header = SUB_VIEW_HEADERS[subView];
+  const showMemberFilters = MEMBER_FILTER_VIEWS.includes(subView);
+  const memberResultCount = filteredTeam.length;
+  const clearMemberFilters = () => setMemberFilters(EMPTY_MEMBER_FILTERS);
 
   return (
     <div className="min-w-0 flex-1 space-y-4">
       <div>
         <h2 className="text-sm font-semibold text-ourox-ink">Roster & Assignment</h2>
-        <p className="mt-1 max-w-3xl text-xs leading-relaxed text-ourox-ink/60">
+        <p className="mt-1 max-w-3xl text-xs leading-relaxed text-ourox-ink/55">
           Roster shows planned ownership, load, and reserve capacity. High-priority queues need
           named owners and backups; Fraud Analysts cannot be fully consumed by routine intake.
         </p>
       </div>
 
       <OpsRosterSubNav active={subView} onSelect={setSubView} />
+
+      {showMemberFilters && (
+        <OpsFilterBar
+          searchId="ops-roster-search"
+          searchValue={memberFilters.text}
+          onSearchChange={(text) =>
+            setMemberFilters((prev) => ({ ...prev, text }))
+          }
+          searchPlaceholder="Search analysts…"
+          searchLabel="Search analysts"
+          resultCount={memberResultCount}
+          resultLabel={memberResultCount === 1 ? "analyst" : "analysts"}
+          filterValues={{ role: memberFilters.role }}
+          onClearAll={clearMemberFilters}
+        >
+          <OpsFilterSelect<OpsRoleFilter>
+            id="ops-roster-role"
+            label="Role"
+            value={memberFilters.role}
+            options={OPS_ROLE_FILTER_OPTIONS}
+            onChange={(role) => setMemberFilters((prev) => ({ ...prev, role }))}
+          />
+        </OpsFilterBar>
+      )}
 
       <div className="min-w-0 space-y-4">
         {subView !== "fairness" && subView !== "performance" && subView !== "qa" && (
@@ -96,16 +145,25 @@ export function OpsRosterWorkspace({ cases }: Props) {
         {subView === "roster" && (
           <>
             <OpsProtectedCapacityNote />
-            <OpsRosterTable
-              members={fraudAnalysts}
-              groupLabel="Fraud Analysts"
-              caption="Fraud Analysts hold decision authority for RFR, LAR, Urgent, escalations, QA, and final sign-off."
-            />
-            <OpsRosterTable
-              members={juniorAnalysts}
-              groupLabel="Junior Analysts"
-              caption="Junior Analysts handle structured intake and evidence preparation under SOP."
-            />
+            {memberResultCount === 0 ? (
+              <OpsFilterEmptyState
+                title="No analysts match the current filters."
+                description="Clear filters or search for another analyst."
+              />
+            ) : (
+              <>
+                <OpsRosterTable
+                  members={fraudAnalysts}
+                  groupLabel="Fraud Analysts"
+                  caption="Fraud Analysts hold decision authority for RFR, LAR, Urgent, escalations, QA, and final sign-off."
+                />
+                <OpsRosterTable
+                  members={juniorAnalysts}
+                  groupLabel="Junior Analysts"
+                  caption="Junior Analysts handle structured intake and evidence preparation under SOP."
+                />
+              </>
+            )}
           </>
         )}
 
@@ -116,19 +174,41 @@ export function OpsRosterWorkspace({ cases }: Props) {
           </>
         )}
 
-        {subView === "weeklySchedule" && (
-          <OpsWeeklyScheduleGrid
-            fraudAnalysts={fraudAnalysts}
-            juniorAnalysts={juniorAnalysts}
+        {subView === "weeklySchedule" &&
+          (memberResultCount === 0 ? (
+            <OpsFilterEmptyState
+              title="No analysts match the current filters."
+              description="Clear filters or search for another analyst."
+            />
+          ) : (
+            <OpsWeeklyScheduleGrid
+              fraudAnalysts={fraudAnalysts}
+              juniorAnalysts={juniorAnalysts}
+              teamWithLoad={filteredTeam}
+            />
+          ))}
+
+        {subView === "fairness" && (
+          <OpsRosterFairnessView
             teamWithLoad={teamWithLoad}
+            memberFilters={memberFilters}
+            memberResultCount={memberResultCount}
           />
         )}
 
-        {subView === "fairness" && <OpsRosterFairnessView teamWithLoad={teamWithLoad} />}
+        {subView === "performance" && (
+          <OpsRosterPerformanceView
+            memberFilters={memberFilters}
+            memberResultCount={memberResultCount}
+          />
+        )}
 
-        {subView === "performance" && <OpsRosterPerformanceView />}
-
-        {subView === "qa" && <OpsRosterQaView />}
+        {subView === "qa" && (
+          <OpsRosterQaView
+            memberFilters={memberFilters}
+            memberResultCount={memberResultCount}
+          />
+        )}
       </div>
     </div>
   );

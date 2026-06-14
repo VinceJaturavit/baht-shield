@@ -69,9 +69,18 @@ function RoleSection({
 export function OpsKpiIndividualView({ kpis }: Props) {
   const fraudAnalysts = kpis.filter((k) => k.role === "Fraud Analyst");
   const juniorAnalysts = kpis.filter((k) => k.role === "Junior Analyst");
+  const zeroActivityCount = kpis.filter((k) => k.rawHandledCases === 0).length;
+  const showThinDataNote = zeroActivityCount >= Math.ceil(kpis.length / 2);
 
   return (
-    <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
+    <div className="space-y-2">
+      {showThinDataNote && (
+        <p className="max-w-3xl text-[11px] leading-relaxed text-ourox-ink/45">
+          This synthetic set has limited closed-case volume, so some individual KPI rows show low or
+          zero activity. The view demonstrates the metric structure rather than production volume.
+        </p>
+      )}
+      <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidian/30">
       <table className="w-full table-fixed border-collapse text-left text-xs">
         <thead>
           <tr className="border-b border-ourox-obsidianMid text-[10px] font-semibold uppercase tracking-wider text-ourox-ink/45">
@@ -93,6 +102,7 @@ export function OpsKpiIndividualView({ kpis }: Props) {
           <RoleSection label="Junior Analysts — intake metrics" rows={juniorAnalysts} />
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

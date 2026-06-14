@@ -1,9 +1,19 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { OpsCase, OpsStreamCode } from "@/lib/ops/types";
-import { OPS_STREAM_CODES } from "@/lib/ops/streams";
+import type { OpsCase } from "@/lib/ops/types";
 import { buildSortedQueueSections } from "@/lib/ops/queue";
+import {
+  EMPTY_CASE_FILTERS,
+  filterOpsCases,
+  OPS_AGING_BUCKET_OPTIONS,
+  OPS_QUEUE_STREAM_OPTIONS,
+  type OpsAgingBucketFilter,
+  type OpsStreamFilter,
+} from "@/lib/ops/filters";
+import { OpsFilterBar } from "./filters/OpsFilterBar";
+import { OpsFilterSelect } from "./filters/OpsFilterSelect";
+import { OpsFilterEmptyState } from "./filters/OpsFilterEmptyState";
 import { OpsQueueList } from "./OpsQueueList";
 
 interface Props {
@@ -13,27 +23,56 @@ interface Props {
 }
 
 type QueueView = "urgent" | "by-stream";
-type StreamFilter = "all" | OpsStreamCode;
-
-const STREAM_FILTERS: { value: StreamFilter; label: string }[] = [
-  { value: "all", label: "All streams" },
-  ...OPS_STREAM_CODES.map((code) => ({ value: code as StreamFilter, label: code })),
-];
 
 export function OpsQueueBoard({ cases, selectedId, onSelect }: Props) {
   const [view, setView] = useState<QueueView>("by-stream");
-  const [streamFilter, setStreamFilter] = useState<StreamFilter>("all");
+  const [filters, setFilters] = useState(EMPTY_CASE_FILTERS);
+
+  const filteredCases = useMemo(() => filterOpsCases(cases, filters), [cases, filters]);
 
   const { urgentCases, mainQueueCases } = useMemo(
-    () => buildSortedQueueSections(cases, streamFilter),
-    [cases, streamFilter],
+    () => buildSortedQueueSections(filteredCases, "all"),
+    [filteredCases],
   );
 
+  const visibleCases = view === "urgent" ? urgentCases : mainQueueCases;
   const isUrgent = view === "urgent";
+
+  const clearAll = () => setFilters(EMPTY_CASE_FILTERS);
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center justify-between gap-3">
+      <OpsFilterBar
+        searchId="ops-queue-search"
+        searchValue={filters.text}
+        onSearchChange={(text) => setFilters((prev) => ({ ...prev, text }))}
+        searchPlaceholder="Search cases…"
+        searchLabel="Search cases"
+        resultCount={visibleCases.length}
+        resultLabel={visibleCases.length === 1 ? "case" : "cases"}
+        filterValues={{
+          stream: filters.stream,
+          bucket: filters.bucket,
+        }}
+        onClearAll={clearAll}
+      >
+        <OpsFilterSelect<OpsStreamFilter>
+          id="ops-queue-stream"
+          label="Stream"
+          value={filters.stream}
+          options={OPS_QUEUE_STREAM_OPTIONS}
+          onChange={(stream) => setFilters((prev) => ({ ...prev, stream }))}
+        />
+        <OpsFilterSelect<OpsAgingBucketFilter>
+          id="ops-queue-bucket"
+          label="SLA state"
+          value={filters.bucket}
+          options={OPS_AGING_BUCKET_OPTIONS}
+          onChange={(bucket) => setFilters((prev) => ({ ...prev, bucket }))}
+        />
+      </OpsFilterBar>
+
+      <div className="flex flex-wrap items-center gap-3">
         <div
           className="flex items-center gap-1 rounded border border-ourox-obsidianMid p-0.5"
           role="group"
@@ -64,36 +103,14 @@ export function OpsQueueBoard({ cases, selectedId, onSelect }: Props) {
             By stream
           </button>
         </div>
-
-        {!isUrgent && (
-          <div
-            className="flex flex-wrap items-center gap-1"
-            role="group"
-            aria-label="Filter by stream"
-          >
-            {STREAM_FILTERS.map(({ value, label }) => {
-              const active = streamFilter === value;
-              return (
-                <button
-                  key={value}
-                  type="button"
-                  onClick={() => setStreamFilter(value)}
-                  aria-pressed={active}
-                  className={`rounded border px-2.5 py-1 text-[11px] font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange ${
-                    active
-                      ? "border-ourox-orange/40 bg-ourox-orange/10 text-ourox-orange"
-                      : "border-ourox-obsidianMid text-ourox-ink/60 hover:border-ourox-obsidianMid hover:bg-ourox-obsidianLight/50 hover:text-ourox-ink"
-                  }`}
-                >
-                  {label}
-                </button>
-              );
-            })}
-          </div>
-        )}
       </div>
 
-      {isUrgent ? (
+      {visibleCases.length === 0 ? (
+        <OpsFilterEmptyState
+          title="No cases match the current filters."
+          description="Clear filters or broaden the search to return more cases."
+        />
+      ) : isUrgent ? (
         <section aria-labelledby="ops-urgent-overlay">
           <div className="mb-2 flex items-center gap-2">
             <span
@@ -121,7 +138,6 @@ export function OpsQueueBoard({ cases, selectedId, onSelect }: Props) {
             selectedId={selectedId}
             onSelect={onSelect}
             labelledBy="ops-urgent-overlay"
-            emptyMessage="No urgent cases in the overlay."
           />
         </section>
       ) : (
@@ -143,11 +159,6 @@ export function OpsQueueBoard({ cases, selectedId, onSelect }: Props) {
             selectedId={selectedId}
             onSelect={onSelect}
             labelledBy="ops-main-queue"
-            emptyMessage={
-              streamFilter === "all"
-                ? "No cases in the main queue."
-                : `No ${streamFilter} cases in the main queue.`
-            }
           />
         </section>
       )}
