@@ -1,15 +1,22 @@
 "use client";
 
-import type { VerityDecisionDraft } from "@/lib/verity/agent-types";
+import type {
+  VerityDecisionDraft,
+  VerityEvidencePack,
+} from "@/lib/verity/agent-types";
 import { RISK_VS_CONFIDENCE_CAPTION } from "@/lib/verity/agent-risk";
+import { getCitedEvidenceRows, getEvidenceCategoryLabel } from "@/lib/verity/agent-evidence-display";
 import { SCENARIO_COLORS } from "@/lib/scenario-utils";
 import { VerityAgentDisclosureSection } from "./VerityAgentDisclosureSection";
+import { VerityAgentConfidenceChip } from "./VerityAgentConfidenceChip";
+import { VerityAgentContributionChip } from "./VerityAgentContributionChip";
 
 interface VerityAgentDecisionDraftProps {
   draft: VerityDecisionDraft;
   displayStatement?: string;
   riskScore?: number;
   riskBand?: string;
+  evidencePack?: VerityEvidencePack;
 }
 
 export function VerityAgentDecisionDraft({
@@ -17,8 +24,16 @@ export function VerityAgentDecisionDraft({
   displayStatement,
   riskScore,
   riskBand,
+  evidencePack,
 }: VerityAgentDecisionDraftProps) {
   const statement = displayStatement ?? draft.decisionSupportStatement;
+  const citedRows = evidencePack
+    ? getCitedEvidenceRows(draft.evidenceCitations, evidencePack)
+    : draft.evidenceCitations.map((citation) => ({
+        citation,
+        item: undefined,
+        contribution: undefined,
+      }));
 
   return (
     <div className="space-y-4">
@@ -45,9 +60,9 @@ export function VerityAgentDecisionDraft({
           <h3 className="text-xs font-semibold uppercase tracking-wide text-signal-secondary">
             Confidence
           </h3>
-          <p className="mt-1 text-lg font-semibold text-signal-ink">
-            {draft.confidence}
-          </p>
+          <div className="mt-1">
+            <VerityAgentConfidenceChip confidence={draft.confidence} />
+          </div>
         </div>
       </div>
 
@@ -97,14 +112,36 @@ export function VerityAgentDecisionDraft({
         </ul>
       </VerityAgentDisclosureSection>
 
-      <VerityAgentDisclosureSection title="Evidence citations (Stage 2)">
-        <ul className="space-y-1.5">
-          {draft.evidenceCitations.map((c) => (
-            <li key={c.evidenceId} className="text-sm">
-              <span className="font-mono text-xs text-signal-indigo">
-                {c.evidenceId}
-              </span>
-              <span className="text-signal-slate"> — {c.citationLabel}</span>
+      <VerityAgentDisclosureSection title="Evidence citations from Stage 2">
+        <ul className="space-y-2.5">
+          {citedRows.map(({ citation, item, contribution }) => (
+            <li key={citation.evidenceId} className="text-sm">
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                {item ? (
+                  <>
+                    <span className="font-medium text-signal-body">
+                      {getEvidenceCategoryLabel(item.category)}
+                    </span>
+                    <span className="text-signal-secondary" aria-hidden>
+                      ·
+                    </span>
+                    <span className="min-w-0 flex-1 text-signal-slate">
+                      {item.finding}
+                    </span>
+                    <VerityAgentConfidenceChip confidence={item.confidence} />
+                    {contribution && (
+                      <VerityAgentContributionChip
+                        contribution={contribution.contribution}
+                      />
+                    )}
+                  </>
+                ) : (
+                  <span className="text-signal-slate">{citation.citationLabel}</span>
+                )}
+              </div>
+              <p className="mt-0.5 font-mono text-xs text-signal-secondary">
+                {citation.evidenceId}
+              </p>
             </li>
           ))}
         </ul>

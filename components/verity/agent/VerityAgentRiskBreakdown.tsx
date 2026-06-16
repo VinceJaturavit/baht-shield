@@ -2,22 +2,21 @@
 
 import type { VerityRiskScore } from "@/lib/verity/agent-types";
 import { getRiskBandClasses } from "@/lib/verity/agent-risk";
+import {
+  getEvidenceCategoryLabel,
+  sortContributionsByScore,
+} from "@/lib/verity/agent-evidence-display";
 import { VerityAgentDisclosureSection } from "./VerityAgentDisclosureSection";
-
-const CATEGORY_LABELS: Record<string, string> = {
-  account_history: "Account history",
-  transaction_graph: "Transaction graph",
-  device_ip_funding: "Device / IP / funding",
-  onchain_exposure: "On-chain exposure",
-  prior_flags: "Prior flags",
-  pattern_match: "Pattern match",
-};
+import { VerityAgentConfidenceChip } from "./VerityAgentConfidenceChip";
+import { VerityAgentContributionChip } from "./VerityAgentContributionChip";
 
 interface VerityAgentRiskBreakdownProps {
   riskScore: VerityRiskScore;
 }
 
 export function VerityAgentRiskBreakdown({ riskScore }: VerityAgentRiskBreakdownProps) {
+  const rankedContributions = sortContributionsByScore(riskScore.contributions);
+
   return (
     <VerityAgentDisclosureSection title="Risk breakdown">
       <div className="space-y-4">
@@ -36,46 +35,66 @@ export function VerityAgentRiskBreakdown({ riskScore }: VerityAgentRiskBreakdown
           {riskScore.ruleSummary}
         </p>
 
-        <div className="space-y-3">
+        <div className="space-y-2">
           <h4 className="text-xs font-semibold uppercase tracking-wide text-signal-secondary">
-            Evidence contributions
+            Evidence contributions (ranked)
           </h4>
-          <ul className="space-y-2">
-            {riskScore.contributions.map((c) => (
-              <li
-                key={c.evidenceId}
-                className="rounded-signalSm border border-signal-borderSubtle bg-signal-surface px-3 py-2.5 text-sm"
-              >
-                <div className="flex flex-wrap items-baseline gap-2">
-                  <span className="font-mono text-xs text-signal-indigo">
-                    {c.evidenceId}
-                  </span>
+          <ul className="divide-y divide-signal-borderSubtle border-y border-signal-borderSubtle">
+            {rankedContributions.map((c) => (
+              <li key={c.evidenceId} className="py-2.5 text-sm">
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
                   <span className="font-medium text-signal-ink">{c.label}</span>
+                  <span className="text-xs text-signal-secondary">
+                    {getEvidenceCategoryLabel(c.category)}
+                  </span>
+                  <VerityAgentConfidenceChip confidence={c.confidence} />
+                  <VerityAgentContributionChip contribution={c.contribution} />
                 </div>
-                <dl className="mt-1.5 grid gap-1 text-xs text-signal-slate sm:grid-cols-2">
-                  <div>
-                    <dt className="inline font-medium text-signal-body">Category: </dt>
-                    <dd className="inline">
-                      {CATEGORY_LABELS[c.category] ?? c.category} (weight{" "}
-                      {c.categoryWeight})
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="inline font-medium text-signal-body">
-                      Confidence:{" "}
-                    </dt>
-                    <dd className="inline">
-                      {c.confidence} (×{c.confidenceMultiplier})
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="inline font-medium text-signal-body">
-                      Contribution:{" "}
-                    </dt>
-                    <dd className="inline tabular-nums">{c.contribution.toFixed(1)}</dd>
-                  </div>
-                </dl>
-                <p className="mt-1 text-xs text-signal-secondary">{c.rationale}</p>
+                <details className="mt-1.5">
+                  <summary className="cursor-pointer text-xs font-medium text-signal-indigo focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-indigo">
+                    Scoring detail
+                  </summary>
+                  <dl className="mt-1.5 space-y-1 text-xs text-signal-slate">
+                    <div>
+                      <dt className="inline font-medium text-signal-body">
+                        Category weight:{" "}
+                      </dt>
+                      <dd className="inline tabular-nums">{c.categoryWeight}</dd>
+                    </div>
+                    <div>
+                      <dt className="inline font-medium text-signal-body">
+                        Confidence multiplier:{" "}
+                      </dt>
+                      <dd className="inline tabular-nums">
+                        {c.confidenceMultiplier}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="inline font-medium text-signal-body">
+                        Contribution:{" "}
+                      </dt>
+                      <dd className="inline tabular-nums">
+                        Category weight {c.categoryWeight} × confidence multiplier{" "}
+                        {c.confidenceMultiplier} = {c.contribution.toFixed(1)}{" "}
+                        contribution
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="inline font-medium text-signal-body">
+                        Evidence ID:{" "}
+                      </dt>
+                      <dd className="inline font-mono text-signal-indigo">
+                        {c.evidenceId}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="inline font-medium text-signal-body">
+                        Rationale:{" "}
+                      </dt>
+                      <dd className="inline">{c.rationale}</dd>
+                    </div>
+                  </dl>
+                </details>
               </li>
             ))}
           </ul>

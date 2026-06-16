@@ -10,6 +10,7 @@ import type {
 import { AGENT_STAGES } from "@/lib/verity/agent-types";
 import { SCENARIO_COLORS } from "@/lib/scenario-utils";
 import { getRiskBandClasses } from "@/lib/verity/agent-risk";
+import { VerityAgentConfidenceChip } from "./VerityAgentConfidenceChip";
 
 interface VerityAgentCaseDashboardHeaderProps {
   caseId: string;
@@ -68,13 +69,10 @@ export function VerityAgentCaseDashboardHeader({
           <p className="text-sm text-signal-slate">
             <span className="font-medium text-signal-body">Recommendation: </span>
             {decision ? (
-              <>
+              <span className="inline-flex flex-wrap items-center gap-2">
                 {decision.recommendation}
-                <span className="text-signal-secondary">
-                  {" "}
-                  · Confidence: {decision.confidence}
-                </span>
-              </>
+                <VerityAgentConfidenceChip confidence={decision.confidence} />
+              </span>
             ) : (
               <span className="text-signal-secondary">Recommendation pending</span>
             )}

@@ -205,6 +205,7 @@ export function VerityAgentStagePanel({
               }
               riskScore={outputs.evidence?.riskScore.score}
               riskBand={outputs.evidence?.riskScore.band}
+              evidencePack={outputs.evidence}
             />
           </div>
           <VerityAgentHumanGate

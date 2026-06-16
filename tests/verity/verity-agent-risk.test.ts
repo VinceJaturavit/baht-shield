@@ -144,4 +144,29 @@ describe("verity agent risk score", () => {
     expect(result.ruleSummary.toLowerCase()).toContain("transparent");
     expect(result.ruleSummary).toContain("not an ML model");
   });
+
+  it("risk breakdown contributions can be sorted descending", () => {
+    const items = [
+      makeItem({ id: "ev-low", category: "account_history", confidence: "Low" }),
+      makeItem({ id: "ev-high", category: "pattern_match", confidence: "High" }),
+    ];
+    const result = calculateRiskScore(items);
+    const sorted = [...result.contributions].sort(
+      (a, b) => b.contribution - a.contribution
+    );
+    expect(sorted[0]?.evidenceId).toBe("ev-high");
+    expect(sorted[0]!.contribution).toBeGreaterThan(sorted[1]!.contribution);
+  });
+
+  it("contribution includes category weight, confidence multiplier, and points", () => {
+    const item = makeItem({
+      id: "ev-fields",
+      category: "device_ip_funding",
+      confidence: "Medium",
+    });
+    const c = calculateEvidenceContribution(item);
+    expect(c.categoryWeight).toBe(12);
+    expect(c.confidenceMultiplier).toBe(0.7);
+    expect(c.contribution).toBeCloseTo(8.4, 5);
+  });
 });

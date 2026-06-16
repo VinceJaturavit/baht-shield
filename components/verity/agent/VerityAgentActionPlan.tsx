@@ -2,6 +2,7 @@
 
 import type { VerityActionPlan } from "@/lib/verity/agent-types";
 import { VerityAgentDisclosureSection } from "./VerityAgentDisclosureSection";
+import { VerityAgentConfidenceChip } from "./VerityAgentConfidenceChip";
 
 interface VerityAgentActionPlanProps {
   plan: VerityActionPlan;
@@ -91,10 +92,12 @@ export function VerityAgentActionPlan({ plan }: VerityAgentActionPlanProps) {
               {plan.patternWriteBack.scenario}
             </dd>
           </div>
-          <div>
+          <div className="flex flex-wrap items-center gap-2">
             <dt className="inline font-medium text-signal-body">Confidence: </dt>
-            <dd className="inline text-signal-slate">
-              {plan.patternWriteBack.confidence}
+            <dd className="inline">
+              <VerityAgentConfidenceChip
+                confidence={plan.patternWriteBack.confidence}
+              />
             </dd>
           </div>
           <div>
