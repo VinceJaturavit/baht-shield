@@ -118,6 +118,83 @@ export function runIntakeScoping(caseId: string): VerityIntakeOutput | null {
   };
 }
 
+type EvidenceProfile = {
+  account_history: VerityEvidencePack["evidenceItems"][number]["confidence"];
+  transaction_graph: VerityEvidencePack["evidenceItems"][number]["confidence"];
+  device_ip_funding: VerityEvidencePack["evidenceItems"][number]["confidence"];
+  onchain_exposure: VerityEvidencePack["evidenceItems"][number]["confidence"];
+  prior_flags: VerityEvidencePack["evidenceItems"][number]["confidence"];
+  pattern_match: VerityEvidencePack["evidenceItems"][number]["confidence"];
+};
+
+const SCENARIO_EVIDENCE_PROFILES: Record<VerityAgentScenario, EvidenceProfile> =
+  {
+    "APP Scam Cash-out Ring": {
+      account_history: "Medium",
+      transaction_graph: "High",
+      device_ip_funding: "High",
+      onchain_exposure: "High",
+      prior_flags: "High",
+      pattern_match: "High",
+    },
+    "Onboarding Mule Farm": {
+      account_history: "Low",
+      transaction_graph: "Medium",
+      device_ip_funding: "High",
+      onchain_exposure: "Low",
+      prior_flags: "Medium",
+      pattern_match: "High",
+    },
+    "Sleeper Mule Activation": {
+      account_history: "Medium",
+      transaction_graph: "Low",
+      device_ip_funding: "Medium",
+      onchain_exposure: "Low",
+      prior_flags: "Low",
+      pattern_match: "Medium",
+    },
+  };
+
+function scenarioFinding(
+  scenario: VerityAgentScenario,
+  category: keyof EvidenceProfile,
+  ctx: NonNullable<ReturnType<typeof getVerityAgentCaseContext>>,
+  pattern: (typeof analystPatterns)[number] | undefined
+): string {
+  const wallet = ctx.walletId ?? "unknown";
+  const patternLabel = pattern?.name ?? ctx.patternId ?? "N/A";
+
+  const findings: Record<VerityAgentScenario, Record<keyof EvidenceProfile, string>> =
+    {
+      "APP Scam Cash-out Ring": {
+        account_history: `Wallet ${wallet} shows rapid outbound activity with ${ctx.noteCount} victim-linked case notes. Account behaviour aligns with authorised push payment scam cash-out in seed data.`,
+        transaction_graph: `Transaction graph shows fan-out movement consistent with APP scam cash-out behaviour. Graph edges link ${wallet} to multiple new beneficiaries and pattern ${ctx.patternId ?? "N/A"}.`,
+        device_ip_funding: `Device and funding links show high-confidence overlap between victim-reported cash-out endpoints and related synthetic beneficiaries.`,
+        onchain_exposure: `Synthetic on-chain exposure summary: outbound wallet hops show consolidation toward cash-out endpoints with high-confidence withdrawal exposure. No live chain query performed.`,
+        prior_flags: `Prior flags show repeated complaint-linked cash-out exposure in the synthetic seed. Alert ${ctx.detail.alert_id} (${ctx.alertRule ?? "rule unknown"}) at severity ${ctx.severity}.`,
+        pattern_match: `Pattern-library match is high-confidence against APP Scam Cash-out Ring indicators: ${patternLabel} (${ctx.patternId ?? "N/A"}) with variables ${pattern?.variables ?? "see seed"}.`,
+      },
+      "Onboarding Mule Farm": {
+        account_history: `Wallet ${wallet} has ${ctx.noteCount} case notes on file. Account history is limited because the accounts are early-stage in the onboarding cluster.`,
+        transaction_graph: `Transaction graph links ${wallet} to pattern ${ctx.patternId ?? "N/A"} with medium-confidence cluster edges. Relationship graph is developing but not yet as mature as cash-out scenarios.`,
+        device_ip_funding: `Device and funding links show clustered onboarding behaviour across multiple synthetic accounts. Shared device and funding-source overlap detected in seed device/SIM bindings.`,
+        onchain_exposure: `On-chain exposure is present but not yet as developed as the cash-out scenario. Synthetic hops show early consolidation toward pattern ${ctx.patternId ?? "N/A"} wallets.`,
+        prior_flags: `Alert ${ctx.detail.alert_id} (${ctx.alertRule ?? "rule unknown"}) at severity ${ctx.severity}. Prior analyst flags note cluster onboarding signals for ${ctx.caseId}.`,
+        pattern_match: `Matched pattern ${patternLabel} (${ctx.patternId ?? "N/A"}) with high-confidence cluster indicators: ${pattern?.variables ?? "see seed"}.`,
+      },
+      "Sleeper Mule Activation": {
+        account_history: `Wallet ${wallet} shows dormant-to-active behaviour with ${ctx.noteCount} case notes, but cash-out evidence is still developing.`,
+        transaction_graph: `Transaction graph is early and does not yet show broad fan-out. Graph edges link ${wallet} to pattern ${ctx.patternId ?? "N/A"} with limited counterparty breadth.`,
+        device_ip_funding: `Device and funding links show moderate overlap consistent with reactivation, but cluster signals are less developed than onboarding-farm cases.`,
+        onchain_exposure: `Synthetic on-chain exposure is limited. Early inbound/outbound hops are present but consolidation toward cash-out endpoints is not yet established.`,
+        prior_flags: `Alert ${ctx.detail.alert_id} (${ctx.alertRule ?? "rule unknown"}) at severity ${ctx.severity}. Prior flags are sparse and consistent with an early activation signal.`,
+        pattern_match: `Pattern match is moderate and should be treated as an early-warning signal: ${patternLabel} (${ctx.patternId ?? "N/A"}) with variables ${pattern?.variables ?? "see seed"}.`,
+      },
+    };
+
+  return findings[scenario][category];
+}
+
 function buildEvidenceItems(
   caseId: string,
   scenario: VerityAgentScenario,
@@ -127,55 +204,56 @@ function buildEvidenceItems(
   const pattern = analystPatterns.find(
     (p) => p.pattern_id === ctx.patternId
   );
+  const profile = SCENARIO_EVIDENCE_PROFILES[scenario];
 
   return [
     {
       id: `ev-${prefix}-acct`,
       label: "Account history review",
       category: "account_history",
-      finding: `Wallet ${ctx.walletId ?? "unknown"} opened with ${ctx.noteCount} case notes on file. Account age and onboarding timing align with ${scenario} cluster indicators in seed data.`,
+      finding: scenarioFinding(scenario, "account_history", ctx, pattern),
       sourceRef: `seed:wallet_accounts/${ctx.walletId ?? caseId}`,
-      confidence: "High",
+      confidence: profile.account_history,
     },
     {
       id: `ev-${prefix}-txn`,
       label: "Transaction / relationship graph",
       category: "transaction_graph",
-      finding: `Graph edges link ${ctx.walletId ?? "entity"} to pattern ${ctx.patternId ?? "N/A"} and related counterparties. Fan-out and velocity patterns consistent with ${scenario} synthetic typology.`,
+      finding: scenarioFinding(scenario, "transaction_graph", ctx, pattern),
       sourceRef: `seed:graph_edges/from=${ctx.walletId ?? caseId}`,
-      confidence: "Medium",
+      confidence: profile.transaction_graph,
     },
     {
       id: `ev-${prefix}-device`,
       label: "Device, IP, and funding links",
       category: "device_ip_funding",
-      finding: `Shared device and funding-source overlap detected in seed device/SIM bindings for wallets in the same ${scenario} cluster.`,
+      finding: scenarioFinding(scenario, "device_ip_funding", ctx, pattern),
       sourceRef: `seed:devices+phone_sim_bindings/${ctx.walletId ?? caseId}`,
-      confidence: "High",
+      confidence: profile.device_ip_funding,
     },
     {
       id: `ev-${prefix}-chain`,
       label: "On-chain exposure",
       category: "onchain_exposure",
-      finding: `Synthetic on-chain exposure summary: inbound/outbound wallet hops show consolidation toward cash-out endpoints linked to ${scenario} pattern wallets. No live chain query performed.`,
+      finding: scenarioFinding(scenario, "onchain_exposure", ctx, pattern),
       sourceRef: `seed:synthetic_onchain/${caseId}`,
-      confidence: "Medium",
+      confidence: profile.onchain_exposure,
     },
     {
       id: `ev-${prefix}-flags`,
       label: "Prior flags",
       category: "prior_flags",
-      finding: `Alert ${ctx.detail.alert_id} (${ctx.alertRule ?? "rule unknown"}) at severity ${ctx.severity}. Prior analyst flags present in case notes for ${caseId}.`,
+      finding: scenarioFinding(scenario, "prior_flags", ctx, pattern),
       sourceRef: `seed:alerts/${ctx.detail.alert_id}`,
-      confidence: "High",
+      confidence: profile.prior_flags,
     },
     {
       id: `ev-${prefix}-pattern`,
       label: "Pattern-library match",
       category: "pattern_match",
-      finding: `Matched pattern ${pattern?.name ?? ctx.patternId ?? "N/A"} (${ctx.patternId ?? "N/A"}) with variables: ${pattern?.variables ?? "see seed"}.`,
+      finding: scenarioFinding(scenario, "pattern_match", ctx, pattern),
       sourceRef: `seed:analyst_patterns/${ctx.patternId ?? "N/A"}`,
-      confidence: "High",
+      confidence: profile.pattern_match,
     },
   ];
 }

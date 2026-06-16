@@ -8,6 +8,7 @@ import {
   getRiskBandTone,
   RISK_RULE_SUMMARY,
 } from "@/lib/verity/agent-risk";
+import { runEvidenceAssembly } from "@/lib/verity/agent-engine";
 import type { VerityEvidenceItem } from "@/lib/verity/agent-types";
 
 const ALL_CATEGORIES: VerityEvidenceItem["category"][] = [
@@ -168,5 +169,35 @@ describe("verity agent risk score", () => {
     expect(c.categoryWeight).toBe(12);
     expect(c.confidenceMultiplier).toBe(0.7);
     expect(c.contribution).toBeCloseTo(8.4, 5);
+  });
+
+  it("scenario seed cases produce different risk scores (regression: constant 68 bug)", () => {
+    const app = runEvidenceAssembly("CASE_APP_001")!.riskScore;
+    const mule = runEvidenceAssembly("CASE_MF_001")!.riskScore;
+    const sleeper = runEvidenceAssembly("CASE_SM_001")!.riskScore;
+
+    const scores = [app.score, mule.score, sleeper.score];
+    const bands = [app.band, mule.band, sleeper.band];
+
+    expect(new Set(scores).size).toBeGreaterThan(1);
+    expect(new Set(bands).size).toBeGreaterThanOrEqual(2);
+    expect(app.score).toBeGreaterThan(sleeper.score);
+    expect(mule.score).toBeGreaterThan(sleeper.score);
+    expect(app.score).toBeGreaterThan(mule.score);
+  });
+
+  it("scenario scores match expected differentiated values", () => {
+    expect(runEvidenceAssembly("CASE_APP_001")!.riskScore.score).toBe(75);
+    expect(runEvidenceAssembly("CASE_APP_001")!.riskScore.band).toBe("High");
+    expect(runEvidenceAssembly("CASE_MF_001")!.riskScore.score).toBe(56);
+    expect(runEvidenceAssembly("CASE_MF_001")!.riskScore.band).toBe("Medium");
+    expect(runEvidenceAssembly("CASE_SM_001")!.riskScore.score).toBe(42);
+    expect(runEvidenceAssembly("CASE_SM_001")!.riskScore.band).toBe("Medium");
+  });
+
+  it("same case produces same score twice", () => {
+    const a = runEvidenceAssembly("CASE_MF_001")!.riskScore.score;
+    const b = runEvidenceAssembly("CASE_MF_001")!.riskScore.score;
+    expect(a).toBe(b);
   });
 });
