@@ -15,7 +15,7 @@ interface VerityOnChainTraceViewProps {
 export function VerityOnChainTraceView({ trace }: VerityOnChainTraceViewProps) {
   return (
     <section
-      aria-label="Forward on-chain trace"
+      aria-label="Forward trace"
       className="space-y-4 rounded-signalSm border border-signal-border bg-signal-surface px-4 py-4"
     >
       <VerityOnChainTraceSummary trace={trace} />
@@ -23,6 +23,7 @@ export function VerityOnChainTraceView({ trace }: VerityOnChainTraceViewProps) {
       <VerityAgentDisclosureSection title="Trace hop detail" defaultOpen={false}>
         <p className="mb-3 text-[13px] text-signal-slate">{trace.summary}</p>
         <p className="mb-3 text-xs text-signal-secondary">
+          <span className="font-medium text-signal-body">Ledger note: </span>
           {trace.ledgerAwarenessNote}
         </p>
         <VerityOnChainTraceHopList

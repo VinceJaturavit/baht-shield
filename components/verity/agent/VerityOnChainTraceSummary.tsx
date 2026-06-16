@@ -15,8 +15,8 @@ export function VerityOnChainTraceSummary({ trace }: VerityOnChainTraceSummaryPr
       <p className="text-xs font-semibold uppercase tracking-wide text-signal-indigo">
         Forward trace
       </p>
-      <p className="text-sm font-medium text-signal-ink">{trace.traceLabel}</p>
-      <p className="text-sm text-signal-slate">{summaryLine}</p>
+      <p className="text-sm font-medium text-signal-ink">{summaryLine}</p>
+      <p className="text-xs text-signal-secondary">{trace.traceLabel}</p>
     </div>
   );
 }
