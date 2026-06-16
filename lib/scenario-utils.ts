@@ -28,12 +28,13 @@ export function isScenarioCase(caseId: string): boolean {
 
 export const SCENARIO_COLORS: Record<ScenarioType, string> = {
   "Onboarding Mule Farm":
-    "border border-signal-border bg-white text-signal-body",
+    "border border-risk-high/40 bg-risk-high/10 text-risk-high",
   "Sleeper Mule Activation":
-    "border border-signal-border bg-white text-signal-body",
+    "border border-signal-amberBorder bg-signal-amberSubtle text-signal-amber",
   "APP Scam Cash-out Ring":
-    "border border-signal-border bg-white text-signal-body",
-  Background: "border border-signal-border bg-signal-muted text-signal-secondary",
+    "border border-risk-critical/40 bg-risk-critical/10 text-risk-critical",
+  Background:
+    "border border-signal-border bg-signal-muted text-signal-secondary",
 };
 
 // ---------------------------------------------------------------------------

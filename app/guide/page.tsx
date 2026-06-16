@@ -1,7 +1,6 @@
-// Ourox Guide — /guide (Spec-022, Spec-004)
-// Comprehensive living guide: 9 sections, calm enterprise document, anchor-friendly.
+// Ourox Guide — /guide (Spec-022, Spec-004, Verity-Spec-P3-002)
+// Comprehensive reviewer overview: calm enterprise document, anchor-friendly.
 // No marketing splash. No animation. No decorative illustrations.
-// Roadmap structured for future updates.
 
 "use client";
 
@@ -16,16 +15,19 @@ interface Section {
 }
 
 const SECTIONS: Section[] = [
+  { id: "reviewer-overview", number: "—", title: "Reviewer overview" },
   { id: "what-ourox-is", number: "1", title: "What Ourox is" },
-  { id: "three-pillars", number: "2", title: "The three pillars" },
-  { id: "ops-features", number: "3", title: "Ops — fraud operations management" },
-  { id: "verity-features", number: "4", title: "Verity — features & functions" },
-  { id: "arbiter-features", number: "5", title: "Arbiter — features & functions" },
-  { id: "how-they-connect", number: "6", title: "How they connect — the loop" },
-  { id: "typologies", number: "7", title: "Typologies demonstrated" },
-  { id: "synthetic-data", number: "8", title: "Synthetic data & boundaries" },
-  { id: "technical-architecture", number: "9", title: "Technical architecture" },
-  { id: "roadmap", number: "10", title: "Roadmap" },
+  { id: "lifecycle-loop", number: "2", title: "Lifecycle loop" },
+  { id: "arbiter", number: "3", title: "Arbiter" },
+  { id: "verity", number: "4", title: "Verity" },
+  { id: "agentic-investigation", number: "5", title: "Agentic investigation" },
+  { id: "ops", number: "6", title: "Ops" },
+  { id: "ai-philosophy", number: "7", title: "AI philosophy" },
+  { id: "synthetic-boundary", number: "8", title: "Synthetic boundary" },
+  { id: "where-to-click", number: "9", title: "Where to click" },
+  { id: "typologies", number: "10", title: "Typologies demonstrated" },
+  { id: "technical-architecture", number: "11", title: "Technical architecture" },
+  { id: "roadmap", number: "12", title: "Roadmap" },
 ];
 
 function SectionHeading({
@@ -201,11 +203,11 @@ export default function GuidePage() {
                 Ourox Guide
               </p>
               <h1 className="mb-3 text-[26px] font-semibold leading-tight tracking-tight text-ourox-ink">
-                How Ourox works
+                Ourox reviewer guide
               </h1>
               <p className="max-w-xl text-base leading-7 text-ourox-ink/60">
-                A structured guide to the platform, its three pillars, the synthetic data
-                boundary, and the roadmap.
+                A plain-language overview of the Ourox platform for recruiters, hiring
+                managers, and fraud or risk reviewers. Synthetic data only.
               </p>
               <p
                 className="mt-4 text-xs text-ourox-ink/30 tracking-wide"
@@ -216,7 +218,31 @@ export default function GuidePage() {
               </p>
             </div>
 
-            {/* Section 1 — What Ourox is */}
+            {/* Reviewer overview */}
+            <section aria-labelledby="reviewer-overview">
+              <SectionHeading id="reviewer-overview" number="—" title="Reviewer overview" />
+              <Prose>
+                <p>
+                  Ourox is a synthetic fraud-tech portfolio platform that demonstrates the
+                  fraud lifecycle end to end: scoring and decisioning, investigation and
+                  pattern intelligence, and operations management.
+                </p>
+                <p>
+                  Ourox is built to show how fraud product, investigation, and operations
+                  thinking connect. It does not use real customer data or production systems.
+                  The goal is to make a full fraud lifecycle visible: risk signals are scored,
+                  cases are investigated, operations teams manage workload and decisions, and
+                  confirmed outcomes feed back into the system.
+                </p>
+                <p>
+                  This guide is the starting point. Use the section index to jump to each
+                  pillar, the agentic investigation route, the AI philosophy, and a short
+                  map of where to click.
+                </p>
+              </Prose>
+            </section>
+
+            {/* What Ourox is */}
             <section aria-labelledby="what-ourox-is">
               <SectionHeading id="what-ourox-is" number="1" title="What Ourox is" />
               <Prose>
@@ -239,39 +265,48 @@ export default function GuidePage() {
               </Prose>
             </section>
 
-            {/* Section 2 — The three pillars */}
-            <section aria-labelledby="three-pillars">
-              <SectionHeading id="three-pillars" number="2" title="The three pillars" />
+            {/* Lifecycle loop */}
+            <section aria-labelledby="lifecycle-loop">
+              <SectionHeading id="lifecycle-loop" number="2" title="Lifecycle loop" />
               <Prose>
                 <p>
-                  Ourox has three pillars: Ops runs the fraud operation, Verity investigates
-                  and captures pattern intelligence, and Arbiter scores, tunes, and compares
-                  decisioning logic. They are designed to be explored together, but each is
-                  usable independently.
+                  Ourox has three pillars. Arbiter is the scoring and decisioning sandbox.
+                  Verity is the investigation and pattern-intelligence layer. Ops is the
+                  fraud-operations management layer. They are designed to be explored together,
+                  but each is usable independently.
+                </p>
+                <p>
+                  Arbiter scores and routes work. Verity investigates and explains the case.
+                  Ops runs the queues, staffing, SLA, QA, and review process. Confirmed outcomes
+                  feed back into patterns and decisioning.
+                </p>
+                <p>
+                  The loop matters because fraud systems improve when investigation outcomes
+                  and operator feedback return to detection and decisioning.
                 </p>
               </Prose>
+
               <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight p-6">
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="text-base font-semibold text-ourox-ink">Ops</span>
+                    <span className="text-base font-semibold text-ourox-ink">Arbiter</span>
                     <span
                       className="text-xs text-ourox-ink/40 tracking-wide"
                       style={{ fontFamily: "'Space Mono', monospace" }}
                     >
-                      Fraud Operations
+                      Scoring &amp; decisioning
                     </span>
                   </div>
                   <p className="text-sm leading-6 text-ourox-ink/60">
-                    Ops is the operations layer after an alert becomes a case. It shows queues,
-                    priority, SLA, aging, roster coverage, the people-management suite, and fair
-                    performance signals.
+                    Synthetic transaction signals become features, scores, rules, decisions,
+                    and feedback in a transparent sandbox.
                   </p>
                   <div className="mt-4">
                     <Link
-                      href="/ops"
+                      href="/arbiter"
                       className="text-xs text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange transition-colors"
                     >
-                      Open Ops
+                      Open Arbiter
                     </Link>
                   </div>
                 </div>
@@ -282,14 +317,12 @@ export default function GuidePage() {
                       className="text-xs text-ourox-ink/40 tracking-wide"
                       style={{ fontFamily: "'Space Mono', monospace" }}
                     >
-                      Investigation & Pattern Intelligence
+                      Investigation &amp; patterns
                     </span>
                   </div>
                   <p className="text-sm leading-6 text-ourox-ink/60">
-                    Verity is the investigation and pattern-intelligence workspace. It shows
-                    how analysts triage alerts, review wallet and entity evidence, work cases,
-                    identify recurring fraud patterns, and capture the variables that a naive
-                    score may miss.
+                    Analysts triage alerts, review evidence, work cases, and capture recurring
+                    fraud patterns that scoring alone may miss.
                   </p>
                   <div className="mt-4">
                     <Link
@@ -302,243 +335,28 @@ export default function GuidePage() {
                 </div>
                 <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight p-6">
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="text-base font-semibold text-ourox-ink">Arbiter</span>
+                    <span className="text-base font-semibold text-ourox-ink">Ops</span>
                     <span
                       className="text-xs text-ourox-ink/40 tracking-wide"
                       style={{ fontFamily: "'Space Mono', monospace" }}
                     >
-                      Risk Scoring & Decisioning
+                      Operations management
                     </span>
                   </div>
                   <p className="text-sm leading-6 text-ourox-ink/60">
-                    Arbiter is the risk scoring and decisioning sandbox. It shows how
-                    synthetic transaction events become features, scores, rules, decisions, and
-                    tuning metrics.
+                    Queues, priority, SLA, aging, roster coverage, and fair performance
+                    signals after an alert becomes a case.
                   </p>
                   <div className="mt-4">
                     <Link
-                      href="/arbiter"
+                      href="/ops"
                       className="text-xs text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange transition-colors"
                     >
-                      Open Arbiter
+                      Open Ops
                     </Link>
                   </div>
                 </div>
               </div>
-            </section>
-
-            {/* Section 3 — Ops */}
-            <section aria-labelledby="ops-features">
-              <SectionHeading
-                id="ops-features"
-                number="3"
-                title="Ops — fraud operations management"
-              />
-              <Prose>
-                <p>
-                  Ops is the fraud operations management layer of Ourox. It shows how work is
-                  managed after an alert becomes a case: queues, priority, SLA, aging, roster
-                  coverage, protected capacity, and a people-management suite built on four
-                  separate signals — fairness, performance, quality, and behaviour.
-                </p>
-                <p>
-                  The Ops layer makes visible the management choices behind a fraud function:
-                  which work is urgent, which clock is running, who owns the queue, whether the
-                  team has decision authority on shift, whether hard work is distributed fairly
-                  within each role, and whether performance is measured without a cases-closed
-                  rank.
-                </p>
-                <p>
-                  Roster sub-views cover daily ownership, weekly schedule, fairness, performance,
-                  and QA. Reviews compacts those signals into a per-analyst pack with a mock AI
-                  copilot for decision-support review drafting.
-                </p>
-                <p>
-                  <Link
-                    href="/ops/guide"
-                    className="text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange transition-colors"
-                  >
-                    Read the Ops guide
-                  </Link>
-                </p>
-              </Prose>
-            </section>
-
-            {/* Section 4 — Verity features */}
-            <section aria-labelledby="verity-features">
-              <SectionHeading
-                id="verity-features"
-                number="4"
-                title="Verity — features & functions"
-              />
-              <Prose>
-                <p>
-                  Verity is organized around the workflow of a fraud analyst: see what needs
-                  attention, investigate the evidence, build a case, close with a structured
-                  note, and feed patterns back into shared intelligence.
-                </p>
-              </Prose>
-              <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                <FeatureItem
-                  name="Dashboard"
-                  description="Fraud-ops overview and Head-of-Fraud view: workload, scenario distribution, trend visibility, and operating posture."
-                />
-                <FeatureItem
-                  name="Alert Queue"
-                  description="Triage by scenario, severity, and case context; shows how investigation work enters the analyst queue."
-                />
-                <FeatureItem
-                  name="Cases"
-                  description="Investigation workflow and closure-note builder; demonstrates structured case handling and evidence capture."
-                />
-                <FeatureItem
-                  name="Wallets / Entities"
-                  description="Wallet profile, evidence summary, and AI copilot context with human-in-the-loop framing."
-                />
-                <FeatureItem
-                  name="Pattern Intelligence"
-                  description="Analyst-curated pattern library, matched variables, and examples of what a naive score may miss."
-                />
-                <FeatureItem
-                  name="Analytics"
-                  description="Portfolio-level fraud insight across scenarios, outcomes, and operational signals."
-                />
-              </div>
-            </section>
-
-            {/* Section 5 — Arbiter features */}
-            <section aria-labelledby="arbiter-features">
-              <SectionHeading
-                id="arbiter-features"
-                number="5"
-                title="Arbiter — features & functions"
-              />
-              <Prose>
-                <p>
-                  Arbiter models the scoring layer end-to-end. A synthetic transaction event
-                  enters the pipeline and exits as a scored, ruled, and decided record with a
-                  full explainability trail.
-                </p>
-              </Prose>
-
-              <div className="mt-6 space-y-5">
-                {/* Pipeline */}
-                <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-5 py-5">
-                  <div className="mb-3 text-sm font-semibold text-ourox-ink">
-                    Six-stage pipeline
-                  </div>
-                  <div className="mb-3 flex flex-wrap items-center gap-1.5">
-                    {[
-                      "signals",
-                      "features",
-                      "score",
-                      "rules",
-                      "decision",
-                      "feedback",
-                    ].map((stage, i, arr) => (
-                      <span key={stage} className="flex items-center gap-1.5">
-                        <span
-                          className="rounded border border-ourox-obsidianMid bg-ourox-obsidianMid px-2.5 py-1 font-mono text-xs text-ourox-ink/70"
-                          style={{ fontFamily: "'Space Mono', monospace" }}
-                        >
-                          {stage}
-                        </span>
-                        {i < arr.length - 1 && (
-                          <svg
-                            width="10"
-                            height="10"
-                            viewBox="0 0 10 10"
-                            fill="none"
-                            aria-hidden="true"
-                          >
-                            <path
-                              d="M2 5h6M6 2.5 8.5 5 6 7.5"
-                              stroke="currentColor"
-                              strokeWidth="1.2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              className="text-ourox-ink/30"
-                            />
-                          </svg>
-                        )}
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-sm leading-6 text-ourox-ink/60">
-                    A synthetic transaction event becomes engineered features, a transparent
-                    weighted score, rule evaluation, and a final decision.
-                  </p>
-                </div>
-
-                {/* Scoring explorer */}
-                <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-5 py-5">
-                  <div className="mb-2 text-sm font-semibold text-ourox-ink">
-                    Scoring explorer
-                  </div>
-                  <p className="text-sm leading-6 text-ourox-ink/60">
-                    The Scoring explorer shows how each event is scored and decided. It
-                    exposes the feature values, weighted score contribution, fired rules, and
-                    final decision precedence — for example, when a rule blocks an event even
-                    though the score band alone would approve it. Twelve features, full
-                    explainability, GoRules Zen-Engine JDM, and decision precedence are all
-                    visible in one place.
-                  </p>
-                </div>
-
-                {/* Tuning workspace */}
-                <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-5 py-5">
-                  <div className="mb-2 text-sm font-semibold text-ourox-ink">
-                    Tuning workspace
-                  </div>
-                  <p className="text-sm leading-6 text-ourox-ink/60">
-                    The Tuning workspace shows the fraud-strategy tradeoff: move a threshold
-                    or feature weight, then watch precision, recall, false-positive rate, and
-                    review volume change. Rule back-testing and shadow mode demonstrate how a
-                    strategy team can test logic before treating it as live decisioning.
-                    Per-typology metrics show where performance varies by fraud scenario.
-                  </p>
-                </div>
-
-                {/* Model view */}
-                <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-5 py-5">
-                  <div className="mb-2 text-sm font-semibold text-ourox-ink">
-                    Model — ML vs rules
-                  </div>
-                  <p className="text-sm leading-6 text-ourox-ink/60">
-                    The Model view shows an offline-trained logistic-regression score alongside
-                    the transparent rule-weighted score. It compares what the synthetic dataset
-                    taught the model to weight against the analyst-designed hand weights, and
-                    highlights events where the two systems disagree. This is a learning-grade
-                    second opinion on synthetic data. The rule engine remains authoritative.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* Section 6 — How they connect */}
-            <section aria-labelledby="how-they-connect">
-              <SectionHeading
-                id="how-they-connect"
-                number="6"
-                title="How they connect — the loop"
-              />
-              <Prose>
-                <p>
-                  The name Ourox references the Ouroboros — the symbol of a loop that feeds
-                  itself. Arbiter scores and routes work. Verity captures what analysts learn
-                  from investigations: patterns, matched variables, case outcomes, and
-                  evidence. Ops runs the operation after work becomes a case: ownership, SLA,
-                  staffing, quality, and performance.
-                </p>
-                <p>
-                  The intended loop is that scoring routes investigation, investigation
-                  explains what is happening, operations manages the work to completion, and
-                  operational outcomes feed back into better detection and routing. In the
-                  current platform, the pillars are demonstrated as connected concepts using
-                  synthetic data. The guide and roadmap track which parts of the loop are live
-                  now and which are planned.
-                </p>
-              </Prose>
 
               <div className="mt-6 rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-5 py-5">
                 <div className="flex flex-wrap items-center gap-2 text-sm">
@@ -604,61 +422,246 @@ export default function GuidePage() {
               </div>
             </section>
 
-            {/* Section 7 — Typologies */}
-            <section aria-labelledby="typologies">
-              <SectionHeading
-                id="typologies"
-                number="7"
-                title="Typologies demonstrated"
-              />
+            {/* Arbiter */}
+            <section aria-labelledby="arbiter">
+              <SectionHeading id="arbiter" number="3" title="Arbiter" />
               <Prose>
                 <p>
-                  Ourox demonstrates three synthetic fraud typologies. Each is designed to
-                  show a distinct signal pattern — not just a high risk score, but a
-                  structured argument for why the behaviour is suspicious.
+                  Arbiter is the scoring and decisioning sandbox. It shows how synthetic
+                  transaction signals become features, scores, rules, decisions, and feedback.
+                  The important design choice is transparency: the system exposes weighted
+                  features, rule triggers, threshold tuning, and disagreement between rules
+                  and model output rather than hiding decisions behind a black box.
+                </p>
+                <p>
+                  Key surfaces include a transparent weighted scoring explorer, a rules engine
+                  with visible precedence, threshold tuning with precision and recall tradeoffs,
+                  an ML second-opinion view that compares model output to hand weights, and a
+                  feedback and disagreement view for learning from misses.
                 </p>
               </Prose>
-              <div className="mt-6 space-y-3">
+
+              <div className="mt-6 space-y-5">
+                <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-5 py-5">
+                  <div className="mb-3 text-sm font-semibold text-ourox-ink">
+                    Six-stage pipeline
+                  </div>
+                  <div className="mb-3 flex flex-wrap items-center gap-1.5">
+                    {[
+                      "signals",
+                      "features",
+                      "score",
+                      "rules",
+                      "decision",
+                      "feedback",
+                    ].map((stage, i, arr) => (
+                      <span key={stage} className="flex items-center gap-1.5">
+                        <span
+                          className="rounded border border-ourox-obsidianMid bg-ourox-obsidianMid px-2.5 py-1 font-mono text-xs text-ourox-ink/70"
+                          style={{ fontFamily: "'Space Mono', monospace" }}
+                        >
+                          {stage}
+                        </span>
+                        {i < arr.length - 1 && (
+                          <svg
+                            width="10"
+                            height="10"
+                            viewBox="0 0 10 10"
+                            fill="none"
+                            aria-hidden="true"
+                          >
+                            <path
+                              d="M2 5h6M6 2.5 8.5 5 6 7.5"
+                              stroke="currentColor"
+                              strokeWidth="1.2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="text-ourox-ink/30"
+                            />
+                          </svg>
+                        )}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-sm leading-6 text-ourox-ink/60">
+                    A synthetic transaction event becomes engineered features, a transparent
+                    weighted score, rule evaluation, and a final decision.
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-5 py-5">
+                  <div className="mb-2 text-sm font-semibold text-ourox-ink">
+                    Tuning and model views
+                  </div>
+                  <p className="text-sm leading-6 text-ourox-ink/60">
+                    The Tuning workspace shows the fraud-strategy tradeoff: move a threshold
+                    or feature weight, then watch precision, recall, false-positive rate, and
+                    review volume change. The Model view shows an offline-trained logistic
+                    regression score alongside the transparent rule-weighted score, with
+                    disagreement cases highlighted. The rule engine remains authoritative; ML
+                    is a learning-grade second opinion on synthetic data.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Verity */}
+            <section aria-labelledby="verity">
+              <SectionHeading id="verity" number="4" title="Verity" />
+              <Prose>
+                <p>
+                  Verity is the investigation and pattern-intelligence layer. It helps a
+                  reviewer move from an alert to a structured view of entities, relationships,
+                  evidence, and recurring patterns. The pattern library represents
+                  analyst-curated intelligence: the part of fraud operations where investigators
+                  capture the behaviours that scoring alone may miss.
+                </p>
+                <p>
+                  Verity is organized around the workflow of a fraud analyst: see what needs
+                  attention, investigate the evidence, build a case, close with a structured
+                  note, and feed patterns back into shared intelligence. Synthetic scenarios
+                  (Onboarding Mule Farm, Sleeper Mule Activation, APP Scam Cash-out Ring)
+                  demonstrate distinct typologies with procedurally generated alerts, cases,
+                  and entities.
+                </p>
+              </Prose>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
                 <FeatureItem
-                  name="Onboarding mule farm"
-                  description="Multiple new wallets share devices or onboarding patterns; the signal is the cluster, not one suspicious account in isolation."
+                  name="Dashboard"
+                  description="Fraud-ops overview: workload, scenario distribution, trend visibility, and operating posture."
                 />
                 <FeatureItem
-                  name="Sleeper-mule activation"
-                  description="A dormant wallet wakes up and begins rapid outbound movement; the signal is the change from baseline."
+                  name="Alert Queue"
+                  description="Triage by scenario, severity, and case context; shows how investigation work enters the analyst queue."
                 />
                 <FeatureItem
-                  name="APP scam cash-out"
-                  description="Victim funds move toward a new or high-risk beneficiary; the signal is the beneficiary and pass-through pattern."
+                  name="Cases"
+                  description="Investigation workflow and closure-note builder; structured case handling and evidence capture."
+                />
+                <FeatureItem
+                  name="Wallets / Entities"
+                  description="Wallet profile, evidence summary, and copilot context with human-in-the-loop framing."
+                />
+                <FeatureItem
+                  name="Pattern Intelligence"
+                  description="Analyst-curated pattern library, matched variables, and examples of what a naive score may miss."
+                />
+                <FeatureItem
+                  name="Analytics"
+                  description="Portfolio-level fraud insight across scenarios, outcomes, and operational signals."
                 />
               </div>
             </section>
 
-            {/* Section 8 — Synthetic data */}
-            <section aria-labelledby="synthetic-data">
+            {/* Agentic investigation */}
+            <section aria-labelledby="agentic-investigation">
               <SectionHeading
-                id="synthetic-data"
-                number="8"
-                title="Synthetic data & boundaries"
+                id="agentic-investigation"
+                number="5"
+                title="Agentic investigation"
               />
               <Prose>
                 <p>
-                  Ourox uses synthetic data only. The scenarios, wallets, transactions,
-                  cases, and patterns are illustrative and designed to teach fraud-operations
-                  concepts. The platform is not connected to real customer data, employer
-                  systems, or production decisioning infrastructure.
+                  The Agentic Investigation route demonstrates governed agentic AI for fraud
+                  investigation. It runs a case through four human-gated stages: intake and
+                  scoping, evidence assembly, decision draft, and action proposal. The agent
+                  does not make the decision. It assembles evidence, cites its findings,
+                  proposes a judgment, and records each human approval, denial, or edit in an
+                  audit trail.
                 </p>
                 <p>
-                  The synthetic boundary means: no real financial crime victims are
-                  represented, no real employer or client data is used, no prior-employer
-                  scoring logic is reproduced, and no vendor systems are reverse-engineered.
-                  The product is built for learning and portfolio demonstration only.
+                  The flow is Intake, Investigate, Decide, Action. Evidence chains are
+                  deterministic and exam-ready. The route is decision-support, not verdict: no
+                  autonomous material action. A live API integration is documented as a future
+                  roadmap item; the current implementation uses mock, deterministic outputs on
+                  synthetic seed cases.
+                </p>
+                <p>
+                  AI compresses the work around a decision, not the decision itself.
+                </p>
+                <p>
+                  <Link
+                    href="/verity/agent"
+                    className="text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange transition-colors"
+                  >
+                    Open Agentic Investigation
+                  </Link>
+                </p>
+              </Prose>
+            </section>
+
+            {/* Ops */}
+            <section aria-labelledby="ops">
+              <SectionHeading id="ops" number="6" title="Ops" />
+              <Prose>
+                <p>
+                  Ops is the fraud-operations management layer. It shows what happens after
+                  alerts become work: queues, SLA clocks, ownership, staffing, handoffs, QA,
+                  performance review, and management reporting. It deliberately avoids a simple
+                  cases-closed ranking. Instead, it separates fairness, throughput, quality,
+                  and behaviour so a manager can review analysts without flattening complex work
+                  into one number.
+                </p>
+                <p>
+                  Five intake streams (RFR, DSP, LAR, PRO, PRF) feed non-FIFO priority queues
+                  with SLA and aging views. Roster covers daily ownership, weekly schedule,
+                  protected capacity, and shift coverage. Fairness uses complexity-weighted KPIs.
+                  The four-signals people-management model separates fairness, performance,
+                  quality, and behaviour. Reviews compacts those signals into a per-analyst pack
+                  with a mock copilot for decision-support review drafting. An impact-tier overlay
+                  on the Queue Board helps triage by severity and exposure.
+                </p>
+                <p>
+                  <Link
+                    href="/ops/guide"
+                    className="text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange transition-colors"
+                  >
+                    Read the Ops guide
+                  </Link>
+                </p>
+              </Prose>
+            </section>
+
+            {/* AI philosophy */}
+            <section aria-labelledby="ai-philosophy">
+              <SectionHeading id="ai-philosophy" number="7" title="AI philosophy" />
+              <Prose>
+                <p>
+                  The AI design philosophy is intentionally conservative. Ourox uses AI-style
+                  workflows to assemble evidence, compare patterns, draft summaries, and prepare
+                  decisions, but the human owns the decision. The controls are similar to what a
+                  manager would expect from a junior analyst: scoped tasks, cited evidence, review
+                  gates, editability, and an audit trail.
+                </p>
+                <p>
+                  AI compresses the work around a decision, not the decision itself. Human
+                  approval is required at every gate in the agentic investigation flow. Design
+                  choices favour deterministic, explainable outputs over opaque automation. No
+                  autonomous material action is implemented. Audit trails record what the system
+                  proposed and what the human approved, denied, or edited.
+                </p>
+              </Prose>
+            </section>
+
+            {/* Synthetic boundary */}
+            <section aria-labelledby="synthetic-boundary">
+              <SectionHeading id="synthetic-boundary" number="8" title="Synthetic boundary" />
+              <Prose>
+                <p>
+                  Ourox uses synthetic data only. The alerts, cases, entities, patterns,
+                  transactions, and review outputs are generated for demonstration and learning.
+                  The platform does not contain real customer data, employer data, confidential
+                  workflows, production thresholds, or live vendor enrichment.
+                </p>
+                <p>
+                  The synthetic boundary means: no real financial crime victims are represented,
+                  no real employer or client data is used, and no vendor systems are
+                  reverse-engineered. The product is built for learning and portfolio
+                  demonstration only. All surfaces are public-safe.
                 </p>
               </Prose>
 
-              <div
-                className="mt-6 rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-5 py-4"
-              >
+              <div className="mt-6 rounded-lg border border-ourox-obsidianMid bg-ourox-obsidianLight/40 px-5 py-4">
                 <p
                   className="text-xs text-ourox-ink/50 tracking-wide"
                   style={{ fontFamily: "'Space Mono', monospace" }}
@@ -670,11 +673,90 @@ export default function GuidePage() {
               </div>
             </section>
 
-            {/* Section 9 — Technical architecture */}
+            {/* Where to click */}
+            <section aria-labelledby="where-to-click">
+              <SectionHeading id="where-to-click" number="9" title="Where to click" />
+              <Prose>
+                <ul className="list-none space-y-3 pl-0">
+                  <li>
+                    Start at{" "}
+                    <Link href="/ops" className="text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange">
+                      /ops
+                    </Link>{" "}
+                    for the operations command center.
+                  </li>
+                  <li>
+                    Open <strong className="font-medium text-ourox-ink/80">Queue Board</strong> to
+                    see priority, SLA, and impact triage.
+                  </li>
+                  <li>
+                    Open <strong className="font-medium text-ourox-ink/80">Roster → Fairness</strong> to
+                    see workload-equity logic.
+                  </li>
+                  <li>
+                    Open <strong className="font-medium text-ourox-ink/80">Roster → Reviews</strong> or
+                    top-level Reviews to see the analyst review pack and mock copilot.
+                  </li>
+                  <li>
+                    Open{" "}
+                    <Link href="/verity/agent" className="text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange">
+                      /verity/agent
+                    </Link>{" "}
+                    to run the human-gated agentic investigation.
+                  </li>
+                  <li>
+                    Open{" "}
+                    <Link href="/arbiter" className="text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange">
+                      Arbiter
+                    </Link>{" "}
+                    to inspect scoring, rules, tuning, and feedback.
+                  </li>
+                  <li>
+                    Read{" "}
+                    <Link href="/ops/guide" className="text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange">
+                      /ops/guide
+                    </Link>{" "}
+                    for deeper operations detail.
+                  </li>
+                </ul>
+              </Prose>
+            </section>
+
+            {/* Typologies */}
+            <section aria-labelledby="typologies">
+              <SectionHeading
+                id="typologies"
+                number="10"
+                title="Typologies demonstrated"
+              />
+              <Prose>
+                <p>
+                  Ourox demonstrates three synthetic fraud typologies. Each is designed to
+                  show a distinct signal pattern — not just a high risk score, but a
+                  structured argument for why the behaviour is suspicious.
+                </p>
+              </Prose>
+              <div className="mt-6 space-y-3">
+                <FeatureItem
+                  name="Onboarding Mule Farm"
+                  description="Multiple new wallets share devices or onboarding patterns; the signal is the cluster, not one suspicious account in isolation."
+                />
+                <FeatureItem
+                  name="Sleeper Mule Activation"
+                  description="A dormant wallet wakes up and begins rapid outbound movement; the signal is the change from baseline."
+                />
+                <FeatureItem
+                  name="APP Scam Cash-out Ring"
+                  description="Victim funds move toward a new or high-risk beneficiary; the signal is the beneficiary and pass-through pattern."
+                />
+              </div>
+            </section>
+
+            {/* Technical architecture */}
             <section aria-labelledby="technical-architecture">
               <SectionHeading
                 id="technical-architecture"
-                number="9"
+                number="11"
                 title="Technical architecture"
               />
               <Prose>
@@ -702,8 +784,7 @@ export default function GuidePage() {
                     the features need: mule onboarding, sleeper-mule activation, and APP
                     scam cash-out. The generator also adds a realistic overlap zone: some
                     fraud has weaker or partial signals, and some background activity has
-                    incidentally elevated features. That makes the model and tuning views
-                    less toy-like and more useful for learning.
+                    incidentally elevated features.
                   </p>
                 </ArchitectureExpander>
 
@@ -737,9 +818,9 @@ export default function GuidePage() {
               </div>
             </section>
 
-            {/* Section 10 — Roadmap */}
+            {/* Roadmap */}
             <section aria-labelledby="roadmap">
-              <SectionHeading id="roadmap" number="10" title="Roadmap" />
+              <SectionHeading id="roadmap" number="12" title="Roadmap" />
               <Prose>
                 <p>
                   The roadmap is structured in three horizons. It is designed to be updated
@@ -753,8 +834,9 @@ export default function GuidePage() {
                   items={[
                     "Ops Phase 1.5 shipped: Queue Board, Aging & SLA, Roster sub-views (Daily Ownership, Weekly Schedule, Fairness, Performance, QA), Reviews with per-analyst pack and mock AI copilot, KPI Board, and Ops Guide.",
                     "Verity: investigation workspace, alert triage queue, case workflow and closure-note builder, wallet and entity view, pattern intelligence library, analytics.",
+                    "Verity Phase 3: Agentic Investigation at /verity/agent — human-gated four-stage flow with deterministic evidence chains and exam-ready audit trail.",
                     "Arbiter: scoring explorer with 12 features and full explainability, GoRules Zen-Engine JDM rule evaluation, decision precedence, tuning workspace, confusion matrix, precision / recall / FPR / F1 metrics, per-typology breakdown, rule back-testing, shadow mode.",
-                    "Arbiter Phase 3 — ML score: offline-trained logistic-regression score shown beside the transparent rule score, with learned importance vs hand weights, calibration bins, held-out metrics, and ML-vs-rule disagreement cases. Learning-grade second opinion on synthetic data; rules remain the decisioning authority.",
+                    "Arbiter Phase 3 — ML score: offline-trained logistic-regression score shown beside the transparent rule score, with learned importance vs hand weights, calibration bins, held-out metrics, and ML-vs-rule disagreement cases.",
                     "Feedback-loop demonstration v1 — model-vs-rule disagreement cases are grouped into a miss pattern, converted into one simulated candidate refinement, and back-tested before any human decision.",
                   ]}
                 />
@@ -762,6 +844,7 @@ export default function GuidePage() {
                   phase="Next"
                   items={[
                     "Live Verity → Arbiter feedback wiring: case outcomes and analyst-curated patterns flowing back into scoring as labels or rule suggestions.",
+                    "Live model API for agentic investigation (governed, human-gated; not autonomous).",
                     "Next Ops loops may extend reporting, QA review, assignment simulation, or Verity/Ops wiring.",
                   ]}
                 />
@@ -798,6 +881,12 @@ export default function GuidePage() {
                 className="text-sm text-ourox-ink/40 underline underline-offset-2 hover:text-ourox-ink transition-colors"
               >
                 Open Verity
+              </Link>
+              <Link
+                href="/verity/agent"
+                className="text-sm text-ourox-ink/40 underline underline-offset-2 hover:text-ourox-ink transition-colors"
+              >
+                Agentic Investigation
               </Link>
               <Link
                 href="/arbiter"

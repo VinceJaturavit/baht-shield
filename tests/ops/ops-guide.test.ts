@@ -67,8 +67,8 @@ describe("Main guide Ops integration", () => {
   const mainGuide = readFileSync(resolve(ROOT, "app/guide/page.tsx"), "utf8");
 
   it("includes Ops in sticky index and section", () => {
-    expect(mainGuide).toContain('id: "ops-features"');
-    expect(mainGuide).toContain("Ops — fraud operations management");
+    expect(mainGuide).toContain('id: "ops"');
+    expect(mainGuide).toContain('title: "Ops"');
   });
 
   it("links to /ops/guide", () => {
@@ -77,7 +77,7 @@ describe("Main guide Ops integration", () => {
   });
 
   it("uses three-pillar framing instead of two products", () => {
-    expect(mainGuide).toContain("three pillars");
+    expect(mainGuide).toContain("Lifecycle loop");
     expect(mainGuide).not.toContain("The two products");
     expect(mainGuide).not.toContain("two products");
   });
