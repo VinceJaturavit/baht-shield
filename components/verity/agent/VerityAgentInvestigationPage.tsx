@@ -23,6 +23,7 @@ import type {
 } from "@/lib/verity/agent-types";
 import { AGENT_STAGES } from "@/lib/verity/agent-types";
 import { VerityAgentCaseSelector } from "./VerityAgentCaseSelector";
+import { VerityAgentCaseDashboardHeader } from "./VerityAgentCaseDashboardHeader";
 import { VerityAgentStepper } from "./VerityAgentStepper";
 import { VerityAgentStagePanel } from "./VerityAgentStagePanel";
 import { VerityAgentAuditTrail } from "./VerityAgentAuditTrail";
@@ -208,6 +209,17 @@ export function VerityAgentInvestigationPage() {
           selectedCaseId={selectedCaseId}
           onSelect={handleCaseSelect}
         />
+
+        {outputs.intake && (
+          <VerityAgentCaseDashboardHeader
+            caseId={selectedCaseId}
+            scenario={outputs.intake.scenario}
+            activeStage={viewableStage}
+            gates={gates}
+            evidence={outputs.evidence}
+            decision={outputs.decision}
+          />
+        )}
 
         <VerityAgentStepper gates={gates} activeStage={viewableStage} />
 

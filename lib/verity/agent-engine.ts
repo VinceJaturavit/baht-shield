@@ -1,6 +1,7 @@
 import { getCaseDetail } from "@/lib/cases";
 import { getScenarioFromCaseId } from "@/lib/scenario-utils";
 import { analystPatterns } from "@/lib/seed-data";
+import { calculateRiskScore } from "./agent-risk";
 import { createAuditEvent } from "./agent-state";
 import type {
   VerityActionPlan,
@@ -233,7 +234,9 @@ export function runEvidenceAssembly(caseId: string): VerityEvidencePack | null {
 
   const summary = `The selected synthetic case (${caseId}) shows clustered signals across account history, transaction graph links, device/IP/funding overlap, synthetic on-chain exposure, prior flags, and pattern-library overlap with the ${ctx.scenario} scenario. The evidence supports further review but does not by itself execute a final decision.`;
 
-  return { caseId, atomicSteps, evidenceItems, summary };
+  const riskScore = calculateRiskScore(evidenceItems);
+
+  return { caseId, atomicSteps, evidenceItems, summary, riskScore };
 }
 
 function scenarioRecommendation(

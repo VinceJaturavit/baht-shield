@@ -9,10 +9,17 @@ import type {
   StageGateState,
   VerityAgentStage,
 } from "@/lib/verity/agent-types";
+import {
+  getIntakeHeadline,
+  getInvestigateHeadline,
+  getDecideHeadline,
+  getActionHeadline,
+} from "@/lib/verity/agent-headlines";
 import { VerityAgentHumanGate } from "./VerityAgentHumanGate";
 import { VerityAgentEvidencePack } from "./VerityAgentEvidencePack";
 import { VerityAgentDecisionDraft } from "./VerityAgentDecisionDraft";
 import { VerityAgentActionPlan } from "./VerityAgentActionPlan";
+import { VerityAgentDisclosureSection } from "./VerityAgentDisclosureSection";
 import { SCENARIO_COLORS } from "@/lib/scenario-utils";
 
 interface StageOutputs {
@@ -40,6 +47,12 @@ function getGate(stage: VerityAgentStage, gates: StageGateState[]) {
   return gates.find((g) => g.stage === stage);
 }
 
+function StageHeadline({ children }: { children: string }) {
+  return (
+    <p className="mt-2 text-sm font-medium text-signal-ink">{children}</p>
+  );
+}
+
 export function VerityAgentStagePanel({
   activeStage,
   gates,
@@ -64,71 +77,70 @@ export function VerityAgentStagePanel({
           <h2 className="text-lg font-semibold text-signal-ink">
             Stage 1 — Intake &amp; scoping
           </h2>
-          <p className="mt-1 text-[13px] text-signal-slate">
-            The agent proposes the investigation scope. The human approves what
-            should be checked before evidence assembly begins.
-          </p>
+          <StageHeadline>{getIntakeHeadline(outputs.intake)}</StageHeadline>
 
-          <dl className="mt-5 space-y-3 text-sm">
-            <div>
-              <dt className="font-medium text-signal-body">Selected case</dt>
-              <dd className="mt-0.5 font-mono text-signal-indigo">
-                {outputs.intake.caseId}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-medium text-signal-body">Scenario</dt>
-              <dd className="mt-0.5">
-                <span
-                  className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${SCENARIO_COLORS[outputs.intake.scenario]}`}
-                >
-                  {outputs.intake.scenario}
-                </span>
-              </dd>
-            </div>
-            <div>
-              <dt className="font-medium text-signal-body">Trigger</dt>
-              <dd className="mt-0.5 text-signal-slate">{outputs.intake.trigger}</dd>
-            </div>
-            <div>
-              <dt className="font-medium text-signal-body">Initial risk signals</dt>
-              <dd className="mt-0.5">
-                <ul className="list-disc pl-5 text-signal-slate">
-                  {outputs.intake.initialRiskSignals.map((s) => (
-                    <li key={s}>{s}</li>
-                  ))}
-                </ul>
-              </dd>
-            </div>
-            <div>
-              <dt className="font-medium text-signal-body">Case summary</dt>
-              <dd className="mt-0.5 text-signal-slate">
-                {outputs.intakeEditedSummary ?? outputs.intake.caseSummary}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-medium text-signal-body">Proposed scope</dt>
-              <dd className="mt-0.5">
-                <ul className="list-disc pl-5 text-signal-slate">
-                  {outputs.intake.proposedScope.map((s) => (
-                    <li key={s}>{s}</li>
-                  ))}
-                </ul>
-              </dd>
-            </div>
-            <div>
-              <dt className="font-medium text-signal-body">Why these checks</dt>
-              <dd className="mt-0.5 text-signal-slate">
-                {outputs.intake.scopeRationale}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-medium text-signal-body">Stage limitations</dt>
-              <dd className="mt-0.5 text-signal-slate">
-                {outputs.intake.stageLimitations}
-              </dd>
-            </div>
-          </dl>
+          <VerityAgentDisclosureSection title="Intake details" defaultOpen>
+            <dl className="space-y-3 text-sm">
+              <div>
+                <dt className="font-medium text-signal-body">Selected case</dt>
+                <dd className="mt-0.5 font-mono text-signal-indigo">
+                  {outputs.intake.caseId}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-signal-body">Scenario</dt>
+                <dd className="mt-0.5">
+                  <span
+                    className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${SCENARIO_COLORS[outputs.intake.scenario]}`}
+                  >
+                    {outputs.intake.scenario}
+                  </span>
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-signal-body">Trigger</dt>
+                <dd className="mt-0.5 text-signal-slate">{outputs.intake.trigger}</dd>
+              </div>
+              <div>
+                <dt className="font-medium text-signal-body">Initial risk signals</dt>
+                <dd className="mt-0.5">
+                  <ul className="list-disc pl-5 text-signal-slate">
+                    {outputs.intake.initialRiskSignals.map((s) => (
+                      <li key={s}>{s}</li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-signal-body">Case summary</dt>
+                <dd className="mt-0.5 text-signal-slate">
+                  {outputs.intakeEditedSummary ?? outputs.intake.caseSummary}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-signal-body">Proposed scope</dt>
+                <dd className="mt-0.5">
+                  <ul className="list-disc pl-5 text-signal-slate">
+                    {outputs.intake.proposedScope.map((s) => (
+                      <li key={s}>{s}</li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-signal-body">Why these checks</dt>
+                <dd className="mt-0.5 text-signal-slate">
+                  {outputs.intake.scopeRationale}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-medium text-signal-body">Stage limitations</dt>
+                <dd className="mt-0.5 text-signal-slate">
+                  {outputs.intake.stageLimitations}
+                </dd>
+              </div>
+            </dl>
+          </VerityAgentDisclosureSection>
 
           <VerityAgentHumanGate
             stageLabel="Intake & scoping"
@@ -150,11 +162,9 @@ export function VerityAgentStagePanel({
           <h2 className="text-lg font-semibold text-signal-ink">
             Stage 2 — Investigate
           </h2>
-          <p className="mt-1 text-[13px] text-signal-slate">
-            Evidence assembly as discrete atomic steps. Hallucinated narratives are
-            reduced by forcing narrow, cited evidence steps.
-          </p>
-          <div className="mt-5">
+          <StageHeadline>{getInvestigateHeadline(outputs.evidence)}</StageHeadline>
+
+          <div className="mt-4">
             <VerityAgentEvidencePack
               pack={outputs.evidence}
               displaySummary={
@@ -184,16 +194,17 @@ export function VerityAgentStagePanel({
           <h2 className="text-lg font-semibold text-signal-ink">
             Stage 3 — Decide
           </h2>
-          <p className="mt-1 text-[13px] text-signal-slate">
-            Proposed judgment for human review — decision-support, not verdict.
-          </p>
-          <div className="mt-5">
+          <StageHeadline>{getDecideHeadline(outputs.decision)}</StageHeadline>
+
+          <div className="mt-4">
             <VerityAgentDecisionDraft
               draft={outputs.decision}
               displayStatement={
                 outputs.decisionEditedStatement ??
                 outputs.decision.decisionSupportStatement
               }
+              riskScore={outputs.evidence?.riskScore.score}
+              riskBand={outputs.evidence?.riskScore.band}
             />
           </div>
           <VerityAgentHumanGate
@@ -217,11 +228,11 @@ export function VerityAgentStagePanel({
           <h2 className="text-lg font-semibold text-signal-ink">
             Stage 4 — Action
           </h2>
-          <p className="mt-1 text-[13px] text-signal-slate">
-            Proposed reversible actions only. Material or irreversible actions
-            flagged as human-required. No execution.
-          </p>
-          <div className="mt-5">
+          <StageHeadline>
+            {getActionHeadline(outputs.action.actions)}
+          </StageHeadline>
+
+          <div className="mt-4">
             <VerityAgentActionPlan plan={outputs.action} />
           </div>
           <VerityAgentHumanGate

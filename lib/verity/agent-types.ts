@@ -55,11 +55,32 @@ export interface VerityEvidenceStep {
   evidenceRefs: string[];
 }
 
+export type VerityRiskBand = "Critical" | "High" | "Medium" | "Low";
+
+export interface VerityRiskContribution {
+  evidenceId: string;
+  label: string;
+  category: VerityEvidenceItem["category"];
+  confidence: VerityEvidenceItem["confidence"];
+  categoryWeight: number;
+  confidenceMultiplier: number;
+  contribution: number;
+  rationale: string;
+}
+
+export interface VerityRiskScore {
+  score: number;
+  band: VerityRiskBand;
+  contributions: VerityRiskContribution[];
+  ruleSummary: string;
+}
+
 export interface VerityEvidencePack {
   caseId: string;
   atomicSteps: VerityEvidenceStep[];
   evidenceItems: VerityEvidenceItem[];
   summary: string;
+  riskScore: VerityRiskScore;
 }
 
 export interface VerityIntakeOutput {

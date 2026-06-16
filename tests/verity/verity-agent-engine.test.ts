@@ -30,6 +30,28 @@ describe("verity agent engine", () => {
     expect(a).toEqual(b);
   });
 
+  it("evidence pack includes riskScore", () => {
+    const pack = runEvidenceAssembly("CASE_MF_001");
+    expect(pack).not.toBeNull();
+    expect(pack!.riskScore).toBeDefined();
+    expect(pack!.riskScore.score).toBeGreaterThanOrEqual(0);
+    expect(pack!.riskScore.score).toBeLessThanOrEqual(100);
+    expect(["Critical", "High", "Medium", "Low"]).toContain(pack!.riskScore.band);
+    expect(pack!.riskScore.contributions).toHaveLength(pack!.evidenceItems.length);
+    for (const c of pack!.riskScore.contributions) {
+      const evidenceIds = pack!.evidenceItems.map((i) => i.id);
+      expect(evidenceIds).toContain(c.evidenceId);
+    }
+  });
+
+  it("decision confidence is not overwritten by risk band", () => {
+    const pack = runEvidenceAssembly("CASE_SM_001")!;
+    const draft = runDecisionDraft("CASE_SM_001", pack)!;
+    expect(draft.confidence).toBe("Medium");
+    expect(pack.riskScore.band).toBe("High");
+    expect(draft.confidence).not.toBe(pack.riskScore.band);
+  });
+
   it("evidence pack contains required atomic steps", () => {
     const pack = runEvidenceAssembly("CASE_APP_001");
     expect(pack).not.toBeNull();

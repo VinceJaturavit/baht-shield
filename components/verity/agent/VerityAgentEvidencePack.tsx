@@ -1,6 +1,9 @@
 "use client";
 
 import type { VerityEvidencePack } from "@/lib/verity/agent-types";
+import { getRiskBandClasses } from "@/lib/verity/agent-risk";
+import { VerityAgentDisclosureSection } from "./VerityAgentDisclosureSection";
+import { VerityAgentRiskBreakdown } from "./VerityAgentRiskBreakdown";
 
 interface VerityAgentEvidencePackProps {
   pack: VerityEvidencePack;
@@ -21,26 +24,44 @@ export function VerityAgentEvidencePack({
   displaySummary,
 }: VerityAgentEvidencePackProps) {
   const summary = displaySummary ?? pack.summary;
+  const { riskScore } = pack;
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h3 className="text-sm font-semibold text-signal-ink">Atomic evidence steps</h3>
-        <p className="mt-1 text-[13px] text-signal-slate">
+    <div className="space-y-4">
+      <div className="flex flex-wrap items-baseline gap-3">
+        <span className="text-sm font-medium text-signal-body">
+          {pack.evidenceItems.length} evidence items
+        </span>
+        <span
+          className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${getRiskBandClasses(riskScore.band)}`}
+        >
+          Risk {riskScore.score} — {riskScore.band}
+        </span>
+      </div>
+
+      <div className="rounded-signalSm border border-signal-border bg-signal-surfaceSubtle px-4 py-3">
+        <h3 className="text-sm font-semibold text-signal-ink">Evidence summary</h3>
+        <p className="mt-2 text-sm leading-relaxed text-signal-slate">{summary}</p>
+      </div>
+
+      <VerityAgentRiskBreakdown riskScore={riskScore} />
+
+      <VerityAgentDisclosureSection title="Atomic evidence steps">
+        <p className="mb-3 text-[13px] text-signal-slate">
           Each step is a discrete, auditable evidence assembly action — not a
           single narrative paragraph.
         </p>
-        <ol className="mt-3 space-y-3">
+        <ol className="space-y-3">
           {pack.atomicSteps.map((step, i) => (
             <li
               key={step.id}
-              className="rounded-signalSm border border-signal-borderSubtle bg-signal-surfaceSubtle px-4 py-3"
+              className="rounded-signalSm border border-signal-borderSubtle bg-signal-surface px-4 py-3"
             >
-              <div className="flex items-baseline justify-between gap-2">
+              <div className="flex flex-wrap items-baseline gap-2">
                 <span className="text-sm font-medium text-signal-ink">
                   {i + 1}. {step.label}
                 </span>
-                <span className="shrink-0 text-xs font-medium text-signal-indigo">
+                <span className="text-xs font-medium text-signal-indigo">
                   {step.status}
                 </span>
               </div>
@@ -51,51 +72,32 @@ export function VerityAgentEvidencePack({
             </li>
           ))}
         </ol>
-      </div>
+      </VerityAgentDisclosureSection>
 
-      <div>
-        <h3 className="text-sm font-semibold text-signal-ink">Evidence items</h3>
-        <div className="mt-2 overflow-x-auto">
-          <table className="w-full min-w-[480px] text-left text-sm">
-            <thead>
-              <tr className="border-b border-signal-border text-xs text-signal-secondary">
-                <th className="pb-2 pr-3 font-medium">ID</th>
-                <th className="pb-2 pr-3 font-medium">Category</th>
-                <th className="pb-2 pr-3 font-medium">Finding</th>
-                <th className="pb-2 pr-3 font-medium">Source</th>
-                <th className="pb-2 font-medium">Confidence</th>
-              </tr>
-            </thead>
-            <tbody>
-              {pack.evidenceItems.map((item) => (
-                <tr
-                  key={item.id}
-                  className="border-b border-signal-borderSubtle align-top"
-                >
-                  <td className="py-2 pr-3 font-mono text-xs text-signal-indigo">
-                    {item.id}
-                  </td>
-                  <td className="py-2 pr-3 text-xs text-signal-body">
-                    {CATEGORY_LABELS[item.category] ?? item.category}
-                  </td>
-                  <td className="py-2 pr-3 text-signal-slate">{item.finding}</td>
-                  <td className="py-2 pr-3 font-mono text-xs text-signal-secondary">
-                    {item.sourceRef}
-                  </td>
-                  <td className="py-2 text-xs font-medium text-signal-body">
-                    {item.confidence}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div className="rounded-signalSm border border-signal-border bg-signal-surfaceSubtle px-4 py-3">
-        <h3 className="text-sm font-semibold text-signal-ink">Neutral summary</h3>
-        <p className="mt-2 text-sm leading-relaxed text-signal-slate">{summary}</p>
-      </div>
+      <VerityAgentDisclosureSection title="Evidence items">
+        <ul className="space-y-3">
+          {pack.evidenceItems.map((item) => (
+            <li
+              key={item.id}
+              className="rounded-signalSm border border-signal-borderSubtle bg-signal-surface px-3 py-2.5 text-sm"
+            >
+              <div className="flex flex-wrap items-baseline gap-2">
+                <span className="font-mono text-xs text-signal-indigo">{item.id}</span>
+                <span className="text-xs font-medium text-signal-body">
+                  {CATEGORY_LABELS[item.category] ?? item.category}
+                </span>
+                <span className="text-xs text-signal-secondary">
+                  Confidence: {item.confidence}
+                </span>
+              </div>
+              <p className="mt-1 text-signal-slate">{item.finding}</p>
+              <p className="mt-1 font-mono text-xs text-signal-secondary">
+                {item.sourceRef}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </VerityAgentDisclosureSection>
     </div>
   );
 }
