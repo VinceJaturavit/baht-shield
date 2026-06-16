@@ -20,6 +20,7 @@ interface AppShellProps {
 
 const NAV_LINKS = [
   { href: "/verity", label: "Dashboard" },
+  { href: "/verity/agent", label: "Agentic Investigation" },
   { href: "/alerts", label: "Alert Queue" },
   { href: "/cases", label: "Cases" },
   { href: "/entities", label: "Wallets / Entities" },

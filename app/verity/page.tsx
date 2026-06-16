@@ -2,6 +2,7 @@
 // All Verity sub-routes (/alerts, /cases, /entities, /patterns, etc.) remain at their
 // current paths. This page is the product entry point at /verity.
 
+import Link from "next/link";
 import { AppShell } from "@/components/AppShell";
 import { MetricCard } from "@/components/MetricCard";
 import { alerts } from "@/lib/seed-data";
@@ -52,6 +53,18 @@ export default function VerityDashboardPage() {
         <p className="mt-2 text-[15px] leading-6 text-signal-slate">
           How a Head of Fraud sees synthetic e-wallet risk across alerts, cases,
           loss exposure, and pattern-linked activity.
+        </p>
+        <p className="mt-3 text-sm">
+          <Link
+            href="/verity/agent"
+            className="font-medium text-signal-indigo underline underline-offset-2 hover:text-signal-indigoHover focus:outline-none focus-visible:ring-2 focus-visible:ring-signal-indigo focus-visible:ring-offset-2 rounded-sm"
+          >
+            Agentic Investigation
+          </Link>
+          <span className="text-signal-slate">
+            {" "}
+            — human-gated investigation copilot (Phase 3)
+          </span>
         </p>
       </div>
 
