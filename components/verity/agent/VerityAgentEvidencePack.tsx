@@ -11,6 +11,7 @@ import { VerityAgentDisclosureSection } from "./VerityAgentDisclosureSection";
 import { VerityAgentRiskBreakdown } from "./VerityAgentRiskBreakdown";
 import { VerityAgentConfidenceChip } from "./VerityAgentConfidenceChip";
 import { VerityAgentContributionChip } from "./VerityAgentContributionChip";
+import { VerityOnChainTraceView } from "./VerityOnChainTraceView";
 
 interface VerityAgentEvidencePackProps {
   pack: VerityEvidencePack;
@@ -72,6 +73,10 @@ export function VerityAgentEvidencePack({
           ))}
         </ul>
       </section>
+
+      {pack.onChainTrace && (
+        <VerityOnChainTraceView trace={pack.onChainTrace} />
+      )}
 
       <VerityAgentRiskBreakdown riskScore={riskScore} />
 

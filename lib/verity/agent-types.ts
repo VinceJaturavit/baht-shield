@@ -75,12 +75,87 @@ export interface VerityRiskScore {
   ruleSummary: string;
 }
 
+export type VerityChainType = "ETH" | "BTC" | "TRON" | "Polygon";
+
+export type VerityTraceAsset =
+  | "USDT-ETH"
+  | "USDT-TRON"
+  | "BTC"
+  | "USDC-Polygon";
+
+export type VerityTraceHopType =
+  | "transfer"
+  | "peel"
+  | "bridge"
+  | "mixer"
+  | "consolidation"
+  | "cash-out";
+
+export type VerityTraceAttributionType =
+  | "synthetic_exchange_vasp"
+  | "synthetic_mixer"
+  | "synthetic_bridge"
+  | "unknown_cluster"
+  | "self_custody_cluster";
+
+export type VerityTracingMethod =
+  | "FIFO"
+  | "LIFO"
+  | "LIBR"
+  | "pro-rata"
+  | "not_applicable";
+
+export type VerityLedgerModel = "account_based" | "utxo";
+
+export interface VerityOnChainTraceHop {
+  index: number;
+  fromAddress: string;
+  toAddress: string;
+  chain: VerityChainType;
+  asset: VerityTraceAsset;
+  amount: number;
+  hopType: VerityTraceHopType;
+  attributionType: VerityTraceAttributionType;
+  attributionLabel: string;
+  isCoMingled: boolean;
+  tracingMethod: VerityTracingMethod;
+  methodNote?: string;
+  ledgerModel: VerityLedgerModel;
+  note: string;
+}
+
+export interface VerityCashOutEndpoint {
+  hopIndex: number;
+  vaspLabel: string;
+  address: string;
+  asset: VerityTraceAsset;
+  chain: VerityChainType;
+  amount: number;
+  whyActionable: string;
+  recoveryPointLabel: string;
+}
+
+export interface VerityOnChainTrace {
+  id: string;
+  caseId: string;
+  scenario: VerityAgentScenario;
+  traceDirection: "forward";
+  traceLabel: string;
+  summary: string;
+  ledgerAwarenessNote: string;
+  hops: VerityOnChainTraceHop[];
+  cashOutEndpoint: VerityCashOutEndpoint;
+  methodologyNotes: string[];
+  syntheticBoundary: string;
+}
+
 export interface VerityEvidencePack {
   caseId: string;
   atomicSteps: VerityEvidenceStep[];
   evidenceItems: VerityEvidenceItem[];
   summary: string;
   riskScore: VerityRiskScore;
+  onChainTrace?: VerityOnChainTrace;
 }
 
 export interface VerityIntakeOutput {

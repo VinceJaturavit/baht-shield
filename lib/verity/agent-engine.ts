@@ -3,6 +3,10 @@ import { getScenarioFromCaseId } from "@/lib/scenario-utils";
 import { analystPatterns } from "@/lib/seed-data";
 import { calculateRiskScore } from "./agent-risk";
 import { createAuditEvent } from "./agent-state";
+import {
+  buildOnChainTraceForScenario,
+  getOnChainExposureFinding,
+} from "./onchain-trace";
 import type {
   VerityActionPlan,
   VerityAgentAuditEvent,
@@ -262,7 +266,22 @@ export function runEvidenceAssembly(caseId: string): VerityEvidencePack | null {
   const ctx = getVerityAgentCaseContext(caseId);
   if (!ctx) return null;
 
+  const onChainTrace = buildOnChainTraceForScenario({
+    caseId,
+    scenario: ctx.scenario,
+  });
+
   const evidenceItems = buildEvidenceItems(caseId, ctx.scenario, ctx);
+  const chainItemIndex = evidenceItems.findIndex(
+    (i) => i.category === "onchain_exposure"
+  );
+  if (chainItemIndex >= 0) {
+    evidenceItems[chainItemIndex] = {
+      ...evidenceItems[chainItemIndex],
+      finding: getOnChainExposureFinding(onChainTrace),
+    };
+  }
+
   const prefix = caseId.replace(/[^A-Z0-9]/gi, "").slice(0, 8);
 
   const atomicSteps = [
@@ -291,8 +310,8 @@ export function runEvidenceAssembly(caseId: string): VerityEvidencePack | null {
       id: `step-${prefix}-chain`,
       label: "On-chain exposure",
       status: "completed" as const,
-      output: evidenceItems[3].finding,
-      evidenceRefs: [evidenceItems[3].id],
+      output: evidenceItems[chainItemIndex].finding,
+      evidenceRefs: [evidenceItems[chainItemIndex].id],
     },
     {
       id: `step-${prefix}-flags`,
@@ -314,7 +333,14 @@ export function runEvidenceAssembly(caseId: string): VerityEvidencePack | null {
 
   const riskScore = calculateRiskScore(evidenceItems);
 
-  return { caseId, atomicSteps, evidenceItems, summary, riskScore };
+  return {
+    caseId,
+    atomicSteps,
+    evidenceItems,
+    summary,
+    riskScore,
+    onChainTrace,
+  };
 }
 
 function scenarioRecommendation(
