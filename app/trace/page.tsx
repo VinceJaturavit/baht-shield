@@ -10,8 +10,10 @@ export const metadata = {
 export default function TracePage() {
   return (
     <OuroxShell currentProduct="Trace">
-      <div className="mx-auto max-w-[1280px] px-6 py-8">
-        <TraceLanding />
+      <div className="flex-1 bg-trace-page">
+        <div className="mx-auto max-w-[1280px] px-6 py-8">
+          <TraceLanding />
+        </div>
       </div>
     </OuroxShell>
   );

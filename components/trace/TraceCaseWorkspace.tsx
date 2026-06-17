@@ -106,7 +106,7 @@ export function TraceCaseWorkspace({ traceCase }: TraceCaseWorkspaceProps) {
         <TraceBoundaryPanel />
       </div>
 
-      <p className="mb-4 text-[11px] text-ourox-ink/50 border-l-2 border-ourox-orange/40 pl-3">
+      <p className="mb-4 text-xs text-trace-secondary border-l-2 border-trace-primary/40 pl-3">
         {TRACE_BOUNDARY.aiRoleStatement}
       </p>
 

@@ -43,7 +43,7 @@ interface TraceTabsProps {
 export function TraceTabs({ activeTab, onTabChange }: TraceTabsProps) {
   return (
     <nav
-      className="flex flex-wrap gap-1 border-b border-ourox-obsidianMid pb-px"
+      className="flex flex-wrap gap-1 border-b border-trace-border pb-px"
       aria-label="Case workspace sections"
     >
       {TABS.map((tab) => {
@@ -55,21 +55,21 @@ export function TraceTabs({ activeTab, onTabChange }: TraceTabsProps) {
             type="button"
             onClick={() => onTabChange(tab.id)}
             aria-current={active ? "page" : undefined}
-            className={`rounded-t px-3 py-2 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ourox-obsidian ${
+            className={`rounded-t px-3 py-2 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-trace-primary focus-visible:ring-offset-2 focus-visible:ring-offset-trace-page ${
               active
-                ? "bg-ourox-obsidianLight border border-b-0 border-ourox-obsidianMid text-ourox-orange"
-                : "text-ourox-ink/60 hover:bg-ourox-obsidianLight/50 hover:text-ourox-ink"
+                ? "bg-trace-card border border-b-0 border-trace-border text-trace-primary"
+                : "text-trace-secondary hover:bg-trace-surface hover:text-trace-heading"
             } ${isCentrepiece && !active ? "font-medium" : ""}`}
           >
             <span className={`block text-xs ${isCentrepiece ? "font-semibold" : "font-medium"}`}>
               {tab.label}
               {isCentrepiece && (
-                <span className="ml-1.5 text-[10px] font-normal text-ourox-yellow/80">
+                <span className="ml-1.5 text-xs font-normal text-trace-cyan">
                   centrepiece
                 </span>
               )}
             </span>
-            <span className="block text-[10px] text-ourox-ink/40 mt-0.5">{tab.description}</span>
+            <span className="block text-xs text-trace-secondary mt-0.5">{tab.description}</span>
           </button>
         );
       })}

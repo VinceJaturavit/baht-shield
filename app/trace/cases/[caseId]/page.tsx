@@ -26,8 +26,10 @@ export default function TraceCasePage({ params }: TraceCasePageProps) {
 
   return (
     <OuroxShell currentProduct="Trace">
-      <div className="mx-auto max-w-[1280px] px-6 py-8">
-        <TraceCaseWorkspace traceCase={traceCase} />
+      <div className="flex-1 bg-trace-page">
+        <div className="mx-auto max-w-[1280px] px-6 py-8">
+          <TraceCaseWorkspace traceCase={traceCase} />
+        </div>
       </div>
     </OuroxShell>
   );

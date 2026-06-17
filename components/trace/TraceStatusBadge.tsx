@@ -9,11 +9,11 @@ const STATUS_LABELS: Record<TraceAttributionStatus, string> = {
 };
 
 const STATUS_STYLES: Record<TraceAttributionStatus, string> = {
-  attributed: "bg-emerald-950/50 text-emerald-300 border-emerald-800/50",
-  partial: "bg-amber-950/50 text-amber-300 border-amber-800/50",
-  "insufficient-evidence": "bg-ourox-obsidianLight text-ourox-ink/70 border-ourox-obsidianMid",
-  rejected: "bg-red-950/50 text-red-300 border-red-800/50",
-  "pending-method": "bg-ourox-obsidianLight text-ourox-ink/60 border-ourox-obsidianMid",
+  attributed: "bg-emerald-50 text-emerald-800 border-emerald-200",
+  partial: "bg-amber-50 text-amber-800 border-amber-200",
+  "insufficient-evidence": "bg-trace-muted text-trace-secondary border-trace-border",
+  rejected: "bg-red-50 text-red-800 border-red-200",
+  "pending-method": "bg-trace-muted text-trace-body border-trace-border",
 };
 
 interface TraceStatusBadgeProps {
@@ -23,7 +23,7 @@ interface TraceStatusBadgeProps {
 export function TraceStatusBadge({ status }: TraceStatusBadgeProps) {
   return (
     <span
-      className={`inline-flex items-center rounded border px-2 py-0.5 text-[11px] font-medium tracking-wide ${STATUS_STYLES[status]}`}
+      className={`inline-flex items-center rounded border px-2 py-0.5 text-xs font-medium tracking-wide ${STATUS_STYLES[status]}`}
     >
       {STATUS_LABELS[status]}
     </span>
@@ -38,10 +38,10 @@ const REVIEW_LABELS: Record<TraceReviewStatus, string> = {
 };
 
 const REVIEW_STYLES: Record<TraceReviewStatus, string> = {
-  draft: "bg-ourox-obsidianLight text-ourox-ink/60 border-ourox-obsidianMid",
-  "pending-review": "bg-amber-950/50 text-amber-300 border-amber-800/50",
-  approved: "bg-emerald-950/50 text-emerald-300 border-emerald-800/50",
-  rejected: "bg-red-950/50 text-red-300 border-red-800/50",
+  draft: "bg-trace-muted text-trace-secondary border-trace-border",
+  "pending-review": "bg-amber-50 text-amber-800 border-amber-200",
+  approved: "bg-emerald-50 text-emerald-800 border-emerald-200",
+  rejected: "bg-red-50 text-red-800 border-red-200",
 };
 
 interface TraceReviewBadgeProps {
@@ -51,7 +51,7 @@ interface TraceReviewBadgeProps {
 export function TraceReviewBadge({ status }: TraceReviewBadgeProps) {
   return (
     <span
-      className={`inline-flex items-center rounded border px-2 py-0.5 text-[11px] font-medium tracking-wide ${REVIEW_STYLES[status]}`}
+      className={`inline-flex items-center rounded border px-2 py-0.5 text-xs font-medium tracking-wide ${REVIEW_STYLES[status]}`}
     >
       {REVIEW_LABELS[status]}
     </span>
@@ -65,9 +65,9 @@ const CONFIDENCE_LABELS: Record<TraceConfidence, string> = {
 };
 
 const CONFIDENCE_STYLES: Record<TraceConfidence, string> = {
-  High: "bg-emerald-950/40 text-emerald-300 border-emerald-800/40",
-  Medium: "bg-amber-950/40 text-amber-300 border-amber-800/40",
-  Low: "bg-ourox-obsidianLight text-ourox-ink/60 border-ourox-obsidianMid",
+  High: "bg-emerald-50 text-emerald-800 border-emerald-200",
+  Medium: "bg-amber-50 text-amber-800 border-amber-200",
+  Low: "bg-trace-muted text-trace-secondary border-trace-border",
 };
 
 interface TraceConfidenceBadgeProps {
@@ -77,7 +77,7 @@ interface TraceConfidenceBadgeProps {
 export function TraceConfidenceBadge({ confidence }: TraceConfidenceBadgeProps) {
   return (
     <span
-      className={`inline-flex items-center rounded border px-2 py-0.5 text-[11px] font-medium ${CONFIDENCE_STYLES[confidence]}`}
+      className={`inline-flex items-center rounded border px-2 py-0.5 text-xs font-medium ${CONFIDENCE_STYLES[confidence]}`}
     >
       {CONFIDENCE_LABELS[confidence]}
     </span>

@@ -5,39 +5,10 @@
 import Link from "next/link";
 import { OuroxMark, OuroxWordmark } from "@/components/ourox/OuroxLogo";
 import { OuroxShell } from "@/components/ourox/OuroxShell";
+import { OUROX_PRODUCTS } from "@/data/ourox/products";
 
 const LINKEDIN_URL = "https://www.linkedin.com/in/jaturavit-chaovalit/";
 const GITHUB_URL = "https://github.com/VinceJaturavit/baht-shield";
-
-const PRODUCTS = [
-  {
-    key: "ops",
-    name: "Ops",
-    href: "/ops",
-    label: "Fraud Operations Management",
-    description:
-      "Case management, queues, SLA, roster, and KPI control — the operations layer after an alert becomes a case.",
-    cta: "Enter Ops",
-  },
-  {
-    key: "verity",
-    name: "Verity",
-    href: "/verity",
-    label: "Investigation & Pattern Intelligence",
-    description:
-      "Investigation and pattern-intelligence workspace for analyst-curated fraud evidence.",
-    cta: "Enter Verity",
-  },
-  {
-    key: "arbiter",
-    name: "Arbiter",
-    href: "/arbiter",
-    label: "Risk Scoring & Decisioning",
-    description:
-      "Risk scoring and decisioning sandbox for features, rules, thresholds, and tuning.",
-    cta: "Enter Arbiter",
-  },
-] as const;
 
 export default function OuroxHomePage() {
   return (
@@ -63,9 +34,9 @@ export default function OuroxHomePage() {
 
           {/* Purpose paragraph */}
           <p className="mb-5 text-base leading-7 text-ourox-ink/70 max-w-xl">
-            Ourox shows the fraud-operations lifecycle end to end: Ops runs the case operation,
-            Verity investigates and captures patterns, and Arbiter scores, tunes, and tests
-            decisioning logic.
+            Ourox shows the fraud lifecycle across four connected layers: Arbiter for scoring and
+            decisioning, Verity for investigation and pattern intelligence, Ops for operations
+            management, and Trace for recovery workflow after vendor tracing.
           </p>
 
           {/* Metadata line */}
@@ -99,7 +70,9 @@ export default function OuroxHomePage() {
               Ops is the operations layer — case management, queues, SLA, roster, and KPI after an
               alert becomes a case. Verity is the investigation and pattern-intelligence side.
               Arbiter is the scoring-and-decisioning side — features, rules, thresholds, and the
-              precision/recall tradeoffs a fraud strategy team works with.
+              precision/recall tradeoffs a fraud strategy team works with. Trace is the
+              recovery-tracing workflow layer — co-mingling method comparison and victim attribution
+              after vendor tracing.
             </p>
             <p className="text-xs text-ourox-ink/40 tracking-wide">
               Everything here is synthetic. The thinking is real.
@@ -133,7 +106,7 @@ export default function OuroxHomePage() {
                 <span className="text-base font-semibold text-ourox-ink">How Ourox works</span>
               </div>
               <p className="text-sm leading-6 text-ourox-ink/60">
-                A structured guide to the platform, its three products, the synthetic data
+                A structured guide to the platform, its four products, the synthetic data
                 boundary, and the roadmap.
               </p>
             </div>
@@ -155,9 +128,9 @@ export default function OuroxHomePage() {
           </div>
         </div>
 
-        {/* Product entries — three rows, no card soup */}
+        {/* Product entries — four rows, no card soup */}
         <div className="space-y-px border border-ourox-obsidianMid rounded-lg overflow-hidden">
-          {PRODUCTS.map((p) => (
+          {OUROX_PRODUCTS.map((p) => (
             <div
               key={p.key}
               className="flex flex-col gap-4 bg-ourox-obsidianLight px-8 py-8 sm:flex-row sm:items-center sm:gap-8 first:rounded-t-lg last:rounded-b-lg"

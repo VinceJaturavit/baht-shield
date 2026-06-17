@@ -7,6 +7,7 @@ import {
   getAliceOutcomesByMethod,
   getScammerOutcomesByMethod,
 } from "@/lib/trace/methods";
+import { buildSamePoolMatrix } from "@/lib/trace/method-display";
 
 describe("trace method allocations — anchor case", () => {
   const comparisons = traceAnchorCase.methodComparisons;
@@ -71,5 +72,32 @@ describe("frozen pool ledger", () => {
     expect(ledger[1]).toMatchObject({ time: "t2", depositor: "Bob", amount: 10_000, runningBalance: 20_000 });
     expect(ledger[2]).toMatchObject({ time: "t3", depositor: "Scammer", amount: 5_000, runningBalance: 25_000 });
     expect(ledger[3]).toMatchObject({ time: "t4", amount: 12_000, runningBalance: 13_000 });
+  });
+});
+
+describe("same-pool comparison matrix presentation", () => {
+  const matrix = buildSamePoolMatrix(traceAnchorCase.methodComparisons);
+
+  it("includes Alice, Bob, and Scammer rows", () => {
+    const parties = matrix.map((r) => r.party);
+    expect(parties).toEqual(["Alice", "Bob", "Scammer"]);
+  });
+
+  it("FIFO Alice remains 10000", () => {
+    const alice = matrix.find((r) => r.party === "Alice")!;
+    expect(alice.allocations.FIFO).toBe(10_000);
+  });
+
+  it("LIFO Alice remains 0", () => {
+    const alice = matrix.find((r) => r.party === "Alice")!;
+    expect(alice.allocations.LIFO).toBe(0);
+  });
+
+  it("method comparisons retain weakness text for caveats disclosure", () => {
+    for (const comparison of traceAnchorCase.methodComparisons) {
+      expect(comparison.weakness.length).toBeGreaterThan(0);
+      expect(comparison.defensibility.length).toBeGreaterThan(0);
+      expect(comparison.uncertainty.length).toBeGreaterThan(0);
+    }
   });
 });

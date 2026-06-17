@@ -3,6 +3,10 @@
 import type { TraceCase, TraceMethod } from "@/lib/trace/types";
 import { TRACE_BOUNDARY } from "@/lib/trace/boundary";
 import type { TraceAiAssistOutput } from "@/lib/trace/ai-assist";
+import {
+  buildSamePoolMatrix,
+  TRACE_METHOD_DISPLAY_ORDER,
+} from "@/lib/trace/method-display";
 import { TraceAmount } from "./TraceAmount";
 import { TraceAiAssistPanel } from "./TraceAiAssistPanel";
 
@@ -23,6 +27,72 @@ interface TraceMethodComparisonProps {
   onUseRationaleStarter: () => void;
 }
 
+function MethodCard({
+  comparison,
+  asset,
+  selected,
+}: {
+  comparison: TraceCase["methodComparisons"][number];
+  asset: string;
+  selected: boolean;
+}) {
+  return (
+    <div
+      className={`border rounded-lg overflow-hidden bg-trace-card ${
+        selected ? "border-trace-primary ring-1 ring-trace-primary/30" : "border-trace-border"
+      }`}
+    >
+      <div className="px-4 py-3 border-b border-trace-border bg-trace-surface">
+        <h3 className="text-sm font-semibold text-trace-heading">{comparison.method}</h3>
+      </div>
+      <div className="px-4 py-3">
+        <table className="w-full text-xs">
+          <thead>
+            <tr className="text-trace-secondary">
+              <th className="text-left py-1 font-medium">Party</th>
+              <th className="text-right py-1 font-medium">Allocated</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparison.allocations.map((a) => (
+              <tr key={a.victimId} className="border-t border-trace-border/60">
+                <td className="py-1.5 text-trace-body">{a.victimNameSynthetic}</td>
+                <td className="py-1.5 text-right">
+                  <TraceAmount
+                    amount={a.allocatedAmount}
+                    asset={asset}
+                    className="text-trace-heading font-medium"
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p className="mt-3 text-xs text-trace-body leading-relaxed">{comparison.assumption}</p>
+      </div>
+      <details className="border-t border-trace-border group">
+        <summary className="px-4 py-2 text-xs font-medium text-trace-primary cursor-pointer hover:bg-trace-muted transition-colors">
+          Why / caveats
+        </summary>
+        <div className="px-4 pb-3 space-y-2 text-xs text-trace-body">
+          <p>
+            <span className="font-medium text-trace-secondary">Weakness: </span>
+            {comparison.weakness}
+          </p>
+          <p>
+            <span className="font-medium text-trace-secondary">Defensibility: </span>
+            {comparison.defensibility}
+          </p>
+          <p>
+            <span className="font-medium text-trace-secondary">Uncertainty: </span>
+            {comparison.uncertainty}
+          </p>
+        </div>
+      </details>
+    </div>
+  );
+}
+
 export function TraceMethodComparison({
   traceCase,
   selectedMethod,
@@ -37,92 +107,93 @@ export function TraceMethodComparison({
   onLogAiSummary,
   onUseRationaleStarter,
 }: TraceMethodComparisonProps) {
+  const matrix = buildSamePoolMatrix(traceCase.methodComparisons);
+
   return (
     <section>
-      <p className="mb-2 text-xs text-ourox-yellow/90 font-medium">
+      <h2 className="mb-2 text-sm font-semibold text-trace-heading">
         Same pool, different outcomes
-      </p>
-      <p className="mb-6 text-xs text-ourox-ink/60 leading-relaxed">
+      </h2>
+      <p className="mb-4 text-xs text-trace-secondary leading-relaxed">
         {TRACE_BOUNDARY.methodComparisonCaption}
       </p>
 
+      <div className="mb-6 overflow-hidden rounded-lg border border-trace-border bg-trace-card">
+        <table className="w-full text-xs">
+          <thead>
+            <tr className="border-b border-trace-border bg-trace-surface text-left">
+              <th className="px-4 py-2.5 font-medium text-trace-secondary w-[100px]"></th>
+              {TRACE_METHOD_DISPLAY_ORDER.map((method) => (
+                <th
+                  key={method}
+                  className={`px-4 py-2.5 font-semibold text-right ${
+                    selectedMethod === method ? "text-trace-primary" : "text-trace-heading"
+                  }`}
+                >
+                  {method}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {matrix.map((row) => (
+              <tr key={row.party} className="border-b border-trace-border/60 last:border-0">
+                <td className="px-4 py-2.5 font-medium text-trace-body">{row.party}</td>
+                {TRACE_METHOD_DISPLAY_ORDER.map((method) => {
+                  const amount = row.allocations[method];
+                  const highlight =
+                    row.party === "Alice" && method === "FIFO" && amount === 10_000;
+                  const highlightLifo =
+                    row.party === "Alice" && method === "LIFO" && amount === 0;
+                  return (
+                    <td
+                      key={method}
+                      className={`px-4 py-2.5 text-right font-mono tabular-nums ${
+                        highlight || highlightLifo
+                          ? "font-semibold text-trace-primary bg-trace-primary/5"
+                          : "text-trace-heading"
+                      }`}
+                    >
+                      {amount.toLocaleString()}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
       <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 mb-6">
         {traceCase.methodComparisons.map((comparison) => (
-          <div
+          <MethodCard
             key={comparison.method}
-            className={`border rounded-lg overflow-hidden ${
-              selectedMethod === comparison.method
-                ? "border-ourox-orange"
-                : "border-ourox-obsidianMid"
-            }`}
-          >
-            <div className="px-3 py-2 border-b border-ourox-obsidianMid bg-ourox-obsidianLight">
-              <h3 className="text-sm font-semibold text-ourox-ink">{comparison.method}</h3>
-              <p className="mt-1 text-[11px] text-ourox-ink/60 leading-relaxed">
-                {comparison.assumption}
-              </p>
-            </div>
-            <div className="px-3 py-2">
-              <table className="w-full text-[11px]">
-                <thead>
-                  <tr className="text-ourox-ink/40">
-                    <th className="text-left py-1 font-medium">Party</th>
-                    <th className="text-right py-1 font-medium">Allocated</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparison.allocations.map((a) => (
-                    <tr key={a.victimId} className="border-t border-ourox-obsidianMid/30">
-                      <td className="py-1.5 text-ourox-ink/80">{a.victimNameSynthetic}</td>
-                      <td className="py-1.5 text-right">
-                        <TraceAmount
-                          amount={a.allocatedAmount}
-                          asset={traceCase.asset}
-                          className="text-ourox-ink/90"
-                        />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="px-3 py-2 border-t border-ourox-obsidianMid space-y-2 text-[11px]">
-              <p>
-                <span className="text-ourox-ink/40">Weakness: </span>
-                <span className="text-ourox-ink/70">{comparison.weakness}</span>
-              </p>
-              <p>
-                <span className="text-ourox-ink/40">Defensibility: </span>
-                <span className="text-ourox-ink/70">{comparison.defensibility}</span>
-              </p>
-              <p>
-                <span className="text-ourox-ink/40">Uncertainty: </span>
-                <span className="text-ourox-ink/70">{comparison.uncertainty}</span>
-              </p>
-            </div>
-          </div>
+            comparison={comparison}
+            asset={traceCase.asset}
+            selected={selectedMethod === comparison.method}
+          />
         ))}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-2 border border-ourox-obsidianMid rounded-lg p-4">
-          <h3 className="text-sm font-semibold text-ourox-ink mb-3">
+        <div className="lg:col-span-2 border border-trace-border rounded-lg p-4 bg-trace-card">
+          <h3 className="text-sm font-semibold text-trace-heading mb-3">
             Human method selection
           </h3>
-          <p className="text-xs text-ourox-ink/50 mb-4">
+          <p className="text-xs text-trace-secondary mb-4">
             No method is pre-selected. The investigator must choose and justify the method.
           </p>
 
           <fieldset className="mb-4">
-            <legend className="text-xs font-medium text-ourox-ink/70 mb-2">Selected method</legend>
+            <legend className="text-xs font-medium text-trace-body mb-2">Selected method</legend>
             <div className="flex flex-wrap gap-2">
               {METHODS.map((method) => (
                 <label
                   key={method}
                   className={`inline-flex items-center gap-2 rounded border px-3 py-2 text-xs cursor-pointer transition-colors ${
                     selectedMethod === method
-                      ? "border-ourox-orange bg-ourox-orange/10 text-ourox-orange"
-                      : "border-ourox-obsidianMid text-ourox-ink/70 hover:border-ourox-ink/30"
+                      ? "border-trace-primary bg-trace-primary/10 text-trace-primary"
+                      : "border-trace-border text-trace-body hover:border-trace-primary/40"
                   }`}
                 >
                   <input
@@ -140,7 +211,7 @@ export function TraceMethodComparison({
           </fieldset>
 
           <div className="mb-4">
-            <label htmlFor="method-rationale" className="block text-xs font-medium text-ourox-ink/70 mb-2">
+            <label htmlFor="method-rationale" className="block text-xs font-medium text-trace-body mb-2">
               Rationale
             </label>
             <textarea
@@ -149,25 +220,25 @@ export function TraceMethodComparison({
               onChange={(e) => onRationaleChange(e.target.value)}
               rows={4}
               placeholder="Explain why this method is defensible for this co-mingled pool..."
-              className="w-full rounded border border-ourox-obsidianMid bg-ourox-obsidian px-3 py-2 text-xs text-ourox-ink placeholder:text-ourox-ink/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange"
+              className="w-full rounded border border-trace-border bg-trace-card px-3 py-2 text-xs text-trace-heading placeholder:text-trace-secondary/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-trace-primary"
             />
             <button
               type="button"
               onClick={onUseRationaleStarter}
-              className="mt-2 text-[11px] text-ourox-ink/50 hover:text-ourox-orange transition-colors"
+              className="mt-2 text-xs text-trace-secondary hover:text-trace-primary transition-colors"
             >
               Insert AI rationale starter (draft only — edit before saving)
             </button>
           </div>
 
           {saveError && (
-            <p className="mb-3 text-xs text-red-400" role="alert">
+            <p className="mb-3 text-xs text-red-700" role="alert">
               {saveError}
             </p>
           )}
 
           {methodSaved && (
-            <p className="mb-3 text-xs text-emerald-400">
+            <p className="mb-3 text-xs text-emerald-700">
               Method selection saved. Attribution table updated. Audit events recorded.
             </p>
           )}
@@ -175,7 +246,7 @@ export function TraceMethodComparison({
           <button
             type="button"
             onClick={onSave}
-            className="rounded bg-ourox-orange px-4 py-2 text-xs font-semibold text-ourox-obsidian hover:bg-ourox-orangeHover transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ourox-orange focus-visible:ring-offset-2 focus-visible:ring-offset-ourox-obsidian"
+            className="rounded bg-trace-primary px-4 py-2 text-xs font-semibold text-white hover:bg-trace-blue1 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-trace-primary focus-visible:ring-offset-2 focus-visible:ring-offset-trace-card"
           >
             Save method selection
           </button>

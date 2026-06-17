@@ -10,53 +10,50 @@ interface TraceVictimAttributionTableProps {
 export function TraceVictimAttributionTable({ rows, asset }: TraceVictimAttributionTableProps) {
   return (
     <section>
-      <p className="mb-4 text-xs text-ourox-ink/60 leading-relaxed">
+      <p className="mb-4 text-xs text-trace-secondary leading-relaxed">
         Attribution rows update after human method selection. Insufficient-evidence claims remain
         excluded regardless of method. AI cannot approve attribution.
       </p>
 
-      <div className="overflow-hidden rounded border border-ourox-obsidianMid">
+      <div className="overflow-hidden rounded-lg border border-trace-border bg-trace-card">
         <table className="w-full text-xs">
           <thead>
-            <tr className="border-b border-ourox-obsidianMid bg-ourox-obsidianLight text-left">
-              <th className="px-3 py-2 font-medium text-ourox-ink/50">Victim / claimant</th>
-              <th className="px-3 py-2 font-medium text-ourox-ink/50">Deposit tx</th>
-              <th className="px-3 py-2 font-medium text-ourox-ink/50 text-right">Deposit amount</th>
-              <th className="px-3 py-2 font-medium text-ourox-ink/50">Method used</th>
-              <th className="px-3 py-2 font-medium text-ourox-ink/50 text-right">Attributed amount</th>
-              <th className="px-3 py-2 font-medium text-ourox-ink/50">Confidence</th>
-              <th className="px-3 py-2 font-medium text-ourox-ink/50 text-center">Evidence count</th>
-              <th className="px-3 py-2 font-medium text-ourox-ink/50">Gaps</th>
-              <th className="px-3 py-2 font-medium text-ourox-ink/50">Status</th>
+            <tr className="border-b border-trace-border bg-trace-surface text-left">
+              <th className="px-3 py-2 font-medium text-trace-heading">Victim / claimant</th>
+              <th className="px-3 py-2 font-medium text-trace-heading">Method used</th>
+              <th className="px-3 py-2 font-medium text-trace-heading text-right">Attributed amount</th>
+              <th className="px-3 py-2 font-medium text-trace-heading">Status</th>
+              <th className="px-3 py-2 font-medium text-trace-heading">Gaps</th>
+              <th className="px-3 py-2 font-medium text-trace-secondary">Deposit tx</th>
+              <th className="px-3 py-2 font-medium text-trace-secondary text-right">Deposit amount</th>
+              <th className="px-3 py-2 font-medium text-trace-secondary">Confidence</th>
+              <th className="px-3 py-2 font-medium text-trace-secondary text-center">Evidence count</th>
             </tr>
           </thead>
           <tbody>
             {rows.map((row) => (
               <tr
                 key={row.victimId}
-                className={`border-b border-ourox-obsidianMid/50 last:border-0 ${
-                  row.status === "insufficient-evidence" ? "bg-ourox-obsidianLight/30" : ""
+                className={`border-b border-trace-border/60 last:border-0 ${
+                  row.status === "insufficient-evidence" ? "bg-trace-muted" : ""
                 }`}
               >
-                <td className="px-3 py-2 text-ourox-ink/90">
+                <td className="px-3 py-2 text-trace-heading font-medium">
                   {row.victimNameSynthetic}
                   {row.victimNameSynthetic === "Scammer" && (
-                    <span className="ml-1 text-ourox-ink/40">(taint)</span>
+                    <span className="ml-1 text-trace-secondary font-normal">(taint)</span>
                   )}
                 </td>
-                <td className="px-3 py-2 font-mono text-ourox-ink/60">{row.depositTx}</td>
-                <td className="px-3 py-2 text-right">
-                  <TraceAmount amount={row.depositAmount} asset={asset} className="text-ourox-ink/80" />
-                </td>
-                <td className="px-3 py-2 text-ourox-ink/70">
+                <td className="px-3 py-2 text-trace-body">
                   {row.methodUsed ?? "—"}
                 </td>
                 <td className="px-3 py-2 text-right">
-                  <TraceAmount amount={row.attributedAmount} asset={asset} className="text-ourox-ink/90" />
+                  <TraceAmount amount={row.attributedAmount} asset={asset} className="text-trace-heading font-medium" />
                 </td>
-                <td className="px-3 py-2 text-ourox-ink/70">{row.confidence}</td>
-                <td className="px-3 py-2 text-center text-ourox-ink/70">{row.evidenceCount}</td>
-                <td className="px-3 py-2 text-ourox-ink/60 max-w-[200px]">
+                <td className="px-3 py-2">
+                  <TraceStatusBadge status={row.status} />
+                </td>
+                <td className="px-3 py-2 text-trace-body max-w-[200px]">
                   {row.gaps.length > 0 ? (
                     <ul className="space-y-0.5">
                       {row.gaps.map((gap) => (
@@ -67,9 +64,12 @@ export function TraceVictimAttributionTable({ rows, asset }: TraceVictimAttribut
                     "—"
                   )}
                 </td>
-                <td className="px-3 py-2">
-                  <TraceStatusBadge status={row.status} />
+                <td className="px-3 py-2 font-mono text-trace-secondary">{row.depositTx}</td>
+                <td className="px-3 py-2 text-right">
+                  <TraceAmount amount={row.depositAmount} asset={asset} className="text-trace-secondary" />
                 </td>
+                <td className="px-3 py-2 text-trace-secondary">{row.confidence}</td>
+                <td className="px-3 py-2 text-center text-trace-secondary">{row.evidenceCount}</td>
               </tr>
             ))}
           </tbody>
