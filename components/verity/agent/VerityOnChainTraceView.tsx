@@ -7,6 +7,7 @@ import { VerityOnChainTraceHopList } from "./VerityOnChainTraceHopList";
 import { VerityOnChainRecoveryPoint } from "./VerityOnChainRecoveryPoint";
 import { VerityOnChainRoadmapPanel } from "./VerityOnChainRoadmapPanel";
 import { VerityOnChainGovernanceNote } from "./VerityOnChainGovernanceNote";
+import { VerityOnChainTracingMethodologyPanel } from "./VerityOnChainTracingMethodologyPanel";
 
 interface VerityOnChainTraceViewProps {
   trace: VerityOnChainTrace;
@@ -35,6 +36,8 @@ export function VerityOnChainTraceView({ trace }: VerityOnChainTraceViewProps) {
       <VerityOnChainRecoveryPoint endpoint={trace.cashOutEndpoint} />
 
       <VerityOnChainRoadmapPanel />
+
+      <VerityOnChainTracingMethodologyPanel />
 
       <VerityOnChainGovernanceNote />
     </section>

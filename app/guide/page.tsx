@@ -7,6 +7,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { OuroxShell } from "@/components/ourox/OuroxShell";
+import { TRACING_METHODOLOGY_GUIDE_ANCHOR } from "@/lib/verity/onchain-methodology-copy";
 
 interface Section {
   id: string;
@@ -21,6 +22,7 @@ const SECTIONS: Section[] = [
   { id: "arbiter", number: "3", title: "Arbiter" },
   { id: "verity", number: "4", title: "Verity" },
   { id: "agentic-investigation", number: "5", title: "Agentic investigation" },
+  { id: "on-chain-tracing-methodology", number: "5a", title: "On-chain tracing methodology" },
   { id: "ops", number: "6", title: "Ops" },
   { id: "ai-philosophy", number: "7", title: "AI philosophy" },
   { id: "synthetic-boundary", number: "8", title: "Synthetic boundary" },
@@ -586,6 +588,35 @@ export default function GuidePage() {
                   >
                     Open Agentic Investigation
                   </Link>
+                </p>
+              </Prose>
+            </section>
+
+            {/* On-chain tracing methodology */}
+            <section aria-labelledby="on-chain-tracing-methodology">
+              <SectionHeading
+                id={TRACING_METHODOLOGY_GUIDE_ANCHOR.id}
+                number="5a"
+                title={TRACING_METHODOLOGY_GUIDE_ANCHOR.title}
+              />
+              <Prose>
+                <p>{TRACING_METHODOLOGY_GUIDE_ANCHOR.summary}</p>
+                <p>
+                  Run{" "}
+                  <Link
+                    href="/verity/agent"
+                    className="text-ourox-orange/70 underline underline-offset-2 hover:text-ourox-orange transition-colors"
+                  >
+                    Agentic Investigation
+                  </Link>
+                  , open the Investigate stage on an APP Scam case, and expand{" "}
+                  <strong className="font-medium text-ourox-ink/80">
+                    Tracing methodology
+                  </strong>{" "}
+                  in the on-chain trace area for the full guide: forward vs backward
+                  tracing, co-mingling, FIFO/LIFO/LIBR/pro-rata, UTXO vs account-based
+                  chains, VASP recovery endpoints, and the freeze → seize → restitution
+                  pathway.
                 </p>
               </Prose>
             </section>
