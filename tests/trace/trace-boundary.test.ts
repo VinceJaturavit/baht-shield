@@ -37,6 +37,24 @@ describe("trace product boundary copy", () => {
   it("not a real recovery filing", () => {
     expect(TRACE_BOUNDARY.evidencePackageBanner).toMatch(/not a real recovery filing/i);
   });
+
+  it("compact banner states synthetic demo", () => {
+    expect(TRACE_BOUNDARY.compactBanner).toMatch(/Synthetic demo/i);
+  });
+
+  it("compact banner states post-vendor-trace workflow", () => {
+    expect(TRACE_BOUNDARY.compactBanner).toMatch(/Post-vendor-trace workflow/i);
+  });
+
+  it("compact banner states AI cannot choose method or approve attribution", () => {
+    expect(TRACE_BOUNDARY.compactBanner).toMatch(/AI cannot choose the method/i);
+    expect(TRACE_BOUNDARY.compactBanner).toMatch(/approve attribution/i);
+  });
+
+  it("IS / IS-NOT content remains available", () => {
+    expect(TRACE_BOUNDARY.isList.length).toBeGreaterThan(0);
+    expect(TRACE_BOUNDARY.isNotList.length).toBeGreaterThan(0);
+  });
 });
 
 describe("trace address safety", () => {

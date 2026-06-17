@@ -1,6 +1,7 @@
 "use client";
 
 import type { TraceAuditEvent, TraceMethod, TraceReviewStatus } from "@/lib/trace/types";
+import { REVIEW_GATE_LOCKED_COPY } from "@/lib/trace/workflow-steps";
 
 interface TraceReviewAuditProps {
   selectedMethod: TraceMethod | null;
@@ -39,16 +40,20 @@ export function TraceReviewAudit({
 
   return (
     <section className="space-y-8">
-      <div className="border border-trace-border rounded-lg p-4 bg-trace-card">
-        <h3 className="text-sm font-semibold text-trace-heading mb-2">Senior reviewer gate</h3>
+      <div>
+        <h2 className="text-sm font-semibold text-trace-heading mb-1">Approve or reject the recovery package</h2>
         <p className="text-xs text-trace-secondary mb-4 leading-relaxed">
           Human review required. Method and rationale must be saved before approval. AI cannot
           approve attribution. Reject requires a reviewer note.
         </p>
+      </div>
+
+      <div className="border border-trace-border rounded-lg p-4 bg-trace-card">
+        <h3 className="text-sm font-semibold text-trace-heading mb-2">Senior reviewer gate</h3>
 
         {!canReview && (
           <p className="mb-4 text-xs text-amber-800 bg-amber-50 border border-amber-200 rounded px-3 py-2">
-            Save method selection with rationale before submitting for review.
+            {REVIEW_GATE_LOCKED_COPY}
           </p>
         )}
 

@@ -5,15 +5,49 @@ import { TraceStatusBadge } from "./TraceStatusBadge";
 interface TraceVictimAttributionTableProps {
   rows: TraceVictimAttributionRow[];
   asset: string;
+  methodSaved?: boolean;
+  compact?: boolean;
 }
 
-export function TraceVictimAttributionTable({ rows, asset }: TraceVictimAttributionTableProps) {
+export function TraceVictimAttributionTable({
+  rows,
+  asset,
+  methodSaved = true,
+  compact = false,
+}: TraceVictimAttributionTableProps) {
+  if (!methodSaved) {
+    return (
+      <section>
+        <h2 className="text-sm font-semibold text-trace-heading mb-1">
+          Who can be attributed to the frozen funds?
+        </h2>
+        <p className="mb-4 text-xs text-trace-secondary leading-relaxed">
+          Attribution is the consequence of the selected method; unsupported claims remain
+          insufficient evidence instead of being forced into recovery.
+        </p>
+        <div className="rounded border border-trace-border bg-trace-muted px-4 py-6 text-center">
+          <p className="text-sm font-medium text-trace-heading">Pending method selection</p>
+          <p className="mt-1 text-xs text-trace-secondary">
+            Save a recovery method before reviewing victim attribution rows.
+          </p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section>
-      <p className="mb-4 text-xs text-trace-secondary leading-relaxed">
-        Attribution rows update after human method selection. Insufficient-evidence claims remain
-        excluded regardless of method. AI cannot approve attribution.
-      </p>
+      {!compact && (
+        <>
+          <h2 className="text-sm font-semibold text-trace-heading mb-1">
+            Who can be attributed to the frozen funds?
+          </h2>
+          <p className="mb-4 text-xs text-trace-secondary leading-relaxed">
+            Attribution is the consequence of the selected method; unsupported claims remain
+            insufficient evidence instead of being forced into recovery.
+          </p>
+        </>
+      )}
 
       <div className="overflow-hidden rounded-lg border border-trace-border bg-trace-card">
         <table className="w-full text-xs">
@@ -24,10 +58,14 @@ export function TraceVictimAttributionTable({ rows, asset }: TraceVictimAttribut
               <th className="px-3 py-2 font-medium text-trace-heading text-right">Attributed amount</th>
               <th className="px-3 py-2 font-medium text-trace-heading">Status</th>
               <th className="px-3 py-2 font-medium text-trace-heading">Gaps</th>
-              <th className="px-3 py-2 font-medium text-trace-secondary">Deposit tx</th>
-              <th className="px-3 py-2 font-medium text-trace-secondary text-right">Deposit amount</th>
-              <th className="px-3 py-2 font-medium text-trace-secondary">Confidence</th>
-              <th className="px-3 py-2 font-medium text-trace-secondary text-center">Evidence count</th>
+              {!compact && (
+                <>
+                  <th className="px-3 py-2 font-medium text-trace-secondary">Deposit tx</th>
+                  <th className="px-3 py-2 font-medium text-trace-secondary text-right">Deposit amount</th>
+                  <th className="px-3 py-2 font-medium text-trace-secondary">Confidence</th>
+                  <th className="px-3 py-2 font-medium text-trace-secondary text-center">Evidence count</th>
+                </>
+              )}
             </tr>
           </thead>
           <tbody>
@@ -64,12 +102,16 @@ export function TraceVictimAttributionTable({ rows, asset }: TraceVictimAttribut
                     "—"
                   )}
                 </td>
-                <td className="px-3 py-2 font-mono text-trace-secondary">{row.depositTx}</td>
-                <td className="px-3 py-2 text-right">
-                  <TraceAmount amount={row.depositAmount} asset={asset} className="text-trace-secondary" />
-                </td>
-                <td className="px-3 py-2 text-trace-secondary">{row.confidence}</td>
-                <td className="px-3 py-2 text-center text-trace-secondary">{row.evidenceCount}</td>
+                {!compact && (
+                  <>
+                    <td className="px-3 py-2 font-mono text-trace-secondary">{row.depositTx}</td>
+                    <td className="px-3 py-2 text-right">
+                      <TraceAmount amount={row.depositAmount} asset={asset} className="text-trace-secondary" />
+                    </td>
+                    <td className="px-3 py-2 text-trace-secondary">{row.confidence}</td>
+                    <td className="px-3 py-2 text-center text-trace-secondary">{row.evidenceCount}</td>
+                  </>
+                )}
               </tr>
             ))}
           </tbody>

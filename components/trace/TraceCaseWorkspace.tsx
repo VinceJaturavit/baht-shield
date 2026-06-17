@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
-import type { TraceCase, TraceMethod, TraceTab, TraceAuditEvent } from "@/lib/trace/types";
+import type { TraceCase, TraceMethod, TraceAuditEvent } from "@/lib/trace/types";
+import type { TraceWorkflowStepId } from "@/lib/trace/workflow-steps";
+import { isStepLocked } from "@/lib/trace/workflow-steps";
 import { buildAttributionRows } from "@/lib/trace/attribution";
 import {
   createAiAssistEvent,
@@ -13,10 +15,15 @@ import {
   validateReviewReject,
 } from "@/lib/trace/audit";
 import { generateDeterministicAiAssist, getAiAssistFullSummary } from "@/lib/trace/ai-assist";
-import { TRACE_BOUNDARY } from "@/lib/trace/boundary";
+import { TRACE_CASE_001_STORY } from "@/data/trace/trace-preview-cases";
 import { TraceCaseHeader } from "./TraceCaseHeader";
-import { TraceTabs } from "./TraceTabs";
-import { TraceBoundaryPanel } from "./TraceBoundaryPanel";
+import { TraceWorkflowStepper } from "./TraceWorkflowStepper";
+import { TraceBoundaryBanner } from "./TraceBoundaryBanner";
+import { TraceBoundaryDrawer } from "./TraceBoundaryDrawer";
+import { TraceCaseStoryCard } from "./TraceCaseStoryCard";
+import { TraceMiniFlow } from "./TraceMiniFlow";
+import { TraceIntakeOverview } from "./TraceIntakeOverview";
+import { TraceCoMinglingOverview } from "./TraceCoMinglingOverview";
 import { TraceVendorEvidence } from "./TraceVendorEvidence";
 import { TraceFrozenPoolLedger } from "./TraceFrozenPoolLedger";
 import { TraceMethodComparison } from "./TraceMethodComparison";
@@ -29,7 +36,7 @@ interface TraceCaseWorkspaceProps {
 }
 
 export function TraceCaseWorkspace({ traceCase }: TraceCaseWorkspaceProps) {
-  const [activeTab, setActiveTab] = useState<TraceTab>("method-comparison");
+  const [activeStep, setActiveStep] = useState<TraceWorkflowStepId>("method-decision");
   const [selectedMethod, setSelectedMethod] = useState<TraceMethod | null>(null);
   const [methodRationale, setMethodRationale] = useState("");
   const [savedMethod, setSavedMethod] = useState<TraceMethod | null>(null);
@@ -47,6 +54,15 @@ export function TraceCaseWorkspace({ traceCase }: TraceCaseWorkspaceProps) {
   const attributionRows = useMemo(
     () => buildAttributionRows(traceCase, savedMethod),
     [traceCase, savedMethod],
+  );
+
+  const handleStepChange = useCallback(
+    (step: TraceWorkflowStepId) => {
+      if (!isStepLocked(step, methodSaved)) {
+        setActiveStep(step);
+      }
+    },
+    [methodSaved],
   );
 
   const handleSaveMethod = useCallback(() => {
@@ -98,28 +114,46 @@ export function TraceCaseWorkspace({ traceCase }: TraceCaseWorkspaceProps) {
     setAuditEvents((prev) => [...prev, createReviewRejectedEvent(reviewerNote)]);
   }, [reviewerNote]);
 
+  const story =
+    traceCase.caseId === "TRACE-CASE-001"
+      ? TRACE_CASE_001_STORY
+      : `${traceCase.title}. Synthetic recovery case for workflow demonstration.`;
+
   return (
     <div className="max-w-6xl overflow-x-hidden">
       <TraceCaseHeader traceCase={traceCase} reviewStatus={reviewStatus} />
 
-      <div className="mb-6">
-        <TraceBoundaryPanel />
+      <div className="mb-4 space-y-2">
+        <TraceBoundaryBanner />
+        <TraceBoundaryDrawer />
       </div>
 
-      <p className="mb-4 text-xs text-trace-secondary border-l-2 border-trace-primary/40 pl-3">
-        {TRACE_BOUNDARY.aiRoleStatement}
-      </p>
+      <div className="mb-6 grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <TraceCaseStoryCard story={story} />
+        <TraceMiniFlow />
+      </div>
 
-      <TraceTabs activeTab={activeTab} onTabChange={setActiveTab} />
+      <div className="mb-6">
+        <TraceWorkflowStepper
+          activeStep={activeStep}
+          methodSaved={methodSaved}
+          reviewStatus={reviewStatus}
+          onStepChange={handleStepChange}
+        />
+      </div>
 
       <div className="mt-6 pb-8">
-        {activeTab === "vendor-evidence" && (
+        {activeStep === "intake" && <TraceIntakeOverview traceCase={traceCase} />}
+        {activeStep === "vendor-evidence" && (
           <TraceVendorEvidence evidence={traceCase.vendorEvidence} />
         )}
-        {activeTab === "frozen-pool" && (
+        {activeStep === "frozen-funds" && (
           <TraceFrozenPoolLedger traceCase={traceCase} />
         )}
-        {activeTab === "method-comparison" && (
+        {activeStep === "co-mingling" && (
+          <TraceCoMinglingOverview traceCase={traceCase} />
+        )}
+        {activeStep === "method-decision" && (
           <TraceMethodComparison
             traceCase={traceCase}
             selectedMethod={selectedMethod}
@@ -135,10 +169,14 @@ export function TraceCaseWorkspace({ traceCase }: TraceCaseWorkspaceProps) {
             onUseRationaleStarter={handleUseRationaleStarter}
           />
         )}
-        {activeTab === "victim-attribution" && (
-          <TraceVictimAttributionTable rows={attributionRows} asset={traceCase.asset} />
+        {activeStep === "victim-attribution" && (
+          <TraceVictimAttributionTable
+            rows={attributionRows}
+            asset={traceCase.asset}
+            methodSaved={methodSaved}
+          />
         )}
-        {activeTab === "evidence-package" && (
+        {activeStep === "evidence-package" && (
           <TraceEvidencePackageSummary
             traceCase={traceCase}
             selectedMethod={savedMethod}
@@ -146,9 +184,11 @@ export function TraceCaseWorkspace({ traceCase }: TraceCaseWorkspaceProps) {
             attributionRows={attributionRows}
             reviewStatus={reviewStatus}
             auditEvents={auditEvents}
+            methodSaved={methodSaved}
+            aiOutput={aiOutput}
           />
         )}
-        {activeTab === "review-audit" && (
+        {activeStep === "senior-review" && (
           <TraceReviewAudit
             selectedMethod={savedMethod}
             methodRationale={savedRationale}

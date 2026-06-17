@@ -1,7 +1,6 @@
 "use client";
 
 import type { TraceCase, TraceMethod } from "@/lib/trace/types";
-import { TRACE_BOUNDARY } from "@/lib/trace/boundary";
 import type { TraceAiAssistOutput } from "@/lib/trace/ai-assist";
 import {
   buildSamePoolMatrix,
@@ -9,6 +8,7 @@ import {
 } from "@/lib/trace/method-display";
 import { TraceAmount } from "./TraceAmount";
 import { TraceAiAssistPanel } from "./TraceAiAssistPanel";
+import { TraceLearningNote } from "./TraceLearningNote";
 
 const METHODS: TraceMethod[] = ["FIFO", "LIFO", "LIBR", "pro-rata"];
 
@@ -36,6 +36,9 @@ function MethodCard({
   asset: string;
   selected: boolean;
 }) {
+  const beneficiaries = comparison.allocations.filter((a) => a.allocatedAmount > 0 && a.role === "victim");
+  const losers = comparison.allocations.filter((a) => a.allocatedAmount === 0 && a.role === "victim");
+
   return (
     <div
       className={`border rounded-lg overflow-hidden bg-trace-card ${
@@ -72,20 +75,32 @@ function MethodCard({
       </div>
       <details className="border-t border-trace-border group">
         <summary className="px-4 py-2 text-xs font-medium text-trace-primary cursor-pointer hover:bg-trace-muted transition-colors">
-          Why / caveats
+          Defensibility review
         </summary>
         <div className="px-4 pb-3 space-y-2 text-xs text-trace-body">
           <p>
-            <span className="font-medium text-trace-secondary">Weakness: </span>
-            {comparison.weakness}
-          </p>
-          <p>
-            <span className="font-medium text-trace-secondary">Defensibility: </span>
+            <span className="font-medium text-trace-secondary">Why defensible: </span>
             {comparison.defensibility}
           </p>
           <p>
-            <span className="font-medium text-trace-secondary">Uncertainty: </span>
-            {comparison.uncertainty}
+            <span className="font-medium text-trace-secondary">Who benefits: </span>
+            {beneficiaries.length > 0
+              ? beneficiaries.map((b) => `${b.victimNameSynthetic} (${b.allocatedAmount.toLocaleString()})`).join(", ")
+              : "No supported victims fully allocated"}
+          </p>
+          <p>
+            <span className="font-medium text-trace-secondary">Who loses: </span>
+            {losers.length > 0
+              ? losers.map((l) => l.victimNameSynthetic).join(", ")
+              : "All supported victims receive allocation"}
+          </p>
+          <p>
+            <span className="font-medium text-trace-secondary">Evidence required: </span>
+            Supported deposit records and pool ledger chronology.
+          </p>
+          <p>
+            <span className="font-medium text-trace-secondary">Reviewer challenge: </span>
+            {comparison.weakness} {comparison.uncertainty}
           </p>
         </div>
       </details>
@@ -111,13 +126,25 @@ export function TraceMethodComparison({
 
   return (
     <section>
-      <h2 className="mb-2 text-sm font-semibold text-trace-heading">
-        Same pool, different outcomes
+      <h2 className="text-sm font-semibold text-trace-heading mb-1">
+        Choose a defensible recovery method
       </h2>
       <p className="mb-4 text-xs text-trace-secondary leading-relaxed">
-        {TRACE_BOUNDARY.methodComparisonCaption}
+        The same frozen pool produces different victim outcomes depending on the accounting method,
+        so the investigator must justify the selected method.
       </p>
 
+      <div className="mb-4">
+        <TraceLearningNote title="Why can't AI choose the method?">
+          Method choice affects victim outcomes and may face reviewer or legal scrutiny. AI can
+          compare methods and draft a rationale, but the investigator must make and justify the
+          choice.
+        </TraceLearningNote>
+      </div>
+
+      <h3 className="mb-2 text-xs font-semibold text-trace-heading">
+        Same pool, different outcomes
+      </h3>
       <div className="mb-6 overflow-hidden rounded-lg border border-trace-border bg-trace-card">
         <table className="w-full text-xs">
           <thead>

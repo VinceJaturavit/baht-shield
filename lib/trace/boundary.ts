@@ -2,6 +2,8 @@ export const TRACE_BOUNDARY = {
   productName: "Ourox Trace",
   tagline:
     "AI-assisted recovery-tracing workflow layer that sits after vendor tracing.",
+  compactBanner:
+    "Synthetic demo · Post-vendor-trace workflow layer · AI cannot choose the method or approve attribution",
   isList: [
     "Synthetic demo recovery-workflow assistant",
     "Post-vendor-trace workflow layer",
