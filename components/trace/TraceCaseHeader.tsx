@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { TraceCase } from "@/lib/trace/types";
 import { TRACE_BOUNDARY } from "@/lib/trace/boundary";
+import { TRACE_GUIDE_NAV } from "@/lib/trace/trace-guide-content";
 import { TraceAmount } from "./TraceAmount";
 import { TraceReviewBadge } from "./TraceStatusBadge";
 import { TraceLogo } from "./TraceLogo";
@@ -13,12 +14,20 @@ interface TraceCaseHeaderProps {
 export function TraceCaseHeader({ traceCase, reviewStatus }: TraceCaseHeaderProps) {
   return (
     <header className="mb-6">
-      <Link
-        href="/trace"
-        className="text-xs text-trace-secondary hover:text-trace-primary transition-colors"
-      >
-        Back to Trace cases
-      </Link>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <Link
+          href="/trace"
+          className="text-xs text-trace-secondary hover:text-trace-primary transition-colors"
+        >
+          Back to Trace cases
+        </Link>
+        <Link
+          href={TRACE_GUIDE_NAV.guideLink.href}
+          className="text-xs text-trace-secondary hover:text-trace-primary transition-colors"
+        >
+          {TRACE_GUIDE_NAV.guideLink.label}
+        </Link>
+      </div>
 
       <div className="mt-3 flex flex-wrap items-start justify-between gap-4">
         <div className="min-w-0 flex items-center gap-3">

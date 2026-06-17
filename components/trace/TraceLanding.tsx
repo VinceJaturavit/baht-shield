@@ -9,23 +9,32 @@ import {
 import { TraceBoundaryDrawer } from "./TraceBoundaryDrawer";
 import { TraceAmount } from "./TraceAmount";
 import { TraceReviewBadge } from "./TraceStatusBadge";
+import { TRACE_GUIDE_NAV } from "@/lib/trace/trace-guide-content";
 import { TraceLogo } from "./TraceLogo";
 
 export function TraceLanding() {
   return (
     <div className="max-w-4xl">
       <header className="mb-6">
-        <div className="flex items-center gap-3">
-          <TraceLogo size={40} className="shrink-0" />
-          <div className="border-l border-trace-border pl-3">
-            <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-              <h1 className="text-xl font-semibold text-trace-heading tracking-tight">Ourox Trace</h1>
-              <span className="text-[10px] font-mono uppercase tracking-wider text-trace-primary">
-                Recovery Tracing Workflow
-              </span>
+        <div className="flex flex-wrap items-start justify-between gap-4">
+          <div className="flex items-center gap-3 min-w-0">
+            <TraceLogo size={40} className="shrink-0" />
+            <div className="border-l border-trace-border pl-3 min-w-0">
+              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                <h1 className="text-xl font-semibold text-trace-heading tracking-tight">Ourox Trace</h1>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-trace-primary">
+                  Recovery Tracing Workflow
+                </span>
+              </div>
+              <p className="mt-2 text-sm text-trace-body leading-relaxed">{TRACE_LANDING_THESIS}</p>
             </div>
-            <p className="mt-2 text-sm text-trace-body leading-relaxed">{TRACE_LANDING_THESIS}</p>
           </div>
+          <Link
+            href={TRACE_GUIDE_NAV.guideLink.href}
+            className="inline-flex shrink-0 rounded border border-trace-border bg-trace-card px-3 py-1.5 text-xs font-medium text-trace-body hover:border-trace-primary hover:text-trace-primary transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-trace-primary"
+          >
+            {TRACE_GUIDE_NAV.guideLink.label}
+          </Link>
         </div>
       </header>
 
